@@ -1,0 +1,4 @@
+Python基础综合练习题可以通过Jupyter Notebook打开，具体安装和使用方法，请见课程【第二章 数据分析预备篇】的前两个视频：
+
+1 - Jupyter Notebook安装 | 搞个金刚钻
+2 - Jupyter Notebook使用 | 上手金刚钻
