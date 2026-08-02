@@ -12,17 +12,12 @@ client = OpenAI()
 import os
 # print(os.environ)  # 打印所有环境变量
 if 'qianwen_openai_api' in os.environ:
-    print(f"Environment variable YOUR_ENV_VAR exists with value: {os.environ['qianwen_openai_api']}")
+    print(f"Environment variable qianwen_openai_api exists with value: {os.environ['qianwen_openai_api'][:10]}")
 else:
-    print("Environment variable YOUR_ENV_VAR does not exist.")
+    print("Environment variable qianwen_openai_api does not exist.")
 
-exit()
-import os
+
 api_key=os.getenv("qianwen_openai_api")
-api_key = os.getenv('OPENAI_API_KEY')
-print(api_key)
-from openai import OpenAI
-
 client = OpenAI(
     api_key=api_key,  # 从阿里云百炼控制台获取
     base_url="https://ws-s6eavmbn4d8prjq0.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",  # 使用官方端点

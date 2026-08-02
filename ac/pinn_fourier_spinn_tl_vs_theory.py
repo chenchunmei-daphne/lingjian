@@ -120,7 +120,6 @@ def make_frequency_grid(start: float = 300.0, stop: float = 1000.0, step: float 
         freqs = np.append(freqs, stop)
     return freqs.tolist()
 
-
 def set_seed(seed: int) -> None:
     random.seed(seed)
     np.random.seed(seed)
