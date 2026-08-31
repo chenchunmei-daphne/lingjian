@@ -7,7 +7,7 @@ from sionna.phy.channel.tr38901 import (
 )
 
 from sionna.phy.channel import cir_to_ofdm_channel
-from sionna.phy.ofdm import subcarrier_frequencies
+from sionna.phy.channel import subcarrier_frequencies
 
 
 # ============================================================
