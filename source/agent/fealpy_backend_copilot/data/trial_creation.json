@@ -1,0 +1,891 @@
+[
+  {
+    "id": "bm.arange",
+    "name": "arange",
+    "full_name": "bm.arange",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "arange(start, stop=None, step=1, *, dtype=None, device=None)",
+    "parameters": [
+      {
+        "name": "start",
+        "type": "number",
+        "default": null,
+        "required": true,
+        "description": "起始值；省略 stop 时作为终止值"
+      },
+      {
+        "name": "stop",
+        "type": "Optional[number]",
+        "default": "None",
+        "required": false,
+        "description": "终止值（不包含）"
+      },
+      {
+        "name": "step",
+        "type": "number",
+        "default": "1",
+        "required": false,
+        "description": "步长"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "device",
+        "type": "Optional[device]",
+        "default": "None",
+        "required": false,
+        "description": "目标设备"
+      }
+    ],
+    "docstring": null,
+    "description": "创建给定区间内等间隔值的一维张量。",
+    "returns": {
+      "type": "Tensor",
+      "description": "一维张量"
+    },
+    "source": "fealpy/backend/numpy_backend.py:L68",
+    "backends": {
+      "numpy": {
+        "api": "numpy.arange"
+      },
+      "pytorch": {
+        "api": "torch.arange"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "NumPy 包装器会移除 device 参数；PyTorch 原生支持 device，且 FEALPy 的 PyTorch 实现处理省略 stop 的调用形式。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "arange"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  },
+  {
+    "id": "bm.asarray",
+    "name": "asarray",
+    "full_name": "bm.asarray",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "asarray(a, dtype=None, *, device=None)",
+    "parameters": [
+      {
+        "name": "a",
+        "type": "array_like",
+        "default": null,
+        "required": true,
+        "description": "输入数据"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "device",
+        "type": "Optional[device]",
+        "default": "None",
+        "required": false,
+        "description": "目标设备"
+      }
+    ],
+    "docstring": null,
+    "description": "将输入转换为后端张量。",
+    "returns": {
+      "type": "Tensor",
+      "description": "转换后的张量"
+    },
+    "source": "fealpy/backend/numpy_backend.py:L69",
+    "backends": {
+      "numpy": {
+        "api": "numpy.asarray"
+      },
+      "pytorch": {
+        "api": "torch.asarray"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "NumPy 包装器会移除 device 参数；PyTorch 对应接口支持设备语义。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "asarray"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  },
+  {
+    "id": "bm.empty",
+    "name": "empty",
+    "full_name": "bm.empty",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "empty(shape, *, dtype=None, device=None)",
+    "parameters": [
+      {
+        "name": "shape",
+        "type": "shape",
+        "default": null,
+        "required": true,
+        "description": "张量形状"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "device",
+        "type": "Optional[device]",
+        "default": "None",
+        "required": false,
+        "description": "目标设备"
+      }
+    ],
+    "docstring": null,
+    "description": "创建未初始化内容的指定形状张量。",
+    "returns": {
+      "type": "Tensor",
+      "description": "未初始化张量"
+    },
+    "source": "fealpy/backend/numpy_backend.py:L70",
+    "backends": {
+      "numpy": {
+        "api": "numpy.empty"
+      },
+      "pytorch": {
+        "api": "torch.empty"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "NumPy 包装器会移除 device 参数；PyTorch 支持 device。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "empty"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  },
+  {
+    "id": "bm.empty_like",
+    "name": "empty_like",
+    "full_name": "bm.empty_like",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "empty_like(x, *, dtype=None, device=None)",
+    "parameters": [
+      {
+        "name": "x",
+        "type": "Tensor",
+        "default": null,
+        "required": true,
+        "description": "参考张量"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "device",
+        "type": "Optional[device]",
+        "default": "None",
+        "required": false,
+        "description": "目标设备"
+      }
+    ],
+    "docstring": null,
+    "description": "创建与参考张量形状相同的未初始化张量。",
+    "returns": {
+      "type": "Tensor",
+      "description": "未初始化张量"
+    },
+    "source": "fealpy/backend/numpy_backend.py:L71",
+    "backends": {
+      "numpy": {
+        "api": "numpy.empty_like"
+      },
+      "pytorch": {
+        "api": "torch.empty_like"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "NumPy 包装器会移除 device 参数；PyTorch 支持 device。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "empty_like"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  },
+  {
+    "id": "bm.eye",
+    "name": "eye",
+    "full_name": "bm.eye",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "eye(n, m=None, /, k=0, dtype=None, **kwargs)",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "int",
+        "default": null,
+        "required": true,
+        "description": "行数"
+      },
+      {
+        "name": "m",
+        "type": "Optional[int]",
+        "default": "None",
+        "required": false,
+        "description": "列数；默认等于 n"
+      },
+      {
+        "name": "k",
+        "type": "int",
+        "default": "0",
+        "required": false,
+        "description": "对角线偏移"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "kwargs",
+        "type": "Any",
+        "default": null,
+        "required": false,
+        "description": "其他后端关键字参数"
+      }
+    ],
+    "docstring": null,
+    "description": "创建二维单位矩阵。",
+    "returns": {
+      "type": "Tensor",
+      "description": "单位矩阵"
+    },
+    "source": "fealpy/backend/pytorch_backend.py:L114",
+    "backends": {
+      "numpy": {
+        "api": "numpy.eye"
+      },
+      "pytorch": {
+        "api": "torch.eye"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "PyTorch 实现仅支持 k=0；NumPy 包装器会移除 device 参数。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "eye"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  },
+  {
+    "id": "bm.full",
+    "name": "full",
+    "full_name": "bm.full",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "full(shape, fill_value, *, dtype=None, device=None)",
+    "parameters": [
+      {
+        "name": "shape",
+        "type": "shape",
+        "default": null,
+        "required": true,
+        "description": "张量形状"
+      },
+      {
+        "name": "fill_value",
+        "type": "scalar",
+        "default": null,
+        "required": true,
+        "description": "填充值"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "device",
+        "type": "Optional[device]",
+        "default": "None",
+        "required": false,
+        "description": "目标设备"
+      }
+    ],
+    "docstring": null,
+    "description": "创建以指定值填充的张量。",
+    "returns": {
+      "type": "Tensor",
+      "description": "填充后的张量"
+    },
+    "source": "fealpy/backend/numpy_backend.py:L73",
+    "backends": {
+      "numpy": {
+        "api": "numpy.full"
+      },
+      "pytorch": {
+        "api": "torch.full"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "NumPy 包装器会移除 device 参数；PyTorch 支持 device。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "full"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  },
+  {
+    "id": "bm.full_like",
+    "name": "full_like",
+    "full_name": "bm.full_like",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "full_like(x, fill_value, *, dtype=None, device=None)",
+    "parameters": [
+      {
+        "name": "x",
+        "type": "Tensor",
+        "default": null,
+        "required": true,
+        "description": "参考张量"
+      },
+      {
+        "name": "fill_value",
+        "type": "scalar",
+        "default": null,
+        "required": true,
+        "description": "填充值"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "device",
+        "type": "Optional[device]",
+        "default": "None",
+        "required": false,
+        "description": "目标设备"
+      }
+    ],
+    "docstring": null,
+    "description": "创建与参考张量形状相同并以指定值填充的张量。",
+    "returns": {
+      "type": "Tensor",
+      "description": "填充后的张量"
+    },
+    "source": "fealpy/backend/numpy_backend.py:L74",
+    "backends": {
+      "numpy": {
+        "api": "numpy.full_like"
+      },
+      "pytorch": {
+        "api": "torch.full_like"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "NumPy 包装器会移除 device 参数；PyTorch 支持 device。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "full_like"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  },
+  {
+    "id": "bm.linspace",
+    "name": "linspace",
+    "full_name": "bm.linspace",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "linspace(start, stop, /, num, *, dtype=None, device=None, endpoint=True)",
+    "parameters": [
+      {
+        "name": "start",
+        "type": "number_or_Tensor",
+        "default": null,
+        "required": true,
+        "description": "起始值"
+      },
+      {
+        "name": "stop",
+        "type": "number_or_Tensor",
+        "default": null,
+        "required": true,
+        "description": "终止值"
+      },
+      {
+        "name": "num",
+        "type": "int",
+        "default": null,
+        "required": true,
+        "description": "样本数量"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "device",
+        "type": "Optional[device]",
+        "default": "None",
+        "required": false,
+        "description": "目标设备"
+      },
+      {
+        "name": "endpoint",
+        "type": "bool",
+        "default": "True",
+        "required": false,
+        "description": "是否包含终止值"
+      }
+    ],
+    "docstring": null,
+    "description": "创建指定区间内线性等间隔的张量。",
+    "returns": {
+      "type": "Tensor",
+      "description": "等间隔样本张量"
+    },
+    "source": "fealpy/backend/pytorch_backend.py:L121",
+    "backends": {
+      "numpy": {
+        "api": "numpy.linspace"
+      },
+      "pytorch": {
+        "api": "torch.linspace"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "PyTorch 实现要求 endpoint=True，并对张量形式的 start、stop 使用向量化处理；NumPy 包装器会移除 device 参数。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "linspace"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  },
+  {
+    "id": "bm.ones",
+    "name": "ones",
+    "full_name": "bm.ones",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "ones(shape, *, dtype=None, device=None)",
+    "parameters": [
+      {
+        "name": "shape",
+        "type": "shape",
+        "default": null,
+        "required": true,
+        "description": "张量形状"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "device",
+        "type": "Optional[device]",
+        "default": "None",
+        "required": false,
+        "description": "目标设备"
+      }
+    ],
+    "docstring": null,
+    "description": "创建元素全为一的张量。",
+    "returns": {
+      "type": "Tensor",
+      "description": "全一张量"
+    },
+    "source": "fealpy/backend/numpy_backend.py:L76",
+    "backends": {
+      "numpy": {
+        "api": "numpy.ones"
+      },
+      "pytorch": {
+        "api": "torch.ones"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "NumPy 包装器会移除 device 参数；PyTorch 支持 device。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "ones"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  },
+  {
+    "id": "bm.ones_like",
+    "name": "ones_like",
+    "full_name": "bm.ones_like",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "ones_like(x, *, dtype=None, device=None)",
+    "parameters": [
+      {
+        "name": "x",
+        "type": "Tensor",
+        "default": null,
+        "required": true,
+        "description": "参考张量"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "device",
+        "type": "Optional[device]",
+        "default": "None",
+        "required": false,
+        "description": "目标设备"
+      }
+    ],
+    "docstring": null,
+    "description": "创建与参考张量形状相同的全一张量。",
+    "returns": {
+      "type": "Tensor",
+      "description": "全一张量"
+    },
+    "source": "fealpy/backend/numpy_backend.py:L77",
+    "backends": {
+      "numpy": {
+        "api": "numpy.ones_like"
+      },
+      "pytorch": {
+        "api": "torch.ones_like"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "NumPy 包装器会移除 device 参数；PyTorch 支持 device。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "ones_like"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  },
+  {
+    "id": "bm.zeros",
+    "name": "zeros",
+    "full_name": "bm.zeros",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "zeros(shape, *, dtype=None, device=None)",
+    "parameters": [
+      {
+        "name": "shape",
+        "type": "shape",
+        "default": null,
+        "required": true,
+        "description": "张量形状"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "device",
+        "type": "Optional[device]",
+        "default": "None",
+        "required": false,
+        "description": "目标设备"
+      }
+    ],
+    "docstring": null,
+    "description": "创建元素全为零的张量。",
+    "returns": {
+      "type": "Tensor",
+      "description": "全零张量"
+    },
+    "source": "fealpy/backend/numpy_backend.py:L78",
+    "backends": {
+      "numpy": {
+        "api": "numpy.zeros"
+      },
+      "pytorch": {
+        "api": "torch.zeros"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "NumPy 包装器会移除 device 参数；PyTorch 支持 device。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "zeros"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  },
+  {
+    "id": "bm.zeros_like",
+    "name": "zeros_like",
+    "full_name": "bm.zeros_like",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "zeros_like(x, *, dtype=None, device=None)",
+    "parameters": [
+      {
+        "name": "x",
+        "type": "Tensor",
+        "default": null,
+        "required": true,
+        "description": "参考张量"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "device",
+        "type": "Optional[device]",
+        "default": "None",
+        "required": false,
+        "description": "目标设备"
+      }
+    ],
+    "docstring": null,
+    "description": "创建与参考张量形状相同的全零张量。",
+    "returns": {
+      "type": "Tensor",
+      "description": "全零张量"
+    },
+    "source": "fealpy/backend/numpy_backend.py:L79",
+    "backends": {
+      "numpy": {
+        "api": "numpy.zeros_like"
+      },
+      "pytorch": {
+        "api": "torch.zeros_like"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "NumPy 包装器会移除 device 参数；PyTorch 支持 device。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "zeros_like"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  },
+  {
+    "id": "bm.array",
+    "name": "array",
+    "full_name": "bm.array",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "array(data, dtype=None, device=None)",
+    "parameters": [
+      {
+        "name": "data",
+        "type": "array_like",
+        "default": null,
+        "required": true,
+        "description": "输入数据"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "device",
+        "type": "Optional[device]",
+        "default": "None",
+        "required": false,
+        "description": "目标设备"
+      }
+    ],
+    "docstring": null,
+    "description": "根据输入数据创建后端张量。",
+    "returns": {
+      "type": "Tensor",
+      "description": "新创建的张量"
+    },
+    "source": "fealpy/backend/numpy_backend.py:L81",
+    "backends": {
+      "numpy": {
+        "api": "numpy.array"
+      },
+      "pytorch": {
+        "api": "torch.tensor"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "PyTorch 将 array 映射为 torch.tensor；NumPy 将其映射为 numpy.array 并移除 device 参数。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "array"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  },
+  {
+    "id": "bm.tensor",
+    "name": "tensor",
+    "full_name": "bm.tensor",
+    "module": "fealpy.backend",
+    "category": "creation",
+    "signature": "tensor(data, dtype=None, device=None)",
+    "parameters": [
+      {
+        "name": "data",
+        "type": "array_like",
+        "default": null,
+        "required": true,
+        "description": "输入数据"
+      },
+      {
+        "name": "dtype",
+        "type": "Optional[dtype]",
+        "default": "None",
+        "required": false,
+        "description": "目标数据类型"
+      },
+      {
+        "name": "device",
+        "type": "Optional[device]",
+        "default": "None",
+        "required": false,
+        "description": "目标设备"
+      }
+    ],
+    "docstring": null,
+    "description": "根据输入数据创建当前后端的张量。",
+    "returns": {
+      "type": "Tensor",
+      "description": "新创建的张量"
+    },
+    "source": "fealpy/backend/numpy_backend.py:L82",
+    "backends": {
+      "numpy": {
+        "api": "numpy.array"
+      },
+      "pytorch": {
+        "api": "torch.tensor"
+      }
+    },
+    "is_backend_agnostic": false,
+    "backend_diff_notes": "NumPy 将 tensor 映射为 numpy.array 并移除 device 参数；PyTorch 映射为 torch.tensor 并支持 device。",
+    "aliases": [],
+    "keywords": [
+      "张量",
+      "创建",
+      "tensor"
+    ],
+    "examples": [],
+    "see_also": [],
+    "deprecated": false,
+    "doc_quality": "inferred",
+    "doc_source": "code_inference"
+  }
+]

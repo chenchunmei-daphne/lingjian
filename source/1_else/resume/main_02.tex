@@ -1,0 +1,253 @@
+\documentclass[10.5pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage[
+  top=0.80cm,
+  bottom=0.90cm,
+  left=1.25cm,
+  right=1.25cm
+]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{fontawesome5}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.02}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue
+}
+
+\setlist[itemize]{
+  leftmargin=1.25em,
+  itemsep=0.12em,
+  topsep=0.18em,
+  parsep=0em,
+  partopsep=0em
+}
+
+\renewcommand\labelitemi{\scriptsize$\bullet$}
+
+\titleformat{\section}
+  {\large\bfseries}
+  {}
+  {0em}
+  {}
+  [\vspace{-0.08em}\titlerule]
+
+\titlespacing*{\section}{0pt}{0.75em}{0.45em}
+
+% =========================
+% 自定义命令
+% =========================
+\newcommand{\resumeItem}[1]{\item #1}
+
+\newcommand{\projectHeader}[3]{%
+  \noindent
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
+    \textbf{#1} &
+    \textbf{#2}\hspace{1.5em}#3
+  \end{tabular*}
+
+  \vspace{0.15em}
+}
+
+\newcommand{\eduEntry}[6]{%
+\textbf{#1}
+\hspace{1.0em}
+\textbf{#2}
+\hspace{1.0em}
+\textbf{#3}
+\hfill
+#4
+
+\vspace{0.25em}
+
+#5
+
+\vspace{0.15em}
+
+#6
+
+\vspace{0.5em}
+}
+
+\newcommand{\subTitle}[2]{
+  \textbf{#1}
+  \hfill
+  #2
+}
+
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}
+
+\newcommand{\contactItem}[2]{
+  \makebox[1.2em][c]{#1}\hspace{0.25em}#2
+}
+
+% =========================
+% 顶部个人信息
+% =========================
+\noindent
+\begin{tabularx}{\textwidth}{@{}X@{\hspace{0.8cm}}p{2.35cm}@{}}
+  \begin{minipage}[c][2.85cm][c]{\linewidth}
+    \centering
+
+    {\hspace*{-1.0cm}\huge \textbf{陈春媚}} \\[0.6em]
+%    {\hspace*{-1.0cm}\Large \textbf{求职意向：软件工程师、软件测试工程师}} \\[0.55em]
+
+    \footnotesize
+    \begin{tabular}{@{}r@{\hspace{0.35em}}l@{\hspace{7.5em}}r@{\hspace{0.35em}}l@{}}
+      \Large \faPhone* & \Large
+      15878562962
+      &
+      \Large \faEnvelope & \Large
+      \href{mailto:1476137517@qq.com}{1476137517@qq.com}
+      \\[0.25em]
+
+      \Large \faGithub & \Large
+      \href{https://github.com/chenchunmei-daphne}{chenchunmei-daphne}
+      &
+      \Large \faHome & \Large
+      现居湖南湘潭｜籍贯广西
+
+    \end{tabular}
+  \end{minipage}
+  &
+  \begin{minipage}[c][2.85cm][c]{2.35cm}
+    \raggedleft
+    \includegraphics[width=2.25cm,height=2.85cm]{photo.jpg}
+  \end{minipage}
+\end{tabularx}
+
+\vspace{0.15em}
+% =========================
+% 教育经历
+% =========================
+\section*{教育经历}
+
+\eduEntry
+{湘潭大学}
+{硕士     }
+{应用统计}
+{2024.09--2027.06}
+{研究方向：\textbf{深度学习}，\textbf{信道矩阵重构}，PINN 求解偏微分方程}
+{相关课程：机器学习，最优化理论与算法，多元统计分析，时间序列分析}
+
+\eduEntry
+{福州大学}
+{本科    }
+{数学与应用数学}
+{2020.09--2024.06}
+{相关课程：数学分析，高等代数，数学建模实训，数据结构与算法，数据库系统，数学软件(MATLAB)，统计计算与统计软件(R 语言)}
+
+% =========================
+% 项目经历
+% =========================
+\section*{项目经历}
+
+\projectHeader
+{华为合作项目｜基于算子学习的信道重构}
+{主要开发人员}
+{2025.07--2026.09}
+
+\smallskip
+
+\textbf{项目概述：}{参与与华为合作的算子学习信道重构项目，面向大规模\ MIMO 不完全观测信道重构问题，负责数据生成、模型开发、训练测试与实验迭代。}
+
+\par \medskip
+\textbf{主要工作与结果：}
+\begin{itemize}
+
+\resumeItem{\textbf{基于\ QuaDRiGa 搭建无线信道数据生成与预处理流程}，完成\ LOS、NLOS 等场景的数据生成和预处理工作。}
+
+\resumeItem{\textbf{基于\ PyTorch 设计并实现\ Transformer 信道重构模型及训练框架}，依托超算互联网平台完成约\ \textbf{8 万样本的多\ GPU 并行训练}，测试集\textbf{频谱效率较基线提升约\ 30\%}。}
+
+\resumeItem{\textbf{负责模型与实验程序的调试迭代}，围绕数据归一化、损失函数及训练稳定性开展实验，完成问题定位、代码修改与性能验证。}
+
+\resumeItem{\textbf{参与训练与评估流程的功能完善}，补充模型检查点、历史指标保存及多组验证流程，提升实验程序的可复现性和结果追踪能力。}
+
+\end{itemize}
+
+\vspace{0.7em}
+
+\projectHeader
+{FEALPy 深度学习模块与示例工程开发}
+{主要开发人员}
+{2025.06--2025.08}
+
+\smallskip
+
+\textbf{项目概述：}{参与\href{https://github.com/chenchunmei-daphne/fealpy}{\ FEALPy} 开源数值计算软件开发，使用\ Python、PyTorch 开发\ PINN、PENN、RFM 深度学习模块及偏微分方程求解示例。}
+
+\par \medskip
+\textbf{主要工作与结果：}
+\begin{itemize}
+
+\resumeItem{\textbf{设计并实现\ PINN、PENN 与\ RFM 模块化代码框架}，封装模型构建、训练、损失计算、优化器配置及结果可视化等功能。}
+
+\resumeItem{\textbf{开发多类\ PDE 求解示例程序}，完成模型训练、数值实验、结果验证及程序调试，提高模块的复用性和可维护性。}
+
+\resumeItem{\textbf{参与功能需求拆解与模块迭代}，根据算法使用需求完善接口与示例，处理开发过程中的程序异常和兼容性问题。}
+
+\resumeItem{相关模块与示例已合并至
+\href{https://github.com/chenchunmei-daphne/fealpy}{\ FEALPy} 开源仓库。}
+\end{itemize}
+
+\vspace{0.7em}
+
+% =========================
+% 技术影响力
+% =========================
+\section*{技术影响力}
+
+\subTitle{开源贡献}{2024.09--至今}
+
+\begin{itemize}
+
+\resumeItem{参与
+\href{https://github.com/chenchunmei-daphne/fealpy}{\ FEALPy}
+开源软件开发，主要贡献\textbf{深度学习\ PDE 求解、有限差分模块及相关示例}；熟悉\ Git/GitHub 协作，累计提交\ \textbf{PR 160+ 次}，贡献代码\ \textbf{6000+ 行}。}
+
+\end{itemize}
+
+\vspace{0.20em}
+
+\subTitle{技术写作}{2025.03--至今}
+
+\begin{itemize}
+
+\resumeItem{在公众号“算海扬帆”发布深度学习与工程开发相关文章\ \textbf{10+ 篇}，累计阅读量\ \textbf{10000+}，内容涵盖\ PINN、CNN 及工程实践。}
+
+\end{itemize}
+
+% =========================
+% 专业能力
+% =========================
+\section*{专业能力}
+
+\begin{itemize}
+
+\resumeItem{\textbf{编程开发：}熟悉\ Python、PyTorch，具备模块开发、数据处理、程序调试及问题定位能力，了解常用数据结构与算法。}
+
+\resumeItem{\textbf{深度学习：}熟悉\ Transformer、CNN、PINN 等模型，能够完成模型构建、训练与性能分析，具备多\ GPU 并行及边读取边训练实践经验。}
+
+\resumeItem{\textbf{工程基础：}熟悉\ Linux 开发环境及\ Git，了解数据库、操作系统基本知识，具备技术文档编写与团队协作经验。}
+
+\resumeItem{\textbf{AI 工具应用：}能够使用\ AI 工具辅助技术调研、代码理解、程序调试、问题排查和文档整理，提高软件开发与学习效率。}
+
+\resumeItem{\textbf{技能证书：}全国计算机等级考试（NCRE）二级，大学英语四级。}
+
+\end{itemize}
+
+\end{CJK*}
+\end{document}
