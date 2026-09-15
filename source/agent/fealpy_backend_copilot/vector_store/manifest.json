@@ -1,0 +1,11 @@
+{
+  "collection": "fealpy_interfaces",
+  "record_count": 220,
+  "embedding_model": "D:\\chen\\repo\\download_model\\bge-m3",
+  "embedding_dimension": 1024,
+  "normalized_embeddings": true,
+  "distance_metric": "cosine",
+  "source_file": "D:\\chen\\repo\\lingjian\\source\\agent\\fealpy_backend_copilot\\data\\all_interfaces.json",
+  "source_sha256": "e7398266214d5ff7d74396a4b563e300e2d795440df3acb73e39f3215bd57b95",
+  "built_at_utc": "2026-09-13T03:42:18.231093+00:00"
+}
