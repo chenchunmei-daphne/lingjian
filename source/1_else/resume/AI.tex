@@ -148,7 +148,8 @@
 {本科    }
 {数学与应用数学}
 {2020.09--2024.06}
-{相关课程：数学分析，高等代数，数学建模实训，数据结构与算法，数据库系统，数学软件(MATLAB)，统计计算与统计软件(R 语言)}
+{相关课程：数学分析，高等代数，数据结构与算法，数据库系统(SQL)，数学软件(MATLAB)}
+
 
 % =========================
 % 项目经历
@@ -172,9 +173,32 @@
 
 \resumeItem{\textbf{基于\ PyTorch 设计并实现\ Transformer 信道重构模型及训练框架}，依托超算互联网平台完成约\ \textbf{8 万样本的多\ GPU 并行训练}，测试集\textbf{频谱效率较基线提升约\ 30\%}。}
 
-\resumeItem{\textbf{负责模型与实验程序的调试迭代}，围绕数据归一化、损失函数及训练稳定性开展实验，完成问题定位、代码修改与性能验证。}
+\resumeItem{\textbf{负责模型与实验流程迭代}，围绕数据归一化、损失函数和训练稳定性开展实验，完善检查点与指标保存机制，提升训练稳定性及实验可复现性。}
 
-\resumeItem{\textbf{参与训练与评估流程的功能完善}，补充模型检查点、历史指标保存及多组验证流程，提升实验程序的可复现性和结果追踪能力。}
+\end{itemize}
+
+\vspace{0.7em}
+
+\projectHeader
+{FEALPy 科学计算\ RAG 智能体}
+{核心开发人员}
+{2026.08--至今}
+
+\smallskip
+
+\textbf{项目概述：}{面向\ FEALPy 新成员开发领域智能助手，将自然语言计算需求转换为可调用的\ \texttt{bm.*} 接口及示例代码，构建涵盖意图理解、知识检索、答案生成、事实校验与多轮会话的智能体工作流。}
+
+\par \medskip
+\textbf{主要工作与成果：}
+\begin{itemize}
+
+\resumeItem{\textbf{设计并实现领域智能体工作流}，使用通义千问完成结构化意图解析与答案生成，串联意图识别、知识检索、候选重排、答案校验和会话记忆模块，支持后端、数据类型、设备及张量形状等约束的自然语言理解。}
+
+\resumeItem{\textbf{构建\ FEALPy 接口\ RAG 知识库}，整理\ 220 条多后端接口数据，使用\ BGE-M3 生成\ 1024 维向量并通过\ Chroma 持久化，结合语义召回、关键词匹配与分类软加权完成候选接口排序。}
+
+\resumeItem{\textbf{实现基于检索证据的幻觉防护与降级机制}，校验回答中的\ FEALPy、NumPy 与\ PyTorch API 是否来源于检索结果；当模型调用、结构化输出或事实校验异常时，自动回退至规则解析与模板回答。}
+
+\resumeItem{\textbf{完成多轮会话、服务化与评测闭环}，基于\ session\_id 隔离上下文，使用\ FastAPI 与\ Gradio 提供聊天、检索及接口查询功能；构建\ 55 条领域问题评测集，通过\ Recall@K、答案准确率及消融实验定位检索瓶颈。}
 
 \end{itemize}
 
@@ -197,10 +221,6 @@
 
 \resumeItem{\textbf{开发多类\ PDE 求解示例程序}，完成模型训练、数值实验、结果验证及程序调试，提高模块的复用性和可维护性。}
 
-\resumeItem{\textbf{参与功能需求拆解与模块迭代}，根据算法使用需求完善接口与示例，处理开发过程中的程序异常和兼容性问题。}
-
-\resumeItem{相关模块与示例已合并至
-\href{https://github.com/chenchunmei-daphne/fealpy}{\ FEALPy} 开源仓库。}
 \end{itemize}
 
 \vspace{0.7em}
@@ -220,16 +240,6 @@
 
 \end{itemize}
 
-\vspace{0.20em}
-
-\subTitle{技术写作}{2025.03--至今}
-
-\begin{itemize}
-
-\resumeItem{在公众号“算海扬帆”发布深度学习与工程开发相关文章\ \textbf{10+ 篇}，累计阅读量\ \textbf{10000+}，内容涵盖\ PINN、CNN 及工程实践。}
-
-\end{itemize}
-
 % =========================
 % 专业能力
 % =========================
@@ -237,15 +247,14 @@
 
 \begin{itemize}
 
-\resumeItem{\textbf{编程开发：}熟悉\ Python、PyTorch，具备模块开发、数据处理、程序调试及问题定位能力，了解常用数据结构与算法。}
+\resumeItem{\textbf{编程开发：}熟悉\ Python、PyTorch、Linux 与\ Git，具备模块开发、数据处理、程序调试及问题定位能力。}
 
 \resumeItem{\textbf{深度学习：}熟悉\ Transformer、CNN、PINN 等模型，能够完成模型构建、训练与性能分析，具备多\ GPU 并行及边读取边训练实践经验。}
 
-\resumeItem{\textbf{工程基础：}熟悉\ Linux 开发环境及\ Git，了解数据库、操作系统基本知识，具备技术文档编写与团队协作经验。}
-
-\resumeItem{\textbf{AI 工具应用：}能够使用\ AI 工具辅助技术调研、代码理解、程序调试、问题排查和文档整理，提高软件开发与学习效率。}
+\resumeItem{\textbf{大模型与智能体应用：}具备\ RAG 领域智能体开发经验，熟悉提示词设计、结构化输出、向量检索、多轮记忆、幻觉校验与失败回退，使用过\ BGE-M3、Chroma、通义千问、FastAPI 与\ Gradio。}
 
 \resumeItem{\textbf{技能证书：}全国计算机等级考试（NCRE）二级，大学英语四级。}
+
 
 \end{itemize}
 

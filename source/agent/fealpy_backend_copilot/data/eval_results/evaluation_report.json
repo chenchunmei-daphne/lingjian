@@ -1,0 +1,3811 @@
+{
+  "config": {
+    "benchmark": "D:\\chen\\repo\\lingjian\\source\\agent\\fealpy_backend_copilot\\data\\eval_questions_55.json",
+    "mode": "hybrid",
+    "top_k": 5,
+    "limit": null
+  },
+  "summary": {
+    "total": 55,
+    "recall_at_1": 0.34545454545454546,
+    "recall_at_2": 0.4,
+    "recall_at_3": 0.43636363636363634,
+    "recall_at_4": 0.43636363636363634,
+    "recall_at_5": 0.43636363636363634,
+    "answer_accuracy": 0.34545454545454546,
+    "answer_correct_count": 19,
+    "failure_counts": {
+      "retrieval_miss": 31,
+      "answer_error_after_retrieval_hit": 5,
+      "pipeline_error": 0
+    },
+    "by_category": {
+      "creation": {
+        "total": 11,
+        "recall_at_5": 0.727273,
+        "answer_accuracy": 0.545455
+      },
+      "linalg": {
+        "total": 15,
+        "recall_at_5": 0.666667,
+        "answer_accuracy": 0.6
+      },
+      "manipulation": {
+        "total": 16,
+        "recall_at_5": 0.1875,
+        "answer_accuracy": 0.125
+      },
+      "other": {
+        "total": 3,
+        "recall_at_5": 0.333333,
+        "answer_accuracy": 0.333333
+      },
+      "reduction": {
+        "total": 10,
+        "recall_at_5": 0.2,
+        "answer_accuracy": 0.1
+      }
+    },
+    "by_difficulty": {
+      "basic": {
+        "total": 23,
+        "recall_at_5": 0.652174,
+        "answer_accuracy": 0.565217
+      },
+      "intermediate": {
+        "total": 2,
+        "recall_at_5": 1.0,
+        "answer_accuracy": 1.0
+      },
+      "medium": {
+        "total": 30,
+        "recall_at_5": 0.233333,
+        "answer_accuracy": 0.133333
+      }
+    },
+    "mean_retrieval_seconds": 7.6464,
+    "mean_chat_seconds": 14.9767
+  },
+  "samples": [
+    {
+      "id": "B001",
+      "query": "我想让后续随机数结果可以复现，FEALPy 后端里怎么设置随机种子？",
+      "expected_api": [
+        "bm.random.seed"
+      ],
+      "expected_category": "other",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.68015589,
+          "distance": 0.39984411
+        },
+        {
+          "rank": 2,
+          "id": "bm.array",
+          "full_name": "bm.array",
+          "category": "creation",
+          "score": 0.67567297,
+          "distance": 0.40432703
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.67542346,
+          "distance": 0.40457654
+        },
+        {
+          "rank": 4,
+          "id": "bm.random.randint",
+          "full_name": "bm.random.randint",
+          "category": "creation",
+          "score": 0.67501541,
+          "distance": 0.40498459
+        },
+        {
+          "rank": 5,
+          "id": "bm.arange",
+          "full_name": "bm.arange",
+          "category": "creation",
+          "score": 0.67037101,
+          "distance": 0.40962899
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.random.rand",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.random.rand`\n\n功能：创建或初始化张量：rand。\n签名：`random.rand(*size, dtype=None, device=None)`\n\n主要参数：\n- `size` (int)：张量各维尺寸，作为可变位置参数传入\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.random.rand`\n- PyTorch：`torch.rand`\n\n后端差异：NumPy 映射为 numpy.random.rand，PyTorch 映射为 torch.rand；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.random.rand(2, 3)\n```\n\n其他候选：`bm.array`、`bm.random.randn`\n源码：`fealpy/backend/numpy_backend.py:L670`\n匹配分数：0.6802",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 9.4676,
+      "chat_seconds": 15.0841
+    },
+    {
+      "id": "B002",
+      "query": "怎么生成一个形状为 2×3 的均匀分布随机张量？",
+      "expected_api": [
+        "bm.random.rand"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 1.12198132,
+          "distance": 0.30801868
+        },
+        {
+          "rank": 2,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.84467269,
+          "distance": 0.35532731
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randint",
+          "full_name": "bm.random.randint",
+          "category": "creation",
+          "score": 0.81400503,
+          "distance": 0.38599497
+        },
+        {
+          "rank": 4,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.60455211,
+          "distance": 0.47544789
+        },
+        {
+          "rank": 5,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.60146298,
+          "distance": 0.47853702
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.random.rand",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.random.rand`\n\n功能：创建或初始化张量：rand。\n签名：`random.rand(*size, dtype=None, device=None)`\n\n主要参数：\n- `size` (int)：张量各维尺寸，作为可变位置参数传入\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.random.rand`\n- PyTorch：`torch.rand`\n\n后端差异：NumPy 映射为 numpy.random.rand，PyTorch 映射为 torch.rand；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.random.rand()\n```\n\n其他候选：`bm.random.randn`、`bm.random.randint`\n源码：`fealpy/backend/numpy_backend.py:L670`\n匹配分数：1.1220",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.8309,
+      "chat_seconds": 14.9393
+    },
+    {
+      "id": "B003",
+      "query": "如何生成 0 到 9 之间的随机整数张量？",
+      "expected_api": [
+        "bm.random.randint"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.randint",
+          "full_name": "bm.random.randint",
+          "category": "creation",
+          "score": 1.13665324,
+          "distance": 0.29334676
+        },
+        {
+          "rank": 2,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.73538484,
+          "distance": 0.34461516
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.71371629,
+          "distance": 0.36628371
+        },
+        {
+          "rank": 4,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.6346518,
+          "distance": 0.4453482
+        },
+        {
+          "rank": 5,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.62556644,
+          "distance": 0.45443356
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.random.randint",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.random.randint`\n\n功能：创建或初始化张量：randint。\n签名：`random.randint(low, high=None, size=None, dtype=None, device=None)`\n\n主要参数：\n- `low` (int)：接口参数 low\n- `high` (Optional[int])：接口参数 high\n- `size` (Optional[Size])：张量形状\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.random.randint`\n- PyTorch：`torch.randint`\n\n后端差异：NumPy 映射为 numpy.random.randint，PyTorch 映射为 torch.randint；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.random.randint(0, 10, size=(2, 3))\n```\n\n其他候选：`bm.random.rand`、`bm.random.randn`\n源码：`fealpy/backend/numpy_backend.py:L674`\n匹配分数：1.1367",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.4961,
+      "chat_seconds": 14.9162
+    },
+    {
+      "id": "B004",
+      "query": "怎么生成一个 2×3 的标准正态分布随机张量？",
+      "expected_api": [
+        "bm.random.randn"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 1.10165875,
+          "distance": 0.32834125
+        },
+        {
+          "rank": 2,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.74325146,
+          "distance": 0.33674854
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randint",
+          "full_name": "bm.random.randint",
+          "category": "creation",
+          "score": 0.68508204,
+          "distance": 0.39491796
+        },
+        {
+          "rank": 4,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.62503423,
+          "distance": 0.45496577
+        },
+        {
+          "rank": 5,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.62018968,
+          "distance": 0.45981032
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.random.randn",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.random.randn`\n\n功能：创建或初始化张量：randn。\n签名：`random.randn(*size, dtype=None, device=None)`\n\n主要参数：\n- `size` (int)：张量各维尺寸，作为可变位置参数传入\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.random.randn`\n- PyTorch：`torch.randn`\n\n后端差异：NumPy 映射为 numpy.random.randn，PyTorch 映射为 torch.randn；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.random.randn()\n```\n\n其他候选：`bm.random.rand`、`bm.random.randint`\n源码：`fealpy/backend/numpy_backend.py:L677`\n匹配分数：1.1017",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.7478,
+      "chat_seconds": 15.0466
+    },
+    {
+      "id": "B005",
+      "query": "如何创建一个 3×4 的全零张量？",
+      "expected_api": [
+        "bm.zeros"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 1.09196752,
+          "distance": 0.33803248
+        },
+        {
+          "rank": 2,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.81383098,
+          "distance": 0.38616902
+        },
+        {
+          "rank": 3,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.66420873,
+          "distance": 0.41579127
+        },
+        {
+          "rank": 4,
+          "id": "bm.empty_like",
+          "full_name": "bm.empty_like",
+          "category": "creation",
+          "score": 0.64489015,
+          "distance": 0.43510985
+        },
+        {
+          "rank": 5,
+          "id": "bm.ones",
+          "full_name": "bm.ones",
+          "category": "creation",
+          "score": 0.63981791,
+          "distance": 0.44018209
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.zeros",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.zeros`\n\n功能：创建或初始化张量：zeros。\n签名：`zeros(shape: Size, /, *, dtype = None, device = None) -> _DT`\n\n主要参数：\n- `shape` (Size)：张量形状\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.zeros`\n- PyTorch：`torch.zeros`\n\n后端差异：NumPy 映射为 numpy.zeros，PyTorch 映射为 torch.zeros；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.zeros((3, 4))\n```\n\n其他候选：`bm.zeros_like`、`bm.empty`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：1.0920",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.6597,
+      "chat_seconds": 15.1429
+    },
+    {
+      "id": "B006",
+      "query": "FEALPy 后端怎么创建一个 5×5 的全 1 张量？",
+      "expected_api": [
+        "bm.ones"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.full_like",
+          "full_name": "bm.full_like",
+          "category": "creation",
+          "score": 0.82370136,
+          "distance": 0.27629864
+        },
+        {
+          "rank": 2,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.81643716,
+          "distance": 0.28356284
+        },
+        {
+          "rank": 3,
+          "id": "bm.ones",
+          "full_name": "bm.ones",
+          "category": "creation",
+          "score": 0.81091336,
+          "distance": 0.28908664
+        },
+        {
+          "rank": 4,
+          "id": "bm.ones_like",
+          "full_name": "bm.ones_like",
+          "category": "creation",
+          "score": 0.79868594,
+          "distance": 0.30131406
+        },
+        {
+          "rank": 5,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.79731855,
+          "distance": 0.30268145
+        }
+      ],
+      "retrieval_hit_rank": 3,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.full_like",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.full_like`\n\n功能：创建或初始化张量：full_like。\n签名：`full_like(x: _DT, fill_value: Number, /, *, dtype = None, device = None) -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n- `fill_value` (Number)：接口参数 fill_value\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.full_like`\n- PyTorch：`torch.full_like`\n\n后端差异：NumPy 映射为 numpy.full_like，PyTorch 映射为 torch.full_like；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.full_like(x, fill_value)\n```\n\n其他候选：`bm.full`、`bm.ones`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.8237",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "answer_error_after_retrieval_hit",
+      "error": null,
+      "retrieval_seconds": 7.557,
+      "chat_seconds": 15.1324
+    },
+    {
+      "id": "B007",
+      "query": "怎么创建形状为 (2,3) 且所有元素都等于 7 的张量？",
+      "expected_api": [
+        "bm.full"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.62032904,
+          "distance": 0.45967096
+        },
+        {
+          "rank": 2,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.61422034,
+          "distance": 0.46577966
+        },
+        {
+          "rank": 3,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.61287333,
+          "distance": 0.46712667
+        },
+        {
+          "rank": 4,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.60820027,
+          "distance": 0.47179973
+        },
+        {
+          "rank": 5,
+          "id": "bm.ones",
+          "full_name": "bm.ones",
+          "category": "creation",
+          "score": 0.60805239,
+          "distance": 0.47194761
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.zeros",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.zeros`\n\n功能：创建或初始化张量：zeros。\n签名：`zeros(shape: Size, /, *, dtype = None, device = None) -> _DT`\n\n主要参数：\n- `shape` (Size)：张量形状\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.zeros`\n- PyTorch：`torch.zeros`\n\n后端差异：NumPy 映射为 numpy.zeros，PyTorch 映射为 torch.zeros；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.zeros((2, 3))\n```\n\n其他候选：`bm.asarray`、`bm.tensor`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.6203",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.7478,
+      "chat_seconds": 15.1924
+    },
+    {
+      "id": "B008",
+      "query": "如何创建一个 4 阶单位矩阵？",
+      "expected_api": [
+        "bm.eye"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.eye",
+          "full_name": "bm.eye",
+          "category": "creation",
+          "score": 0.58043833,
+          "distance": 0.49956167
+        },
+        {
+          "rank": 2,
+          "id": "bm.array",
+          "full_name": "bm.array",
+          "category": "creation",
+          "score": 0.54604919,
+          "distance": 0.53395081
+        },
+        {
+          "rank": 3,
+          "id": "bm.arange",
+          "full_name": "bm.arange",
+          "category": "creation",
+          "score": 0.54120477,
+          "distance": 0.53879523
+        },
+        {
+          "rank": 4,
+          "id": "bm.full_like",
+          "full_name": "bm.full_like",
+          "category": "creation",
+          "score": 0.54049559,
+          "distance": 0.53950441
+        },
+        {
+          "rank": 5,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.54040535,
+          "distance": 0.53959465
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.eye",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.eye`\n\n功能：创建或初始化张量：eye。\n签名：`eye(n_rows: int, n_cols: Optional[int] = None, /, *, k: int = 0, dtype = None, device = None) -> _DT`\n\n主要参数：\n- `n_rows` (int)：接口参数 n_rows\n- `n_cols` (Optional[int])：接口参数 n_cols\n- `k` (int)：接口参数 k\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.eye`\n- PyTorch：`torch.eye`\n\n后端差异：NumPy 映射为 numpy.eye，PyTorch 映射为 torch.eye；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.eye(3)\n```\n\n其他候选：`bm.array`、`bm.arange`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.5804",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.6096,
+      "chat_seconds": 15.0355
+    },
+    {
+      "id": "B009",
+      "query": "怎么生成从 0 开始、小于 10、步长为 2 的序列？",
+      "expected_api": [
+        "bm.arange"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.arange",
+          "full_name": "bm.arange",
+          "category": "creation",
+          "score": 1.05288809,
+          "distance": 0.37711191
+        },
+        {
+          "rank": 2,
+          "id": "bm.array",
+          "full_name": "bm.array",
+          "category": "creation",
+          "score": 0.61588617,
+          "distance": 0.46411383
+        },
+        {
+          "rank": 3,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.59919502,
+          "distance": 0.48080498
+        },
+        {
+          "rank": 4,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.57434721,
+          "distance": 0.50565279
+        },
+        {
+          "rank": 5,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.56881793,
+          "distance": 0.51118207
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.arange",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.arange`\n\n功能：创建或初始化张量：arange。\n签名：`arange(stop: Number, /, step: Number = 1, *, dtype = None, device = None) -> _DT`\n\n主要参数：\n- `stop` (Number)：终止值\n- `step` (Number)：步长\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.arange`\n- PyTorch：`torch.arange`\n\n后端差异：NumPy 映射为 numpy.arange，PyTorch 映射为 torch.arange；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.arange(5)\n```\n\n其他候选：`bm.array`、`bm.zeros_like`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：1.0529",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.706,
+      "chat_seconds": 14.9872
+    },
+    {
+      "id": "B010",
+      "query": "如何在 0 到 1 之间均匀取 100 个点？",
+      "expected_api": [
+        "bm.linspace"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.39820087,
+          "distance": 0.60179913
+        },
+        {
+          "rank": 2,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.3931247,
+          "distance": 0.6068753
+        },
+        {
+          "rank": 3,
+          "id": "bm.multiply",
+          "full_name": "bm.multiply",
+          "category": "math",
+          "score": 0.39044458,
+          "distance": 0.60955542
+        },
+        {
+          "rank": 4,
+          "id": "bm.take",
+          "full_name": "bm.take",
+          "category": "manipulation",
+          "score": 0.38912594,
+          "distance": 0.61087406
+        },
+        {
+          "rank": 5,
+          "id": "bm.scatter",
+          "full_name": "bm.scatter",
+          "category": "manipulation",
+          "score": 0.3863276,
+          "distance": 0.5836724
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.random.rand",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.random.rand`\n\n功能：创建或初始化张量：rand。\n签名：`random.rand(*size, dtype=None, device=None)`\n\n主要参数：\n- `size` (int)：张量各维尺寸，作为可变位置参数传入\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.random.rand`\n- PyTorch：`torch.rand`\n\n后端差异：NumPy 映射为 numpy.random.rand，PyTorch 映射为 torch.rand；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.random.rand(2, 3)\n```\n\n其他候选：`bm.zeros_like`、`bm.multiply`\n源码：`fealpy/backend/numpy_backend.py:L670`\n匹配分数：0.3982",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.4139,
+      "chat_seconds": 14.878
+    },
+    {
+      "id": "B011",
+      "query": "我有一个 Python 列表，怎么把它转换成 FEALPy 后端数组？",
+      "expected_api": [
+        "bm.asarray"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.array",
+          "full_name": "bm.array",
+          "category": "creation",
+          "score": 0.69032218,
+          "distance": 0.32967782
+        },
+        {
+          "rank": 2,
+          "id": "bm.load_backend",
+          "full_name": "bm.load_backend",
+          "category": "other",
+          "score": 0.68672915,
+          "distance": 0.33327085
+        },
+        {
+          "rank": 3,
+          "id": "bm.set_backend",
+          "full_name": "bm.set_backend",
+          "category": "other",
+          "score": 0.68285592,
+          "distance": 0.33714408
+        },
+        {
+          "rank": 4,
+          "id": "bm.random.seed",
+          "full_name": "bm.random.seed",
+          "category": "other",
+          "score": 0.66771402,
+          "distance": 0.35228598
+        },
+        {
+          "rank": 5,
+          "id": "bm.get_current_backend",
+          "full_name": "bm.get_current_backend",
+          "category": "other",
+          "score": 0.66614761,
+          "distance": 0.35385239
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.array",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.array`\n\n功能：创建或初始化张量：array。\n签名：`array(object, /, *, dtype = None, device = None, **kwargs) -> _DT`\n\n主要参数：\n- `object` (未标注类型)：输入对象\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n- `kwargs` (未标注类型)：参数 kwargs\n\n对应后端：\n- NumPy：`numpy.array`\n- PyTorch：`torch.tensor`\n\n后端差异：NumPy 映射为 numpy.array，PyTorch 映射为 torch.tensor；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.array([1, 2, 3])\n```\n\n其他候选：`bm.load_backend`、`bm.set_backend`\n源码：`fealpy/backend/numpy_backend.py:L81`\n匹配分数：0.6903",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.6575,
+      "chat_seconds": 15.1411
+    },
+    {
+      "id": "B012",
+      "query": "已有张量 x，怎样创建一个和 x 形状相同的全零张量？",
+      "expected_api": [
+        "bm.zeros_like"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 1.10339981,
+          "distance": 0.32660019
+        },
+        {
+          "rank": 2,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.83142443,
+          "distance": 0.36857557
+        },
+        {
+          "rank": 3,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.69610591,
+          "distance": 0.38389409
+        },
+        {
+          "rank": 4,
+          "id": "bm.empty_like",
+          "full_name": "bm.empty_like",
+          "category": "creation",
+          "score": 0.67001333,
+          "distance": 0.40998667
+        },
+        {
+          "rank": 5,
+          "id": "bm.ones",
+          "full_name": "bm.ones",
+          "category": "creation",
+          "score": 0.66335102,
+          "distance": 0.41664898
+        }
+      ],
+      "retrieval_hit_rank": 2,
+      "recall_at": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.zeros",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.zeros`\n\n功能：创建或初始化张量：zeros。\n签名：`zeros(shape: Size, /, *, dtype = None, device = None) -> _DT`\n\n主要参数：\n- `shape` (Size)：张量形状\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.zeros`\n- PyTorch：`torch.zeros`\n\n后端差异：NumPy 映射为 numpy.zeros，PyTorch 映射为 torch.zeros；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.zeros((2, 3))\n```\n\n其他候选：`bm.zeros_like`、`bm.empty`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：1.1034",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "answer_error_after_retrieval_hit",
+      "error": null,
+      "retrieval_seconds": 7.701,
+      "chat_seconds": 15.1273
+    },
+    {
+      "id": "B013",
+      "query": "给定矩阵 A 和右端项 b，如何求解线性方程组 Ax=b？",
+      "expected_api": [
+        "bm.linalg.solve"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.solve",
+          "full_name": "bm.linalg.solve",
+          "category": "linalg",
+          "score": 1.05413853,
+          "distance": 0.37586147
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.matmul",
+          "full_name": "bm.linalg.matmul",
+          "category": "linalg",
+          "score": 0.64223464,
+          "distance": 0.43776536
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.tensordot",
+          "full_name": "bm.linalg.tensordot",
+          "category": "linalg",
+          "score": 0.63028629,
+          "distance": 0.44971371
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.vecdot",
+          "full_name": "bm.linalg.vecdot",
+          "category": "linalg",
+          "score": 0.62571462,
+          "distance": 0.45428538
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.cross",
+          "full_name": "bm.linalg.cross",
+          "category": "linalg",
+          "score": 0.62203641,
+          "distance": 0.45796359
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.solve",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.solve`\n\n功能：执行线性代数运算：solve。\n签名：`linalg.solve(x1: _DT, x2: _DT, /) -> _DT`\n\n主要参数：\n- `x1` (_DT)：第一个输入张量\n- `x2` (_DT)：第二个输入张量\n\n对应后端：\n- NumPy：`numpy.linalg.solve`\n- PyTorch：`torch.linalg.solve`\n\n后端差异：NumPy 映射为 numpy.linalg.solve，PyTorch 映射为 torch.linalg.solve；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.solve(x1, x2)\n```\n\n其他候选：`bm.linalg.matmul`、`bm.linalg.tensordot`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：1.0541",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.5748,
+      "chat_seconds": 14.9774
+    },
+    {
+      "id": "B014",
+      "query": "如何计算一个方阵的逆矩阵？",
+      "expected_api": [
+        "bm.linalg.inv"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.matmul",
+          "full_name": "bm.linalg.matmul",
+          "category": "linalg",
+          "score": 0.45990658,
+          "distance": 0.54009342
+        },
+        {
+          "rank": 2,
+          "id": "bm.matmul",
+          "full_name": "bm.matmul",
+          "category": "linalg",
+          "score": 0.44243932,
+          "distance": 0.55756068
+        },
+        {
+          "rank": 3,
+          "id": "bm.sqrt",
+          "full_name": "bm.sqrt",
+          "category": "math",
+          "score": 0.43764532,
+          "distance": 0.56235468
+        },
+        {
+          "rank": 4,
+          "id": "bm.arccos",
+          "full_name": "bm.arccos",
+          "category": "math",
+          "score": 0.43113238,
+          "distance": 0.56886762
+        },
+        {
+          "rank": 5,
+          "id": "bm.round",
+          "full_name": "bm.round",
+          "category": "math",
+          "score": 0.42939317,
+          "distance": 0.57060683
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.linalg.matmul",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.linalg.matmul`\n\n功能：执行线性代数运算：matmul。\n签名：`linalg.matmul(x1: _DT, x2: _DT, /) -> _DT`\n\n主要参数：\n- `x1` (_DT)：第一个输入张量\n- `x2` (_DT)：第二个输入张量\n\n对应后端：\n- NumPy：`numpy.linalg.matmul`\n- PyTorch：`torch.linalg.matmul`\n\n后端差异：NumPy 映射为 numpy.linalg.matmul，PyTorch 映射为 torch.linalg.matmul；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.matmul(x1, x2)\n```\n\n其他候选：`bm.matmul`、`bm.sqrt`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：0.4599",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.5643,
+      "chat_seconds": 14.8366
+    },
+    {
+      "id": "B015",
+      "query": "怎么求矩阵 A 的行列式？",
+      "expected_api": [
+        "bm.linalg.det"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.matmul",
+          "full_name": "bm.linalg.matmul",
+          "category": "linalg",
+          "score": 0.46763629,
+          "distance": 0.53236371
+        },
+        {
+          "rank": 2,
+          "id": "bm.matmul",
+          "full_name": "bm.matmul",
+          "category": "linalg",
+          "score": 0.45171922,
+          "distance": 0.54828078
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.solve",
+          "full_name": "bm.linalg.solve",
+          "category": "linalg",
+          "score": 0.43248832,
+          "distance": 0.56751168
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.vecdot",
+          "full_name": "bm.linalg.vecdot",
+          "category": "linalg",
+          "score": 0.42858428,
+          "distance": 0.57141572
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.tensordot",
+          "full_name": "bm.linalg.tensordot",
+          "category": "linalg",
+          "score": 0.42763734,
+          "distance": 0.57236266
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.linalg.matmul",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.linalg.matmul`\n\n功能：执行线性代数运算：matmul。\n签名：`linalg.matmul(x1: _DT, x2: _DT, /) -> _DT`\n\n主要参数：\n- `x1` (_DT)：第一个输入张量\n- `x2` (_DT)：第二个输入张量\n\n对应后端：\n- NumPy：`numpy.linalg.matmul`\n- PyTorch：`torch.linalg.matmul`\n\n后端差异：NumPy 映射为 numpy.linalg.matmul，PyTorch 映射为 torch.linalg.matmul；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.matmul(x1, x2)\n```\n\n其他候选：`bm.matmul`、`bm.linalg.solve`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：0.4676",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.6386,
+      "chat_seconds": 14.7525
+    },
+    {
+      "id": "B016",
+      "query": "我想对矩阵做奇异值分解，应该用哪个 bm 接口？",
+      "expected_api": [
+        "bm.linalg.svd"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.matmul",
+          "full_name": "bm.linalg.matmul",
+          "category": "linalg",
+          "score": 0.68793306,
+          "distance": 0.41206694
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.solve",
+          "full_name": "bm.linalg.solve",
+          "category": "linalg",
+          "score": 0.68331144,
+          "distance": 0.41668856
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.tensordot",
+          "full_name": "bm.linalg.tensordot",
+          "category": "linalg",
+          "score": 0.66685793,
+          "distance": 0.43314207
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.outer",
+          "full_name": "bm.linalg.outer",
+          "category": "linalg",
+          "score": 0.66667715,
+          "distance": 0.43332285
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.eigvalsh",
+          "full_name": "bm.linalg.eigvalsh",
+          "category": "linalg",
+          "score": 0.66547076,
+          "distance": 0.43452924
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.linalg.matmul",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.linalg.matmul`\n\n功能：执行线性代数运算：matmul。\n签名：`linalg.matmul(x1: _DT, x2: _DT, /) -> _DT`\n\n主要参数：\n- `x1` (_DT)：第一个输入张量\n- `x2` (_DT)：第二个输入张量\n\n对应后端：\n- NumPy：`numpy.linalg.matmul`\n- PyTorch：`torch.linalg.matmul`\n\n后端差异：NumPy 映射为 numpy.linalg.matmul，PyTorch 映射为 torch.linalg.matmul；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.matmul(x1, x2)\n```\n\n其他候选：`bm.linalg.solve`、`bm.linalg.tensordot`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：0.6879",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.5574,
+      "chat_seconds": 15.049
+    },
+    {
+      "id": "B017",
+      "query": "如何对矩阵进行 QR 分解？",
+      "expected_api": [
+        "bm.linalg.qr"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.qr",
+          "full_name": "bm.linalg.qr",
+          "category": "linalg",
+          "score": 0.67363999,
+          "distance": 0.42636001
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.matmul",
+          "full_name": "bm.linalg.matmul",
+          "category": "linalg",
+          "score": 0.61286719,
+          "distance": 0.46713281
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.cross",
+          "full_name": "bm.linalg.cross",
+          "category": "linalg",
+          "score": 0.60191061,
+          "distance": 0.47808939
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.solve",
+          "full_name": "bm.linalg.solve",
+          "category": "linalg",
+          "score": 0.59487893,
+          "distance": 0.48512107
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.tensordot",
+          "full_name": "bm.linalg.tensordot",
+          "category": "linalg",
+          "score": 0.58093734,
+          "distance": 0.49906266
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.qr",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.qr`\n\n功能：执行线性代数运算：qr。\n签名：`linalg.qr(x: _DT, /, *, mode = 'reduced') -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n- `mode` (未标注类型)：接口参数 mode\n\n对应后端：\n- NumPy：`numpy.linalg.qr`\n- PyTorch：`torch.linalg.qr`\n\n后端差异：NumPy 映射为 numpy.linalg.qr，PyTorch 映射为 torch.linalg.qr；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.qr(x)\n```\n\n其他候选：`bm.linalg.matmul`、`bm.linalg.cross`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：0.6736",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.6964,
+      "chat_seconds": 15.019
+    },
+    {
+      "id": "B018",
+      "query": "正定矩阵怎么做 Cholesky 分解？",
+      "expected_api": [
+        "bm.linalg.cholesky"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.cholesky",
+          "full_name": "bm.linalg.cholesky",
+          "category": "linalg",
+          "score": 0.63194976,
+          "distance": 0.46805024
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.solve",
+          "full_name": "bm.linalg.solve",
+          "category": "linalg",
+          "score": 0.59436281,
+          "distance": 0.48563719
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.matmul",
+          "full_name": "bm.linalg.matmul",
+          "category": "linalg",
+          "score": 0.58886518,
+          "distance": 0.49113482
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.cross",
+          "full_name": "bm.linalg.cross",
+          "category": "linalg",
+          "score": 0.58549942,
+          "distance": 0.49450058
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.tensordot",
+          "full_name": "bm.linalg.tensordot",
+          "category": "linalg",
+          "score": 0.5828522,
+          "distance": 0.4971478
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.cholesky",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.cholesky`\n\n功能：执行线性代数运算：cholesky。\n签名：`linalg.cholesky(x: _DT, /, *, upper: bool = False) -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n- `upper` (bool)：接口参数 upper\n\n对应后端：\n- NumPy：`numpy.linalg.cholesky`\n- PyTorch：`torch.linalg.cholesky`\n\n后端差异：NumPy 映射为 numpy.linalg.cholesky，PyTorch 映射为 torch.linalg.cholesky；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.cholesky(x)\n```\n\n其他候选：`bm.linalg.solve`、`bm.linalg.matmul`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：0.6319",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.7117,
+      "chat_seconds": 15.1633
+    },
+    {
+      "id": "B019",
+      "query": "怎么计算一个矩阵的秩？",
+      "expected_api": [
+        "bm.linalg.matrix_rank"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.matmul",
+          "full_name": "bm.linalg.matmul",
+          "category": "linalg",
+          "score": 0.47251534,
+          "distance": 0.52748466
+        },
+        {
+          "rank": 2,
+          "id": "bm.matmul",
+          "full_name": "bm.matmul",
+          "category": "linalg",
+          "score": 0.45080632,
+          "distance": 0.54919368
+        },
+        {
+          "rank": 3,
+          "id": "bm.sqrt",
+          "full_name": "bm.sqrt",
+          "category": "math",
+          "score": 0.42635226,
+          "distance": 0.57364774
+        },
+        {
+          "rank": 4,
+          "id": "bm.round",
+          "full_name": "bm.round",
+          "category": "math",
+          "score": 0.42401683,
+          "distance": 0.57598317
+        },
+        {
+          "rank": 5,
+          "id": "bm.arccos",
+          "full_name": "bm.arccos",
+          "category": "math",
+          "score": 0.41988391,
+          "distance": 0.58011609
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.linalg.matmul",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.linalg.matmul`\n\n功能：执行线性代数运算：matmul。\n签名：`linalg.matmul(x1: _DT, x2: _DT, /) -> _DT`\n\n主要参数：\n- `x1` (_DT)：第一个输入张量\n- `x2` (_DT)：第二个输入张量\n\n对应后端：\n- NumPy：`numpy.linalg.matmul`\n- PyTorch：`torch.linalg.matmul`\n\n后端差异：NumPy 映射为 numpy.linalg.matmul，PyTorch 映射为 torch.linalg.matmul；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.matmul(x1, x2)\n```\n\n其他候选：`bm.matmul`、`bm.sqrt`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：0.4725",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.5246,
+      "chat_seconds": 15.162
+    },
+    {
+      "id": "B020",
+      "query": "如何计算向量的 2 范数？",
+      "expected_api": [
+        "bm.linalg.vector_norm"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.vector_norm",
+          "full_name": "bm.linalg.vector_norm",
+          "category": "linalg",
+          "score": 0.65779789,
+          "distance": 0.42220211
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.cross",
+          "full_name": "bm.linalg.cross",
+          "category": "linalg",
+          "score": 0.60933246,
+          "distance": 0.47066754
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.inv",
+          "full_name": "bm.linalg.inv",
+          "category": "linalg",
+          "score": 0.60103293,
+          "distance": 0.47896707
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.solve",
+          "full_name": "bm.linalg.solve",
+          "category": "linalg",
+          "score": 0.59820606,
+          "distance": 0.48179394
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.outer",
+          "full_name": "bm.linalg.outer",
+          "category": "linalg",
+          "score": 0.59308274,
+          "distance": 0.48691726
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.vector_norm",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.vector_norm`\n\n功能：执行线性代数运算：vector_norm。\n签名：`linalg.vector_norm(x: _DT, /, *, axis: Optional[int] = None, keepdims: bool = False, ord: Union[int, float, Literal['inf', '-inf', 'fro']] = 2) -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n- `axis` (Optional[int])：操作所在的轴\n- `keepdims` (bool)：是否保留被归约的维度\n- `ord` (Union[int, float, Literal['inf', '-inf', 'fro']])：接口参数 ord\n\n对应后端：\n- NumPy：`numpy.linalg.vector_norm`\n- PyTorch：`torch.linalg.vector_norm`\n\n后端差异：NumPy 映射为 numpy.linalg.vector_norm，PyTorch 映射为 torch.linalg.vector_norm；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.vector_norm(x)\n```\n\n其他候选：`bm.linalg.cross`、`bm.linalg.inv`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：0.6578",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.3761,
+      "chat_seconds": 15.1042
+    },
+    {
+      "id": "B021",
+      "query": "怎样把张量 x 从 (2,3,4) 改成 (6,4)？",
+      "expected_api": [
+        "bm.reshape"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.60490568,
+          "distance": 0.47509432
+        },
+        {
+          "rank": 2,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.57804622,
+          "distance": 0.50195378
+        },
+        {
+          "rank": 3,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.57412918,
+          "distance": 0.50587082
+        },
+        {
+          "rank": 4,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.56816168,
+          "distance": 0.51183832
+        },
+        {
+          "rank": 5,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.56580235,
+          "distance": 0.51419765
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.asarray",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.asarray`\n\n功能：创建或初始化张量：asarray。\n签名：`asarray(obj, /, *, dtype = None, device = None, copy = None) -> _DT`\n\n主要参数：\n- `obj` (未标注类型)：接口参数 obj\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n- `copy` (未标注类型)：接口参数 copy\n\n对应后端：\n- NumPy：`numpy.asarray`\n- PyTorch：`torch.asarray`\n\n后端差异：NumPy 映射为 numpy.asarray，PyTorch 映射为 torch.asarray；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.asarray([1, 2, 3])\n```\n\n其他候选：`bm.tensor`、`bm.empty`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.6049",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.7875,
+      "chat_seconds": 14.7771
+    },
+    {
+      "id": "B022",
+      "query": "有两个形状相同的张量，怎么沿第 0 维拼接？",
+      "expected_api": [
+        "bm.concat"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.concat",
+          "full_name": "bm.concat",
+          "category": "manipulation",
+          "score": 0.99677294,
+          "distance": 0.43322706
+        },
+        {
+          "rank": 2,
+          "id": "bm.split",
+          "full_name": "bm.split",
+          "category": "manipulation",
+          "score": 0.6083916,
+          "distance": 0.4716084
+        },
+        {
+          "rank": 3,
+          "id": "bm.repeat",
+          "full_name": "bm.repeat",
+          "category": "manipulation",
+          "score": 0.60570063,
+          "distance": 0.47429937
+        },
+        {
+          "rank": 4,
+          "id": "bm.unstack",
+          "full_name": "bm.unstack",
+          "category": "manipulation",
+          "score": 0.6012509,
+          "distance": 0.4787491
+        },
+        {
+          "rank": 5,
+          "id": "bm.squeeze",
+          "full_name": "bm.squeeze",
+          "category": "manipulation",
+          "score": 0.60101535,
+          "distance": 0.47898465
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.concat",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.concat`\n\n功能：执行张量变换或操作：concat。\n签名：`concat(arrays: Union[Tuple[_DT, ...], List[_DT]], /, *, axis = 0) -> _DT`\n\n主要参数：\n- `arrays` (Union[Tuple[_DT, ...], List[_DT]])：接口参数 arrays\n- `axis` (未标注类型)：操作所在的轴\n\n对应后端：\n- NumPy：`numpy.concatenate`\n- PyTorch：`torch.concat`\n\n后端差异：NumPy 映射为 numpy.concatenate，PyTorch 映射为 torch.concat；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.concat(arrays)\n```\n\n其他候选：`bm.split`、`bm.repeat`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.9968",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.4618,
+      "chat_seconds": 15.0452
+    },
+    {
+      "id": "B023",
+      "query": "如何把多个张量沿一个新的维度堆叠起来？",
+      "expected_api": [
+        "bm.stack"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.stack",
+          "full_name": "bm.stack",
+          "category": "manipulation",
+          "score": 1.03894334,
+          "distance": 0.39105666
+        },
+        {
+          "rank": 2,
+          "id": "bm.unstack",
+          "full_name": "bm.unstack",
+          "category": "manipulation",
+          "score": 0.80431945,
+          "distance": 0.39568055
+        },
+        {
+          "rank": 3,
+          "id": "bm.squeeze",
+          "full_name": "bm.squeeze",
+          "category": "manipulation",
+          "score": 0.64684756,
+          "distance": 0.43315244
+        },
+        {
+          "rank": 4,
+          "id": "bm.repeat",
+          "full_name": "bm.repeat",
+          "category": "manipulation",
+          "score": 0.63986416,
+          "distance": 0.44013584
+        },
+        {
+          "rank": 5,
+          "id": "bm.scatter_add",
+          "full_name": "bm.scatter_add",
+          "category": "manipulation",
+          "score": 0.63886582,
+          "distance": 0.41113418
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.stack",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.stack`\n\n功能：执行张量变换或操作：stack。\n签名：`stack(arrays: Union[Tuple[_DT, ...], List[_DT]], *, axis = 0) -> _DT`\n\n主要参数：\n- `arrays` (Union[Tuple[_DT, ...], List[_DT]])：接口参数 arrays\n- `axis` (未标注类型)：操作所在的轴\n\n对应后端：\n- NumPy：`numpy.stack`\n- PyTorch：`torch.stack`\n\n后端差异：NumPy 映射为 numpy.stack，PyTorch 映射为 torch.stack；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.stack(arrays)\n```\n\n其他候选：`bm.unstack`、`bm.squeeze`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：1.0389",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.7674,
+      "chat_seconds": 14.9273
+    },
+    {
+      "id": "B024",
+      "query": "张量中有长度为 1 的维度，怎么把这个维度去掉？",
+      "expected_api": [
+        "bm.squeeze"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.56302972,
+          "distance": 0.51697028
+        },
+        {
+          "rank": 2,
+          "id": "bm.ones",
+          "full_name": "bm.ones",
+          "category": "creation",
+          "score": 0.54726173,
+          "distance": 0.53273827
+        },
+        {
+          "rank": 3,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.54500003,
+          "distance": 0.53499997
+        },
+        {
+          "rank": 4,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.53999753,
+          "distance": 0.54000247
+        },
+        {
+          "rank": 5,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.53542532,
+          "distance": 0.54457468
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.empty",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.empty`\n\n功能：创建或初始化张量：empty。\n签名：`empty(shape: Size, /, *, dtype = None, device = None) -> _DT`\n\n主要参数：\n- `shape` (Size)：张量形状\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.empty`\n- PyTorch：`torch.empty`\n\n后端差异：NumPy 映射为 numpy.empty，PyTorch 映射为 torch.empty；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.empty((2, 3))\n```\n\n其他候选：`bm.ones`、`bm.tensor`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.5630",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.596,
+      "chat_seconds": 15.0325
+    },
+    {
+      "id": "B025",
+      "query": "怎样给张量增加一个新的维度？",
+      "expected_api": [
+        "bm.expand_dims"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.62670447,
+          "distance": 0.45329553
+        },
+        {
+          "rank": 2,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.62558581,
+          "distance": 0.45441419
+        },
+        {
+          "rank": 3,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.62058468,
+          "distance": 0.45941532
+        },
+        {
+          "rank": 4,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.61894317,
+          "distance": 0.46105683
+        },
+        {
+          "rank": 5,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.61519255,
+          "distance": 0.46480745
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.tensor",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.tensor`\n\n功能：创建或初始化张量：tensor。\n签名：`tensor(data, /, *, dtype = None, device = None, **kwargs) -> _DT`\n\n主要参数：\n- `data` (未标注类型)：输入数据\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n- `kwargs` (未标注类型)：参数 kwargs\n\n对应后端：\n- NumPy：`numpy.array`\n- PyTorch：`torch.tensor`\n\n后端差异：NumPy 映射为 numpy.array，PyTorch 映射为 torch.tensor；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.tensor([1, 2, 3])\n```\n\n其他候选：`bm.asarray`、`bm.full`\n源码：`fealpy/backend/numpy_backend.py:L82`\n匹配分数：0.6267",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.7073,
+      "chat_seconds": 14.9234
+    },
+    {
+      "id": "B026",
+      "query": "如何把三维张量的维度顺序从 (0,1,2) 改成 (2,0,1)？",
+      "expected_api": [
+        "bm.permute_dims"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.54765196,
+          "distance": 0.53234804
+        },
+        {
+          "rank": 2,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.54757782,
+          "distance": 0.53242218
+        },
+        {
+          "rank": 3,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.54310228,
+          "distance": 0.53689772
+        },
+        {
+          "rank": 4,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.54165687,
+          "distance": 0.53834313
+        },
+        {
+          "rank": 5,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.53123512,
+          "distance": 0.54876488
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.asarray",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.asarray`\n\n功能：创建或初始化张量：asarray。\n签名：`asarray(obj, /, *, dtype = None, device = None, copy = None) -> _DT`\n\n主要参数：\n- `obj` (未标注类型)：接口参数 obj\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n- `copy` (未标注类型)：接口参数 copy\n\n对应后端：\n- NumPy：`numpy.asarray`\n- PyTorch：`torch.asarray`\n\n后端差异：NumPy 映射为 numpy.asarray，PyTorch 映射为 torch.asarray；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.asarray([1, 2, 3])\n```\n\n其他候选：`bm.random.randn`、`bm.zeros`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.5477",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.593,
+      "chat_seconds": 14.9619
+    },
+    {
+      "id": "B027",
+      "query": "我想把张量的第 0 维移动到最后一维，用什么接口？",
+      "expected_api": [
+        "bm.moveaxis"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.58910032,
+          "distance": 0.49089968
+        },
+        {
+          "rank": 2,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.57915272,
+          "distance": 0.50084728
+        },
+        {
+          "rank": 3,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.56786676,
+          "distance": 0.51213324
+        },
+        {
+          "rank": 4,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.55721648,
+          "distance": 0.52278352
+        },
+        {
+          "rank": 5,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.55690094,
+          "distance": 0.52309906
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.zeros",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.zeros`\n\n功能：创建或初始化张量：zeros。\n签名：`zeros(shape: Size, /, *, dtype = None, device = None) -> _DT`\n\n主要参数：\n- `shape` (Size)：张量形状\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.zeros`\n- PyTorch：`torch.zeros`\n\n后端差异：NumPy 映射为 numpy.zeros，PyTorch 映射为 torch.zeros；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.zeros((2, 3))\n```\n\n其他候选：`bm.asarray`、`bm.empty`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.5891",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.4905,
+      "chat_seconds": 14.7421
+    },
+    {
+      "id": "B028",
+      "query": "如何把张量沿指定轴反转？",
+      "expected_api": [
+        "bm.flip"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.58115001,
+          "distance": 0.49884999
+        },
+        {
+          "rank": 2,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.5583538,
+          "distance": 0.5216462
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.55627372,
+          "distance": 0.52372628
+        },
+        {
+          "rank": 4,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.5477974,
+          "distance": 0.5322026
+        },
+        {
+          "rank": 5,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.53817685,
+          "distance": 0.54182315
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.asarray",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.asarray`\n\n功能：创建或初始化张量：asarray。\n签名：`asarray(obj, /, *, dtype = None, device = None, copy = None) -> _DT`\n\n主要参数：\n- `obj` (未标注类型)：接口参数 obj\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n- `copy` (未标注类型)：接口参数 copy\n\n对应后端：\n- NumPy：`numpy.asarray`\n- PyTorch：`torch.asarray`\n\n后端差异：NumPy 映射为 numpy.asarray，PyTorch 映射为 torch.asarray；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.asarray([1, 2, 3])\n```\n\n其他候选：`bm.random.rand`、`bm.random.randn`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.5812",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.7758,
+      "chat_seconds": 14.8485
+    },
+    {
+      "id": "B029",
+      "query": "怎样把张量中的元素重复多次？",
+      "expected_api": [
+        "bm.repeat"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.59793659,
+          "distance": 0.48206341
+        },
+        {
+          "rank": 2,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.59790357,
+          "distance": 0.48209643
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.57818015,
+          "distance": 0.50181985
+        },
+        {
+          "rank": 4,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.57064165,
+          "distance": 0.50935835
+        },
+        {
+          "rank": 5,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.56712438,
+          "distance": 0.51287562
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.asarray",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.asarray`\n\n功能：创建或初始化张量：asarray。\n签名：`asarray(obj, /, *, dtype = None, device = None, copy = None) -> _DT`\n\n主要参数：\n- `obj` (未标注类型)：接口参数 obj\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n- `copy` (未标注类型)：接口参数 copy\n\n对应后端：\n- NumPy：`numpy.asarray`\n- PyTorch：`torch.asarray`\n\n后端差异：NumPy 映射为 numpy.asarray，PyTorch 映射为 torch.asarray；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.asarray([1, 2, 3])\n```\n\n其他候选：`bm.tensor`、`bm.random.rand`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.5979",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.5125,
+      "chat_seconds": 14.7245
+    },
+    {
+      "id": "B030",
+      "query": "如何按照 (2,3) 的重复次数平铺一个张量？",
+      "expected_api": [
+        "bm.tile"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.60088523,
+          "distance": 0.47911477
+        },
+        {
+          "rank": 2,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.5872124,
+          "distance": 0.4927876
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randint",
+          "full_name": "bm.random.randint",
+          "category": "creation",
+          "score": 0.57865878,
+          "distance": 0.50134122
+        },
+        {
+          "rank": 4,
+          "id": "bm.ones",
+          "full_name": "bm.ones",
+          "category": "creation",
+          "score": 0.57620908,
+          "distance": 0.50379092
+        },
+        {
+          "rank": 5,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.57513161,
+          "distance": 0.50486839
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.random.rand",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.random.rand`\n\n功能：创建或初始化张量：rand。\n签名：`random.rand(*size, dtype=None, device=None)`\n\n主要参数：\n- `size` (int)：张量各维尺寸，作为可变位置参数传入\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.random.rand`\n- PyTorch：`torch.rand`\n\n后端差异：NumPy 映射为 numpy.random.rand，PyTorch 映射为 torch.rand；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.random.rand(2, 3)\n```\n\n其他候选：`bm.asarray`、`bm.random.randint`\n源码：`fealpy/backend/numpy_backend.py:L670`\n匹配分数：0.6009",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.7412,
+      "chat_seconds": 14.9152
+    },
+    {
+      "id": "B031",
+      "query": "怎么计算张量所有元素的和？",
+      "expected_api": [
+        "bm.sum"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.57258852,
+          "distance": 0.50741148
+        },
+        {
+          "rank": 2,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.5710267,
+          "distance": 0.5089733
+        },
+        {
+          "rank": 3,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.56766279,
+          "distance": 0.51233721
+        },
+        {
+          "rank": 4,
+          "id": "bm.ones",
+          "full_name": "bm.ones",
+          "category": "creation",
+          "score": 0.56530722,
+          "distance": 0.51469278
+        },
+        {
+          "rank": 5,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.56123068,
+          "distance": 0.51876932
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.zeros",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.zeros`\n\n功能：创建或初始化张量：zeros。\n签名：`zeros(shape: Size, /, *, dtype = None, device = None) -> _DT`\n\n主要参数：\n- `shape` (Size)：张量形状\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.zeros`\n- PyTorch：`torch.zeros`\n\n后端差异：NumPy 映射为 numpy.zeros，PyTorch 映射为 torch.zeros；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.zeros((2, 3))\n```\n\n其他候选：`bm.asarray`、`bm.tensor`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.5726",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.562,
+      "chat_seconds": 14.881
+    },
+    {
+      "id": "B032",
+      "query": "如何沿 axis=1 计算张量的平均值？",
+      "expected_api": [
+        "bm.mean"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.mean",
+          "full_name": "bm.mean",
+          "category": "reduction",
+          "score": 0.99632727,
+          "distance": 0.43367273
+        },
+        {
+          "rank": 2,
+          "id": "bm.argmin",
+          "full_name": "bm.argmin",
+          "category": "reduction",
+          "score": 0.61422922,
+          "distance": 0.46577078
+        },
+        {
+          "rank": 3,
+          "id": "bm.prod",
+          "full_name": "bm.prod",
+          "category": "reduction",
+          "score": 0.61323275,
+          "distance": 0.46676725
+        },
+        {
+          "rank": 4,
+          "id": "bm.cumulative_sum",
+          "full_name": "bm.cumulative_sum",
+          "category": "reduction",
+          "score": 0.61122365,
+          "distance": 0.46877635
+        },
+        {
+          "rank": 5,
+          "id": "bm.sum",
+          "full_name": "bm.sum",
+          "category": "reduction",
+          "score": 0.61084332,
+          "distance": 0.46915668
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.mean",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.mean`\n\n功能：对张量执行归约运算：mean。\n签名：`mean(x: _DT, /, *, axis = None, keepdims: bool = False) -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n- `axis` (未标注类型)：操作所在的轴\n- `keepdims` (bool)：是否保留被归约的维度\n\n对应后端：\n- NumPy：`numpy.mean`\n- PyTorch：`torch.mean`\n\n后端差异：NumPy 映射为 numpy.mean，PyTorch 映射为 torch.mean；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.mean(x, axis=1)\n```\n\n其他候选：`bm.argmin`、`bm.prod`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.9963",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.5497,
+      "chat_seconds": 15.0388
+    },
+    {
+      "id": "B033",
+      "query": "怎样求张量在指定轴上的最大值？",
+      "expected_api": [
+        "bm.max"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.58856125,
+          "distance": 0.49143875
+        },
+        {
+          "rank": 2,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.58807267,
+          "distance": 0.49192733
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.58508767,
+          "distance": 0.49491233
+        },
+        {
+          "rank": 4,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.5827563,
+          "distance": 0.4972437
+        },
+        {
+          "rank": 5,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.57994707,
+          "distance": 0.50005293
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.tensor",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.tensor`\n\n功能：创建或初始化张量：tensor。\n签名：`tensor(data, /, *, dtype = None, device = None, **kwargs) -> _DT`\n\n主要参数：\n- `data` (未标注类型)：输入数据\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n- `kwargs` (未标注类型)：参数 kwargs\n\n对应后端：\n- NumPy：`numpy.array`\n- PyTorch：`torch.tensor`\n\n后端差异：NumPy 映射为 numpy.array，PyTorch 映射为 torch.tensor；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.tensor([1, 2, 3])\n```\n\n其他候选：`bm.full`、`bm.random.randn`\n源码：`fealpy/backend/numpy_backend.py:L82`\n匹配分数：0.5886",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.5987,
+      "chat_seconds": 15.133
+    },
+    {
+      "id": "B034",
+      "query": "怎么求一个张量的最小值？",
+      "expected_api": [
+        "bm.min"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.61843337,
+          "distance": 0.46156663
+        },
+        {
+          "rank": 2,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.61581816,
+          "distance": 0.46418184
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.60814126,
+          "distance": 0.47185874
+        },
+        {
+          "rank": 4,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.60796465,
+          "distance": 0.47203535
+        },
+        {
+          "rank": 5,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.60722877,
+          "distance": 0.47277123
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.tensor",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.tensor`\n\n功能：创建或初始化张量：tensor。\n签名：`tensor(data, /, *, dtype = None, device = None, **kwargs) -> _DT`\n\n主要参数：\n- `data` (未标注类型)：输入数据\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n- `kwargs` (未标注类型)：参数 kwargs\n\n对应后端：\n- NumPy：`numpy.array`\n- PyTorch：`torch.tensor`\n\n后端差异：NumPy 映射为 numpy.array，PyTorch 映射为 torch.tensor；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.tensor([1, 2, 3])\n```\n\n其他候选：`bm.zeros`、`bm.random.randn`\n源码：`fealpy/backend/numpy_backend.py:L82`\n匹配分数：0.6184",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.4855,
+      "chat_seconds": 15.0133
+    },
+    {
+      "id": "B035",
+      "query": "如何计算张量的标准差？",
+      "expected_api": [
+        "bm.std"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.62127932,
+          "distance": 0.45872068
+        },
+        {
+          "rank": 2,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.61883576,
+          "distance": 0.46116424
+        },
+        {
+          "rank": 3,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.6159323,
+          "distance": 0.4640677
+        },
+        {
+          "rank": 4,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.61448236,
+          "distance": 0.46551764
+        },
+        {
+          "rank": 5,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.60309132,
+          "distance": 0.47690868
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.random.rand",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.random.rand`\n\n功能：创建或初始化张量：rand。\n签名：`random.rand(*size, dtype=None, device=None)`\n\n主要参数：\n- `size` (int)：张量各维尺寸，作为可变位置参数传入\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.random.rand`\n- PyTorch：`torch.rand`\n\n后端差异：NumPy 映射为 numpy.random.rand，PyTorch 映射为 torch.rand；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.random.rand(2, 3)\n```\n\n其他候选：`bm.random.randn`、`bm.asarray`\n源码：`fealpy/backend/numpy_backend.py:L670`\n匹配分数：0.6213",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.4809,
+      "chat_seconds": 14.9632
+    },
+    {
+      "id": "B036",
+      "query": "怎样计算张量的方差？",
+      "expected_api": [
+        "bm.var"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.59482874,
+          "distance": 0.48517126
+        },
+        {
+          "rank": 2,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.59412386,
+          "distance": 0.48587614
+        },
+        {
+          "rank": 3,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.58500119,
+          "distance": 0.49499881
+        },
+        {
+          "rank": 4,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.58113595,
+          "distance": 0.49886405
+        },
+        {
+          "rank": 5,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.58048387,
+          "distance": 0.49951613
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.tensor",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.tensor`\n\n功能：创建或初始化张量：tensor。\n签名：`tensor(data, /, *, dtype = None, device = None, **kwargs) -> _DT`\n\n主要参数：\n- `data` (未标注类型)：输入数据\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n- `kwargs` (未标注类型)：参数 kwargs\n\n对应后端：\n- NumPy：`numpy.array`\n- PyTorch：`torch.tensor`\n\n后端差异：NumPy 映射为 numpy.array，PyTorch 映射为 torch.tensor；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.tensor([1, 2, 3])\n```\n\n其他候选：`bm.asarray`、`bm.empty`\n源码：`fealpy/backend/numpy_backend.py:L82`\n匹配分数：0.5948",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.5834,
+      "chat_seconds": 14.9971
+    },
+    {
+      "id": "B037",
+      "query": "如何计算一个张量所有元素的乘积？",
+      "expected_api": [
+        "bm.prod"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.ones",
+          "full_name": "bm.ones",
+          "category": "creation",
+          "score": 0.57572676,
+          "distance": 0.50427324
+        },
+        {
+          "rank": 2,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.57522257,
+          "distance": 0.50477743
+        },
+        {
+          "rank": 3,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.57174511,
+          "distance": 0.50825489
+        },
+        {
+          "rank": 4,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.5681146,
+          "distance": 0.5118854
+        },
+        {
+          "rank": 5,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.55882003,
+          "distance": 0.52117997
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.ones",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.ones`\n\n功能：创建或初始化张量：ones。\n签名：`ones(shape: Size, /, *, dtype = None, device = None) -> _DT`\n\n主要参数：\n- `shape` (Size)：张量形状\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.ones`\n- PyTorch：`torch.ones`\n\n后端差异：NumPy 映射为 numpy.ones，PyTorch 映射为 torch.ones；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.ones((2, 3))\n```\n\n其他候选：`bm.asarray`、`bm.tensor`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.5757",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.5348,
+      "chat_seconds": 15.0598
+    },
+    {
+      "id": "B038",
+      "query": "我不只想要最大值，还想知道最大值所在的位置，应该用什么接口？",
+      "expected_api": [
+        "bm.argmax"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.max",
+          "full_name": "bm.max",
+          "category": "reduction",
+          "score": 0.61543007,
+          "distance": 0.46456993
+        },
+        {
+          "rank": 2,
+          "id": "bm.argmax",
+          "full_name": "bm.argmax",
+          "category": "reduction",
+          "score": 0.6036817,
+          "distance": 0.4763183
+        },
+        {
+          "rank": 3,
+          "id": "bm.std",
+          "full_name": "bm.std",
+          "category": "reduction",
+          "score": 0.60155674,
+          "distance": 0.47844326
+        },
+        {
+          "rank": 4,
+          "id": "bm.any",
+          "full_name": "bm.any",
+          "category": "reduction",
+          "score": 0.59029164,
+          "distance": 0.48970836
+        },
+        {
+          "rank": 5,
+          "id": "bm.prod",
+          "full_name": "bm.prod",
+          "category": "reduction",
+          "score": 0.58532371,
+          "distance": 0.49467629
+        }
+      ],
+      "retrieval_hit_rank": 2,
+      "recall_at": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.max",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.max`\n\n功能：对张量执行归约运算：max。\n签名：`max(x: _DT, /, *, axis = None, keepdims = False) -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n- `axis` (未标注类型)：操作所在的轴\n- `keepdims` (未标注类型)：是否保留被归约的维度\n\n对应后端：\n- NumPy：`numpy.max`\n- PyTorch：`torch.max`\n\n后端差异：NumPy 映射为 numpy.max，PyTorch 映射为 torch.max；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.max(x)\n```\n\n其他候选：`bm.argmax`、`bm.std`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.6154",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "answer_error_after_retrieval_hit",
+      "error": null,
+      "retrieval_seconds": 7.6373,
+      "chat_seconds": 14.9552
+    },
+    {
+      "id": "B039",
+      "query": "怎么找到张量最小元素对应的索引？",
+      "expected_api": [
+        "bm.argmin"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.61124642,
+          "distance": 0.46875358
+        },
+        {
+          "rank": 2,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.58153595,
+          "distance": 0.49846405
+        },
+        {
+          "rank": 3,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.58074482,
+          "distance": 0.49925518
+        },
+        {
+          "rank": 4,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.57987954,
+          "distance": 0.50012046
+        },
+        {
+          "rank": 5,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.57887842,
+          "distance": 0.50112158
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.tensor",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.tensor`\n\n功能：创建或初始化张量：tensor。\n签名：`tensor(data, /, *, dtype = None, device = None, **kwargs) -> _DT`\n\n主要参数：\n- `data` (未标注类型)：输入数据\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n- `kwargs` (未标注类型)：参数 kwargs\n\n对应后端：\n- NumPy：`numpy.array`\n- PyTorch：`torch.tensor`\n\n后端差异：NumPy 映射为 numpy.array，PyTorch 映射为 torch.tensor；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.tensor([1, 2, 3])\n```\n\n其他候选：`bm.empty`、`bm.asarray`\n源码：`fealpy/backend/numpy_backend.py:L82`\n匹配分数：0.6112",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.5968,
+      "chat_seconds": 14.8944
+    },
+    {
+      "id": "B040",
+      "query": "如何沿某个轴计算累计和？",
+      "expected_api": [
+        "bm.cumsum"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.cumulative_sum",
+          "full_name": "bm.cumulative_sum",
+          "category": "reduction",
+          "score": 0.45630455,
+          "distance": 0.54369545
+        },
+        {
+          "rank": 2,
+          "id": "bm.cross",
+          "full_name": "bm.cross",
+          "category": "linalg",
+          "score": 0.44779611,
+          "distance": 0.55220389
+        },
+        {
+          "rank": 3,
+          "id": "bm.sum",
+          "full_name": "bm.sum",
+          "category": "reduction",
+          "score": 0.44580835,
+          "distance": 0.55419165
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.cross",
+          "full_name": "bm.linalg.cross",
+          "category": "linalg",
+          "score": 0.44424796,
+          "distance": 0.55575204
+        },
+        {
+          "rank": 5,
+          "id": "bm.cos",
+          "full_name": "bm.cos",
+          "category": "math",
+          "score": 0.44394821,
+          "distance": 0.55605179
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.cumulative_sum",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.cumulative_sum`\n\n功能：对张量执行归约运算：cumulative_sum。\n签名：`cumulative_sum(x: _DT, /, *, axis: Optional[int] = None, dtype = None, include_initial: bool = False) -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n- `axis` (Optional[int])：操作所在的轴\n- `dtype` (未标注类型)：数据类型\n- `include_initial` (bool)：接口参数 include_initial\n\n对应后端：\n- NumPy：`numpy.cumulative_sum`\n- PyTorch：`torch.cumulative_sum`\n\n后端差异：NumPy 映射为 numpy.cumulative_sum，PyTorch 映射为 torch.cumulative_sum；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.cumulative_sum(x)\n```\n\n其他候选：`bm.cross`、`bm.sum`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.4563",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.5347,
+      "chat_seconds": 14.8932
+    },
+    {
+      "id": "B041",
+      "query": "根据布尔条件 condition，在 x 和 y 中逐元素选择值应该用什么接口？",
+      "expected_api": [
+        "bm.where"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.outer",
+          "full_name": "bm.linalg.outer",
+          "category": "linalg",
+          "score": 0.51886326,
+          "distance": 0.48113674
+        },
+        {
+          "rank": 2,
+          "id": "bm.searchsorted",
+          "full_name": "bm.searchsorted",
+          "category": "manipulation",
+          "score": 0.51479226,
+          "distance": 0.48520774
+        },
+        {
+          "rank": 3,
+          "id": "bm.where",
+          "full_name": "bm.where",
+          "category": "manipulation",
+          "score": 0.51106924,
+          "distance": 0.48893076
+        },
+        {
+          "rank": 4,
+          "id": "bm.take",
+          "full_name": "bm.take",
+          "category": "manipulation",
+          "score": 0.51042181,
+          "distance": 0.48957819
+        },
+        {
+          "rank": 5,
+          "id": "bm.trace",
+          "full_name": "bm.trace",
+          "category": "linalg",
+          "score": 0.5007109,
+          "distance": 0.4992891
+        }
+      ],
+      "retrieval_hit_rank": 3,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.outer",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.linalg.outer`\n\n功能：执行线性代数运算：outer。\n签名：`linalg.outer(x1: _DT, x2: _DT, /) -> _DT`\n\n主要参数：\n- `x1` (_DT)：第一个输入张量\n- `x2` (_DT)：第二个输入张量\n\n对应后端：\n- NumPy：`numpy.linalg.outer`\n- PyTorch：`torch.linalg.outer`\n\n后端差异：NumPy 映射为 numpy.linalg.outer，PyTorch 映射为 torch.linalg.outer；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.outer(x1, x2)\n```\n\n其他候选：`bm.searchsorted`、`bm.where`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：0.5189",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "answer_error_after_retrieval_hit",
+      "error": null,
+      "retrieval_seconds": 7.7126,
+      "chat_seconds": 15.0991
+    },
+    {
+      "id": "B042",
+      "query": "如何找出张量中所有非零元素的位置？",
+      "expected_api": [
+        "bm.nonzero"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.64447202,
+          "distance": 0.43552798
+        },
+        {
+          "rank": 2,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.60811569,
+          "distance": 0.47188431
+        },
+        {
+          "rank": 3,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.6077223,
+          "distance": 0.4722777
+        },
+        {
+          "rank": 4,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.60146602,
+          "distance": 0.47853398
+        },
+        {
+          "rank": 5,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.59269531,
+          "distance": 0.48730469
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.zeros",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.zeros`\n\n功能：创建或初始化张量：zeros。\n签名：`zeros(shape: Size, /, *, dtype = None, device = None) -> _DT`\n\n主要参数：\n- `shape` (Size)：张量形状\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.zeros`\n- PyTorch：`torch.zeros`\n\n后端差异：NumPy 映射为 numpy.zeros，PyTorch 映射为 torch.zeros；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.zeros((2, 3))\n```\n\n其他候选：`bm.asarray`、`bm.empty`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.6445",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.411,
+      "chat_seconds": 14.9681
+    },
+    {
+      "id": "B043",
+      "query": "怎样把张量沿最后一维从小到大排序并得到排序后的值？",
+      "expected_api": [
+        "bm.sort"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.59671708,
+          "distance": 0.48328292
+        },
+        {
+          "rank": 2,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.59131463,
+          "distance": 0.48868537
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.58353134,
+          "distance": 0.49646866
+        },
+        {
+          "rank": 4,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.58168777,
+          "distance": 0.49831223
+        },
+        {
+          "rank": 5,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.57684012,
+          "distance": 0.50315988
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.random.rand",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.random.rand`\n\n功能：创建或初始化张量：rand。\n签名：`random.rand(*size, dtype=None, device=None)`\n\n主要参数：\n- `size` (int)：张量各维尺寸，作为可变位置参数传入\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n\n对应后端：\n- NumPy：`numpy.random.rand`\n- PyTorch：`torch.rand`\n\n后端差异：NumPy 映射为 numpy.random.rand，PyTorch 映射为 torch.rand；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.random.rand(2, 3)\n```\n\n其他候选：`bm.tensor`、`bm.random.randn`\n源码：`fealpy/backend/numpy_backend.py:L670`\n匹配分数：0.5967",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.7191,
+      "chat_seconds": 15.0094
+    },
+    {
+      "id": "B044",
+      "query": "我需要的不是排序后的值，而是排序对应的索引，应该用哪个接口？",
+      "expected_api": [
+        "bm.argsort"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.slogdet",
+          "full_name": "bm.linalg.slogdet",
+          "category": "linalg",
+          "score": 0.57381767,
+          "distance": 0.42618233
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.matrix_rank",
+          "full_name": "bm.linalg.matrix_rank",
+          "category": "linalg",
+          "score": 0.56784356,
+          "distance": 0.43215644
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.trace",
+          "full_name": "bm.linalg.trace",
+          "category": "linalg",
+          "score": 0.56673956,
+          "distance": 0.43326044
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.det",
+          "full_name": "bm.linalg.det",
+          "category": "linalg",
+          "score": 0.56651986,
+          "distance": 0.43348014
+        },
+        {
+          "rank": 5,
+          "id": "bm.searchsorted",
+          "full_name": "bm.searchsorted",
+          "category": "manipulation",
+          "score": 0.5658862,
+          "distance": 0.4341138
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.linalg.slogdet",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.linalg.slogdet`\n\n功能：执行线性代数运算：slogdet。\n签名：`linalg.slogdet(x: _DT, /) -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n\n对应后端：\n- NumPy：`numpy.linalg.slogdet`\n- PyTorch：`torch.linalg.slogdet`\n\n后端差异：NumPy 映射为 numpy.linalg.slogdet，PyTorch 映射为 torch.linalg.slogdet；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.slogdet(x)\n```\n\n其他候选：`bm.linalg.matrix_rank`、`bm.linalg.trace`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：0.5738",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.6387,
+      "chat_seconds": 15.0097
+    },
+    {
+      "id": "B045",
+      "query": "如何获取张量中的唯一元素并去除重复值？",
+      "expected_api": [
+        "bm.unique"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.58711638,
+          "distance": 0.49288362
+        },
+        {
+          "rank": 2,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.58427979,
+          "distance": 0.49572021
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.58090522,
+          "distance": 0.49909478
+        },
+        {
+          "rank": 4,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.5763401,
+          "distance": 0.5036599
+        },
+        {
+          "rank": 5,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.57460733,
+          "distance": 0.50539267
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.tensor",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.tensor`\n\n功能：创建或初始化张量：tensor。\n签名：`tensor(data, /, *, dtype = None, device = None, **kwargs) -> _DT`\n\n主要参数：\n- `data` (未标注类型)：输入数据\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n- `kwargs` (未标注类型)：参数 kwargs\n\n对应后端：\n- NumPy：`numpy.array`\n- PyTorch：`torch.tensor`\n\n后端差异：NumPy 映射为 numpy.array，PyTorch 映射为 torch.tensor；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.tensor([1, 2, 3])\n```\n\n其他候选：`bm.asarray`、`bm.random.rand`\n源码：`fealpy/backend/numpy_backend.py:L82`\n匹配分数：0.5871",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.5223,
+      "chat_seconds": 14.8926
+    },
+    {
+      "id": "B046",
+      "query": "如何把形状为 (3,1) 的张量广播成 (3,4)？",
+      "expected_api": [
+        "bm.broadcast_to"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.56107356,
+          "distance": 0.51892644
+        },
+        {
+          "rank": 2,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.5593486,
+          "distance": 0.5206514
+        },
+        {
+          "rank": 3,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.55143614,
+          "distance": 0.52856386
+        },
+        {
+          "rank": 4,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.5490938,
+          "distance": 0.5309062
+        },
+        {
+          "rank": 5,
+          "id": "bm.ones",
+          "full_name": "bm.ones",
+          "category": "creation",
+          "score": 0.54838278,
+          "distance": 0.53161722
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.asarray",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.asarray`\n\n功能：创建或初始化张量：asarray。\n签名：`asarray(obj, /, *, dtype = None, device = None, copy = None) -> _DT`\n\n主要参数：\n- `obj` (未标注类型)：接口参数 obj\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n- `copy` (未标注类型)：接口参数 copy\n\n对应后端：\n- NumPy：`numpy.asarray`\n- PyTorch：`torch.asarray`\n\n后端差异：NumPy 映射为 numpy.asarray，PyTorch 映射为 torch.asarray；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.asarray([1, 2, 3])\n```\n\n其他候选：`bm.random.randn`、`bm.tensor`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.5611",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.7021,
+      "chat_seconds": 15.0128
+    },
+    {
+      "id": "B047",
+      "query": "我想用爱因斯坦求和记号进行张量运算，例如 ij,jk->ik，用什么接口？",
+      "expected_api": [
+        "bm.einsum"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.64862807,
+          "distance": 0.43137193
+        },
+        {
+          "rank": 2,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.64787074,
+          "distance": 0.43212926
+        },
+        {
+          "rank": 3,
+          "id": "bm.eye",
+          "full_name": "bm.eye",
+          "category": "creation",
+          "score": 0.62890716,
+          "distance": 0.45109284
+        },
+        {
+          "rank": 4,
+          "id": "bm.ones",
+          "full_name": "bm.ones",
+          "category": "creation",
+          "score": 0.6239198,
+          "distance": 0.4560802
+        },
+        {
+          "rank": 5,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.61549123,
+          "distance": 0.46450877
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.tensor",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.tensor`\n\n功能：创建或初始化张量：tensor。\n签名：`tensor(data, /, *, dtype = None, device = None, **kwargs) -> _DT`\n\n主要参数：\n- `data` (未标注类型)：输入数据\n- `dtype` (未标注类型)：数据类型\n- `device` (未标注类型)：计算设备\n- `kwargs` (未标注类型)：参数 kwargs\n\n对应后端：\n- NumPy：`numpy.array`\n- PyTorch：`torch.tensor`\n\n后端差异：NumPy 映射为 numpy.array，PyTorch 映射为 torch.tensor；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.tensor([1, 2, 3])\n```\n\n其他候选：`bm.asarray`、`bm.eye`\n源码：`fealpy/backend/numpy_backend.py:L82`\n匹配分数：0.6486",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.7968,
+      "chat_seconds": 14.7711
+    },
+    {
+      "id": "B048",
+      "query": "两个矩阵 A 和 B 做矩阵乘法，在 bm 中应该调用什么？",
+      "expected_api": [
+        "bm.matmul"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.matmul",
+          "full_name": "bm.linalg.matmul",
+          "category": "linalg",
+          "score": 1.10254819,
+          "distance": 0.34745181
+        },
+        {
+          "rank": 2,
+          "id": "bm.matmul",
+          "full_name": "bm.matmul",
+          "category": "linalg",
+          "score": 1.06929631,
+          "distance": 0.38070369
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.matrix_norm",
+          "full_name": "bm.linalg.matrix_norm",
+          "category": "linalg",
+          "score": 0.63694308,
+          "distance": 0.46305692
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.solve",
+          "full_name": "bm.linalg.solve",
+          "category": "linalg",
+          "score": 0.62715802,
+          "distance": 0.47284198
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.matrix_transpose",
+          "full_name": "bm.linalg.matrix_transpose",
+          "category": "linalg",
+          "score": 0.61019633,
+          "distance": 0.48980367
+        }
+      ],
+      "retrieval_hit_rank": 2,
+      "recall_at": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.matmul",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.linalg.matmul`\n\n功能：执行线性代数运算：matmul。\n签名：`linalg.matmul(x1: _DT, x2: _DT, /) -> _DT`\n\n主要参数：\n- `x1` (_DT)：第一个输入张量\n- `x2` (_DT)：第二个输入张量\n\n对应后端：\n- NumPy：`numpy.linalg.matmul`\n- PyTorch：`torch.linalg.matmul`\n\n后端差异：NumPy 映射为 numpy.linalg.matmul，PyTorch 映射为 torch.linalg.matmul；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.matmul(x1, x2)\n```\n\n其他候选：`bm.matmul`、`bm.linalg.matrix_norm`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：1.1025",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "answer_error_after_retrieval_hit",
+      "error": null,
+      "retrieval_seconds": 7.6697,
+      "chat_seconds": 14.952
+    },
+    {
+      "id": "B049",
+      "query": "怎么把 FEALPy 当前计算后端切换成 PyTorch？",
+      "expected_api": [
+        "bm.set_backend"
+      ],
+      "expected_category": "other",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.arccosh",
+          "full_name": "bm.arccosh",
+          "category": "math",
+          "score": 0.70813074,
+          "distance": 0.31186926
+        },
+        {
+          "rank": 2,
+          "id": "bm.bitwise_right_shift",
+          "full_name": "bm.bitwise_right_shift",
+          "category": "math",
+          "score": 0.69757547,
+          "distance": 0.32242453
+        },
+        {
+          "rank": 3,
+          "id": "bm.bitwise_invert",
+          "full_name": "bm.bitwise_invert",
+          "category": "math",
+          "score": 0.69633599,
+          "distance": 0.32366401
+        },
+        {
+          "rank": 4,
+          "id": "bm.floor",
+          "full_name": "bm.floor",
+          "category": "math",
+          "score": 0.69184412,
+          "distance": 0.32815588
+        },
+        {
+          "rank": 5,
+          "id": "bm.real",
+          "full_name": "bm.real",
+          "category": "math",
+          "score": 0.69040348,
+          "distance": 0.32959652
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.arccosh",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.arccosh`\n\n功能：对输入执行数学运算：arccosh。\n签名：`arccosh(x: _DT, /) -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n\n对应后端：\n- NumPy：`numpy.arccosh`\n- PyTorch：`torch.arccosh`\n\n后端差异：NumPy 映射为 numpy.arccosh，PyTorch 映射为 torch.arccosh；参数与设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"pytorch\")\nresult = bm.arccosh(x)\n```\n\n其他候选：`bm.bitwise_right_shift`、`bm.bitwise_invert`\n源码：`fealpy/backend/numpy_backend.py:L646`\n匹配分数：0.7081",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 7.6967,
+      "chat_seconds": 14.7845
+    },
+    {
+      "id": "B050",
+      "query": "如何查看 FEALPy 当前正在使用哪个后端？",
+      "expected_api": [
+        "bm.get_current_backend"
+      ],
+      "expected_category": "other",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.get_current_backend",
+          "full_name": "bm.get_current_backend",
+          "category": "other",
+          "score": 0.77037646,
+          "distance": 0.24962354
+        },
+        {
+          "rank": 2,
+          "id": "bm.load_backend",
+          "full_name": "bm.load_backend",
+          "category": "other",
+          "score": 0.70989289,
+          "distance": 0.31010711
+        },
+        {
+          "rank": 3,
+          "id": "bm.set_backend",
+          "full_name": "bm.set_backend",
+          "category": "other",
+          "score": 0.7051263,
+          "distance": 0.3148737
+        },
+        {
+          "rank": 4,
+          "id": "bm.logical_and",
+          "full_name": "bm.logical_and",
+          "category": "comparison",
+          "score": 0.6742837,
+          "distance": 0.3457163
+        },
+        {
+          "rank": 5,
+          "id": "bm.is_tensor",
+          "full_name": "bm.is_tensor",
+          "category": "other",
+          "score": 0.67041462,
+          "distance": 0.31958538
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.get_current_backend",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.get_current_backend`\n\n功能：提供后端工具或 FEALPy 专用功能：get_current_backend。\n签名：`get_current_backend() -> BackendProxy`\n\n主要参数：\n- 无参数\n\n对应后端：\n- NumPy：`无单一对应 API`\n- PyTorch：`无单一对应 API`\n\n后端差异：该接口由 FEALPy 自身实现或管理，没有单一对应的 NumPy/PyTorch 原生 API。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.get_current_backend()\n```\n\n其他候选：`bm.load_backend`、`bm.set_backend`\n源码：`fealpy/backend/manager.py:L48`\n匹配分数：0.7704",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.4263,
+      "chat_seconds": 14.9238
+    },
+    {
+      "id": "B051",
+      "query": "如何计算一个向量 x 的 2 范数（欧几里得范数）？",
+      "expected_api": [
+        "bm.linalg.vector_norm"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.vector_norm",
+          "full_name": "bm.linalg.vector_norm",
+          "category": "linalg",
+          "score": 0.58447732,
+          "distance": 0.49552268
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.cross",
+          "full_name": "bm.linalg.cross",
+          "category": "linalg",
+          "score": 0.51659538,
+          "distance": 0.56340462
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.vecdot",
+          "full_name": "bm.linalg.vecdot",
+          "category": "linalg",
+          "score": 0.51476784,
+          "distance": 0.56523216
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.outer",
+          "full_name": "bm.linalg.outer",
+          "category": "linalg",
+          "score": 0.51373376,
+          "distance": 0.56626624
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.matrix_norm",
+          "full_name": "bm.linalg.matrix_norm",
+          "category": "linalg",
+          "score": 0.51005234,
+          "distance": 0.56994766
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.vector_norm",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.vector_norm`\n\n功能：执行线性代数运算：vector_norm。\n签名：`linalg.vector_norm(x: _DT, /, *, axis: Optional[int] = None, keepdims: bool = False, ord: Union[int, float, Literal['inf', '-inf', 'fro']] = 2) -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n- `axis` (Optional[int])：操作所在的轴\n- `keepdims` (bool)：是否保留被归约的维度\n- `ord` (Union[int, float, Literal['inf', '-inf', 'fro']])：接口参数 ord\n\n对应后端：\n- NumPy：`numpy.linalg.vector_norm`\n- PyTorch：`torch.linalg.vector_norm`\n\n后端差异：NumPy 映射为 numpy.linalg.vector_norm，PyTorch 映射为 torch.linalg.vector_norm；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.vector_norm(x)\n```\n\n其他候选：`bm.linalg.cross`、`bm.linalg.vecdot`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：0.5845",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.5218,
+      "chat_seconds": 15.0157
+    },
+    {
+      "id": "B052",
+      "query": "我想计算向量 x 的 1 范数，也就是所有元素绝对值之和，FEALPy 后端应该使用哪个接口？",
+      "expected_api": [
+        "bm.linalg.vector_norm"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.vector_norm",
+          "full_name": "bm.linalg.vector_norm",
+          "category": "linalg",
+          "score": 0.78914966,
+          "distance": 0.29085034
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.inv",
+          "full_name": "bm.linalg.inv",
+          "category": "linalg",
+          "score": 0.75034382,
+          "distance": 0.32965618
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.svdvals",
+          "full_name": "bm.linalg.svdvals",
+          "category": "linalg",
+          "score": 0.74655582,
+          "distance": 0.33344418
+        },
+        {
+          "rank": 4,
+          "id": "bm.vecdot",
+          "full_name": "bm.vecdot",
+          "category": "linalg",
+          "score": 0.74635358,
+          "distance": 0.33364642
+        },
+        {
+          "rank": 5,
+          "id": "bm.trace",
+          "full_name": "bm.trace",
+          "category": "linalg",
+          "score": 0.74581249,
+          "distance": 0.33418751
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.vector_norm",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.vector_norm`\n\n功能：执行线性代数运算：vector_norm。\n签名：`linalg.vector_norm(x: _DT, /, *, axis: Optional[int] = None, keepdims: bool = False, ord: Union[int, float, Literal['inf', '-inf', 'fro']] = 2) -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n- `axis` (Optional[int])：操作所在的轴\n- `keepdims` (bool)：是否保留被归约的维度\n- `ord` (Union[int, float, Literal['inf', '-inf', 'fro']])：接口参数 ord\n\n对应后端：\n- NumPy：`numpy.linalg.vector_norm`\n- PyTorch：`torch.linalg.vector_norm`\n\n后端差异：NumPy 映射为 numpy.linalg.vector_norm，PyTorch 映射为 torch.linalg.vector_norm；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.vector_norm(x)\n```\n\n其他候选：`bm.linalg.inv`、`bm.linalg.svdvals`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：0.7891",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.5551,
+      "chat_seconds": 15.1039
+    },
+    {
+      "id": "B053",
+      "query": "对于一个二维张量，我想沿指定 axis 计算每一行或每一列的向量范数，应该使用什么接口？",
+      "expected_api": [
+        "bm.linalg.vector_norm"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "intermediate",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.vector_norm",
+          "full_name": "bm.linalg.vector_norm",
+          "category": "linalg",
+          "score": 1.12734043,
+          "distance": 0.30265957
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.vecdot",
+          "full_name": "bm.linalg.vecdot",
+          "category": "linalg",
+          "score": 0.71651174,
+          "distance": 0.36348826
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.svdvals",
+          "full_name": "bm.linalg.svdvals",
+          "category": "linalg",
+          "score": 0.69677682,
+          "distance": 0.38322318
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.cross",
+          "full_name": "bm.linalg.cross",
+          "category": "linalg",
+          "score": 0.69569011,
+          "distance": 0.38430989
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.inv",
+          "full_name": "bm.linalg.inv",
+          "category": "linalg",
+          "score": 0.69167562,
+          "distance": 0.38832438
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.vector_norm",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.vector_norm`\n\n功能：执行线性代数运算：vector_norm。\n签名：`linalg.vector_norm(x: _DT, /, *, axis: Optional[int] = None, keepdims: bool = False, ord: Union[int, float, Literal['inf', '-inf', 'fro']] = 2) -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n- `axis` (Optional[int])：操作所在的轴\n- `keepdims` (bool)：是否保留被归约的维度\n- `ord` (Union[int, float, Literal['inf', '-inf', 'fro']])：接口参数 ord\n\n对应后端：\n- NumPy：`numpy.linalg.vector_norm`\n- PyTorch：`torch.linalg.vector_norm`\n\n后端差异：NumPy 映射为 numpy.linalg.vector_norm，PyTorch 映射为 torch.linalg.vector_norm；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.vector_norm(x)\n```\n\n其他候选：`bm.linalg.vecdot`、`bm.linalg.svdvals`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：1.1273",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.6327,
+      "chat_seconds": 15.0051
+    },
+    {
+      "id": "B054",
+      "query": "如何计算矩阵 A 的 Frobenius 范数？",
+      "expected_api": [
+        "bm.linalg.matrix_norm"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.matrix_norm",
+          "full_name": "bm.linalg.matrix_norm",
+          "category": "linalg",
+          "score": 1.05013549,
+          "distance": 0.37986451
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.matmul",
+          "full_name": "bm.linalg.matmul",
+          "category": "linalg",
+          "score": 0.65493162,
+          "distance": 0.42506838
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.vector_norm",
+          "full_name": "bm.linalg.vector_norm",
+          "category": "linalg",
+          "score": 0.65306862,
+          "distance": 0.42693138
+        },
+        {
+          "rank": 4,
+          "id": "bm.matmul",
+          "full_name": "bm.matmul",
+          "category": "linalg",
+          "score": 0.62365689,
+          "distance": 0.45634311
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.cross",
+          "full_name": "bm.linalg.cross",
+          "category": "linalg",
+          "score": 0.62351568,
+          "distance": 0.45648432
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.matrix_norm",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.matrix_norm`\n\n功能：执行线性代数运算：matrix_norm。\n签名：`linalg.matrix_norm(x: _DT, /, *, keepdims: bool = False, ord: Union[int, float, Literal['fro', 'nuc']] = 'fro') -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n- `keepdims` (bool)：是否保留被归约的维度\n- `ord` (Union[int, float, Literal['fro', 'nuc']])：接口参数 ord\n\n对应后端：\n- NumPy：`numpy.linalg.matrix_norm`\n- PyTorch：`torch.linalg.matrix_norm`\n\n后端差异：NumPy 映射为 numpy.linalg.matrix_norm，PyTorch 映射为 torch.linalg.matrix_norm；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.matrix_norm(x)\n```\n\n其他候选：`bm.linalg.matmul`、`bm.linalg.vector_norm`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：1.0501",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.6833,
+      "chat_seconds": 14.8866
+    },
+    {
+      "id": "B055",
+      "query": "我需要计算矩阵 A 的核范数（nuclear norm），在 FEALPy 后端中应该使用哪个接口？",
+      "expected_api": [
+        "bm.linalg.matrix_norm"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "intermediate",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.matrix_norm",
+          "full_name": "bm.linalg.matrix_norm",
+          "category": "linalg",
+          "score": 0.82323048,
+          "distance": 0.27676952
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.vector_norm",
+          "full_name": "bm.linalg.vector_norm",
+          "category": "linalg",
+          "score": 0.79588453,
+          "distance": 0.30411547
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.matmul",
+          "full_name": "bm.linalg.matmul",
+          "category": "linalg",
+          "score": 0.78269455,
+          "distance": 0.31730545
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.tensordot",
+          "full_name": "bm.linalg.tensordot",
+          "category": "linalg",
+          "score": 0.76995263,
+          "distance": 0.33004737
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.solve",
+          "full_name": "bm.linalg.solve",
+          "category": "linalg",
+          "score": 0.76963434,
+          "distance": 0.33036566
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.matrix_norm",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.matrix_norm`\n\n功能：执行线性代数运算：matrix_norm。\n签名：`linalg.matrix_norm(x: _DT, /, *, keepdims: bool = False, ord: Union[int, float, Literal['fro', 'nuc']] = 'fro') -> _DT`\n\n主要参数：\n- `x` (_DT)：输入张量\n- `keepdims` (bool)：是否保留被归约的维度\n- `ord` (Union[int, float, Literal['fro', 'nuc']])：接口参数 ord\n\n对应后端：\n- NumPy：`numpy.linalg.matrix_norm`\n- PyTorch：`torch.linalg.matrix_norm`\n\n后端差异：NumPy 映射为 numpy.linalg.matrix_norm，PyTorch 映射为 torch.linalg.matrix_norm；实际参数或设备语义以各后端 notes 为准。\n\n使用示例：\n```python\nfrom fealpy.backend import bm\nbm.set_backend(\"numpy\")\nresult = bm.linalg.matrix_norm(x)\n```\n\n其他候选：`bm.linalg.vector_norm`、`bm.linalg.matmul`\n源码：`fealpy/backend/numpy_backend.py:L29`\n匹配分数：0.8232",
+      "intent_source": "rule_fallback",
+      "answer_source": "template_fallback",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 7.6303,
+      "chat_seconds": 14.87
+    }
+  ]
+}

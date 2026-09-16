@@ -173,7 +173,7 @@ fealpy_backend_copilot/
 | 文件 | 作用 | 与其他文件的关系 |
 |---|---|---|
 | `intent_parser.py` | 使用关键词和正则表达式识别操作、分类、后端、shape、dtype、axis 和 device。 | 被 `agent.py` 直接使用，也是 `llm_intent_parser.py` 的失败回退。 |
-| `retriever.py` | 加载 BGE-M3 和 Chroma，执行向量召回、分类过滤、后端过滤和规则重排。 | 被规则智能体和混合智能体共同使用；读取 `all_interfaces.json` 和 Chroma。 |
+| `retriever.py` | 加载 BGE-M3 和 Chroma，执行向量召回、分类软加权、后端过滤和规则重排。category 不作为硬过滤条件，避免错误分类直接丢失正确接口。 | 被规则智能体和混合智能体共同使用；读取 `all_interfaces.json` 和 Chroma。 |
 | `answer_generator.py` | 根据检索记录生成确定性的模板答案和示例代码。 | 被 `agent.py` 直接使用，也是 `llm_answer_generator.py` 的失败回退。 |
 | `agent.py` | 编排规则意图解析、向量检索和模板回答。 | 由 `cli.py` 调用，不需要通义千问 API。 |
 | `cli.py` | 规则 MVP 的命令行入口。 | 创建 `FealpyBackendAgent` 并输出模板答案。 |
@@ -351,6 +351,32 @@ D:\mini\envs\cgraph_env\python.exe -m unittest discover -s tests -v
 ```
 
 测试不调用真实通义千问服务，覆盖会话、意图清洗、接口/API 校验和回退逻辑。
+
+## Benchmark 定量评测
+
+使用 55 条基准题分别运行独立检索和完整聊天链路：
+
+```powershell
+D:\mini\envs\cgraph_env\python.exe evaluate_benchmark.py --mode hybrid
+```
+
+`hybrid` 使用当前通义千问混合链路；未配置密钥时会按项目既有逻辑回退到规则解析和模板回答。若要显式评测纯规则基线，使用 `--mode rule`。可用 `--limit 3` 做快速冒烟测试。
+
+默认结果写入 `data/eval_results/`：
+
+- `evaluation_report.json`：汇总 Recall@1~5、Answer Accuracy、分类/难度切片和全部逐题证据。
+- `samples.csv`：每题 Top1~5、正确 API 排名、最终首选 API 和失败类型，使用 Excel 兼容编码。
+- `failures.jsonl`：仅导出失败样本；`retrieval_miss` 表示 Top-5 未召回，`answer_error_after_retrieval_hit` 表示已召回但回答错误，`pipeline_error` 表示运行异常。
+
+Answer Accuracy 按最终回答中首个明确推荐的 `bm.*` API 与标注 API 精确匹配计算，不会因正确 API 仅出现在“其他候选”中而计为正确。每道题使用独立会话，避免多轮记忆污染结果。
+
+进一步定位检索错误时运行：
+
+```powershell
+D:\mini\envs\cgraph_env\python.exe retrieval_diagnostics.py
+```
+
+该脚本批量执行原始 query、query 加 operation、query 加 category、完整增强 query、取消分类过滤和 Oracle category 六组消融，并分别记录向量原始排名与规则重排排名。结果位于 `data/eval_results/retrieval_diagnostics/`，包含 Recall@1/5/10/20/30、MRR、Mean Rank、知识库覆盖检查和逐题失败归因。
 
 ## 启动完整应用（推荐）
 

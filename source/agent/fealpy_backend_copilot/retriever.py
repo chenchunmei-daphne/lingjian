@@ -66,11 +66,9 @@ class FealpyRetriever:
             [self._query_text(intent)], normalize_embeddings=True
         ).tolist()
         candidate_count = min(max(intent.top_k * 6, 20), self.collection.count())
-        where = {"category": intent.category} if intent.category else None
         response = self.collection.query(
             query_embeddings=query_embedding,
             n_results=candidate_count,
-            where=where,
             include=["distances"],
         )
 
@@ -105,4 +103,3 @@ class FealpyRetriever:
 
         results.sort(key=lambda item: item.score, reverse=True)
         return results[: intent.top_k]
-

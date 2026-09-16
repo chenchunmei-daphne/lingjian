@@ -1,0 +1,552 @@
+[
+  {
+    "id": "B001",
+    "query": "我想让后续随机数结果可以复现，FEALPy 后端里怎么设置随机种子？",
+    "expected_api": [
+      "bm.random.seed"
+    ],
+    "expected_category": "other",
+    "difficulty": "basic",
+    "signature": "random.seed(seed: int, /) -> None"
+  },
+  {
+    "id": "B002",
+    "query": "怎么生成一个形状为 2×3 的均匀分布随机张量？",
+    "expected_api": [
+      "bm.random.rand"
+    ],
+    "expected_category": "creation",
+    "difficulty": "basic",
+    "signature": "random.rand(*size, dtype=None, device=None)"
+  },
+  {
+    "id": "B003",
+    "query": "如何生成 0 到 9 之间的随机整数张量？",
+    "expected_api": [
+      "bm.random.randint"
+    ],
+    "expected_category": "creation",
+    "difficulty": "basic",
+    "signature": "random.randint(low, high=None, size=None, dtype=None, device=None)"
+  },
+  {
+    "id": "B004",
+    "query": "怎么生成一个 2×3 的标准正态分布随机张量？",
+    "expected_api": [
+      "bm.random.randn"
+    ],
+    "expected_category": "creation",
+    "difficulty": "basic",
+    "signature": "random.randn(*size, dtype=None, device=None)"
+  },
+  {
+    "id": "B005",
+    "query": "如何创建一个 3×4 的全零张量？",
+    "expected_api": [
+      "bm.zeros"
+    ],
+    "expected_category": "creation",
+    "difficulty": "basic",
+    "signature": "zeros(shape: Size, /, *, dtype = None, device = None) -> _DT"
+  },
+  {
+    "id": "B006",
+    "query": "FEALPy 后端怎么创建一个 5×5 的全 1 张量？",
+    "expected_api": [
+      "bm.ones"
+    ],
+    "expected_category": "creation",
+    "difficulty": "basic",
+    "signature": "ones(shape: Size, /, *, dtype = None, device = None) -> _DT"
+  },
+  {
+    "id": "B007",
+    "query": "怎么创建形状为 (2,3) 且所有元素都等于 7 的张量？",
+    "expected_api": [
+      "bm.full"
+    ],
+    "expected_category": "creation",
+    "difficulty": "basic",
+    "signature": "full(shape: Size, fill_value: Number, /, *, dtype = None, device = None) -> _DT"
+  },
+  {
+    "id": "B008",
+    "query": "如何创建一个 4 阶单位矩阵？",
+    "expected_api": [
+      "bm.eye"
+    ],
+    "expected_category": "creation",
+    "difficulty": "basic",
+    "signature": "eye(n_rows: int, n_cols: Optional[int] = None, /, *, k: int = 0, dtype = None, device = None) -> _DT"
+  },
+  {
+    "id": "B009",
+    "query": "怎么生成从 0 开始、小于 10、步长为 2 的序列？",
+    "expected_api": [
+      "bm.arange"
+    ],
+    "expected_category": "creation",
+    "difficulty": "basic",
+    "signature": "arange(stop: Number, /, step: Number = 1, *, dtype = None, device = None) -> _DT"
+  },
+  {
+    "id": "B010",
+    "query": "如何在 0 到 1 之间均匀取 100 个点？",
+    "expected_api": [
+      "bm.linspace"
+    ],
+    "expected_category": "creation",
+    "difficulty": "basic",
+    "signature": "linspace(start: Number, stop: Number, /, num: int, *, dtype = None, device = None, endpoint = True) -> _DT"
+  },
+  {
+    "id": "B011",
+    "query": "我有一个 Python 列表，怎么把它转换成 FEALPy 后端数组？",
+    "expected_api": [
+      "bm.asarray"
+    ],
+    "expected_category": "creation",
+    "difficulty": "basic",
+    "signature": "asarray(obj, /, *, dtype = None, device = None, copy = None) -> _DT"
+  },
+  {
+    "id": "B012",
+    "query": "已有张量 x，怎样创建一个和 x 形状相同的全零张量？",
+    "expected_api": [
+      "bm.zeros_like"
+    ],
+    "expected_category": "creation",
+    "difficulty": "basic",
+    "signature": "zeros_like(x: _DT, /, *, dtype = None, device = None) -> _DT"
+  },
+  {
+    "id": "B013",
+    "query": "给定矩阵 A 和右端项 b，如何求解线性方程组 Ax=b？",
+    "expected_api": [
+      "bm.linalg.solve"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "basic",
+    "signature": "linalg.solve(x1: _DT, x2: _DT, /) -> _DT"
+  },
+  {
+    "id": "B014",
+    "query": "如何计算一个方阵的逆矩阵？",
+    "expected_api": [
+      "bm.linalg.inv"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "basic",
+    "signature": "linalg.inv(x: _DT, /) -> _DT"
+  },
+  {
+    "id": "B015",
+    "query": "怎么求矩阵 A 的行列式？",
+    "expected_api": [
+      "bm.linalg.det"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "basic",
+    "signature": "linalg.det(x: _DT, /) -> _DT"
+  },
+  {
+    "id": "B016",
+    "query": "我想对矩阵做奇异值分解，应该用哪个 bm 接口？",
+    "expected_api": [
+      "bm.linalg.svd"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "basic",
+    "signature": "linalg.svd(x: _DT, /, *, full_matrices: bool = True) -> Tuple[_DT, _DT, _DT]"
+  },
+  {
+    "id": "B017",
+    "query": "如何对矩阵进行 QR 分解？",
+    "expected_api": [
+      "bm.linalg.qr"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "basic",
+    "signature": "linalg.qr(x: _DT, /, *, mode = 'reduced') -> _DT"
+  },
+  {
+    "id": "B018",
+    "query": "正定矩阵怎么做 Cholesky 分解？",
+    "expected_api": [
+      "bm.linalg.cholesky"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "basic",
+    "signature": "linalg.cholesky(x: _DT, /, *, upper: bool = False) -> _DT"
+  },
+  {
+    "id": "B019",
+    "query": "怎么计算一个矩阵的秩？",
+    "expected_api": [
+      "bm.linalg.matrix_rank"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "basic",
+    "signature": "linalg.matrix_rank(x: _DT, /, *, rtol = None) -> _DT"
+  },
+  {
+    "id": "B020",
+    "query": "如何计算向量的 2 范数？",
+    "expected_api": [
+      "bm.linalg.vector_norm"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "basic",
+    "signature": "linalg.vector_norm(x: _DT, /, *, axis: Optional[int] = None, keepdims: bool = False, ord: Union[int, float, Literal['inf', '-inf', 'fro']] = 2) -> _DT"
+  },
+  {
+    "id": "B021",
+    "query": "怎样把张量 x 从 (2,3,4) 改成 (6,4)？",
+    "expected_api": [
+      "bm.reshape"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "reshape(x: _DT, /, shape: Size, *, copy = None) -> _DT"
+  },
+  {
+    "id": "B022",
+    "query": "有两个形状相同的张量，怎么沿第 0 维拼接？",
+    "expected_api": [
+      "bm.concat"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "concat(arrays: Union[Tuple[_DT, ...], List[_DT]], /, *, axis = 0) -> _DT"
+  },
+  {
+    "id": "B023",
+    "query": "如何把多个张量沿一个新的维度堆叠起来？",
+    "expected_api": [
+      "bm.stack"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "stack(arrays: Union[Tuple[_DT, ...], List[_DT]], *, axis = 0) -> _DT"
+  },
+  {
+    "id": "B024",
+    "query": "张量中有长度为 1 的维度，怎么把这个维度去掉？",
+    "expected_api": [
+      "bm.squeeze"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "squeeze(x: _DT, /, axis: Union[int, Tuple[int, ...]]) -> _DT"
+  },
+  {
+    "id": "B025",
+    "query": "怎样给张量增加一个新的维度？",
+    "expected_api": [
+      "bm.expand_dims"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "expand_dims(x: _DT, /, *, axis: int = 0) -> _DT"
+  },
+  {
+    "id": "B026",
+    "query": "如何把三维张量的维度顺序从 (0,1,2) 改成 (2,0,1)？",
+    "expected_api": [
+      "bm.permute_dims"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "permute_dims(x: _DT, /, axes: Tuple[int, ...]) -> _DT"
+  },
+  {
+    "id": "B027",
+    "query": "我想把张量的第 0 维移动到最后一维，用什么接口？",
+    "expected_api": [
+      "bm.moveaxis"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "moveaxis(x: _DT, source: Union[int, Tuple[int, ...]], destination: Union[int, Tuple[int, ...]], /) -> _DT"
+  },
+  {
+    "id": "B028",
+    "query": "如何把张量沿指定轴反转？",
+    "expected_api": [
+      "bm.flip"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "flip(x: _DT, /, axis: Optional[Union[int, Tuple[int, ...]]] = None) -> _DT"
+  },
+  {
+    "id": "B029",
+    "query": "怎样把张量中的元素重复多次？",
+    "expected_api": [
+      "bm.repeat"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "repeat(x: _DT, repeats: int, /, *, axis: Optional[int] = None) -> _DT"
+  },
+  {
+    "id": "B030",
+    "query": "如何按照 (2,3) 的重复次数平铺一个张量？",
+    "expected_api": [
+      "bm.tile"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "tile(x: _DT, repetitions: Tuple[int, ...], /) -> _DT"
+  },
+  {
+    "id": "B031",
+    "query": "怎么计算张量所有元素的和？",
+    "expected_api": [
+      "bm.sum"
+    ],
+    "expected_category": "reduction",
+    "difficulty": "medium",
+    "signature": "sum(x: _DT, /, *, axis = None, dtype = None, keepdims = False) -> _DT"
+  },
+  {
+    "id": "B032",
+    "query": "如何沿 axis=1 计算张量的平均值？",
+    "expected_api": [
+      "bm.mean"
+    ],
+    "expected_category": "reduction",
+    "difficulty": "medium",
+    "signature": "mean(x: _DT, /, *, axis = None, keepdims: bool = False) -> _DT"
+  },
+  {
+    "id": "B033",
+    "query": "怎样求张量在指定轴上的最大值？",
+    "expected_api": [
+      "bm.max"
+    ],
+    "expected_category": "reduction",
+    "difficulty": "medium",
+    "signature": "max(x: _DT, /, *, axis = None, keepdims = False) -> _DT"
+  },
+  {
+    "id": "B034",
+    "query": "怎么求一个张量的最小值？",
+    "expected_api": [
+      "bm.min"
+    ],
+    "expected_category": "reduction",
+    "difficulty": "medium",
+    "signature": "min(x: _DT, /, *, axis = None, keepdims = False) -> _DT"
+  },
+  {
+    "id": "B035",
+    "query": "如何计算张量的标准差？",
+    "expected_api": [
+      "bm.std"
+    ],
+    "expected_category": "reduction",
+    "difficulty": "medium",
+    "signature": "std(x: _DT, /, *, axis = None, correction: Number = 0.0, keepdims: bool = False) -> _DT"
+  },
+  {
+    "id": "B036",
+    "query": "怎样计算张量的方差？",
+    "expected_api": [
+      "bm.var"
+    ],
+    "expected_category": "reduction",
+    "difficulty": "medium",
+    "signature": "var(x: _DT, /, *, axis = None, correction: Number = 0.0, keepdims: bool = False) -> _DT"
+  },
+  {
+    "id": "B037",
+    "query": "如何计算一个张量所有元素的乘积？",
+    "expected_api": [
+      "bm.prod"
+    ],
+    "expected_category": "reduction",
+    "difficulty": "medium",
+    "signature": "prod(x: _DT, /, *, axis = None, dtype = None, keepdims = False) -> _DT"
+  },
+  {
+    "id": "B038",
+    "query": "我不只想要最大值，还想知道最大值所在的位置，应该用什么接口？",
+    "expected_api": [
+      "bm.argmax"
+    ],
+    "expected_category": "reduction",
+    "difficulty": "medium",
+    "signature": "argmax(x: _DT, /, *, axis = None, keepdims = False) -> _DT"
+  },
+  {
+    "id": "B039",
+    "query": "怎么找到张量最小元素对应的索引？",
+    "expected_api": [
+      "bm.argmin"
+    ],
+    "expected_category": "reduction",
+    "difficulty": "medium",
+    "signature": "argmin(x: _DT, /, *, axis = None, keepdims = False) -> _DT"
+  },
+  {
+    "id": "B040",
+    "query": "如何沿某个轴计算累计和？",
+    "expected_api": [
+      "bm.cumsum"
+    ],
+    "expected_category": "reduction",
+    "difficulty": "medium",
+    "signature": "cumsum(x: _DT, /, *, axis: Optional[int] = None) -> _DT"
+  },
+  {
+    "id": "B041",
+    "query": "根据布尔条件 condition，在 x 和 y 中逐元素选择值应该用什么接口？",
+    "expected_api": [
+      "bm.where"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "where(condition: _DT, x1: _DT, x2: _DT, /) -> _DT"
+  },
+  {
+    "id": "B042",
+    "query": "如何找出张量中所有非零元素的位置？",
+    "expected_api": [
+      "bm.nonzero"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "nonzero(x: _DT, /) -> Tuple[_DT, ...]"
+  },
+  {
+    "id": "B043",
+    "query": "怎样把张量沿最后一维从小到大排序并得到排序后的值？",
+    "expected_api": [
+      "bm.sort"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "sort(x: _DT, /, *, axis: int = -1, descending: bool = False, stable: bool = True) -> _DT"
+  },
+  {
+    "id": "B044",
+    "query": "我需要的不是排序后的值，而是排序对应的索引，应该用哪个接口？",
+    "expected_api": [
+      "bm.argsort"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "argsort(x: _DT, /, *, axis: int = -1, descending: bool = False, stable: bool = True) -> _DT"
+  },
+  {
+    "id": "B045",
+    "query": "如何获取张量中的唯一元素并去除重复值？",
+    "expected_api": [
+      "bm.unique"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "unique(ar: _DT, return_index = False, return_inverse = False, return_counts = False, axis = 0, **kwargs)"
+  },
+  {
+    "id": "B046",
+    "query": "如何把形状为 (3,1) 的张量广播成 (3,4)？",
+    "expected_api": [
+      "bm.broadcast_to"
+    ],
+    "expected_category": "manipulation",
+    "difficulty": "medium",
+    "signature": "broadcast_to(x: _DT, /, shape: Size) -> _DT"
+  },
+  {
+    "id": "B047",
+    "query": "我想用爱因斯坦求和记号进行张量运算，例如 ij,jk->ik，用什么接口？",
+    "expected_api": [
+      "bm.einsum"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "medium",
+    "signature": "einsum(subscripts: str, /, *operands: _DT, **kwargs) -> _DT"
+  },
+  {
+    "id": "B048",
+    "query": "两个矩阵 A 和 B 做矩阵乘法，在 bm 中应该调用什么？",
+    "expected_api": [
+      "bm.matmul"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "medium",
+    "signature": "matmul(x1: _DT, x2: _DT, /) -> _DT"
+  },
+  {
+    "id": "B049",
+    "query": "怎么把 FEALPy 当前计算后端切换成 PyTorch？",
+    "expected_api": [
+      "bm.set_backend"
+    ],
+    "expected_category": "other",
+    "difficulty": "medium",
+    "signature": "set_backend(name: str) -> None"
+  },
+  {
+    "id": "B050",
+    "query": "如何查看 FEALPy 当前正在使用哪个后端？",
+    "expected_api": [
+      "bm.get_current_backend"
+    ],
+    "expected_category": "other",
+    "difficulty": "medium",
+    "signature": "get_current_backend() -> BackendProxy"
+  },
+  {
+    "id": "B051",
+    "query": "如何计算一个向量 x 的 2 范数（欧几里得范数）？",
+    "expected_api": [
+      "bm.linalg.vector_norm"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "basic",
+    "signature": "linalg.vector_norm(x: _DT, /, *, axis: Optional[int] = None, keepdims: bool = False, ord: Union[int, float, Literal['inf', '-inf', 'fro']] = 2) -> _DT"
+  },
+  {
+    "id": "B052",
+    "query": "我想计算向量 x 的 1 范数，也就是所有元素绝对值之和，FEALPy 后端应该使用哪个接口？",
+    "expected_api": [
+      "bm.linalg.vector_norm"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "basic",
+    "signature": "linalg.vector_norm(x: _DT, /, *, axis: Optional[int] = None, keepdims: bool = False, ord: Union[int, float, Literal['inf', '-inf', 'fro']] = 2) -> _DT"
+  },
+  {
+    "id": "B053",
+    "query": "对于一个二维张量，我想沿指定 axis 计算每一行或每一列的向量范数，应该使用什么接口？",
+    "expected_api": [
+      "bm.linalg.vector_norm"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "intermediate",
+    "signature": "linalg.vector_norm(x: _DT, /, *, axis: Optional[int] = None, keepdims: bool = False, ord: Union[int, float, Literal['inf', '-inf', 'fro']] = 2) -> _DT"
+  },
+  {
+    "id": "B054",
+    "query": "如何计算矩阵 A 的 Frobenius 范数？",
+    "expected_api": [
+      "bm.linalg.matrix_norm"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "basic",
+    "signature": "linalg.matrix_norm(x: _DT, /, *, keepdims: bool = False, ord: Union[int, float, Literal['fro', 'nuc']] = 'fro') -> _DT"
+  },
+  {
+    "id": "B055",
+    "query": "我需要计算矩阵 A 的核范数（nuclear norm），在 FEALPy 后端中应该使用哪个接口？",
+    "expected_api": [
+      "bm.linalg.matrix_norm"
+    ],
+    "expected_category": "linalg",
+    "difficulty": "intermediate",
+    "signature": "linalg.matrix_norm(x: _DT, /, *, keepdims: bool = False, ord: Union[int, float, Literal['fro', 'nuc']] = 'fro') -> _DT"
+  }
+]

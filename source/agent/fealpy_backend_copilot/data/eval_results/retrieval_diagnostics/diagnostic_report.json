@@ -1,0 +1,7187 @@
+{
+  "summary": {
+    "total": 55,
+    "original_top5_miss_count": 31,
+    "intent": {
+      "category_accuracy": 0.436364,
+      "category_confusion": {
+        "other -> creation": 1,
+        "creation -> None": 2,
+        "linalg -> None": 3,
+        "manipulation -> creation": 12,
+        "reduction -> creation": 7,
+        "reduction -> None": 1,
+        "manipulation -> None": 2,
+        "linalg -> creation": 1,
+        "other -> None": 2
+      },
+      "gold_interface_hint_recall": 0.236364
+    },
+    "experiments": {
+      "raw_no_filter": {
+        "vector": {
+          "total": 55,
+          "recall_at_1": 0.418182,
+          "recall_at_5": 0.545455,
+          "recall_at_10": 0.745455,
+          "recall_at_20": 0.818182,
+          "recall_at_30": 0.854545,
+          "mrr": 0.49373,
+          "mean_rank_found": 11.5636,
+          "not_found_in_collection": 0
+        },
+        "reranked": {
+          "total": 55,
+          "recall_at_1": 0.4,
+          "recall_at_5": 0.527273,
+          "recall_at_10": 0.654545,
+          "recall_at_20": 0.818182,
+          "recall_at_30": 0.909091,
+          "mrr": 0.479813,
+          "mean_rank_found": 11.1091,
+          "not_found_in_collection": 0
+        }
+      },
+      "query_operation_no_filter": {
+        "vector": {
+          "total": 55,
+          "recall_at_1": 0.436364,
+          "recall_at_5": 0.636364,
+          "recall_at_10": 0.654545,
+          "recall_at_20": 0.745455,
+          "recall_at_30": 0.8,
+          "mrr": 0.525534,
+          "mean_rank_found": 15.2727,
+          "not_found_in_collection": 0
+        },
+        "reranked": {
+          "total": 55,
+          "recall_at_1": 0.4,
+          "recall_at_5": 0.490909,
+          "recall_at_10": 0.581818,
+          "recall_at_20": 0.727273,
+          "recall_at_30": 0.854545,
+          "mrr": 0.47145,
+          "mean_rank_found": 15.0545,
+          "not_found_in_collection": 0
+        }
+      },
+      "query_category_no_filter": {
+        "vector": {
+          "total": 55,
+          "recall_at_1": 0.4,
+          "recall_at_5": 0.545455,
+          "recall_at_10": 0.618182,
+          "recall_at_20": 0.818182,
+          "recall_at_30": 0.872727,
+          "mrr": 0.475742,
+          "mean_rank_found": 13.6182,
+          "not_found_in_collection": 0
+        },
+        "reranked": {
+          "total": 55,
+          "recall_at_1": 0.4,
+          "recall_at_5": 0.490909,
+          "recall_at_10": 0.563636,
+          "recall_at_20": 0.727273,
+          "recall_at_30": 0.890909,
+          "mrr": 0.464,
+          "mean_rank_found": 13.6545,
+          "not_found_in_collection": 0
+        }
+      },
+      "complete_no_filter": {
+        "vector": {
+          "total": 55,
+          "recall_at_1": 0.418182,
+          "recall_at_5": 0.545455,
+          "recall_at_10": 0.654545,
+          "recall_at_20": 0.745455,
+          "recall_at_30": 0.818182,
+          "mrr": 0.500498,
+          "mean_rank_found": 14.4,
+          "not_found_in_collection": 0
+        },
+        "reranked": {
+          "total": 55,
+          "recall_at_1": 0.381818,
+          "recall_at_5": 0.490909,
+          "recall_at_10": 0.509091,
+          "recall_at_20": 0.672727,
+          "recall_at_30": 0.854545,
+          "mrr": 0.451534,
+          "mean_rank_found": 16.0727,
+          "not_found_in_collection": 0
+        }
+      },
+      "complete_current_filter": {
+        "vector": {
+          "total": 55,
+          "recall_at_1": 0.345455,
+          "recall_at_5": 0.436364,
+          "recall_at_10": 0.454545,
+          "recall_at_20": 0.490909,
+          "recall_at_30": 0.545455,
+          "mrr": 0.391459,
+          "mean_rank_found": 9.7647,
+          "not_found_in_collection": 21
+        },
+        "reranked": {
+          "total": 55,
+          "recall_at_1": 0.345455,
+          "recall_at_5": 0.436364,
+          "recall_at_10": 0.454545,
+          "recall_at_20": 0.490909,
+          "recall_at_30": 0.581818,
+          "mrr": 0.394583,
+          "mean_rank_found": 8.4118,
+          "not_found_in_collection": 21
+        }
+      },
+      "complete_oracle_filter": {
+        "vector": {
+          "total": 55,
+          "recall_at_1": 0.454545,
+          "recall_at_5": 0.763636,
+          "recall_at_10": 0.909091,
+          "recall_at_20": 0.981818,
+          "recall_at_30": 1.0,
+          "mrr": 0.596496,
+          "mean_rank_found": 3.6909,
+          "not_found_in_collection": 0
+        },
+        "reranked": {
+          "total": 55,
+          "recall_at_1": 0.472727,
+          "recall_at_5": 0.818182,
+          "recall_at_10": 0.945455,
+          "recall_at_20": 0.981818,
+          "recall_at_30": 1.0,
+          "mrr": 0.626641,
+          "mean_rank_found": 3.2182,
+          "not_found_in_collection": 0
+        }
+      }
+    },
+    "failure_signal_counts": {
+      "intent_category_wrong_or_missing": 29,
+      "hard_filter_blocks_gold": 21,
+      "oracle_category_recovers_top5": 21,
+      "reranker_fails_to_promote_candidate": 14,
+      "query_enrichment_harms_vector_rank": 5,
+      "vector_gold_outside_initial_30": 10,
+      "reranker_harms_top5": 4
+    },
+    "exclusive_failure_attribution": {
+      "wrong_category_hard_filter": 17,
+      "vector_representation_or_base_ranking": 10,
+      "missing_category_no_narrowing": 4
+    },
+    "current_reranker_top5_effect": {
+      "harmed": 0,
+      "helped": 0
+    }
+  },
+  "knowledge_base_audit": {
+    "record_count_json": 220,
+    "record_count_collection": 220,
+    "gold_api_count": 51,
+    "gold_missing_from_json": [],
+    "gold_missing_from_collection": [],
+    "json_collection_id_difference": [],
+    "gold_category_mismatches": [],
+    "data_sha256": "e7398266214d5ff7d74396a4b563e300e2d795440df3acb73e39f3215bd57b95",
+    "manifest_source_sha256": "e7398266214d5ff7d74396a4b563e300e2d795440df3acb73e39f3215bd57b95",
+    "manifest_matches_current_data": true
+  },
+  "samples": [
+    {
+      "id": "B001",
+      "query": "我想让后续随机数结果可以复现，FEALPy 后端里怎么设置随机种子？",
+      "expected_api": [
+        "bm.random.seed"
+      ],
+      "expected_category": "other",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.seed",
+            "bm.set_backend",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint"
+          ],
+          "reranked_top5": [
+            "bm.random.seed",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.arange"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.seed",
+            "bm.set_backend",
+            "bm.set_default_device",
+            "bm.get_current_backend",
+            "bm.load_backend"
+          ],
+          "reranked_top5": [
+            "bm.random.seed",
+            "bm.random.rand",
+            "bm.random.randint",
+            "bm.array",
+            "bm.meshgrid"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.seed",
+            "bm.set_backend",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.array"
+          ],
+          "reranked_top5": [
+            "bm.random.seed",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.array",
+            "bm.random.randint"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.seed",
+            "bm.set_backend",
+            "bm.set_default_device",
+            "bm.get_current_backend",
+            "bm.load_backend"
+          ],
+          "reranked_top5": [
+            "bm.random.seed",
+            "bm.random.rand",
+            "bm.array",
+            "bm.random.randn",
+            "bm.random.randint"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.array",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.arange"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.array",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.arange"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.seed",
+            "bm.set_backend",
+            "bm.set_default_device",
+            "bm.get_current_backend",
+            "bm.load_backend"
+          ],
+          "reranked_top5": [
+            "bm.random.seed",
+            "bm.set_backend",
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_default_device"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B002",
+      "query": "怎么生成一个形状为 2×3 的均匀分布随机张量？",
+      "expected_api": [
+        "bm.random.rand"
+      ],
+      "expected_category": "creation",
+      "parsed_category": "creation",
+      "interface_hints": [
+        "random.rand"
+      ],
+      "hint_hits_gold": true,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.scatter",
+            "bm.scatter_add"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.asarray",
+            "bm.empty"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.scatter",
+            "bm.scatter_add"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.random.seed",
+            "bm.asarray"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.scatter",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.asarray",
+            "bm.empty"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.scatter",
+            "bm.scatter_add"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.random.seed",
+            "bm.empty"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.empty",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.empty",
+            "bm.asarray"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.empty",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.random.randint",
+            "bm.empty",
+            "bm.asarray"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B003",
+      "query": "如何生成 0 到 9 之间的随机整数张量？",
+      "expected_api": [
+        "bm.random.randint"
+      ],
+      "expected_category": "creation",
+      "parsed_category": "creation",
+      "interface_hints": [
+        "random.randint"
+      ],
+      "hint_hits_gold": true,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.randint",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.random.randint",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.empty"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.randint",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.tensor"
+          ],
+          "reranked_top5": [
+            "bm.random.randint",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.tensor"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.randint",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.random.randint",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.empty"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.randint",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.tensor"
+          ],
+          "reranked_top5": [
+            "bm.random.randint",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.tensor"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.randint",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.tensor"
+          ],
+          "reranked_top5": [
+            "bm.random.randint",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.tensor"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.randint",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.tensor"
+          ],
+          "reranked_top5": [
+            "bm.random.randint",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.tensor"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B004",
+      "query": "怎么生成一个 2×3 的标准正态分布随机张量？",
+      "expected_api": [
+        "bm.random.randn"
+      ],
+      "expected_category": "creation",
+      "parsed_category": "creation",
+      "interface_hints": [
+        "random.randn"
+      ],
+      "hint_hits_gold": true,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.random.randint",
+            "bm.scatter",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.random.randint",
+            "bm.asarray",
+            "bm.tensor"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.random.randint",
+            "bm.scatter",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.random.randint",
+            "bm.asarray",
+            "bm.tensor"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.random.randint",
+            "bm.asarray",
+            "bm.tensor"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.random.randint",
+            "bm.asarray",
+            "bm.tensor"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.random.randint",
+            "bm.tensor",
+            "bm.scatter"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.random.randint",
+            "bm.tensor",
+            "bm.asarray"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.random.randint",
+            "bm.tensor",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.random.randint",
+            "bm.tensor",
+            "bm.asarray"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.random.randint",
+            "bm.tensor",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.random.randint",
+            "bm.tensor",
+            "bm.asarray"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B005",
+      "query": "如何创建一个 3×4 的全零张量？",
+      "expected_api": [
+        "bm.zeros"
+      ],
+      "expected_category": "creation",
+      "parsed_category": "creation",
+      "interface_hints": [
+        "zeros"
+      ],
+      "hint_hits_gold": true,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.empty",
+            "bm.zeros_like",
+            "bm.ones",
+            "bm.empty_like"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.ones",
+            "bm.empty_like"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.nonzero",
+            "bm.ones"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.ones",
+            "bm.empty_like"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.empty",
+            "bm.zeros_like",
+            "bm.empty_like",
+            "bm.ones"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B006",
+      "query": "FEALPy 后端怎么创建一个 5×5 的全 1 张量？",
+      "expected_api": [
+        "bm.ones"
+      ],
+      "expected_category": "creation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.ones",
+            "bm.full",
+            "bm.asarray",
+            "bm.empty",
+            "bm.full_like"
+          ],
+          "reranked_top5": [
+            "bm.ones",
+            "bm.full",
+            "bm.asarray",
+            "bm.empty",
+            "bm.full_like"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.full_like",
+            "bm.ones",
+            "bm.full",
+            "bm.empty",
+            "bm.ones_like"
+          ],
+          "reranked_top5": [
+            "bm.full_like",
+            "bm.ones",
+            "bm.full",
+            "bm.empty",
+            "bm.ones_like"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.ones",
+            "bm.full_like",
+            "bm.full",
+            "bm.ones_like",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.ones",
+            "bm.full_like",
+            "bm.full",
+            "bm.ones_like",
+            "bm.empty"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 3,
+          "reranked_rank": 3,
+          "vector_top5": [
+            "bm.full_like",
+            "bm.full",
+            "bm.ones",
+            "bm.ones_like",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.full_like",
+            "bm.full",
+            "bm.ones",
+            "bm.ones_like",
+            "bm.empty"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 3,
+          "reranked_rank": 3,
+          "vector_top5": [
+            "bm.full_like",
+            "bm.full",
+            "bm.ones",
+            "bm.ones_like",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.full_like",
+            "bm.full",
+            "bm.ones",
+            "bm.ones_like",
+            "bm.empty"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 3,
+          "reranked_rank": 3,
+          "vector_top5": [
+            "bm.full_like",
+            "bm.full",
+            "bm.ones",
+            "bm.ones_like",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.full_like",
+            "bm.full",
+            "bm.ones",
+            "bm.ones_like",
+            "bm.empty"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B007",
+      "query": "怎么创建形状为 (2,3) 且所有元素都等于 7 的张量？",
+      "expected_api": [
+        "bm.full"
+      ],
+      "expected_category": "creation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "vector_representation_or_base_ranking",
+      "diagnostic_signals": [
+        "reranker_fails_to_promote_candidate"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 8,
+          "reranked_rank": 8,
+          "vector_top5": [
+            "bm.asarray",
+            "bm.zeros",
+            "bm.tensor",
+            "bm.empty",
+            "bm.random.rand"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.zeros",
+            "bm.tensor",
+            "bm.empty",
+            "bm.random.rand"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 7,
+          "reranked_rank": 7,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.ones",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.ones",
+            "bm.empty"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 9,
+          "reranked_rank": 9,
+          "vector_top5": [
+            "bm.asarray",
+            "bm.zeros",
+            "bm.tensor",
+            "bm.empty",
+            "bm.random.rand"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.zeros",
+            "bm.tensor",
+            "bm.empty",
+            "bm.random.rand"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 7,
+          "reranked_rank": 7,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty",
+            "bm.ones"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty",
+            "bm.ones"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 7,
+          "reranked_rank": 7,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty",
+            "bm.ones"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty",
+            "bm.ones"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 7,
+          "reranked_rank": 7,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty",
+            "bm.ones"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty",
+            "bm.ones"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B008",
+      "query": "如何创建一个 4 阶单位矩阵？",
+      "expected_api": [
+        "bm.eye"
+      ],
+      "expected_category": "creation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.eye",
+            "bm.linalg.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.matmul",
+            "bm.arange"
+          ],
+          "reranked_top5": [
+            "bm.eye",
+            "bm.arange",
+            "bm.linspace",
+            "bm.tensor",
+            "bm.array"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.eye",
+            "bm.linalg.matmul",
+            "bm.arange",
+            "bm.matmul",
+            "bm.tensor"
+          ],
+          "reranked_top5": [
+            "bm.eye",
+            "bm.arange",
+            "bm.tensor",
+            "bm.array",
+            "bm.linspace"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.eye",
+            "bm.arange",
+            "bm.array",
+            "bm.linspace",
+            "bm.tensor"
+          ],
+          "reranked_top5": [
+            "bm.eye",
+            "bm.arange",
+            "bm.array",
+            "bm.linspace",
+            "bm.tensor"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.eye",
+            "bm.linalg.matmul",
+            "bm.array",
+            "bm.arange",
+            "bm.full_like"
+          ],
+          "reranked_top5": [
+            "bm.eye",
+            "bm.array",
+            "bm.arange",
+            "bm.full_like",
+            "bm.zeros_like"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.eye",
+            "bm.array",
+            "bm.arange",
+            "bm.full_like",
+            "bm.zeros_like"
+          ],
+          "reranked_top5": [
+            "bm.eye",
+            "bm.array",
+            "bm.arange",
+            "bm.full_like",
+            "bm.zeros_like"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.eye",
+            "bm.array",
+            "bm.arange",
+            "bm.full_like",
+            "bm.zeros_like"
+          ],
+          "reranked_top5": [
+            "bm.eye",
+            "bm.array",
+            "bm.arange",
+            "bm.full_like",
+            "bm.zeros_like"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B009",
+      "query": "怎么生成从 0 开始、小于 10、步长为 2 的序列？",
+      "expected_api": [
+        "bm.arange"
+      ],
+      "expected_category": "creation",
+      "parsed_category": "creation",
+      "interface_hints": [
+        "arange"
+      ],
+      "hint_hits_gold": true,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.arange",
+            "bm.zeros_like",
+            "bm.array",
+            "bm.log10",
+            "bm.zeros"
+          ],
+          "reranked_top5": [
+            "bm.arange",
+            "bm.zeros_like",
+            "bm.array",
+            "bm.zeros",
+            "bm.linspace"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.arange",
+            "bm.array",
+            "bm.zeros_like",
+            "bm.random.rand",
+            "bm.trace"
+          ],
+          "reranked_top5": [
+            "bm.arange",
+            "bm.array",
+            "bm.zeros_like",
+            "bm.random.rand",
+            "bm.eye"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.arange",
+            "bm.array",
+            "bm.zeros_like",
+            "bm.zeros",
+            "bm.linspace"
+          ],
+          "reranked_top5": [
+            "bm.arange",
+            "bm.array",
+            "bm.zeros_like",
+            "bm.zeros",
+            "bm.linspace"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.arange",
+            "bm.array",
+            "bm.zeros_like",
+            "bm.zeros",
+            "bm.random.rand"
+          ],
+          "reranked_top5": [
+            "bm.arange",
+            "bm.array",
+            "bm.zeros_like",
+            "bm.zeros",
+            "bm.random.rand"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.arange",
+            "bm.array",
+            "bm.zeros_like",
+            "bm.zeros",
+            "bm.random.rand"
+          ],
+          "reranked_top5": [
+            "bm.arange",
+            "bm.array",
+            "bm.zeros_like",
+            "bm.zeros",
+            "bm.random.rand"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.arange",
+            "bm.array",
+            "bm.zeros_like",
+            "bm.zeros",
+            "bm.random.rand"
+          ],
+          "reranked_top5": [
+            "bm.arange",
+            "bm.array",
+            "bm.zeros_like",
+            "bm.zeros",
+            "bm.random.rand"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B010",
+      "query": "如何在 0 到 1 之间均匀取 100 个点？",
+      "expected_api": [
+        "bm.linspace"
+      ],
+      "expected_category": "creation",
+      "parsed_category": null,
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "vector_representation_or_base_ranking",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "reranker_fails_to_promote_candidate",
+        "query_enrichment_harms_vector_rank"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 5,
+          "reranked_rank": 5,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.zeros_like",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.linspace"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.zeros_like",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.linspace"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 29,
+          "reranked_rank": 28,
+          "vector_top5": [
+            "bm.scatter",
+            "bm.scatter_add",
+            "bm.random.rand",
+            "bm.zeros_like",
+            "bm.multiply"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.zeros_like",
+            "bm.multiply",
+            "bm.take",
+            "bm.scatter"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 5,
+          "reranked_rank": 4,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.zeros_like",
+            "bm.scatter",
+            "bm.not_equal",
+            "bm.linspace"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.zeros_like",
+            "bm.not_equal",
+            "bm.linspace",
+            "bm.zeros"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 29,
+          "reranked_rank": 28,
+          "vector_top5": [
+            "bm.scatter",
+            "bm.scatter_add",
+            "bm.random.rand",
+            "bm.zeros_like",
+            "bm.multiply"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.zeros_like",
+            "bm.multiply",
+            "bm.take",
+            "bm.scatter"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 29,
+          "reranked_rank": 28,
+          "vector_top5": [
+            "bm.scatter",
+            "bm.scatter_add",
+            "bm.random.rand",
+            "bm.zeros_like",
+            "bm.multiply"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.zeros_like",
+            "bm.multiply",
+            "bm.take",
+            "bm.scatter"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 6,
+          "reranked_rank": 6,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.zeros_like",
+            "bm.random.randn",
+            "bm.ones_like",
+            "bm.zeros"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.zeros_like",
+            "bm.random.randn",
+            "bm.ones_like",
+            "bm.zeros"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B011",
+      "query": "我有一个 Python 列表，怎么把它转换成 FEALPy 后端数组？",
+      "expected_api": [
+        "bm.asarray"
+      ],
+      "expected_category": "creation",
+      "parsed_category": null,
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "missing_category_no_narrowing",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "oracle_category_recovers_top5",
+        "vector_gold_outside_initial_30"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 9,
+          "reranked_rank": 6,
+          "vector_top5": [
+            "bm.array",
+            "bm.to_numpy",
+            "bm.from_numpy",
+            "bm.load_backend",
+            "bm.tolist"
+          ],
+          "reranked_top5": [
+            "bm.array",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.random.seed",
+            "bm.arange"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 40,
+          "reranked_rank": 24,
+          "vector_top5": [
+            "bm.array",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.to_numpy",
+            "bm.from_numpy"
+          ],
+          "reranked_top5": [
+            "bm.array",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.random.seed",
+            "bm.get_current_backend"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 16,
+          "reranked_rank": 9,
+          "vector_top5": [
+            "bm.to_numpy",
+            "bm.array",
+            "bm.load_backend",
+            "bm.from_numpy",
+            "bm.set_backend"
+          ],
+          "reranked_top5": [
+            "bm.array",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.to_numpy",
+            "bm.result_type"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 40,
+          "reranked_rank": 24,
+          "vector_top5": [
+            "bm.array",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.to_numpy",
+            "bm.from_numpy"
+          ],
+          "reranked_top5": [
+            "bm.array",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.random.seed",
+            "bm.get_current_backend"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 40,
+          "reranked_rank": 24,
+          "vector_top5": [
+            "bm.array",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.to_numpy",
+            "bm.from_numpy"
+          ],
+          "reranked_top5": [
+            "bm.array",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.random.seed",
+            "bm.get_current_backend"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 3,
+          "reranked_rank": 3,
+          "vector_top5": [
+            "bm.array",
+            "bm.arange",
+            "bm.asarray",
+            "bm.empty_like",
+            "bm.meshgrid"
+          ],
+          "reranked_top5": [
+            "bm.array",
+            "bm.arange",
+            "bm.asarray",
+            "bm.empty_like",
+            "bm.meshgrid"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B012",
+      "query": "已有张量 x，怎样创建一个和 x 形状相同的全零张量？",
+      "expected_api": [
+        "bm.zeros_like"
+      ],
+      "expected_category": "creation",
+      "parsed_category": "creation",
+      "interface_hints": [
+        "zeros"
+      ],
+      "hint_hits_gold": false,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 3,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.empty",
+            "bm.zeros_like",
+            "bm.empty_like",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.asarray"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.nonzero"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 3,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.empty",
+            "bm.zeros_like",
+            "bm.empty_like",
+            "bm.full_like"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.full_like"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.zeros_like",
+            "bm.empty",
+            "bm.empty_like",
+            "bm.ones"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B013",
+      "query": "给定矩阵 A 和右端项 b，如何求解线性方程组 Ax=b？",
+      "expected_api": [
+        "bm.linalg.solve"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": "linalg",
+      "interface_hints": [
+        "linalg.solve"
+      ],
+      "hint_hits_gold": true,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.vecdot",
+            "bm.vecdot",
+            "bm.matmul"
+          ],
+          "reranked_top5": [
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.vecdot",
+            "bm.vecdot",
+            "bm.matmul"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.vecdot",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.vecdot",
+            "bm.linalg.cross"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.vecdot",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.vecdot",
+            "bm.linalg.cross"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.vecdot",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.vecdot",
+            "bm.linalg.cross"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.vecdot",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.vecdot",
+            "bm.linalg.cross"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.vecdot",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.vecdot",
+            "bm.linalg.cross"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B014",
+      "query": "如何计算一个方阵的逆矩阵？",
+      "expected_api": [
+        "bm.linalg.inv"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": null,
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "vector_representation_or_base_ranking",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "vector_gold_outside_initial_30"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 67,
+          "reranked_rank": 66,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.cross",
+            "bm.negative",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.cross",
+            "bm.negative",
+            "bm.linalg.cross"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 49,
+          "reranked_rank": 49,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.sqrt",
+            "bm.arccos",
+            "bm.round"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.sqrt",
+            "bm.arccos",
+            "bm.round"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 71,
+          "reranked_rank": 69,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.negative",
+            "bm.round",
+            "bm.sqrt"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.negative",
+            "bm.round",
+            "bm.sqrt"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 49,
+          "reranked_rank": 49,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.sqrt",
+            "bm.arccos",
+            "bm.round"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.sqrt",
+            "bm.arccos",
+            "bm.round"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 49,
+          "reranked_rank": 49,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.sqrt",
+            "bm.arccos",
+            "bm.round"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.sqrt",
+            "bm.arccos",
+            "bm.round"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 13,
+          "reranked_rank": 13,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.cross",
+            "bm.cross",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.cross",
+            "bm.cross",
+            "bm.linalg.tensordot"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B015",
+      "query": "怎么求矩阵 A 的行列式？",
+      "expected_api": [
+        "bm.linalg.det"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": null,
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "vector_representation_or_base_ranking",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "reranker_fails_to_promote_candidate"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 11,
+          "reranked_rank": 11,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.vecdot",
+            "bm.vecdot",
+            "bm.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.vecdot",
+            "bm.vecdot",
+            "bm.cross"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 11,
+          "reranked_rank": 11,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.vecdot",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.vecdot",
+            "bm.linalg.tensordot"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 11,
+          "reranked_rank": 11,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.eye",
+            "bm.linalg.vecdot",
+            "bm.linalg.matrix_norm"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.eye",
+            "bm.linalg.vecdot",
+            "bm.linalg.matrix_norm"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 11,
+          "reranked_rank": 11,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.vecdot",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.vecdot",
+            "bm.linalg.tensordot"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 11,
+          "reranked_rank": 11,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.vecdot",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.vecdot",
+            "bm.linalg.tensordot"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 11,
+          "reranked_rank": 11,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.vecdot",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.vecdot",
+            "bm.linalg.tensordot"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B016",
+      "query": "我想对矩阵做奇异值分解，应该用哪个 bm 接口？",
+      "expected_api": [
+        "bm.linalg.svd"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": "linalg",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "vector_representation_or_base_ranking",
+      "diagnostic_signals": [
+        "reranker_fails_to_promote_candidate"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 70,
+          "reranked_rank": 27,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.eye",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.cross"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 65,
+          "reranked_rank": 25,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.matmul",
+            "bm.subtract",
+            "bm.bitwise_invert"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.matmul",
+            "bm.linalg.outer",
+            "bm.linalg.matrix_transpose"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 25,
+          "reranked_rank": 25,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.outer"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.outer"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 23,
+          "reranked_rank": 23,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot",
+            "bm.linalg.outer",
+            "bm.linalg.eigvalsh"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot",
+            "bm.linalg.outer",
+            "bm.linalg.eigvalsh"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 23,
+          "reranked_rank": 23,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot",
+            "bm.linalg.outer",
+            "bm.linalg.eigvalsh"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot",
+            "bm.linalg.outer",
+            "bm.linalg.eigvalsh"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 23,
+          "reranked_rank": 23,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot",
+            "bm.linalg.outer",
+            "bm.linalg.eigvalsh"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot",
+            "bm.linalg.outer",
+            "bm.linalg.eigvalsh"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B017",
+      "query": "如何对矩阵进行 QR 分解？",
+      "expected_api": [
+        "bm.linalg.qr"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": "linalg",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.qr",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.eye",
+            "bm.linalg.matrix_norm"
+          ],
+          "reranked_top5": [
+            "bm.linalg.qr",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.matrix_norm",
+            "bm.matmul"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.qr",
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.square",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.qr",
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.cross",
+            "bm.cross"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.qr",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.solve",
+            "bm.linalg.matrix_norm"
+          ],
+          "reranked_top5": [
+            "bm.linalg.qr",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.solve",
+            "bm.linalg.matrix_norm"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.qr",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.qr",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.qr",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.qr",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.qr",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.qr",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B018",
+      "query": "正定矩阵怎么做 Cholesky 分解？",
+      "expected_api": [
+        "bm.linalg.cholesky"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": "linalg",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.cholesky",
+            "bm.linalg.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.einsum"
+          ],
+          "reranked_top5": [
+            "bm.linalg.cholesky",
+            "bm.linalg.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.einsum"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.cholesky",
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.cross",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.cholesky",
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.cross",
+            "bm.linalg.tensordot"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.cholesky",
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.cholesky",
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.tensordot"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.cholesky",
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.cholesky",
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.tensordot"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.cholesky",
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.cholesky",
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.tensordot"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.cholesky",
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.cholesky",
+            "bm.linalg.solve",
+            "bm.linalg.matmul",
+            "bm.linalg.cross",
+            "bm.linalg.tensordot"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B019",
+      "query": "怎么计算一个矩阵的秩？",
+      "expected_api": [
+        "bm.linalg.matrix_rank"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": null,
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "vector_representation_or_base_ranking",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "vector_gold_outside_initial_30",
+        "query_enrichment_harms_vector_rank"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 5,
+          "reranked_rank": 5,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.eye",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.matrix_rank"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.eye",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.matrix_rank"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 32,
+          "reranked_rank": 30,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.sqrt",
+            "bm.round",
+            "bm.arccos"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.sqrt",
+            "bm.round",
+            "bm.arccos"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 4,
+          "reranked_rank": 4,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.eye",
+            "bm.linalg.matrix_rank",
+            "bm.not_equal"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.eye",
+            "bm.linalg.matrix_rank",
+            "bm.not_equal"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 32,
+          "reranked_rank": 30,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.sqrt",
+            "bm.round",
+            "bm.arccos"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.sqrt",
+            "bm.round",
+            "bm.arccos"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 32,
+          "reranked_rank": 30,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.sqrt",
+            "bm.round",
+            "bm.arccos"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.sqrt",
+            "bm.round",
+            "bm.arccos"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 6,
+          "reranked_rank": 6,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.vecdot",
+            "bm.linalg.det",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.vecdot",
+            "bm.linalg.det",
+            "bm.linalg.cross"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B020",
+      "query": "如何计算向量的 2 范数？",
+      "expected_api": [
+        "bm.linalg.vector_norm"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": "linalg",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.atan2",
+            "bm.cross",
+            "bm.linalg.cross",
+            "bm.arctan2"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.cross",
+            "bm.linalg.cross",
+            "bm.linalg.matrix_norm",
+            "bm.trace"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.log2",
+            "bm.atan2",
+            "bm.arctan2",
+            "bm.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.cross",
+            "bm.linalg.cross",
+            "bm.linalg.svdvals",
+            "bm.linalg.inv"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.linalg.trace"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.linalg.trace"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.inv",
+            "bm.linalg.solve",
+            "bm.linalg.outer"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.inv",
+            "bm.linalg.solve",
+            "bm.linalg.outer"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.inv",
+            "bm.linalg.solve",
+            "bm.linalg.outer"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.inv",
+            "bm.linalg.solve",
+            "bm.linalg.outer"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.inv",
+            "bm.linalg.solve",
+            "bm.linalg.outer"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.inv",
+            "bm.linalg.solve",
+            "bm.linalg.outer"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B021",
+      "query": "怎样把张量 x 从 (2,3,4) 改成 (6,4)？",
+      "expected_api": [
+        "bm.reshape"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "reranker_fails_to_promote_candidate"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 6,
+          "reranked_rank": 13,
+          "vector_top5": [
+            "bm.set_at",
+            "bm.permute_dims",
+            "bm.expand_dims",
+            "bm.asarray",
+            "bm.broadcast_to"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.random.rand",
+            "bm.empty"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 5,
+          "reranked_rank": 12,
+          "vector_top5": [
+            "bm.expand_dims",
+            "bm.permute_dims",
+            "bm.size",
+            "bm.set_at",
+            "bm.reshape"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty",
+            "bm.random.randn",
+            "bm.random.rand"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 5,
+          "reranked_rank": 20,
+          "vector_top5": [
+            "bm.asarray",
+            "bm.set_at",
+            "bm.expand_dims",
+            "bm.permute_dims",
+            "bm.reshape"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.tensor",
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.empty"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 6,
+          "reranked_rank": 15,
+          "vector_top5": [
+            "bm.size",
+            "bm.expand_dims",
+            "bm.permute_dims",
+            "bm.set_at",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty",
+            "bm.random.randn",
+            "bm.random.rand"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty",
+            "bm.random.randn",
+            "bm.random.rand"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty",
+            "bm.random.randn",
+            "bm.random.rand"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 5,
+          "reranked_rank": 3,
+          "vector_top5": [
+            "bm.size",
+            "bm.expand_dims",
+            "bm.permute_dims",
+            "bm.set_at",
+            "bm.reshape"
+          ],
+          "reranked_top5": [
+            "bm.expand_dims",
+            "bm.permute_dims",
+            "bm.reshape",
+            "bm.broadcast_to",
+            "bm.squeeze"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B022",
+      "query": "有两个形状相同的张量，怎么沿第 0 维拼接？",
+      "expected_api": [
+        "bm.concat"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "manipulation",
+      "interface_hints": [
+        "concat"
+      ],
+      "hint_hits_gold": true,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 29,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.random.rand",
+            "bm.asarray",
+            "bm.empty",
+            "bm.zeros_like"
+          ],
+          "reranked_top5": [
+            "bm.concat",
+            "bm.expand_dims",
+            "bm.squeeze",
+            "bm.reshape",
+            "bm.searchsorted"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.concat",
+            "bm.set_at",
+            "bm.zeros",
+            "bm.asarray",
+            "bm.repeat"
+          ],
+          "reranked_top5": [
+            "bm.concat",
+            "bm.repeat",
+            "bm.split",
+            "bm.searchsorted",
+            "bm.squeeze"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 17,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.scatter",
+            "bm.set_at",
+            "bm.scatter_add",
+            "bm.squeeze",
+            "bm.split"
+          ],
+          "reranked_top5": [
+            "bm.concat",
+            "bm.squeeze",
+            "bm.split",
+            "bm.unstack",
+            "bm.expand_dims"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.concat",
+            "bm.set_at",
+            "bm.scatter",
+            "bm.split",
+            "bm.repeat"
+          ],
+          "reranked_top5": [
+            "bm.concat",
+            "bm.split",
+            "bm.repeat",
+            "bm.unstack",
+            "bm.squeeze"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.concat",
+            "bm.set_at",
+            "bm.scatter",
+            "bm.split",
+            "bm.repeat"
+          ],
+          "reranked_top5": [
+            "bm.concat",
+            "bm.split",
+            "bm.repeat",
+            "bm.unstack",
+            "bm.squeeze"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.concat",
+            "bm.set_at",
+            "bm.scatter",
+            "bm.split",
+            "bm.repeat"
+          ],
+          "reranked_top5": [
+            "bm.concat",
+            "bm.split",
+            "bm.repeat",
+            "bm.unstack",
+            "bm.squeeze"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B023",
+      "query": "如何把多个张量沿一个新的维度堆叠起来？",
+      "expected_api": [
+        "bm.stack"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "manipulation",
+      "interface_hints": [
+        "stack"
+      ],
+      "hint_hits_gold": true,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 34,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.scatter_add",
+            "bm.squeeze",
+            "bm.random.randn"
+          ],
+          "reranked_top5": [
+            "bm.stack",
+            "bm.unstack",
+            "bm.squeeze",
+            "bm.repeat",
+            "bm.tile"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.stack",
+            "bm.unstack",
+            "bm.scatter_add",
+            "bm.scatter",
+            "bm.squeeze"
+          ],
+          "reranked_top5": [
+            "bm.stack",
+            "bm.unstack",
+            "bm.squeeze",
+            "bm.take",
+            "bm.scatter_add"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 18,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.squeeze",
+            "bm.scatter_add",
+            "bm.repeat",
+            "bm.scatter",
+            "bm.add_at"
+          ],
+          "reranked_top5": [
+            "bm.stack",
+            "bm.unstack",
+            "bm.squeeze",
+            "bm.repeat",
+            "bm.flip"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.stack",
+            "bm.unstack",
+            "bm.scatter_add",
+            "bm.scatter",
+            "bm.squeeze"
+          ],
+          "reranked_top5": [
+            "bm.stack",
+            "bm.unstack",
+            "bm.squeeze",
+            "bm.repeat",
+            "bm.scatter_add"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.stack",
+            "bm.unstack",
+            "bm.scatter_add",
+            "bm.scatter",
+            "bm.squeeze"
+          ],
+          "reranked_top5": [
+            "bm.stack",
+            "bm.unstack",
+            "bm.squeeze",
+            "bm.repeat",
+            "bm.scatter_add"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.stack",
+            "bm.unstack",
+            "bm.scatter_add",
+            "bm.scatter",
+            "bm.squeeze"
+          ],
+          "reranked_top5": [
+            "bm.stack",
+            "bm.unstack",
+            "bm.squeeze",
+            "bm.repeat",
+            "bm.scatter_add"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B024",
+      "query": "张量中有长度为 1 的维度，怎么把这个维度去掉？",
+      "expected_api": [
+        "bm.squeeze"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "vector_representation_or_base_ranking",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "reranker_fails_to_promote_candidate"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 14,
+          "reranked_rank": 22,
+          "vector_top5": [
+            "bm.empty",
+            "bm.expand_dims",
+            "bm.take",
+            "bm.random.rand",
+            "bm.size"
+          ],
+          "reranked_top5": [
+            "bm.empty",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.ones"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 18,
+          "reranked_rank": 29,
+          "vector_top5": [
+            "bm.size",
+            "bm.expand_dims",
+            "bm.empty",
+            "bm.take",
+            "bm.set_at"
+          ],
+          "reranked_top5": [
+            "bm.empty",
+            "bm.ones",
+            "bm.tensor",
+            "bm.zeros",
+            "bm.asarray"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 14,
+          "reranked_rank": 21,
+          "vector_top5": [
+            "bm.empty",
+            "bm.tensor",
+            "bm.random.rand",
+            "bm.ones",
+            "bm.zeros"
+          ],
+          "reranked_top5": [
+            "bm.empty",
+            "bm.tensor",
+            "bm.random.rand",
+            "bm.ones",
+            "bm.zeros"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 19,
+          "reranked_rank": 26,
+          "vector_top5": [
+            "bm.size",
+            "bm.expand_dims",
+            "bm.empty",
+            "bm.take",
+            "bm.set_at"
+          ],
+          "reranked_top5": [
+            "bm.empty",
+            "bm.ones",
+            "bm.tensor",
+            "bm.zeros",
+            "bm.asarray"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.empty",
+            "bm.ones",
+            "bm.tensor",
+            "bm.zeros",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.empty",
+            "bm.ones",
+            "bm.tensor",
+            "bm.zeros",
+            "bm.asarray"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 13,
+          "reranked_rank": 8,
+          "vector_top5": [
+            "bm.size",
+            "bm.expand_dims",
+            "bm.take",
+            "bm.set_at",
+            "bm.scatter_add"
+          ],
+          "reranked_top5": [
+            "bm.expand_dims",
+            "bm.take",
+            "bm.size",
+            "bm.unstack",
+            "bm.split"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B025",
+      "query": "怎样给张量增加一个新的维度？",
+      "expected_api": [
+        "bm.expand_dims"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "reranker_harms_top5"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 10,
+          "vector_top5": [
+            "bm.expand_dims",
+            "bm.broadcast_to",
+            "bm.add_at",
+            "bm.set_at",
+            "bm.random.randn"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 8,
+          "vector_top5": [
+            "bm.expand_dims",
+            "bm.size",
+            "bm.scatter_add",
+            "bm.insert",
+            "bm.add_at"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.full",
+            "bm.empty",
+            "bm.random.randn"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 16,
+          "vector_top5": [
+            "bm.tensor",
+            "bm.expand_dims",
+            "bm.random.rand",
+            "bm.asarray",
+            "bm.random.randn"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.random.rand",
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.empty"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 12,
+          "vector_top5": [
+            "bm.expand_dims",
+            "bm.size",
+            "bm.scatter_add",
+            "bm.add_at",
+            "bm.insert"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.full",
+            "bm.empty",
+            "bm.random.rand"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.full",
+            "bm.empty",
+            "bm.random.rand"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.full",
+            "bm.empty",
+            "bm.random.rand"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.expand_dims",
+            "bm.size",
+            "bm.scatter_add",
+            "bm.add_at",
+            "bm.insert"
+          ],
+          "reranked_top5": [
+            "bm.expand_dims",
+            "bm.broadcast_to",
+            "bm.squeeze",
+            "bm.repeat",
+            "bm.copy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B026",
+      "query": "如何把三维张量的维度顺序从 (0,1,2) 改成 (2,0,1)？",
+      "expected_api": [
+        "bm.permute_dims"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "reranker_fails_to_promote_candidate"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 10,
+          "reranked_rank": 21,
+          "vector_top5": [
+            "bm.random.randn",
+            "bm.expand_dims",
+            "bm.searchsorted",
+            "bm.sort",
+            "bm.random.rand"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.asarray",
+            "bm.zeros",
+            "bm.empty"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 3,
+          "reranked_rank": 16,
+          "vector_top5": [
+            "bm.expand_dims",
+            "bm.size",
+            "bm.permute_dims",
+            "bm.searchsorted",
+            "bm.sort"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.zeros",
+            "bm.random.rand",
+            "bm.empty"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 15,
+          "reranked_rank": 25,
+          "vector_top5": [
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.searchsorted",
+            "bm.expand_dims"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.zeros",
+            "bm.tensor"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 6,
+          "reranked_rank": 21,
+          "vector_top5": [
+            "bm.expand_dims",
+            "bm.size",
+            "bm.searchsorted",
+            "bm.sort",
+            "bm.scatter_add"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.random.rand",
+            "bm.empty"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.random.rand",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.random.rand",
+            "bm.empty"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 6,
+          "reranked_rank": 4,
+          "vector_top5": [
+            "bm.expand_dims",
+            "bm.size",
+            "bm.searchsorted",
+            "bm.sort",
+            "bm.scatter_add"
+          ],
+          "reranked_top5": [
+            "bm.expand_dims",
+            "bm.searchsorted",
+            "bm.sort",
+            "bm.permute_dims",
+            "bm.argsort"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B027",
+      "query": "我想把张量的第 0 维移动到最后一维，用什么接口？",
+      "expected_api": [
+        "bm.moveaxis"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "reranker_fails_to_promote_candidate",
+        "query_enrichment_harms_vector_rank"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 8,
+          "vector_top5": [
+            "bm.moveaxis",
+            "bm.scatter_add",
+            "bm.permute_dims",
+            "bm.set_at",
+            "bm.broadcast_to"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.empty"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 4,
+          "reranked_rank": 10,
+          "vector_top5": [
+            "bm.scatter_add",
+            "bm.permute_dims",
+            "bm.expand_dims",
+            "bm.moveaxis",
+            "bm.set_at"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.empty",
+            "bm.random.randn",
+            "bm.tensor"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 4,
+          "reranked_rank": 18,
+          "vector_top5": [
+            "bm.scatter_add",
+            "bm.set_at",
+            "bm.broadcast_to",
+            "bm.moveaxis",
+            "bm.scatter"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.empty",
+            "bm.random.rand",
+            "bm.random.randn"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 7,
+          "reranked_rank": 16,
+          "vector_top5": [
+            "bm.scatter_add",
+            "bm.permute_dims",
+            "bm.expand_dims",
+            "bm.set_at",
+            "bm.scatter"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.empty",
+            "bm.zeros_like",
+            "bm.tensor"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.empty",
+            "bm.zeros_like",
+            "bm.tensor"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.empty",
+            "bm.zeros_like",
+            "bm.tensor"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 7,
+          "reranked_rank": 3,
+          "vector_top5": [
+            "bm.scatter_add",
+            "bm.permute_dims",
+            "bm.expand_dims",
+            "bm.set_at",
+            "bm.scatter"
+          ],
+          "reranked_top5": [
+            "bm.permute_dims",
+            "bm.expand_dims",
+            "bm.moveaxis",
+            "bm.squeeze",
+            "bm.broadcast_to"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B028",
+      "query": "如何把张量沿指定轴反转？",
+      "expected_api": [
+        "bm.flip"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "vector_representation_or_base_ranking",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "reranker_fails_to_promote_candidate"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 17,
+          "reranked_rank": 23,
+          "vector_top5": [
+            "bm.unique",
+            "bm.permute_dims",
+            "bm.roll",
+            "bm.repeat",
+            "bm.set_at"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.empty"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 11,
+          "reranked_rank": 18,
+          "vector_top5": [
+            "bm.expand_dims",
+            "bm.permute_dims",
+            "bm.unique",
+            "bm.size",
+            "bm.roll"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.empty"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 16,
+          "reranked_rank": 29,
+          "vector_top5": [
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.unique",
+            "bm.set_at"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.empty"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 13,
+          "reranked_rank": 22,
+          "vector_top5": [
+            "bm.size",
+            "bm.expand_dims",
+            "bm.set_at",
+            "bm.permute_dims",
+            "bm.roll"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.empty"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.empty"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 12,
+          "reranked_rank": 9,
+          "vector_top5": [
+            "bm.size",
+            "bm.expand_dims",
+            "bm.set_at",
+            "bm.permute_dims",
+            "bm.roll"
+          ],
+          "reranked_top5": [
+            "bm.expand_dims",
+            "bm.permute_dims",
+            "bm.roll",
+            "bm.repeat",
+            "bm.unique"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B029",
+      "query": "怎样把张量中的元素重复多次？",
+      "expected_api": [
+        "bm.repeat"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.repeat",
+            "bm.tile",
+            "bm.random.rand",
+            "bm.reshape",
+            "bm.tensor"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.repeat",
+            "bm.tensor",
+            "bm.random.randn",
+            "bm.asarray"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.repeat",
+            "bm.tile",
+            "bm.permute_dims",
+            "bm.reshape",
+            "bm.copy"
+          ],
+          "reranked_top5": [
+            "bm.repeat",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.random.randn"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 6,
+          "vector_top5": [
+            "bm.repeat",
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.randn"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.random.randint"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 3,
+          "vector_top5": [
+            "bm.repeat",
+            "bm.tile",
+            "bm.copy",
+            "bm.scatter",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.tensor",
+            "bm.repeat",
+            "bm.random.rand",
+            "bm.random.randn"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.asarray",
+            "bm.tensor",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.tensor",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.empty"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.repeat",
+            "bm.tile",
+            "bm.copy",
+            "bm.scatter",
+            "bm.insert"
+          ],
+          "reranked_top5": [
+            "bm.repeat",
+            "bm.tile",
+            "bm.copy",
+            "bm.reshape",
+            "bm.permute_dims"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B030",
+      "query": "如何按照 (2,3) 的重复次数平铺一个张量？",
+      "expected_api": [
+        "bm.tile"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "reranker_fails_to_promote_candidate"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 6,
+          "reranked_rank": 19,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.repeat",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.scatter"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.random.randint",
+            "bm.ones"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 3,
+          "reranked_rank": 16,
+          "vector_top5": [
+            "bm.repeat",
+            "bm.scatter",
+            "bm.tile",
+            "bm.copy",
+            "bm.random.rand"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.asarray",
+            "bm.ones",
+            "bm.random.randn",
+            "bm.random.randint"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 10,
+          "reranked_rank": 20,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.repeat",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.random.randint"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.random.randint",
+            "bm.ones"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 7,
+          "reranked_rank": 21,
+          "vector_top5": [
+            "bm.repeat",
+            "bm.random.rand",
+            "bm.scatter",
+            "bm.copy",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.asarray",
+            "bm.random.randint",
+            "bm.ones",
+            "bm.random.randn"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.asarray",
+            "bm.random.randint",
+            "bm.ones",
+            "bm.random.randn"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.asarray",
+            "bm.random.randint",
+            "bm.ones",
+            "bm.random.randn"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 5,
+          "reranked_rank": 4,
+          "vector_top5": [
+            "bm.repeat",
+            "bm.scatter",
+            "bm.copy",
+            "bm.split",
+            "bm.tile"
+          ],
+          "reranked_top5": [
+            "bm.repeat",
+            "bm.copy",
+            "bm.split",
+            "bm.tile",
+            "bm.reshape"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B031",
+      "query": "怎么计算张量所有元素的和？",
+      "expected_api": [
+        "bm.sum"
+      ],
+      "expected_category": "reduction",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "vector_gold_outside_initial_30"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 8,
+          "reranked_rank": 20,
+          "vector_top5": [
+            "bm.all",
+            "bm.asarray",
+            "bm.zeros",
+            "bm.tensor",
+            "bm.ones"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.zeros",
+            "bm.tensor",
+            "bm.ones",
+            "bm.random.rand"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 34,
+          "reranked_rank": 38,
+          "vector_top5": [
+            "bm.unique_all",
+            "bm.permute_dims",
+            "bm.split",
+            "bm.scatter",
+            "bm.repeat"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.ones",
+            "bm.full"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 19,
+          "reranked_rank": 25,
+          "vector_top5": [
+            "bm.tensor",
+            "bm.ones",
+            "bm.asarray",
+            "bm.zeros",
+            "bm.random.rand"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.ones",
+            "bm.asarray",
+            "bm.zeros",
+            "bm.random.rand"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 45,
+          "reranked_rank": 48,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.split",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.scatter_add"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.ones",
+            "bm.full"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.ones",
+            "bm.full"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.ones",
+            "bm.full"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 3,
+          "reranked_rank": 3,
+          "vector_top5": [
+            "bm.all",
+            "bm.cumulative_sum",
+            "bm.sum",
+            "bm.prod",
+            "bm.any"
+          ],
+          "reranked_top5": [
+            "bm.all",
+            "bm.cumulative_sum",
+            "bm.sum",
+            "bm.prod",
+            "bm.any"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B032",
+      "query": "如何沿 axis=1 计算张量的平均值？",
+      "expected_api": [
+        "bm.mean"
+      ],
+      "expected_category": "reduction",
+      "parsed_category": "reduction",
+      "interface_hints": [
+        "mean"
+      ],
+      "hint_hits_gold": true,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 10,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.moveaxis",
+            "bm.random.randn",
+            "bm.index_add",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.mean",
+            "bm.argmax",
+            "bm.cumulative_sum",
+            "bm.sum",
+            "bm.cumsum"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.mean",
+            "bm.moveaxis",
+            "bm.random.randn",
+            "bm.set_at"
+          ],
+          "reranked_top5": [
+            "bm.mean",
+            "bm.argmin",
+            "bm.argmax",
+            "bm.cumulative_sum",
+            "bm.any"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.mean",
+            "bm.random.rand",
+            "bm.sum",
+            "bm.prod",
+            "bm.cumulative_sum"
+          ],
+          "reranked_top5": [
+            "bm.mean",
+            "bm.sum",
+            "bm.prod",
+            "bm.cumulative_sum",
+            "bm.any"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.moveaxis",
+            "bm.mean",
+            "bm.expand_dims",
+            "bm.index_add",
+            "bm.swapaxes"
+          ],
+          "reranked_top5": [
+            "bm.mean",
+            "bm.argmin",
+            "bm.prod",
+            "bm.cumulative_sum",
+            "bm.sum"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.mean",
+            "bm.argmin",
+            "bm.prod",
+            "bm.cumulative_sum",
+            "bm.sum"
+          ],
+          "reranked_top5": [
+            "bm.mean",
+            "bm.argmin",
+            "bm.prod",
+            "bm.cumulative_sum",
+            "bm.sum"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.mean",
+            "bm.argmin",
+            "bm.prod",
+            "bm.cumulative_sum",
+            "bm.sum"
+          ],
+          "reranked_top5": [
+            "bm.mean",
+            "bm.argmin",
+            "bm.prod",
+            "bm.cumulative_sum",
+            "bm.sum"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B033",
+      "query": "怎样求张量在指定轴上的最大值？",
+      "expected_api": [
+        "bm.max"
+      ],
+      "expected_category": "reduction",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "vector_gold_outside_initial_30"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 7,
+          "reranked_rank": 12,
+          "vector_top5": [
+            "bm.size",
+            "bm.random.randn",
+            "bm.squeeze",
+            "bm.set_at",
+            "bm.random.rand"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.empty"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 27,
+          "reranked_rank": 35,
+          "vector_top5": [
+            "bm.size",
+            "bm.squeeze",
+            "bm.expand_dims",
+            "bm.set_at",
+            "bm.insert"
+          ],
+          "reranked_top5": [
+            "bm.full",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.random.rand"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 15,
+          "reranked_rank": 22,
+          "vector_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.squeeze",
+            "bm.size"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.empty"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 31,
+          "reranked_rank": 38,
+          "vector_top5": [
+            "bm.size",
+            "bm.squeeze",
+            "bm.expand_dims",
+            "bm.set_at",
+            "bm.insert"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.full",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.random.rand"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.tensor",
+            "bm.full",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.random.rand"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.full",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.random.rand"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.max",
+            "bm.argmax",
+            "bm.prod",
+            "bm.cumprod",
+            "bm.cumsum"
+          ],
+          "reranked_top5": [
+            "bm.max",
+            "bm.argmax",
+            "bm.prod",
+            "bm.cumprod",
+            "bm.cumsum"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B034",
+      "query": "怎么求一个张量的最小值？",
+      "expected_api": [
+        "bm.min"
+      ],
+      "expected_category": "reduction",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "vector_gold_outside_initial_30"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 7,
+          "reranked_rank": 16,
+          "vector_top5": [
+            "bm.bincount",
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.set_at"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.zeros",
+            "bm.empty"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 30,
+          "reranked_rank": 36,
+          "vector_top5": [
+            "bm.bincount",
+            "bm.size",
+            "bm.scatter",
+            "bm.permute_dims",
+            "bm.squeeze"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.zeros",
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.empty"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 15,
+          "reranked_rank": 23,
+          "vector_top5": [
+            "bm.tensor",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.zeros",
+            "bm.empty"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 36,
+          "reranked_rank": 41,
+          "vector_top5": [
+            "bm.bincount",
+            "bm.size",
+            "bm.searchsorted",
+            "bm.tensor",
+            "bm.scatter"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.zeros",
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.empty"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.tensor",
+            "bm.zeros",
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.zeros",
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.empty"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.prod",
+            "bm.min",
+            "bm.mean",
+            "bm.std",
+            "bm.argmin"
+          ],
+          "reranked_top5": [
+            "bm.prod",
+            "bm.min",
+            "bm.mean",
+            "bm.std",
+            "bm.argmin"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B035",
+      "query": "如何计算张量的标准差？",
+      "expected_api": [
+        "bm.std"
+      ],
+      "expected_category": "reduction",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "vector_gold_outside_initial_30"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 41,
+          "reranked_rank": 46,
+          "vector_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.set_at",
+            "bm.asarray",
+            "bm.scatter"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 48,
+          "reranked_rank": 54,
+          "vector_top5": [
+            "bm.set_at",
+            "bm.scatter",
+            "bm.scatter_add",
+            "bm.permute_dims",
+            "bm.copy"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 51,
+          "reranked_rank": 48,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.empty"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 57,
+          "reranked_rank": 56,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.scatter_add",
+            "bm.scatter",
+            "bm.set_at",
+            "bm.random.randn"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.empty"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 4,
+          "reranked_rank": 4,
+          "vector_top5": [
+            "bm.prod",
+            "bm.cumulative_sum",
+            "bm.mean",
+            "bm.std",
+            "bm.cumprod"
+          ],
+          "reranked_top5": [
+            "bm.prod",
+            "bm.cumulative_sum",
+            "bm.mean",
+            "bm.std",
+            "bm.cumprod"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B036",
+      "query": "怎样计算张量的方差？",
+      "expected_api": [
+        "bm.var"
+      ],
+      "expected_category": "reduction",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "vector_representation_or_base_ranking",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "vector_gold_outside_initial_30"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 43,
+          "reranked_rank": 49,
+          "vector_top5": [
+            "bm.random.randn",
+            "bm.broadcast_to",
+            "bm.set_at",
+            "bm.random.rand",
+            "bm.where"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.empty"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 66,
+          "reranked_rank": 72,
+          "vector_top5": [
+            "bm.permute_dims",
+            "bm.size",
+            "bm.set_at",
+            "bm.split",
+            "bm.copy"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.empty",
+            "bm.random.rand"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 60,
+          "reranked_rank": 55,
+          "vector_top5": [
+            "bm.tensor",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.empty"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 87,
+          "reranked_rank": 88,
+          "vector_top5": [
+            "bm.split",
+            "bm.size",
+            "bm.scatter_add",
+            "bm.permute_dims",
+            "bm.scatter"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.empty",
+            "bm.random.rand",
+            "bm.random.randn"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.empty",
+            "bm.random.rand",
+            "bm.random.randn"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.empty",
+            "bm.random.rand",
+            "bm.random.randn"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 8,
+          "reranked_rank": 8,
+          "vector_top5": [
+            "bm.prod",
+            "bm.cumulative_sum",
+            "bm.cumsum",
+            "bm.sum",
+            "bm.cumprod"
+          ],
+          "reranked_top5": [
+            "bm.prod",
+            "bm.cumulative_sum",
+            "bm.cumsum",
+            "bm.sum",
+            "bm.cumprod"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B037",
+      "query": "如何计算一个张量所有元素的乘积？",
+      "expected_api": [
+        "bm.prod"
+      ],
+      "expected_category": "reduction",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "vector_representation_or_base_ranking",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "vector_gold_outside_initial_30"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 50,
+          "reranked_rank": 52,
+          "vector_top5": [
+            "bm.bincount",
+            "bm.ones",
+            "bm.tensor",
+            "bm.unique_all",
+            "bm.all"
+          ],
+          "reranked_top5": [
+            "bm.ones",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.zeros",
+            "bm.random.rand"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 115,
+          "reranked_rank": 119,
+          "vector_top5": [
+            "bm.scatter",
+            "bm.unique_all",
+            "bm.scatter_add",
+            "bm.insert",
+            "bm.bincount"
+          ],
+          "reranked_top5": [
+            "bm.ones",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.full",
+            "bm.zeros"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 39,
+          "reranked_rank": 39,
+          "vector_top5": [
+            "bm.ones",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.zeros"
+          ],
+          "reranked_top5": [
+            "bm.ones",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.zeros"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 96,
+          "reranked_rank": 98,
+          "vector_top5": [
+            "bm.scatter",
+            "bm.scatter_add",
+            "bm.split",
+            "bm.insert",
+            "bm.bincount"
+          ],
+          "reranked_top5": [
+            "bm.ones",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.full",
+            "bm.zeros"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.ones",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.full",
+            "bm.zeros"
+          ],
+          "reranked_top5": [
+            "bm.ones",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.full",
+            "bm.zeros"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 6,
+          "reranked_rank": 6,
+          "vector_top5": [
+            "bm.all",
+            "bm.cumulative_sum",
+            "bm.cumsum",
+            "bm.any",
+            "bm.sum"
+          ],
+          "reranked_top5": [
+            "bm.all",
+            "bm.cumulative_sum",
+            "bm.cumsum",
+            "bm.any",
+            "bm.sum"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B038",
+      "query": "我不只想要最大值，还想知道最大值所在的位置，应该用什么接口？",
+      "expected_api": [
+        "bm.argmax"
+      ],
+      "expected_category": "reduction",
+      "parsed_category": "reduction",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 12,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.maximum",
+            "bm.where",
+            "bm.greater",
+            "bm.greater_equal",
+            "bm.clip"
+          ],
+          "reranked_top5": [
+            "bm.max",
+            "bm.argmax",
+            "bm.std",
+            "bm.any",
+            "bm.maximum"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 75,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.where",
+            "bm.maximum",
+            "bm.greater",
+            "bm.scatter_add",
+            "bm.greater_equal"
+          ],
+          "reranked_top5": [
+            "bm.max",
+            "bm.argmax",
+            "bm.std",
+            "bm.where",
+            "bm.any"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.max",
+            "bm.argmax",
+            "bm.maximum",
+            "bm.where",
+            "bm.std"
+          ],
+          "reranked_top5": [
+            "bm.max",
+            "bm.argmax",
+            "bm.std",
+            "bm.sum",
+            "bm.any"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 12,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.where",
+            "bm.scatter_add",
+            "bm.maximum",
+            "bm.greater",
+            "bm.max"
+          ],
+          "reranked_top5": [
+            "bm.max",
+            "bm.argmax",
+            "bm.std",
+            "bm.any",
+            "bm.prod"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.max",
+            "bm.argmax",
+            "bm.std",
+            "bm.any",
+            "bm.prod"
+          ],
+          "reranked_top5": [
+            "bm.max",
+            "bm.argmax",
+            "bm.std",
+            "bm.any",
+            "bm.prod"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.max",
+            "bm.argmax",
+            "bm.std",
+            "bm.any",
+            "bm.prod"
+          ],
+          "reranked_top5": [
+            "bm.max",
+            "bm.argmax",
+            "bm.std",
+            "bm.any",
+            "bm.prod"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B039",
+      "query": "怎么找到张量最小元素对应的索引？",
+      "expected_api": [
+        "bm.argmin"
+      ],
+      "expected_category": "reduction",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "reranker_fails_to_promote_candidate",
+        "query_enrichment_harms_vector_rank"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 5,
+          "reranked_rank": 21,
+          "vector_top5": [
+            "bm.searchsorted",
+            "bm.min",
+            "bm.tensor",
+            "bm.bincount",
+            "bm.argmin"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.zeros",
+            "bm.empty",
+            "bm.random.rand",
+            "bm.asarray"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 15,
+          "reranked_rank": 25,
+          "vector_top5": [
+            "bm.searchsorted",
+            "bm.tensor",
+            "bm.bincount",
+            "bm.tolist",
+            "bm.scatter"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.empty",
+            "bm.zeros",
+            "bm.asarray",
+            "bm.zeros_like"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 19,
+          "reranked_rank": 23,
+          "vector_top5": [
+            "bm.tensor",
+            "bm.zeros",
+            "bm.empty",
+            "bm.random.rand",
+            "bm.zeros_like"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.zeros",
+            "bm.empty",
+            "bm.random.rand",
+            "bm.zeros_like"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 23,
+          "reranked_rank": 26,
+          "vector_top5": [
+            "bm.tensor",
+            "bm.searchsorted",
+            "bm.empty",
+            "bm.asarray",
+            "bm.zeros"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.empty",
+            "bm.asarray",
+            "bm.zeros",
+            "bm.zeros_like"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.tensor",
+            "bm.empty",
+            "bm.asarray",
+            "bm.zeros",
+            "bm.zeros_like"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.empty",
+            "bm.asarray",
+            "bm.zeros",
+            "bm.zeros_like"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.min",
+            "bm.argmin",
+            "bm.prod",
+            "bm.var",
+            "bm.std"
+          ],
+          "reranked_top5": [
+            "bm.min",
+            "bm.argmin",
+            "bm.prod",
+            "bm.var",
+            "bm.std"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B040",
+      "query": "如何沿某个轴计算累计和？",
+      "expected_api": [
+        "bm.cumsum"
+      ],
+      "expected_category": "reduction",
+      "parsed_category": null,
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "missing_category_no_narrowing",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "oracle_category_recovers_top5",
+        "reranker_fails_to_promote_candidate"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 8,
+          "reranked_rank": 8,
+          "vector_top5": [
+            "bm.cumulative_sum",
+            "bm.sum",
+            "bm.cross",
+            "bm.trace",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.cumulative_sum",
+            "bm.sum",
+            "bm.cross",
+            "bm.trace",
+            "bm.linalg.cross"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 17,
+          "reranked_rank": 17,
+          "vector_top5": [
+            "bm.cumulative_sum",
+            "bm.cross",
+            "bm.sum",
+            "bm.linalg.cross",
+            "bm.cos"
+          ],
+          "reranked_top5": [
+            "bm.cumulative_sum",
+            "bm.cross",
+            "bm.sum",
+            "bm.linalg.cross",
+            "bm.cos"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 27,
+          "reranked_rank": 27,
+          "vector_top5": [
+            "bm.cumulative_sum",
+            "bm.sum",
+            "bm.trace",
+            "bm.cross",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.cumulative_sum",
+            "bm.sum",
+            "bm.trace",
+            "bm.cross",
+            "bm.linalg.cross"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 17,
+          "reranked_rank": 17,
+          "vector_top5": [
+            "bm.cumulative_sum",
+            "bm.cross",
+            "bm.sum",
+            "bm.linalg.cross",
+            "bm.cos"
+          ],
+          "reranked_top5": [
+            "bm.cumulative_sum",
+            "bm.cross",
+            "bm.sum",
+            "bm.linalg.cross",
+            "bm.cos"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 17,
+          "reranked_rank": 17,
+          "vector_top5": [
+            "bm.cumulative_sum",
+            "bm.cross",
+            "bm.sum",
+            "bm.linalg.cross",
+            "bm.cos"
+          ],
+          "reranked_top5": [
+            "bm.cumulative_sum",
+            "bm.cross",
+            "bm.sum",
+            "bm.linalg.cross",
+            "bm.cos"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 4,
+          "reranked_rank": 4,
+          "vector_top5": [
+            "bm.cumulative_sum",
+            "bm.sum",
+            "bm.prod",
+            "bm.cumsum",
+            "bm.cumprod"
+          ],
+          "reranked_top5": [
+            "bm.cumulative_sum",
+            "bm.sum",
+            "bm.prod",
+            "bm.cumsum",
+            "bm.cumprod"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B041",
+      "query": "根据布尔条件 condition，在 x 和 y 中逐元素选择值应该用什么接口？",
+      "expected_api": [
+        "bm.where"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": null,
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 6,
+          "reranked_rank": 5,
+          "vector_top5": [
+            "bm.linalg.outer",
+            "bm.searchsorted",
+            "bm.scatter",
+            "bm.trace",
+            "bm.take"
+          ],
+          "reranked_top5": [
+            "bm.linalg.outer",
+            "bm.searchsorted",
+            "bm.trace",
+            "bm.take",
+            "bm.where"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 5,
+          "reranked_rank": 3,
+          "vector_top5": [
+            "bm.scatter",
+            "bm.linalg.outer",
+            "bm.scatter_add",
+            "bm.searchsorted",
+            "bm.where"
+          ],
+          "reranked_top5": [
+            "bm.linalg.outer",
+            "bm.searchsorted",
+            "bm.where",
+            "bm.take",
+            "bm.trace"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 63,
+          "reranked_rank": 39,
+          "vector_top5": [
+            "bm.scatter",
+            "bm.edge_normal",
+            "bm.edge_tangent",
+            "bm.linalg.outer",
+            "bm.searchsorted"
+          ],
+          "reranked_top5": [
+            "bm.linalg.outer",
+            "bm.searchsorted",
+            "bm.trace",
+            "bm.linalg.trace",
+            "bm.eye"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 5,
+          "reranked_rank": 3,
+          "vector_top5": [
+            "bm.scatter",
+            "bm.linalg.outer",
+            "bm.scatter_add",
+            "bm.searchsorted",
+            "bm.where"
+          ],
+          "reranked_top5": [
+            "bm.linalg.outer",
+            "bm.searchsorted",
+            "bm.where",
+            "bm.take",
+            "bm.trace"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 5,
+          "reranked_rank": 3,
+          "vector_top5": [
+            "bm.scatter",
+            "bm.linalg.outer",
+            "bm.scatter_add",
+            "bm.searchsorted",
+            "bm.where"
+          ],
+          "reranked_top5": [
+            "bm.linalg.outer",
+            "bm.searchsorted",
+            "bm.where",
+            "bm.take",
+            "bm.trace"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 4,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.scatter",
+            "bm.scatter_add",
+            "bm.searchsorted",
+            "bm.where",
+            "bm.take"
+          ],
+          "reranked_top5": [
+            "bm.searchsorted",
+            "bm.where",
+            "bm.take",
+            "bm.tile",
+            "bm.swapaxes"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B042",
+      "query": "如何找出张量中所有非零元素的位置？",
+      "expected_api": [
+        "bm.nonzero"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "reranker_fails_to_promote_candidate",
+        "query_enrichment_harms_vector_rank"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 15,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.nonzero",
+            "bm.empty",
+            "bm.asarray",
+            "bm.random.randn"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.empty",
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.random.rand"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 15,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.nonzero",
+            "bm.scatter",
+            "bm.scatter_add",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.empty",
+            "bm.tensor",
+            "bm.zeros_like"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 10,
+          "reranked_rank": 19,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.empty",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.rand"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.empty",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.rand"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 6,
+          "reranked_rank": 18,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.empty",
+            "bm.scatter",
+            "bm.tensor"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.empty",
+            "bm.tensor",
+            "bm.zeros_like"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.empty",
+            "bm.tensor",
+            "bm.zeros_like"
+          ],
+          "reranked_top5": [
+            "bm.zeros",
+            "bm.asarray",
+            "bm.empty",
+            "bm.tensor",
+            "bm.zeros_like"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.scatter",
+            "bm.nonzero",
+            "bm.scatter_add",
+            "bm.split",
+            "bm.searchsorted"
+          ],
+          "reranked_top5": [
+            "bm.nonzero",
+            "bm.split",
+            "bm.searchsorted",
+            "bm.expand_dims",
+            "bm.where"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B043",
+      "query": "怎样把张量沿最后一维从小到大排序并得到排序后的值？",
+      "expected_api": [
+        "bm.sort"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "reranker_harms_top5"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 5,
+          "reranked_rank": 16,
+          "vector_top5": [
+            "bm.searchsorted",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.argsort",
+            "bm.sort"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.randint"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 4,
+          "reranked_rank": 16,
+          "vector_top5": [
+            "bm.size",
+            "bm.searchsorted",
+            "bm.squeeze",
+            "bm.sort",
+            "bm.scatter_add"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.zeros"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 6,
+          "reranked_rank": 20,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.random.randn",
+            "bm.searchsorted",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.random.randint"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 3,
+          "reranked_rank": 19,
+          "vector_top5": [
+            "bm.size",
+            "bm.searchsorted",
+            "bm.sort",
+            "bm.scatter_add",
+            "bm.squeeze"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.zeros"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.zeros"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.zeros"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 3,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.size",
+            "bm.searchsorted",
+            "bm.sort",
+            "bm.scatter_add",
+            "bm.squeeze"
+          ],
+          "reranked_top5": [
+            "bm.searchsorted",
+            "bm.sort",
+            "bm.squeeze",
+            "bm.split",
+            "bm.argsort"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B044",
+      "query": "我需要的不是排序后的值，而是排序对应的索引，应该用哪个接口？",
+      "expected_api": [
+        "bm.argsort"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": null,
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "missing_category_no_narrowing",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "oracle_category_recovers_top5",
+        "vector_gold_outside_initial_30"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 51,
+          "reranked_rank": 42,
+          "vector_top5": [
+            "bm.linalg.slogdet",
+            "bm.linalg.matrix_rank",
+            "bm.linalg.trace",
+            "bm.linalg.det",
+            "bm.linalg.vecdot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.slogdet",
+            "bm.linalg.matrix_rank",
+            "bm.linalg.trace",
+            "bm.linalg.det",
+            "bm.linalg.vecdot"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 61,
+          "reranked_rank": 44,
+          "vector_top5": [
+            "bm.linalg.slogdet",
+            "bm.linalg.matrix_rank",
+            "bm.linalg.trace",
+            "bm.linalg.det",
+            "bm.searchsorted"
+          ],
+          "reranked_top5": [
+            "bm.linalg.slogdet",
+            "bm.linalg.matrix_rank",
+            "bm.linalg.trace",
+            "bm.linalg.det",
+            "bm.searchsorted"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 79,
+          "reranked_rank": 55,
+          "vector_top5": [
+            "bm.device_index",
+            "bm.linalg.matrix_rank",
+            "bm.linalg.trace",
+            "bm.linalg.slogdet",
+            "bm.searchsorted"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matrix_rank",
+            "bm.linalg.trace",
+            "bm.linalg.slogdet",
+            "bm.searchsorted",
+            "bm.linalg.det"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 61,
+          "reranked_rank": 44,
+          "vector_top5": [
+            "bm.linalg.slogdet",
+            "bm.linalg.matrix_rank",
+            "bm.linalg.trace",
+            "bm.linalg.det",
+            "bm.searchsorted"
+          ],
+          "reranked_top5": [
+            "bm.linalg.slogdet",
+            "bm.linalg.matrix_rank",
+            "bm.linalg.trace",
+            "bm.linalg.det",
+            "bm.searchsorted"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 61,
+          "reranked_rank": 44,
+          "vector_top5": [
+            "bm.linalg.slogdet",
+            "bm.linalg.matrix_rank",
+            "bm.linalg.trace",
+            "bm.linalg.det",
+            "bm.searchsorted"
+          ],
+          "reranked_top5": [
+            "bm.linalg.slogdet",
+            "bm.linalg.matrix_rank",
+            "bm.linalg.trace",
+            "bm.linalg.det",
+            "bm.searchsorted"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 4,
+          "reranked_rank": 3,
+          "vector_top5": [
+            "bm.searchsorted",
+            "bm.sort",
+            "bm.scatter_add",
+            "bm.argsort",
+            "bm.scatter"
+          ],
+          "reranked_top5": [
+            "bm.searchsorted",
+            "bm.sort",
+            "bm.argsort",
+            "bm.swapaxes",
+            "bm.scatter_add"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B045",
+      "query": "如何获取张量中的唯一元素并去除重复值？",
+      "expected_api": [
+        "bm.unique"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "reranker_harms_top5"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 9,
+          "vector_top5": [
+            "bm.unique",
+            "bm.unique_all",
+            "bm.repeat",
+            "bm.random.rand",
+            "bm.random.randn"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.ones",
+            "bm.asarray"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 9,
+          "vector_top5": [
+            "bm.unique",
+            "bm.repeat",
+            "bm.unique_all",
+            "bm.scatter",
+            "bm.searchsorted"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.ones"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 16,
+          "vector_top5": [
+            "bm.unique",
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.unique_all",
+            "bm.random.randn"
+          ],
+          "reranked_top5": [
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.ones"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 17,
+          "vector_top5": [
+            "bm.repeat",
+            "bm.unique",
+            "bm.unique_all",
+            "bm.scatter",
+            "bm.scatter_add"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.empty"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.empty"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.random.randn",
+            "bm.empty"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.repeat",
+            "bm.unique",
+            "bm.unique_all",
+            "bm.scatter",
+            "bm.scatter_add"
+          ],
+          "reranked_top5": [
+            "bm.repeat",
+            "bm.unique",
+            "bm.unique_all",
+            "bm.searchsorted",
+            "bm.copy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B046",
+      "query": "如何把形状为 (3,1) 的张量广播成 (3,4)？",
+      "expected_api": [
+        "bm.broadcast_to"
+      ],
+      "expected_category": "manipulation",
+      "parsed_category": "creation",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5",
+        "reranker_harms_top5"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 9,
+          "vector_top5": [
+            "bm.broadcast_to",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.squeeze"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.ones",
+            "bm.tensor"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 7,
+          "vector_top5": [
+            "bm.broadcast_to",
+            "bm.expand_dims",
+            "bm.scatter_add",
+            "bm.reshape",
+            "bm.squeeze"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.ones",
+            "bm.random.rand"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 16,
+          "vector_top5": [
+            "bm.broadcast_to",
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.tensor"
+          ],
+          "reranked_top5": [
+            "bm.random.randn",
+            "bm.asarray",
+            "bm.random.rand",
+            "bm.tensor",
+            "bm.ones"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 11,
+          "vector_top5": [
+            "bm.broadcast_to",
+            "bm.scatter_add",
+            "bm.size",
+            "bm.expand_dims",
+            "bm.asarray"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.random.rand",
+            "bm.ones"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.random.rand",
+            "bm.ones"
+          ],
+          "reranked_top5": [
+            "bm.asarray",
+            "bm.random.randn",
+            "bm.tensor",
+            "bm.random.rand",
+            "bm.ones"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.broadcast_to",
+            "bm.scatter_add",
+            "bm.size",
+            "bm.expand_dims",
+            "bm.scatter"
+          ],
+          "reranked_top5": [
+            "bm.broadcast_to",
+            "bm.expand_dims",
+            "bm.squeeze",
+            "bm.reshape",
+            "bm.repeat"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B047",
+      "query": "我想用爱因斯坦求和记号进行张量运算，例如 ij,jk->ik，用什么接口？",
+      "expected_api": [
+        "bm.einsum"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": "creation",
+      "interface_hints": [
+        "einsum",
+        "sum"
+      ],
+      "hint_hits_gold": true,
+      "original_top5_miss": true,
+      "root_cause": "wrong_category_hard_filter",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "hard_filter_blocks_gold",
+        "oracle_category_recovers_top5"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 34,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.take",
+            "bm.add_at",
+            "bm.index_add",
+            "bm.asarray",
+            "bm.permute_dims"
+          ],
+          "reranked_top5": [
+            "bm.einsum",
+            "bm.sum",
+            "bm.asarray",
+            "bm.cumsum",
+            "bm.cumulative_sum"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.einsum",
+            "bm.take",
+            "bm.index_add",
+            "bm.permute_dims",
+            "bm.bincount"
+          ],
+          "reranked_top5": [
+            "bm.einsum",
+            "bm.sum",
+            "bm.cumsum",
+            "bm.cumulative_sum",
+            "bm.asarray"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 54,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.asarray",
+            "bm.take",
+            "bm.tensor",
+            "bm.add_at",
+            "bm.index_add"
+          ],
+          "reranked_top5": [
+            "bm.einsum",
+            "bm.sum",
+            "bm.asarray",
+            "bm.tensor",
+            "bm.random.randn"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.einsum",
+            "bm.tensor",
+            "bm.asarray",
+            "bm.index_add",
+            "bm.take"
+          ],
+          "reranked_top5": [
+            "bm.einsum",
+            "bm.sum",
+            "bm.cumsum",
+            "bm.tensor",
+            "bm.asarray"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": null,
+          "reranked_rank": null,
+          "vector_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.eye",
+            "bm.ones",
+            "bm.random.randn"
+          ],
+          "reranked_top5": [
+            "bm.tensor",
+            "bm.asarray",
+            "bm.eye",
+            "bm.ones",
+            "bm.random.randn"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.einsum",
+            "bm.linalg.inv",
+            "bm.linalg.vector_norm",
+            "bm.linalg.eigvalsh",
+            "bm.linalg.matmul"
+          ],
+          "reranked_top5": [
+            "bm.einsum",
+            "bm.linalg.inv",
+            "bm.linalg.vector_norm",
+            "bm.linalg.eigvalsh",
+            "bm.linalg.matmul"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B048",
+      "query": "两个矩阵 A 和 B 做矩阵乘法，在 bm 中应该调用什么？",
+      "expected_api": [
+        "bm.matmul"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": "linalg",
+      "interface_hints": [
+        "matmul"
+      ],
+      "hint_hits_gold": true,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.square",
+            "bm.eye",
+            "bm.multiply"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.cross"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.multiply",
+            "bm.add",
+            "bm.square"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.cross"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.linalg.matrix_transpose"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.linalg.matrix_transpose"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.linalg.matrix_transpose"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.linalg.matrix_transpose"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 2,
+          "reranked_rank": 2,
+          "vector_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.linalg.matrix_transpose"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.solve",
+            "bm.linalg.matrix_transpose"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B049",
+      "query": "怎么把 FEALPy 当前计算后端切换成 PyTorch？",
+      "expected_api": [
+        "bm.set_backend"
+      ],
+      "expected_category": "other",
+      "parsed_category": null,
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": true,
+      "root_cause": "missing_category_no_narrowing",
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing",
+        "oracle_category_recovers_top5",
+        "reranker_fails_to_promote_candidate"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 28,
+          "reranked_rank": 17,
+          "vector_top5": [
+            "bm.get_current_backend",
+            "bm.arccosh",
+            "bm.barycenter",
+            "bm.set_default_device",
+            "bm.to_numpy"
+          ],
+          "reranked_top5": [
+            "bm.get_current_backend",
+            "bm.arccosh",
+            "bm.bitwise_right_shift",
+            "bm.acosh",
+            "bm.arctanh"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 32,
+          "reranked_rank": 25,
+          "vector_top5": [
+            "bm.get_current_backend",
+            "bm.set_default_device",
+            "bm.arccosh",
+            "bm.to_numpy",
+            "bm.bitwise_right_shift"
+          ],
+          "reranked_top5": [
+            "bm.get_current_backend",
+            "bm.arccosh",
+            "bm.bitwise_right_shift",
+            "bm.bitwise_invert",
+            "bm.real"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 21,
+          "reranked_rank": 10,
+          "vector_top5": [
+            "bm.to_numpy",
+            "bm.from_numpy",
+            "bm.device_put",
+            "bm.set_default_device",
+            "bm.is_tensor"
+          ],
+          "reranked_top5": [
+            "bm.load_backend",
+            "bm.finfo",
+            "bm.to_numpy",
+            "bm.result_type",
+            "bm.get_current_backend"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 30,
+          "reranked_rank": 22,
+          "vector_top5": [
+            "bm.get_current_backend",
+            "bm.set_default_device",
+            "bm.arccosh",
+            "bm.to_numpy",
+            "bm.bitwise_right_shift"
+          ],
+          "reranked_top5": [
+            "bm.get_current_backend",
+            "bm.arccosh",
+            "bm.bitwise_right_shift",
+            "bm.bitwise_invert",
+            "bm.floor"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 30,
+          "reranked_rank": 22,
+          "vector_top5": [
+            "bm.get_current_backend",
+            "bm.set_default_device",
+            "bm.arccosh",
+            "bm.to_numpy",
+            "bm.bitwise_right_shift"
+          ],
+          "reranked_top5": [
+            "bm.get_current_backend",
+            "bm.arccosh",
+            "bm.bitwise_right_shift",
+            "bm.bitwise_invert",
+            "bm.floor"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 8,
+          "reranked_rank": 4,
+          "vector_top5": [
+            "bm.get_current_backend",
+            "bm.set_default_device",
+            "bm.tensorprod",
+            "bm.is_tensor",
+            "bm.query_point"
+          ],
+          "reranked_top5": [
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_default_device",
+            "bm.set_backend",
+            "bm.tril"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B050",
+      "query": "如何查看 FEALPy 当前正在使用哪个后端？",
+      "expected_api": [
+        "bm.get_current_backend"
+      ],
+      "expected_category": "other",
+      "parsed_category": null,
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [
+        "intent_category_wrong_or_missing"
+      ],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.vmap",
+            "bm.is_tensor"
+          ],
+          "reranked_top5": [
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.tril",
+            "bm.logical_and"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.is_tensor",
+            "bm.tensorprod"
+          ],
+          "reranked_top5": [
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.logical_and",
+            "bm.is_tensor"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.is_tensor",
+            "bm.context"
+          ],
+          "reranked_top5": [
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.is_tensor",
+            "bm.finfo"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.is_tensor",
+            "bm.tensorprod"
+          ],
+          "reranked_top5": [
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.logical_and",
+            "bm.is_tensor"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.is_tensor",
+            "bm.tensorprod"
+          ],
+          "reranked_top5": [
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.logical_and",
+            "bm.is_tensor"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.is_tensor",
+            "bm.tensorprod"
+          ],
+          "reranked_top5": [
+            "bm.get_current_backend",
+            "bm.load_backend",
+            "bm.set_backend",
+            "bm.is_tensor",
+            "bm.random.seed"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B051",
+      "query": "如何计算一个向量 x 的 2 范数（欧几里得范数）？",
+      "expected_api": [
+        "bm.linalg.vector_norm"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": "linalg",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.cross",
+            "bm.atan2",
+            "bm.linalg.matrix_norm",
+            "bm.arctan2"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.cross",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.cross",
+            "bm.trace"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.arctan2",
+            "bm.atan2",
+            "bm.log2",
+            "bm.bitwise_xor"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.vecdot",
+            "bm.cross",
+            "bm.linalg.vecdot",
+            "bm.linalg.cross"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vecdot",
+            "bm.linalg.eigvalsh"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vecdot",
+            "bm.linalg.eigvalsh"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.log2",
+            "bm.linalg.cross",
+            "bm.linalg.vecdot",
+            "bm.linalg.outer"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.vecdot",
+            "bm.linalg.outer",
+            "bm.linalg.matrix_norm"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.vecdot",
+            "bm.linalg.outer",
+            "bm.linalg.matrix_norm"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.vecdot",
+            "bm.linalg.outer",
+            "bm.linalg.matrix_norm"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.vecdot",
+            "bm.linalg.outer",
+            "bm.linalg.matrix_norm"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.cross",
+            "bm.linalg.vecdot",
+            "bm.linalg.outer",
+            "bm.linalg.matrix_norm"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B052",
+      "query": "我想计算向量 x 的 1 范数，也就是所有元素绝对值之和，FEALPy 后端应该使用哪个接口？",
+      "expected_api": [
+        "bm.linalg.vector_norm"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": "linalg",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.trace",
+            "bm.cross",
+            "bm.vecdot",
+            "bm.allclose"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.trace",
+            "bm.cross",
+            "bm.vecdot",
+            "bm.linalg.vecdot"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.equal",
+            "bm.expm1",
+            "bm.trace",
+            "bm.vecdot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.trace",
+            "bm.vecdot",
+            "bm.cross",
+            "bm.linalg.svdvals"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.trace",
+            "bm.linalg.inv",
+            "bm.linalg.trace",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.trace",
+            "bm.linalg.inv",
+            "bm.linalg.trace",
+            "bm.linalg.cross"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.inv",
+            "bm.linalg.svdvals",
+            "bm.vecdot",
+            "bm.trace"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.inv",
+            "bm.linalg.svdvals",
+            "bm.vecdot",
+            "bm.trace"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.inv",
+            "bm.linalg.svdvals",
+            "bm.vecdot",
+            "bm.trace"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.inv",
+            "bm.linalg.svdvals",
+            "bm.vecdot",
+            "bm.trace"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.inv",
+            "bm.linalg.svdvals",
+            "bm.vecdot",
+            "bm.trace"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.inv",
+            "bm.linalg.svdvals",
+            "bm.vecdot",
+            "bm.trace"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B053",
+      "query": "对于一个二维张量，我想沿指定 axis 计算每一行或每一列的向量范数，应该使用什么接口？",
+      "expected_api": [
+        "bm.linalg.vector_norm"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": "linalg",
+      "interface_hints": [
+        "linalg.vector_norm"
+      ],
+      "hint_hits_gold": true,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.vecdot",
+            "bm.vecdot",
+            "bm.moveaxis",
+            "bm.linalg.svdvals"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.vecdot",
+            "bm.vecdot",
+            "bm.linalg.svdvals",
+            "bm.trace"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.vecdot",
+            "bm.linalg.svdvals",
+            "bm.linalg.cross",
+            "bm.linalg.matrix_norm"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.vecdot",
+            "bm.linalg.svdvals",
+            "bm.linalg.cross",
+            "bm.linalg.matrix_norm"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.vecdot",
+            "bm.linalg.cross",
+            "bm.linalg.svdvals",
+            "bm.linalg.inv"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.vecdot",
+            "bm.linalg.cross",
+            "bm.linalg.svdvals",
+            "bm.linalg.inv"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.vecdot",
+            "bm.linalg.svdvals",
+            "bm.linalg.cross",
+            "bm.linalg.inv"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.vecdot",
+            "bm.linalg.svdvals",
+            "bm.linalg.cross",
+            "bm.linalg.inv"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.vecdot",
+            "bm.linalg.svdvals",
+            "bm.linalg.cross",
+            "bm.linalg.inv"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.vecdot",
+            "bm.linalg.svdvals",
+            "bm.linalg.cross",
+            "bm.linalg.inv"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.vecdot",
+            "bm.linalg.svdvals",
+            "bm.linalg.cross",
+            "bm.linalg.inv"
+          ],
+          "reranked_top5": [
+            "bm.linalg.vector_norm",
+            "bm.linalg.vecdot",
+            "bm.linalg.svdvals",
+            "bm.linalg.cross",
+            "bm.linalg.inv"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B054",
+      "query": "如何计算矩阵 A 的 Frobenius 范数？",
+      "expected_api": [
+        "bm.linalg.matrix_norm"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": "linalg",
+      "interface_hints": [
+        "linalg.matrix_norm"
+      ],
+      "hint_hits_gold": true,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.eye",
+            "bm.matmul",
+            "bm.linalg.matmul",
+            "bm.asin"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.matmul",
+            "bm.linalg.matmul",
+            "bm.linalg.vector_norm",
+            "bm.cross"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.cross"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.solve",
+            "bm.linalg.tensordot"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.vector_norm",
+            "bm.matmul",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.vector_norm",
+            "bm.matmul",
+            "bm.linalg.cross"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.vector_norm",
+            "bm.matmul",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.vector_norm",
+            "bm.matmul",
+            "bm.linalg.cross"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.vector_norm",
+            "bm.matmul",
+            "bm.linalg.cross"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.vector_norm",
+            "bm.matmul",
+            "bm.linalg.cross"
+          ]
+        }
+      }
+    },
+    {
+      "id": "B055",
+      "query": "我需要计算矩阵 A 的核范数（nuclear norm），在 FEALPy 后端中应该使用哪个接口？",
+      "expected_api": [
+        "bm.linalg.matrix_norm"
+      ],
+      "expected_category": "linalg",
+      "parsed_category": "linalg",
+      "interface_hints": [],
+      "hint_hits_gold": false,
+      "original_top5_miss": false,
+      "root_cause": null,
+      "diagnostic_signals": [],
+      "experiments": {
+        "raw_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.eye",
+            "bm.edge_normal",
+            "bm.matmul"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.matmul",
+            "bm.linalg.matmul",
+            "bm.linalg.vecdot"
+          ]
+        },
+        "query_operation_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.edge_normal",
+            "bm.linalg.vector_norm",
+            "bm.to_numpy",
+            "bm.eye"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.linalg.matmul",
+            "bm.matmul",
+            "bm.linalg.vecdot"
+          ]
+        },
+        "query_category_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.linalg.tensordot",
+            "bm.linalg.matmul",
+            "bm.linalg.slogdet"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.linalg.tensordot",
+            "bm.linalg.matmul",
+            "bm.linalg.slogdet"
+          ]
+        },
+        "complete_no_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.solve"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.solve"
+          ]
+        },
+        "complete_current_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.solve"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.solve"
+          ]
+        },
+        "complete_oracle_filter": {
+          "vector_rank": 1,
+          "reranked_rank": 1,
+          "vector_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.solve"
+          ],
+          "reranked_top5": [
+            "bm.linalg.matrix_norm",
+            "bm.linalg.vector_norm",
+            "bm.linalg.matmul",
+            "bm.linalg.tensordot",
+            "bm.linalg.solve"
+          ]
+        }
+      }
+    }
+  ]
+}
