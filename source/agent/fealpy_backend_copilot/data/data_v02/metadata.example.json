@@ -1,0 +1,231 @@
+{
+  "manifest": {
+    "schema_version": "2.0.0-draft.1",
+    "dataset_version": "data_v02",
+    "language": "zh-CN",
+    "source_revision": null,
+    "created_at": null,
+    "counts": {"interfaces": 1, "capabilities": 2},
+    "generation": {
+      "description": "v02 元数据结构讨论用的最小示例，不代表全量已审核数据",
+      "review_status": "draft"
+    }
+  },
+  "interfaces": [
+    {
+      "id": "bm.sum",
+      "full_name": "bm.sum",
+      "namespace": "bm",
+      "name": "sum",
+      "category": "reduction",
+      "summary": "沿指定维度或对全部元素执行加法归约",
+      "signature": "sum(x, /, *, axis=None, dtype=None, keepdims=False)",
+      "status": "active",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_only",
+          "type": "TensorLike",
+          "required": true,
+          "default": null,
+          "semantic_role": "input_tensor",
+          "description": "需要求和的输入张量",
+          "constraints": [],
+          "backend_names": {"numpy": "a", "pytorch": "input"}
+        },
+        {
+          "name": "axis",
+          "kind": "keyword_only",
+          "type": "Optional[int | tuple[int, ...]]",
+          "required": false,
+          "default": null,
+          "semantic_role": "reduction_axes",
+          "description": "指定归约维度；为 null 时归约所有维度",
+          "constraints": [],
+          "backend_names": {"numpy": "axis", "pytorch": "dim"}
+        },
+        {
+          "name": "dtype",
+          "kind": "keyword_only",
+          "type": "Optional[DType]",
+          "required": false,
+          "default": null,
+          "semantic_role": "output_dtype",
+          "description": "指定计算和输出的数据类型",
+          "constraints": [],
+          "backend_names": {"numpy": "dtype", "pytorch": "dtype"}
+        },
+        {
+          "name": "keepdims",
+          "kind": "keyword_only",
+          "type": "bool",
+          "required": false,
+          "default": false,
+          "semantic_role": "keep_reduced_dimensions",
+          "description": "是否以长度为 1 的维度保留被归约的轴",
+          "constraints": [],
+          "backend_names": {"numpy": "keepdims", "pytorch": "keepdim"}
+        }
+      ],
+      "returns": {
+        "type": "Tensor",
+        "description": "加法归约结果",
+        "shape_rule": "移除被归约的维度；keepdims=true 时将其保留为长度 1",
+        "dtype_rule": "显式指定 dtype 时使用该类型，否则遵循当前后端规则",
+        "structure": "tensor",
+        "copy_semantics": null,
+        "differentiable": null
+      },
+      "backends": {
+        "numpy": {
+          "supported": true,
+          "native_api": "numpy.sum",
+          "native_signature": null,
+          "mapping_type": "wrapper",
+          "parameter_map": {"x": "a", "axis": "axis", "dtype": "dtype", "keepdims": "keepdims"},
+          "return_adaptation": null,
+          "behavior_notes": [],
+          "source": "fealpy/backend/numpy_backend.py"
+        },
+        "pytorch": {
+          "supported": true,
+          "native_api": "torch.sum",
+          "native_signature": null,
+          "mapping_type": "renamed_params",
+          "parameter_map": {"x": "input", "axis": "dim", "dtype": "dtype", "keepdims": "keepdim"},
+          "return_adaptation": null,
+          "behavior_notes": [],
+          "source": "fealpy/backend/pytorch_backend.py"
+        }
+      },
+      "semantic_differences": [
+        {
+          "aspect": "parameter_name",
+          "fealpy": "axis / keepdims",
+          "numpy": "axis / keepdims",
+          "pytorch": "dim / keepdim",
+          "impact": "FEALPy 对外统一使用 axis 和 keepdims",
+          "evidence": ["source:numpy_backend.py", "source:pytorch_backend.py"],
+          "confidence": "medium"
+        }
+      ],
+      "provenance": {
+        "sources": [
+          {"kind": "source", "location": "fealpy/backend/numpy_backend.py", "revision": null},
+          {"kind": "source", "location": "fealpy/backend/pytorch_backend.py", "revision": null}
+        ],
+        "extraction_method": "mixed",
+        "review_status": "unreviewed",
+        "confidence": "medium",
+        "issues": ["示例尚未核对具体源码行号和原生签名"]
+      }
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "reduction.sum.all_elements",
+      "canonical_intent": "计算张量所有元素之和",
+      "task_family": "reduction",
+      "summary": "不指定归约维度，将输入张量中的所有元素相加得到整体总和",
+      "user_expressions": [
+        {"text": "计算张量所有元素之和", "language": "zh-CN", "style": "canonical", "source": "curated", "include_in_embedding": true},
+        {"text": "把数组里的数全部加起来", "language": "zh-CN", "style": "colloquial", "source": "curated", "include_in_embedding": true},
+        {"text": "NumPy 的 np.sum(x) 在 FEALPy 中怎么写", "language": "zh-CN", "style": "migration", "source": "curated", "include_in_embedding": true}
+      ],
+      "intent_slots": [
+        {"name": "input", "type": "TensorLike", "required": true, "description": "待求和张量"},
+        {"name": "dtype", "type": "Optional[DType]", "required": false, "description": "期望的计算和输出类型"}
+      ],
+      "interface_refs": [
+        {
+          "interface_id": "bm.sum",
+          "role": "primary",
+          "when": "需要将全部元素归约为一个总和时",
+          "argument_bindings": {"x": "$input", "axis": null, "dtype": "$dtype"},
+          "call_template": "bm.sum(x, dtype=dtype)",
+          "priority": 1
+        }
+      ],
+      "contrasts": [
+        {
+          "capability_id": "reduction.sum.along_axis",
+          "distinction": "沿轴求和只归约指定维度；全部元素求和不指定 axis",
+          "selection_cue": "问题明确出现某一轴、每行或每列时选择沿轴求和"
+        }
+      ],
+      "preconditions": [],
+      "result_semantics": "返回包含全部输入元素总和的结果张量",
+      "examples": [
+        {
+          "query": "把 x 中所有元素加起来",
+          "fealpy_call": "bm.sum(x)",
+          "numpy_call": "np.sum(x)",
+          "pytorch_call": "torch.sum(x)",
+          "notes": "不传 axis"
+        }
+      ],
+      "backend_considerations": [],
+      "tags": ["求和", "总和", "所有元素", "sum"],
+      "provenance": {
+        "sources": [{"kind": "manual_review", "location": "data_v02 design example", "revision": null}],
+        "extraction_method": "manual",
+        "review_status": "unreviewed",
+        "confidence": "medium",
+        "issues": ["需要用独立开发集验证表达覆盖率"]
+      }
+    },
+    {
+      "id": "reduction.sum.along_axis",
+      "canonical_intent": "沿指定维度计算元素之和",
+      "task_family": "reduction",
+      "summary": "只对指定轴进行加法归约，可选择是否保留被归约的维度",
+      "user_expressions": [
+        {"text": "沿指定轴求和", "language": "zh-CN", "style": "canonical", "source": "curated", "include_in_embedding": true},
+        {"text": "计算每一行的总和", "language": "zh-CN", "style": "colloquial", "source": "curated", "include_in_embedding": true},
+        {"text": "axis=1 求和并保留维度", "language": "zh-CN", "style": "parameterized", "source": "curated", "include_in_embedding": true}
+      ],
+      "intent_slots": [
+        {"name": "input", "type": "TensorLike", "required": true, "description": "待求和张量"},
+        {"name": "axis", "type": "int | tuple[int, ...]", "required": true, "description": "归约维度"},
+        {"name": "keepdims", "type": "bool", "required": false, "description": "是否保留被归约维度"}
+      ],
+      "interface_refs": [
+        {
+          "interface_id": "bm.sum",
+          "role": "primary",
+          "when": "用户指定一个或多个归约维度时",
+          "argument_bindings": {"x": "$input", "axis": "$axis", "keepdims": "$keepdims"},
+          "call_template": "bm.sum(x, axis=axis, keepdims=keepdims)",
+          "priority": 1
+        }
+      ],
+      "contrasts": [
+        {
+          "capability_id": "reduction.sum.all_elements",
+          "distinction": "本能力要求显式指定归约维度，而全部元素求和不指定 axis",
+          "selection_cue": "问题出现 axis、维度、每行或每列时选择本能力"
+        }
+      ],
+      "preconditions": ["axis 必须是输入张量的有效维度"],
+      "result_semantics": "返回沿指定维度求和后的张量",
+      "examples": [
+        {
+          "query": "沿 axis=1 对 x 求和并保留维度",
+          "fealpy_call": "bm.sum(x, axis=1, keepdims=True)",
+          "numpy_call": "np.sum(x, axis=1, keepdims=True)",
+          "pytorch_call": "torch.sum(x, dim=1, keepdim=True)",
+          "notes": "FEALPy 将 PyTorch 的 dim/keepdim 统一为 axis/keepdims"
+        }
+      ],
+      "backend_considerations": ["PyTorch 原生参数 dim 和 keepdim 在 FEALPy 中分别统一为 axis 和 keepdims"],
+      "tags": ["沿轴求和", "逐行求和", "逐列求和", "axis", "sum"],
+      "provenance": {
+        "sources": [{"kind": "manual_review", "location": "data_v02 design example", "revision": null}],
+        "extraction_method": "manual",
+        "review_status": "unreviewed",
+        "confidence": "medium",
+        "issues": ["需要核对多轴参数在两个后端中的实际支持情况"]
+      }
+    }
+  ]
+}

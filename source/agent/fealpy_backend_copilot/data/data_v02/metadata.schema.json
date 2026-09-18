@@ -1,0 +1,248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fealpy.example/schemas/backend-copilot-metadata-v02.json",
+  "title": "FEALPy Backend Copilot Metadata v02",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifest", "interfaces", "capabilities"],
+  "properties": {
+    "manifest": {"$ref": "#/$defs/manifest"},
+    "interfaces": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/interface"}
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/capability"}
+    }
+  },
+  "$defs": {
+    "nullableString": {"type": ["string", "null"]},
+    "sourceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "location"],
+      "properties": {
+        "kind": {"enum": ["source", "documentation", "test", "manual_review"]},
+        "location": {"type": "string", "minLength": 1},
+        "revision": {"$ref": "#/$defs/nullableString"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sources", "extraction_method", "review_status", "confidence", "issues"],
+      "properties": {
+        "sources": {"type": "array", "items": {"$ref": "#/$defs/sourceRef"}},
+        "extraction_method": {"enum": ["ast", "runtime_inspection", "manual", "llm_assisted", "mixed"]},
+        "review_status": {"enum": ["unreviewed", "machine_checked", "human_reviewed"]},
+        "confidence": {"enum": ["verified", "high", "medium", "low"]},
+        "issues": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "dataset_version", "language", "source_revision", "created_at", "counts", "generation"],
+      "properties": {
+        "schema_version": {"type": "string", "minLength": 1},
+        "dataset_version": {"const": "data_v02"},
+        "language": {"const": "zh-CN"},
+        "source_revision": {"$ref": "#/$defs/nullableString"},
+        "created_at": {"type": ["string", "null"], "format": "date-time"},
+        "counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["interfaces", "capabilities"],
+          "properties": {
+            "interfaces": {"type": "integer", "minimum": 0},
+            "capabilities": {"type": "integer", "minimum": 0}
+          }
+        },
+        "generation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["description", "review_status"],
+          "properties": {
+            "description": {"type": "string"},
+            "review_status": {"enum": ["draft", "partial", "reviewed", "released"]}
+          }
+        }
+      }
+    },
+    "parameter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "kind", "type", "required", "default", "semantic_role", "description", "constraints", "backend_names"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["positional_only", "positional_or_keyword", "keyword_only", "var_positional", "var_keyword"]},
+        "type": {"$ref": "#/$defs/nullableString"},
+        "required": {"type": "boolean"},
+        "default": {},
+        "semantic_role": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 1},
+        "constraints": {"type": "array", "items": {"type": "string"}},
+        "backend_names": {
+          "type": "object",
+          "additionalProperties": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "backend": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["supported", "native_api", "native_signature", "mapping_type", "parameter_map", "return_adaptation", "behavior_notes", "source"],
+      "properties": {
+        "supported": {"type": "boolean"},
+        "native_api": {"$ref": "#/$defs/nullableString"},
+        "native_signature": {"$ref": "#/$defs/nullableString"},
+        "mapping_type": {"enum": ["direct", "renamed_params", "wrapper", "composed", "custom", "unsupported"]},
+        "parameter_map": {"type": "object", "additionalProperties": {"type": ["string", "null"]}},
+        "return_adaptation": {"$ref": "#/$defs/nullableString"},
+        "behavior_notes": {"type": "array", "items": {"type": "string"}},
+        "source": {"$ref": "#/$defs/nullableString"}
+      }
+    },
+    "semanticDifference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["aspect", "fealpy", "numpy", "pytorch", "impact", "evidence", "confidence"],
+      "properties": {
+        "aspect": {"enum": ["parameter_name", "parameter_form", "default", "dtype", "device", "shape", "return_type", "copy_view", "autograd", "error_behavior", "unsupported", "other"]},
+        "fealpy": {"$ref": "#/$defs/nullableString"},
+        "numpy": {"$ref": "#/$defs/nullableString"},
+        "pytorch": {"$ref": "#/$defs/nullableString"},
+        "impact": {"type": "string", "minLength": 1},
+        "evidence": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"enum": ["verified", "high", "medium", "low"]}
+      }
+    },
+    "interface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "full_name", "namespace", "name", "category", "summary", "signature", "status", "parameters", "returns", "backends", "semantic_differences", "provenance"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^bm(\\.[A-Za-z_][A-Za-z0-9_]*)+$"},
+        "full_name": {"type": "string", "pattern": "^bm\\."},
+        "namespace": {"type": "string", "pattern": "^bm(\\.[A-Za-z_][A-Za-z0-9_]*)*$"},
+        "name": {"type": "string", "minLength": 1},
+        "category": {"enum": ["creation", "math", "linalg", "manipulation", "reduction", "comparison", "dtype", "random", "backend_management", "other"]},
+        "summary": {"type": "string", "minLength": 1},
+        "signature": {"type": "string", "minLength": 1},
+        "status": {"enum": ["active", "deprecated", "experimental"]},
+        "parameters": {"type": "array", "items": {"$ref": "#/$defs/parameter"}},
+        "returns": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "description", "shape_rule", "dtype_rule", "structure", "copy_semantics", "differentiable"],
+          "properties": {
+            "type": {"$ref": "#/$defs/nullableString"},
+            "description": {"type": "string"},
+            "shape_rule": {"$ref": "#/$defs/nullableString"},
+            "dtype_rule": {"$ref": "#/$defs/nullableString"},
+            "structure": {"enum": ["scalar", "tensor", "tuple", "none", "backend_object", "unknown"]},
+            "copy_semantics": {"$ref": "#/$defs/nullableString"},
+            "differentiable": {"type": ["boolean", "null"]}
+          }
+        },
+        "backends": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["numpy", "pytorch"],
+          "properties": {
+            "numpy": {"$ref": "#/$defs/backend"},
+            "pytorch": {"$ref": "#/$defs/backend"}
+          }
+        },
+        "semantic_differences": {"type": "array", "items": {"$ref": "#/$defs/semanticDifference"}},
+        "provenance": {"$ref": "#/$defs/provenance"}
+      }
+    },
+    "expression": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "language", "style", "source", "include_in_embedding"],
+      "properties": {
+        "text": {"type": "string", "minLength": 1},
+        "language": {"enum": ["zh-CN", "en"]},
+        "style": {"enum": ["canonical", "colloquial", "mathematical", "migration", "parameterized"]},
+        "source": {"enum": ["curated", "documentation", "synthetic_reviewed"]},
+        "include_in_embedding": {"type": "boolean"}
+      }
+    },
+    "interfaceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["interface_id", "role", "when", "argument_bindings", "call_template", "priority"],
+      "properties": {
+        "interface_id": {"type": "string", "pattern": "^bm\\."},
+        "role": {"enum": ["primary", "alternative", "supporting"]},
+        "when": {"type": "string"},
+        "argument_bindings": {"type": "object"},
+        "call_template": {"type": "string", "minLength": 1},
+        "priority": {"type": "integer", "minimum": 1}
+      }
+    },
+    "capability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "canonical_intent", "task_family", "summary", "user_expressions", "intent_slots", "interface_refs", "contrasts", "preconditions", "result_semantics", "examples", "backend_considerations", "tags", "provenance"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$"},
+        "canonical_intent": {"type": "string", "minLength": 1},
+        "task_family": {"type": "string", "minLength": 1},
+        "summary": {"type": "string", "minLength": 1},
+        "user_expressions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/expression"}},
+        "intent_slots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "type", "required", "description"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "type": {"type": "string", "minLength": 1},
+              "required": {"type": "boolean"},
+              "description": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "interface_refs": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/interfaceRef"}},
+        "contrasts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["capability_id", "distinction", "selection_cue"],
+            "properties": {
+              "capability_id": {"type": "string"},
+              "distinction": {"type": "string", "minLength": 1},
+              "selection_cue": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "preconditions": {"type": "array", "items": {"type": "string"}},
+        "result_semantics": {"type": "string", "minLength": 1},
+        "examples": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["query", "fealpy_call", "numpy_call", "pytorch_call", "notes"],
+            "properties": {
+              "query": {"type": "string", "minLength": 1},
+              "fealpy_call": {"type": "string", "minLength": 1},
+              "numpy_call": {"$ref": "#/$defs/nullableString"},
+              "pytorch_call": {"$ref": "#/$defs/nullableString"},
+              "notes": {"type": "string"}
+            }
+          }
+        },
+        "backend_considerations": {"type": "array", "items": {"type": "string"}},
+        "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "provenance": {"$ref": "#/$defs/provenance"}
+      }
+    }
+  }
+}
