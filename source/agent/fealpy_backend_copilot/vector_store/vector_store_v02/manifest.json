@@ -1,0 +1,28 @@
+{
+  "collection": "fealpy_capabilities_v02",
+  "record_type": "capability",
+  "record_count": 218,
+  "interface_count": 233,
+  "capability_count": 218,
+  "schema_version": "2.0.0-retrieval-mvp",
+  "dataset_version": "data_v02",
+  "embedding_model": "D:\\chen\\repo\\download_model\\bge-m3",
+  "embedding_dimension": 1024,
+  "normalized_embeddings": true,
+  "distance_metric": "cosine",
+  "document_fields": [
+    "intent",
+    "expressions",
+    "target_interfaces",
+    "target_reasons",
+    "tags"
+  ],
+  "excluded_embedding_fields": [
+    "contrasts",
+    "category",
+    "source"
+  ],
+  "source_file": "D:\\chen\\repo\\lingjian\\source\\agent\\fealpy_backend_copilot\\data\\data_v02\\all_interfaces.json",
+  "source_sha256": "043e3b0d83f2d14a619a7b4c696e92175eafaf698a8649bd61876e2d9eefe5eb",
+  "built_at_utc": "2026-09-20T02:05:20.824901+00:00"
+}

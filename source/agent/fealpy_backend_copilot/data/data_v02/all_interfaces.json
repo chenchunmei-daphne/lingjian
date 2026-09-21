@@ -1,0 +1,6958 @@
+{
+  "schema_version": "2.0.0-retrieval-mvp",
+  "dataset_version": "data_v02",
+  "scope": "根据用户描述的计算功能检索正确的 FEALPy bm.* 接口",
+  "interfaces": [
+    {
+      "id": "bm.random.seed",
+      "name": "random.seed",
+      "summary": "设置随机数生成器的种子，使随机结果可复现",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L667"
+    },
+    {
+      "id": "bm.random.rand",
+      "name": "random.rand",
+      "summary": "创建服从零到一均匀分布的随机张量",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L670"
+    },
+    {
+      "id": "bm.random.randint",
+      "name": "random.randint",
+      "summary": "创建指定整数区间内的随机整数张量",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L674"
+    },
+    {
+      "id": "bm.random.randn",
+      "name": "random.randn",
+      "summary": "创建服从标准正态分布的随机张量",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L677"
+    },
+    {
+      "id": "bm.linalg.cholesky",
+      "name": "linalg.cholesky",
+      "summary": "对对称正定矩阵进行 Cholesky 分解",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.cross",
+      "name": "linalg.cross",
+      "summary": "计算三维向量或向量数组的叉积",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.det",
+      "name": "linalg.det",
+      "summary": "计算方阵的行列式",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.diagonal",
+      "name": "linalg.diagonal",
+      "summary": "提取矩阵或批量矩阵的对角线元素",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.eigh",
+      "name": "linalg.eigh",
+      "summary": "计算实对称或复 Hermitian 矩阵的特征值和特征向量",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.eigvalsh",
+      "name": "linalg.eigvalsh",
+      "summary": "只计算实对称或复 Hermitian 矩阵的特征值",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.inv",
+      "name": "linalg.inv",
+      "summary": "计算可逆方阵的逆矩阵",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.matmul",
+      "name": "linalg.matmul",
+      "summary": "执行矩阵乘法或批量矩阵乘法",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.matrix_norm",
+      "name": "linalg.matrix_norm",
+      "summary": "计算矩阵范数，例如 Frobenius 范数或核范数",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.matrix_power",
+      "name": "linalg.matrix_power",
+      "summary": "计算方阵的整数次幂",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.matrix_rank",
+      "name": "linalg.matrix_rank",
+      "summary": "计算矩阵的秩",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.matrix_transpose",
+      "name": "linalg.matrix_transpose",
+      "summary": "交换矩阵最后两个维度以得到矩阵转置",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.outer",
+      "name": "linalg.outer",
+      "summary": "计算两个向量的外积",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.pinv",
+      "name": "linalg.pinv",
+      "summary": "计算矩阵的 Moore-Penrose 伪逆",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.qr",
+      "name": "linalg.qr",
+      "summary": "对矩阵进行 QR 分解",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.slogdet",
+      "name": "linalg.slogdet",
+      "summary": "计算行列式的符号和绝对值的自然对数",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.solve",
+      "name": "linalg.solve",
+      "summary": "求解线性方程组",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.svd",
+      "name": "linalg.svd",
+      "summary": "对矩阵进行奇异值分解并返回奇异向量和奇异值",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.svdvals",
+      "name": "linalg.svdvals",
+      "summary": "只计算矩阵的奇异值",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.tensordot",
+      "name": "linalg.tensordot",
+      "summary": "沿指定维度对两个张量执行缩并",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.trace",
+      "name": "linalg.trace",
+      "summary": "计算矩阵对角线元素之和",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.vecdot",
+      "name": "linalg.vecdot",
+      "summary": "沿指定维度计算两个向量的点积",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.linalg.vector_norm",
+      "name": "linalg.vector_norm",
+      "summary": "计算向量范数，支持指定阶数和维度",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L29"
+    },
+    {
+      "id": "bm.set_backend",
+      "name": "set_backend",
+      "summary": "切换 FEALPy 当前使用的计算后端",
+      "category": "other",
+      "source": "fealpy/backend/manager.py:L23"
+    },
+    {
+      "id": "bm.load_backend",
+      "name": "load_backend",
+      "summary": "加载并返回指定名称的 FEALPy 计算后端",
+      "category": "other",
+      "source": "fealpy/backend/manager.py:L29"
+    },
+    {
+      "id": "bm.get_current_backend",
+      "name": "get_current_backend",
+      "summary": "获取 FEALPy 当前正在使用的计算后端",
+      "category": "other",
+      "source": "fealpy/backend/manager.py:L48"
+    },
+    {
+      "id": "bm.is_tensor",
+      "name": "is_tensor",
+      "summary": "判断一个对象是否为当前后端支持的张量",
+      "category": "other",
+      "source": "fealpy/backend/base.py:L306"
+    },
+    {
+      "id": "bm.context",
+      "name": "context",
+      "summary": "获取张量的数据类型和设备等上下文信息",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L33"
+    },
+    {
+      "id": "bm.set_default_device",
+      "name": "set_default_device",
+      "summary": "设置当前后端创建张量时使用的默认设备",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L37"
+    },
+    {
+      "id": "bm.device_type",
+      "name": "device_type",
+      "summary": "获取张量所在设备的类型，例如 CPU 或 GPU",
+      "category": "dtype",
+      "source": "fealpy/backend/numpy_backend.py:L41"
+    },
+    {
+      "id": "bm.device_index",
+      "name": "device_index",
+      "summary": "获取张量所在设备的编号",
+      "category": "dtype",
+      "source": "fealpy/backend/numpy_backend.py:L44"
+    },
+    {
+      "id": "bm.get_device",
+      "name": "get_device",
+      "summary": "获取张量所在的计算设备",
+      "category": "dtype",
+      "source": "fealpy/backend/numpy_backend.py:L47"
+    },
+    {
+      "id": "bm.device_put",
+      "name": "device_put",
+      "summary": "将张量放到指定计算设备上",
+      "category": "dtype",
+      "source": "fealpy/backend/numpy_backend.py:L50"
+    },
+    {
+      "id": "bm.to_numpy",
+      "name": "to_numpy",
+      "summary": "将当前后端张量转换为 NumPy 数组",
+      "category": "dtype",
+      "source": "fealpy/backend/numpy_backend.py:L56"
+    },
+    {
+      "id": "bm.from_numpy",
+      "name": "from_numpy",
+      "summary": "将 NumPy 数组转换为当前后端张量",
+      "category": "dtype",
+      "source": "fealpy/backend/numpy_backend.py:L60"
+    },
+    {
+      "id": "bm.tolist",
+      "name": "tolist",
+      "summary": "将张量转换为 Python 列表",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L64"
+    },
+    {
+      "id": "bm.compile",
+      "name": "compile",
+      "summary": "编译或优化一个可调用函数以便后续执行",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.arange",
+      "name": "arange",
+      "summary": "按起点、终点和步长创建等间隔数值序列",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.asarray",
+      "name": "asarray",
+      "summary": "把输入转换为数组，并尽可能避免不必要的复制",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.empty",
+      "name": "empty",
+      "summary": "创建指定形状但不初始化元素值的张量",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.empty_like",
+      "name": "empty_like",
+      "summary": "创建与给定张量形状相同但不初始化元素值的张量",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.eye",
+      "name": "eye",
+      "summary": "创建二维单位矩阵或带指定对角线的矩阵",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.full",
+      "name": "full",
+      "summary": "创建指定形状且所有元素为同一给定值的张量",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.full_like",
+      "name": "full_like",
+      "summary": "创建与给定张量形状相同且填充指定值的张量",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.linspace",
+      "name": "linspace",
+      "summary": "在起点和终点之间创建指定数量的等间隔数值",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.meshgrid",
+      "name": "meshgrid",
+      "summary": "根据多个一维坐标序列生成坐标网格",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.ones",
+      "name": "ones",
+      "summary": "创建指定形状的全一张量",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.ones_like",
+      "name": "ones_like",
+      "summary": "创建与给定张量形状相同的全一张量",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.tril",
+      "name": "tril",
+      "summary": "提取矩阵的下三角部分并将其余元素置零",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.triu",
+      "name": "triu",
+      "summary": "提取矩阵的上三角部分并将其余元素置零",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.zeros",
+      "name": "zeros",
+      "summary": "创建指定形状的全零张量",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.zeros_like",
+      "name": "zeros_like",
+      "summary": "创建与给定张量形状相同的全零张量",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.array",
+      "name": "array",
+      "summary": "根据输入数据创建数组",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L81"
+    },
+    {
+      "id": "bm.tensor",
+      "name": "tensor",
+      "summary": "根据输入数据创建当前后端的张量",
+      "category": "creation",
+      "source": "fealpy/backend/numpy_backend.py:L82"
+    },
+    {
+      "id": "bm.astype",
+      "name": "astype",
+      "summary": "将张量转换为指定数据类型",
+      "category": "dtype",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.can_cast",
+      "name": "can_cast",
+      "summary": "判断一种数据类型能否安全转换为另一种数据类型",
+      "category": "dtype",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.finfo",
+      "name": "finfo",
+      "summary": "查询浮点数据类型的精度和取值范围",
+      "category": "dtype",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.iinfo",
+      "name": "iinfo",
+      "summary": "查询整数数据类型的取值范围",
+      "category": "dtype",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.isdtype",
+      "name": "isdtype",
+      "summary": "判断数据类型是否属于指定的数据类型类别",
+      "category": "dtype",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.result_type",
+      "name": "result_type",
+      "summary": "推断多个输入共同运算时应使用的数据类型",
+      "category": "dtype",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.abs",
+      "name": "abs",
+      "summary": "逐元素计算输入张量的绝对值",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.acos",
+      "name": "acos",
+      "summary": "逐元素计算输入张量的反余弦",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.acosh",
+      "name": "acosh",
+      "summary": "逐元素计算输入张量的反双曲余弦",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.add",
+      "name": "add",
+      "summary": "对输入张量逐元素相加",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.asin",
+      "name": "asin",
+      "summary": "逐元素计算输入张量的反正弦",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.asinh",
+      "name": "asinh",
+      "summary": "逐元素计算输入张量的反双曲正弦",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.atan",
+      "name": "atan",
+      "summary": "逐元素计算输入张量的反正切",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.atan2",
+      "name": "atan2",
+      "summary": "对输入张量根据纵横坐标计算四象限反正切",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.atanh",
+      "name": "atanh",
+      "summary": "逐元素计算输入张量的反双曲正切",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.bitwise_and",
+      "name": "bitwise_and",
+      "summary": "对输入张量逐位与",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.bitwise_left_shift",
+      "name": "bitwise_left_shift",
+      "summary": "对输入张量逐位左移",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.bitwise_invert",
+      "name": "bitwise_invert",
+      "summary": "逐元素计算输入张量的逐位取反结果",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.bitwise_or",
+      "name": "bitwise_or",
+      "summary": "对输入张量逐位或",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.bitwise_right_shift",
+      "name": "bitwise_right_shift",
+      "summary": "对输入张量逐位右移",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.bitwise_xor",
+      "name": "bitwise_xor",
+      "summary": "对输入张量逐位异或",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.ceil",
+      "name": "ceil",
+      "summary": "逐元素计算输入张量的向上取整",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.clip",
+      "name": "clip",
+      "summary": "对输入张量把元素限制在给定的最小值和最大值之间",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.conj",
+      "name": "conj",
+      "summary": "逐元素计算输入张量的复共轭",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.copysign",
+      "name": "copysign",
+      "summary": "对输入张量把第二个输入的符号复制到第一个输入的绝对值上",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.cos",
+      "name": "cos",
+      "summary": "逐元素计算输入张量的余弦",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.cosh",
+      "name": "cosh",
+      "summary": "逐元素计算输入张量的双曲余弦",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.divide",
+      "name": "divide",
+      "summary": "对输入张量逐元素相除",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.equal",
+      "name": "equal",
+      "summary": "判断两个输入的对应元素是否相等",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.exp",
+      "name": "exp",
+      "summary": "逐元素计算输入张量的自然指数",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.expm1",
+      "name": "expm1",
+      "summary": "逐元素计算输入张量的自然指数减一",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.floor",
+      "name": "floor",
+      "summary": "逐元素计算输入张量的向下取整",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.floor_divide",
+      "name": "floor_divide",
+      "summary": "对输入张量逐元素整除",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.greater",
+      "name": "greater",
+      "summary": "判断第一个输入的对应元素是否大于第二个输入",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.greater_equal",
+      "name": "greater_equal",
+      "summary": "判断第一个输入的对应元素是否大于或等于第二个输入",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.hypot",
+      "name": "hypot",
+      "summary": "对输入张量直角三角形斜边长度",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.imag",
+      "name": "imag",
+      "summary": "逐元素计算输入张量的虚部",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.isfinite",
+      "name": "isfinite",
+      "summary": "判断各元素是否为有限数值",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.isinf",
+      "name": "isinf",
+      "summary": "判断各元素是否为正无穷或负无穷",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.isnan",
+      "name": "isnan",
+      "summary": "判断各元素是否为非数值 NaN",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.less",
+      "name": "less",
+      "summary": "判断第一个输入的对应元素是否小于第二个输入",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.less_equal",
+      "name": "less_equal",
+      "summary": "判断第一个输入的对应元素是否小于或等于第二个输入",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.log",
+      "name": "log",
+      "summary": "逐元素计算输入张量的自然对数",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.log1p",
+      "name": "log1p",
+      "summary": "逐元素计算输入张量的一加输入值的自然对数",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.log2",
+      "name": "log2",
+      "summary": "逐元素计算输入张量的以二为底的对数",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.log10",
+      "name": "log10",
+      "summary": "逐元素计算输入张量的以十为底的对数",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.logaddexp",
+      "name": "logaddexp",
+      "summary": "对输入张量两个输入指数和的对数",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.logical_and",
+      "name": "logical_and",
+      "summary": "对两个布尔输入逐元素执行逻辑与",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.logical_not",
+      "name": "logical_not",
+      "summary": "对布尔输入逐元素执行逻辑非",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.logical_or",
+      "name": "logical_or",
+      "summary": "对两个布尔输入逐元素执行逻辑或",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.logical_xor",
+      "name": "logical_xor",
+      "summary": "对两个布尔输入逐元素执行逻辑异或",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.maximum",
+      "name": "maximum",
+      "summary": "对输入张量两个输入逐元素比较后的较大值",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.minimum",
+      "name": "minimum",
+      "summary": "对输入张量两个输入逐元素比较后的较小值",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.multiply",
+      "name": "multiply",
+      "summary": "对输入张量逐元素相乘",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.negative",
+      "name": "negative",
+      "summary": "逐元素计算输入张量的相反数",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.not_equal",
+      "name": "not_equal",
+      "summary": "判断两个输入的对应元素是否不相等",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.positive",
+      "name": "positive",
+      "summary": "逐元素计算输入张量的正值恒等变换",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.pow",
+      "name": "pow",
+      "summary": "对输入张量逐元素幂",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.real",
+      "name": "real",
+      "summary": "逐元素计算输入张量的实部",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.remainder",
+      "name": "remainder",
+      "summary": "对输入张量逐元素除法的余数",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.round",
+      "name": "round",
+      "summary": "逐元素计算输入张量的舍入值",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.sign",
+      "name": "sign",
+      "summary": "逐元素计算输入张量的符号值",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.sin",
+      "name": "sin",
+      "summary": "逐元素计算输入张量的正弦",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.sinh",
+      "name": "sinh",
+      "summary": "逐元素计算输入张量的双曲正弦",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.square",
+      "name": "square",
+      "summary": "逐元素计算输入张量的平方",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.sqrt",
+      "name": "sqrt",
+      "summary": "逐元素计算输入张量的平方根",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.subtract",
+      "name": "subtract",
+      "summary": "对输入张量逐元素相减",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.tan",
+      "name": "tan",
+      "summary": "逐元素计算输入张量的正切",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.tanh",
+      "name": "tanh",
+      "summary": "逐元素计算输入张量的双曲正切",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.trunc",
+      "name": "trunc",
+      "summary": "逐元素计算输入张量的向零截断后的整数部分",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.arcsin",
+      "name": "arcsin",
+      "summary": "逐元素计算输入张量的反正弦",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.arccos",
+      "name": "arccos",
+      "summary": "逐元素计算输入张量的反余弦",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.arctan",
+      "name": "arctan",
+      "summary": "逐元素计算输入张量的反正切",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.arctan2",
+      "name": "arctan2",
+      "summary": "对输入张量根据纵横坐标计算四象限反正切",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.arcsinh",
+      "name": "arcsinh",
+      "summary": "逐元素计算输入张量的反双曲正弦",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.arccosh",
+      "name": "arccosh",
+      "summary": "逐元素计算输入张量的反双曲余弦",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.arctanh",
+      "name": "arctanh",
+      "summary": "逐元素计算输入张量的反双曲正切",
+      "category": "math",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.take",
+      "name": "take",
+      "summary": "按给定索引从张量中取出元素",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.matmul",
+      "name": "matmul",
+      "summary": "执行矩阵乘法或批量矩阵乘法",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.matrix_transpose",
+      "name": "matrix_transpose",
+      "summary": "交换矩阵最后两个维度以得到矩阵转置",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.tensordot",
+      "name": "tensordot",
+      "summary": "沿指定维度对两个张量执行缩并",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.vecdot",
+      "name": "vecdot",
+      "summary": "沿指定维度计算两个向量的点积",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.cross",
+      "name": "cross",
+      "summary": "计算三维向量或向量数组的叉积",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.dot",
+      "name": "dot",
+      "summary": "计算两个输入的点积或按相应规则执行乘积求和",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.einsum",
+      "name": "einsum",
+      "summary": "使用爱因斯坦求和表达式描述张量运算",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L93"
+    },
+    {
+      "id": "bm.trace",
+      "name": "trace",
+      "summary": "计算矩阵对角线元素之和",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.broadcast_arrays",
+      "name": "broadcast_arrays",
+      "summary": "将多个张量广播成相互兼容的共同形状",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.broadcast_to",
+      "name": "broadcast_to",
+      "summary": "将张量广播到指定目标形状",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.concat",
+      "name": "concat",
+      "summary": "沿已有维度连接多个张量",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.expand_dims",
+      "name": "expand_dims",
+      "summary": "在指定位置为张量增加一个长度为一的新维度",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.flip",
+      "name": "flip",
+      "summary": "沿指定维度反转张量中的元素顺序",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.moveaxis",
+      "name": "moveaxis",
+      "summary": "把张量的一个或多个维度移动到新的位置",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.permute_dims",
+      "name": "permute_dims",
+      "summary": "按照给定顺序重新排列张量的全部维度",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.repeat",
+      "name": "repeat",
+      "summary": "逐元素重复张量中的值",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.reshape",
+      "name": "reshape",
+      "summary": "在元素总数不变的情况下将张量变为指定形状",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.roll",
+      "name": "roll",
+      "summary": "沿指定维度循环移动张量元素",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.squeeze",
+      "name": "squeeze",
+      "summary": "删除张量中长度为一的维度",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.stack",
+      "name": "stack",
+      "summary": "沿新增加的维度堆叠多个张量",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.tile",
+      "name": "tile",
+      "summary": "按照各维度的重复次数平铺整个张量",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.unstack",
+      "name": "unstack",
+      "summary": "沿指定维度把一个张量拆成多个张量",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L99"
+    },
+    {
+      "id": "bm.insert",
+      "name": "insert",
+      "summary": "在指定位置向数组插入元素",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.split",
+      "name": "split",
+      "summary": "沿指定维度把张量切分成多个部分",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.swapaxes",
+      "name": "swapaxes",
+      "summary": "交换张量的两个指定维度",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.argmax",
+      "name": "argmax",
+      "summary": "返回张量最大元素所在的位置索引",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.argmin",
+      "name": "argmin",
+      "summary": "返回张量最小元素所在的位置索引",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.nonzero",
+      "name": "nonzero",
+      "summary": "返回张量中所有非零元素的位置索引",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.searchsorted",
+      "name": "searchsorted",
+      "summary": "在有序序列中查找插入值后仍保持有序的位置",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.where",
+      "name": "where",
+      "summary": "根据布尔条件从两个输入中逐元素选择值",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.bincount",
+      "name": "bincount",
+      "summary": "统计非负整数张量中每个取值出现的次数",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.isin",
+      "name": "isin",
+      "summary": "判断输入中的每个元素是否出现在候选元素集合中",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.unique_all",
+      "name": "unique_all",
+      "summary": "获取唯一元素以及索引、逆映射和计数等完整信息",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.unique",
+      "name": "unique",
+      "summary": "获取张量中的唯一元素并去除重复值",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.argsort",
+      "name": "argsort",
+      "summary": "返回张量排序后各元素对应的原始索引",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.sort",
+      "name": "sort",
+      "summary": "返回沿指定维度排序后的元素值",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.lexsort",
+      "name": "lexsort",
+      "summary": "使用多个键对数据执行稳定的字典序排序",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.cumulative_sum",
+      "name": "cumulative_sum",
+      "summary": "沿指定维度计算包含初始值语义的累计和",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.max",
+      "name": "max",
+      "summary": "计算张量全部元素或指定维度上的最大值",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.mean",
+      "name": "mean",
+      "summary": "计算张量全部元素或指定维度上的平均值",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.min",
+      "name": "min",
+      "summary": "计算张量全部元素或指定维度上的最小值",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.prod",
+      "name": "prod",
+      "summary": "计算张量全部元素或指定维度上的乘积",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.std",
+      "name": "std",
+      "summary": "计算张量全部元素或指定维度上的标准差",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.sum",
+      "name": "sum",
+      "summary": "计算张量全部元素或指定维度上的元素之和",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L112"
+    },
+    {
+      "id": "bm.var",
+      "name": "var",
+      "summary": "计算张量全部元素或指定维度上的方差",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.cumsum",
+      "name": "cumsum",
+      "summary": "沿指定维度计算累计和并保留各位置的中间结果",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.cumprod",
+      "name": "cumprod",
+      "summary": "沿指定维度计算累计乘积并保留各位置的中间结果",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.all",
+      "name": "all",
+      "summary": "判断张量全部元素或指定维度上的元素是否都为真",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.any",
+      "name": "any",
+      "summary": "判断张量全部元素或指定维度上是否至少有一个元素为真",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.allclose",
+      "name": "allclose",
+      "summary": "判断两个张量在给定容差内是否整体近似相等",
+      "category": "comparison",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.copy",
+      "name": "copy",
+      "summary": "复制张量并得到独立的新张量",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.size",
+      "name": "size",
+      "summary": "获取张量的元素总数或指定维度的长度",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.apply_along_axis",
+      "name": "apply_along_axis",
+      "summary": "沿数组指定维度对一维切片应用函数",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.vmap",
+      "name": "vmap",
+      "summary": "把处理单个样本的函数向量化为批量函数",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L336"
+    },
+    {
+      "id": "bm.grad",
+      "name": "grad",
+      "summary": "构造计算标量函数梯度的函数",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.jvp",
+      "name": "jvp",
+      "summary": "计算函数在给定切向量方向上的 Jacobian-向量积",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.vjp",
+      "name": "vjp",
+      "summary": "计算给定余切向量与函数 Jacobian 的向量-Jacobian 积",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.jacfwd",
+      "name": "jacfwd",
+      "summary": "使用前向模式自动微分计算函数的 Jacobian",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.jacrev",
+      "name": "jacrev",
+      "summary": "使用反向模式自动微分计算函数的 Jacobian",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.hessian",
+      "name": "hessian",
+      "summary": "计算标量函数的 Hessian 矩阵",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L646"
+    },
+    {
+      "id": "bm.set_at",
+      "name": "set_at",
+      "summary": "在指定索引位置写入或替换张量元素",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L119"
+    },
+    {
+      "id": "bm.add_at",
+      "name": "add_at",
+      "summary": "把给定值累加到张量的指定索引位置",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L124"
+    },
+    {
+      "id": "bm.index_add",
+      "name": "index_add",
+      "summary": "沿指定维度按索引把源张量累加到目标张量",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L129"
+    },
+    {
+      "id": "bm.scatter",
+      "name": "scatter",
+      "summary": "沿指定维度按索引把值写入目标张量",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L136"
+    },
+    {
+      "id": "bm.scatter_add",
+      "name": "scatter_add",
+      "summary": "沿指定维度按索引把值累加到目标张量",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L140"
+    },
+    {
+      "id": "bm.query_point",
+      "name": "query_point",
+      "summary": "在周期盒及给定搜索半径下查询点的邻居",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L223"
+    },
+    {
+      "id": "bm.multi_index_matrix",
+      "name": "multi_index_matrix",
+      "summary": "生成给定次数和维数的多重指标矩阵",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L357"
+    },
+    {
+      "id": "bm.edge_length",
+      "name": "edge_length",
+      "summary": "根据节点坐标和边连接关系计算每条边的长度",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L368"
+    },
+    {
+      "id": "bm.edge_normal",
+      "name": "edge_normal",
+      "summary": "计算二维网格边的法向量",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L374"
+    },
+    {
+      "id": "bm.edge_tangent",
+      "name": "edge_tangent",
+      "summary": "计算网格边的切向量",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L384"
+    },
+    {
+      "id": "bm.tensorprod",
+      "name": "tensorprod",
+      "summary": "计算多个张量的一般化张量积",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L392"
+    },
+    {
+      "id": "bm.bc_to_points",
+      "name": "bc_to_points",
+      "summary": "利用重心坐标将网格实体上的点转换为物理坐标",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L402"
+    },
+    {
+      "id": "bm.barycenter",
+      "name": "barycenter",
+      "summary": "计算网格实体顶点的重心坐标位置",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L410"
+    },
+    {
+      "id": "bm.simplex_measure",
+      "name": "simplex_measure",
+      "summary": "计算单纯形网格实体的几何测度",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L414"
+    },
+    {
+      "id": "bm.simplex_shape_function",
+      "name": "simplex_shape_function",
+      "summary": "计算单纯形有限元形函数值",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L424"
+    },
+    {
+      "id": "bm.simplex_grad_shape_function",
+      "name": "simplex_grad_shape_function",
+      "summary": "计算单纯形有限元形函数的梯度",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L443"
+    },
+    {
+      "id": "bm.simplex_hess_shape_function",
+      "name": "simplex_hess_shape_function",
+      "summary": "计算单纯形有限元形函数的 Hessian",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L480"
+    },
+    {
+      "id": "bm.tensor_measure",
+      "name": "tensor_measure",
+      "summary": "计算由张量积结构表示的网格实体测度",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L562"
+    },
+    {
+      "id": "bm.interval_grad_lambda",
+      "name": "interval_grad_lambda",
+      "summary": "计算区间单元重心坐标函数的梯度",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L567"
+    },
+    {
+      "id": "bm.triangle_area_3d",
+      "name": "triangle_area_3d",
+      "summary": "计算三维空间中三角形的面积",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L575"
+    },
+    {
+      "id": "bm.triangle_grad_lambda_2d",
+      "name": "triangle_grad_lambda_2d",
+      "summary": "计算二维三角形重心坐标函数的梯度",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L587"
+    },
+    {
+      "id": "bm.triangle_grad_lambda_3d",
+      "name": "triangle_grad_lambda_3d",
+      "summary": "计算三维空间三角形重心坐标函数的梯度",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L601"
+    },
+    {
+      "id": "bm.quadrangle_grad_lambda_2d",
+      "name": "quadrangle_grad_lambda_2d",
+      "summary": "计算二维四边形参考坐标函数的梯度",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L616"
+    },
+    {
+      "id": "bm.tetrahedron_grad_lambda_3d",
+      "name": "tetrahedron_grad_lambda_3d",
+      "summary": "计算三维四面体重心坐标函数的梯度",
+      "category": "other",
+      "source": "fealpy/backend/numpy_backend.py:L620"
+    },
+    {
+      "id": "bm.signbit",
+      "name": "signbit",
+      "summary": "判断各元素的符号位是否为负",
+      "category": "math",
+      "source": "fealpy/backend/base.py:L167"
+    },
+    {
+      "id": "bm.power",
+      "name": "power",
+      "summary": "对输入张量逐元素幂",
+      "category": "math",
+      "source": "fealpy/backend/base.py:L172"
+    },
+    {
+      "id": "bm.take_along_axis",
+      "name": "take_along_axis",
+      "summary": "沿指定维度按照索引张量取出元素",
+      "category": "manipulation",
+      "source": "fealpy/backend/base.py:L176"
+    },
+    {
+      "id": "bm.concatenate",
+      "name": "concatenate",
+      "summary": "沿已有维度连接多个张量",
+      "category": "manipulation",
+      "source": "fealpy/backend/base.py:L206"
+    },
+    {
+      "id": "bm.transpose",
+      "name": "transpose",
+      "summary": "按照给定轴顺序转置张量",
+      "category": "manipulation",
+      "source": "fealpy/backend/base.py:L207"
+    },
+    {
+      "id": "bm.unique_counts",
+      "name": "unique_counts",
+      "summary": "获取唯一元素及每个唯一值的出现次数",
+      "category": "manipulation",
+      "source": "fealpy/backend/base.py:L218"
+    },
+    {
+      "id": "bm.unique_inverse",
+      "name": "unique_inverse",
+      "summary": "获取唯一元素及可重建原输入的逆映射索引",
+      "category": "manipulation",
+      "source": "fealpy/backend/base.py:L218"
+    },
+    {
+      "id": "bm.unique_values",
+      "name": "unique_values",
+      "summary": "只获取张量中的唯一元素值",
+      "category": "manipulation",
+      "source": "fealpy/backend/base.py:L218"
+    },
+    {
+      "id": "bm.setdiff1d",
+      "name": "setdiff1d",
+      "summary": "获取只出现在第一个输入而未出现在第二个输入中的元素",
+      "category": "manipulation",
+      "source": "fealpy/backend/base.py:L221"
+    },
+    {
+      "id": "bm.coo_spmm",
+      "name": "coo_spmm",
+      "summary": "执行 COO 格式稀疏矩阵与稠密向量或矩阵的乘法",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L157"
+    },
+    {
+      "id": "bm.csr_spmm",
+      "name": "csr_spmm",
+      "summary": "执行 CSR 格式稀疏矩阵与稠密向量或矩阵的乘法",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L181"
+    },
+    {
+      "id": "bm.csr_spspmm",
+      "name": "csr_spspmm",
+      "summary": "执行两个 CSR 格式稀疏矩阵的乘法",
+      "category": "linalg",
+      "source": "fealpy/backend/numpy_backend.py:L202"
+    },
+    {
+      "id": "bm.coo_tocsr",
+      "name": "coo_tocsr",
+      "summary": "把 COO 格式的稀疏矩阵转换为 CSR 格式",
+      "category": "manipulation",
+      "source": "fealpy/backend/numpy_backend.py:L210"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "interface.random.seed",
+      "intent": "设置随机数生成器的种子，使随机结果可复现",
+      "expressions": [
+        "设置随机数生成器的种子，使随机结果可复现",
+        "固定随机种子",
+        "如何设置随机数生成器的种子，使随机结果可复现",
+        "我想设置随机数生成器的种子，使随机结果可复现",
+        "FEALPy 中用什么接口可以设置随机数生成器的种子，使随机结果可复现"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.random.seed",
+          "role": "primary",
+          "reason": "设置随机数生成器的种子，使随机结果可复现"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "random.seed",
+        "other",
+        "固定随机种子",
+        "随机"
+      ]
+    },
+    {
+      "id": "interface.random.rand",
+      "intent": "创建服从零到一均匀分布的随机张量",
+      "expressions": [
+        "创建服从零到一均匀分布的随机张量",
+        "生成均匀随机数",
+        "如何创建服从零到一均匀分布的随机张量",
+        "我想创建服从零到一均匀分布的随机张量",
+        "FEALPy 中用什么接口可以创建服从零到一均匀分布的随机张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.random.rand",
+          "role": "primary",
+          "reason": "创建服从零到一均匀分布的随机张量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "random.rand",
+        "creation",
+        "生成均匀随机数",
+        "随机"
+      ]
+    },
+    {
+      "id": "interface.random.randint",
+      "intent": "创建指定整数区间内的随机整数张量",
+      "expressions": [
+        "创建指定整数区间内的随机整数张量",
+        "生成随机整数",
+        "如何创建指定整数区间内的随机整数张量",
+        "我想创建指定整数区间内的随机整数张量",
+        "FEALPy 中用什么接口可以创建指定整数区间内的随机整数张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.random.randint",
+          "role": "primary",
+          "reason": "创建指定整数区间内的随机整数张量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "random.randint",
+        "creation",
+        "生成随机整数",
+        "随机"
+      ]
+    },
+    {
+      "id": "interface.random.randn",
+      "intent": "创建服从标准正态分布的随机张量",
+      "expressions": [
+        "创建服从标准正态分布的随机张量",
+        "生成标准正态随机数",
+        "如何创建服从标准正态分布的随机张量",
+        "我想创建服从标准正态分布的随机张量",
+        "FEALPy 中用什么接口可以创建服从标准正态分布的随机张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.random.randn",
+          "role": "primary",
+          "reason": "创建服从标准正态分布的随机张量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "random.randn",
+        "creation",
+        "生成标准正态随机数",
+        "随机"
+      ]
+    },
+    {
+      "id": "interface.linalg.cholesky",
+      "intent": "对对称正定矩阵进行 Cholesky 分解",
+      "expressions": [
+        "对对称正定矩阵进行 Cholesky 分解",
+        "如何对对称正定矩阵进行 Cholesky 分解",
+        "我想对对称正定矩阵进行 Cholesky 分解",
+        "FEALPy 中用什么接口可以对对称正定矩阵进行 Cholesky 分解"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.cholesky",
+          "role": "primary",
+          "reason": "对对称正定矩阵进行 Cholesky 分解"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "cholesky",
+        "linalg.cholesky",
+        "linalg",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.linalg.det",
+      "intent": "计算方阵的行列式",
+      "expressions": [
+        "计算方阵的行列式",
+        "求行列式",
+        "如何计算方阵的行列式",
+        "我想计算方阵的行列式",
+        "FEALPy 中用什么接口可以计算方阵的行列式"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.det",
+          "role": "primary",
+          "reason": "计算方阵的行列式"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.linalg.slogdet",
+          "difference": "det 直接返回行列式；slogdet 返回符号和绝对值对数",
+          "selection_cue": "需要数值更稳定的对数形式时选择 bm.linalg.slogdet"
+        }
+      ],
+      "tags": [
+        "det",
+        "linalg.det",
+        "linalg",
+        "求行列式"
+      ]
+    },
+    {
+      "id": "interface.linalg.diagonal",
+      "intent": "提取矩阵或批量矩阵的对角线元素",
+      "expressions": [
+        "提取矩阵或批量矩阵的对角线元素",
+        "如何提取矩阵或批量矩阵的对角线元素",
+        "我想提取矩阵或批量矩阵的对角线元素",
+        "FEALPy 中用什么接口可以提取矩阵或批量矩阵的对角线元素"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.diagonal",
+          "role": "primary",
+          "reason": "提取矩阵或批量矩阵的对角线元素"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "diagonal",
+        "linalg.diagonal",
+        "linalg",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.linalg.eigh",
+      "intent": "计算实对称或复 Hermitian 矩阵的特征值和特征向量",
+      "expressions": [
+        "计算实对称或复 Hermitian 矩阵的特征值和特征向量",
+        "如何计算实对称或复 Hermitian 矩阵的特征值和特征向量",
+        "我想计算实对称或复 Hermitian 矩阵的特征值和特征向量",
+        "FEALPy 中用什么接口可以计算实对称或复 Hermitian 矩阵的特征值和特征向量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.eigh",
+          "role": "primary",
+          "reason": "计算实对称或复 Hermitian 矩阵的特征值和特征向量"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.linalg.eigvalsh",
+          "difference": "eigh 返回特征值和特征向量；eigvalsh 只返回特征值",
+          "selection_cue": "只需要特征值时选择 bm.linalg.eigvalsh"
+        }
+      ],
+      "tags": [
+        "eigh",
+        "linalg.eigh",
+        "linalg",
+        "矩阵",
+        "向量"
+      ]
+    },
+    {
+      "id": "interface.linalg.eigvalsh",
+      "intent": "只计算实对称或复 Hermitian 矩阵的特征值",
+      "expressions": [
+        "只计算实对称或复 Hermitian 矩阵的特征值",
+        "如何只计算实对称或复 Hermitian 矩阵的特征值",
+        "我想只计算实对称或复 Hermitian 矩阵的特征值",
+        "FEALPy 中用什么接口可以只计算实对称或复 Hermitian 矩阵的特征值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.eigvalsh",
+          "role": "primary",
+          "reason": "只计算实对称或复 Hermitian 矩阵的特征值"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.linalg.eigh",
+          "difference": "eigvalsh 只返回特征值；eigh 还返回特征向量",
+          "selection_cue": "需要特征向量时选择 bm.linalg.eigh"
+        }
+      ],
+      "tags": [
+        "eigvalsh",
+        "linalg.eigvalsh",
+        "linalg",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.linalg.inv",
+      "intent": "计算可逆方阵的逆矩阵",
+      "expressions": [
+        "计算可逆方阵的逆矩阵",
+        "求逆矩阵",
+        "如何计算可逆方阵的逆矩阵",
+        "我想计算可逆方阵的逆矩阵",
+        "FEALPy 中用什么接口可以计算可逆方阵的逆矩阵"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.inv",
+          "role": "primary",
+          "reason": "计算可逆方阵的逆矩阵"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "inv",
+        "linalg.inv",
+        "linalg",
+        "求逆矩阵",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.linalg.matrix_norm",
+      "intent": "计算矩阵范数，例如 Frobenius 范数或核范数",
+      "expressions": [
+        "计算矩阵范数，例如 Frobenius 范数或核范数",
+        "求矩阵范数",
+        "如何计算矩阵范数，例如 Frobenius 范数或核范数",
+        "我想计算矩阵范数，例如 Frobenius 范数或核范数",
+        "FEALPy 中用什么接口可以计算矩阵范数，例如 Frobenius 范数或核范数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.matrix_norm",
+          "role": "primary",
+          "reason": "计算矩阵范数，例如 Frobenius 范数或核范数"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.linalg.vector_norm",
+          "difference": "matrix_norm 按矩阵语义计算范数；vector_norm 按向量或指定轴计算范数",
+          "selection_cue": "输入按向量处理时选择 bm.linalg.vector_norm"
+        }
+      ],
+      "tags": [
+        "matrix_norm",
+        "linalg.matrix_norm",
+        "linalg",
+        "求矩阵范数",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.linalg.matrix_power",
+      "intent": "计算方阵的整数次幂",
+      "expressions": [
+        "计算方阵的整数次幂",
+        "如何计算方阵的整数次幂",
+        "我想计算方阵的整数次幂",
+        "FEALPy 中用什么接口可以计算方阵的整数次幂"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.matrix_power",
+          "role": "primary",
+          "reason": "计算方阵的整数次幂"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "matrix_power",
+        "linalg.matrix_power",
+        "linalg"
+      ]
+    },
+    {
+      "id": "interface.linalg.matrix_rank",
+      "intent": "计算矩阵的秩",
+      "expressions": [
+        "计算矩阵的秩",
+        "求矩阵秩",
+        "如何计算矩阵的秩",
+        "我想计算矩阵的秩",
+        "FEALPy 中用什么接口可以计算矩阵的秩"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.matrix_rank",
+          "role": "primary",
+          "reason": "计算矩阵的秩"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "matrix_rank",
+        "linalg.matrix_rank",
+        "linalg",
+        "求矩阵秩",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.linalg.outer",
+      "intent": "计算两个向量的外积",
+      "expressions": [
+        "计算两个向量的外积",
+        "如何计算两个向量的外积",
+        "我想计算两个向量的外积",
+        "FEALPy 中用什么接口可以计算两个向量的外积"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.outer",
+          "role": "primary",
+          "reason": "计算两个向量的外积"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "outer",
+        "linalg.outer",
+        "linalg",
+        "向量"
+      ]
+    },
+    {
+      "id": "interface.linalg.pinv",
+      "intent": "计算矩阵的 Moore-Penrose 伪逆",
+      "expressions": [
+        "计算矩阵的 Moore-Penrose 伪逆",
+        "如何计算矩阵的 Moore-Penrose 伪逆",
+        "我想计算矩阵的 Moore-Penrose 伪逆",
+        "FEALPy 中用什么接口可以计算矩阵的 Moore-Penrose 伪逆"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.pinv",
+          "role": "primary",
+          "reason": "计算矩阵的 Moore-Penrose 伪逆"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "pinv",
+        "linalg.pinv",
+        "linalg",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.linalg.qr",
+      "intent": "对矩阵进行 QR 分解",
+      "expressions": [
+        "对矩阵进行 QR 分解",
+        "如何对矩阵进行 QR 分解",
+        "我想对矩阵进行 QR 分解",
+        "FEALPy 中用什么接口可以对矩阵进行 QR 分解"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.qr",
+          "role": "primary",
+          "reason": "对矩阵进行 QR 分解"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "qr",
+        "linalg.qr",
+        "linalg",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.linalg.slogdet",
+      "intent": "计算行列式的符号和绝对值的自然对数",
+      "expressions": [
+        "计算行列式的符号和绝对值的自然对数",
+        "如何计算行列式的符号和绝对值的自然对数",
+        "我想计算行列式的符号和绝对值的自然对数",
+        "FEALPy 中用什么接口可以计算行列式的符号和绝对值的自然对数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.slogdet",
+          "role": "primary",
+          "reason": "计算行列式的符号和绝对值的自然对数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "slogdet",
+        "linalg.slogdet",
+        "linalg"
+      ]
+    },
+    {
+      "id": "interface.linalg.solve",
+      "intent": "求解线性方程组",
+      "expressions": [
+        "求解线性方程组",
+        "解线性方程组",
+        "如何求解线性方程组",
+        "我想求解线性方程组",
+        "FEALPy 中用什么接口可以求解线性方程组"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.solve",
+          "role": "primary",
+          "reason": "求解线性方程组"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "solve",
+        "linalg.solve",
+        "linalg",
+        "解线性方程组"
+      ]
+    },
+    {
+      "id": "interface.linalg.svd",
+      "intent": "对矩阵进行奇异值分解并返回奇异向量和奇异值",
+      "expressions": [
+        "对矩阵进行奇异值分解并返回奇异向量和奇异值",
+        "如何对矩阵进行奇异值分解并返回奇异向量和奇异值",
+        "我想对矩阵进行奇异值分解并返回奇异向量和奇异值",
+        "FEALPy 中用什么接口可以对矩阵进行奇异值分解并返回奇异向量和奇异值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.svd",
+          "role": "primary",
+          "reason": "对矩阵进行奇异值分解并返回奇异向量和奇异值"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.linalg.svdvals",
+          "difference": "svd 返回奇异向量和奇异值；svdvals 只返回奇异值",
+          "selection_cue": "只需要奇异值时选择 bm.linalg.svdvals"
+        }
+      ],
+      "tags": [
+        "svd",
+        "linalg.svd",
+        "linalg",
+        "矩阵",
+        "向量"
+      ]
+    },
+    {
+      "id": "interface.linalg.svdvals",
+      "intent": "只计算矩阵的奇异值",
+      "expressions": [
+        "只计算矩阵的奇异值",
+        "如何只计算矩阵的奇异值",
+        "我想只计算矩阵的奇异值",
+        "FEALPy 中用什么接口可以只计算矩阵的奇异值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.svdvals",
+          "role": "primary",
+          "reason": "只计算矩阵的奇异值"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.linalg.svd",
+          "difference": "svdvals 只返回奇异值；svd 还返回奇异向量",
+          "selection_cue": "需要完整分解时选择 bm.linalg.svd"
+        }
+      ],
+      "tags": [
+        "svdvals",
+        "linalg.svdvals",
+        "linalg",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.linalg.vector_norm",
+      "intent": "计算向量范数，支持指定阶数和维度",
+      "expressions": [
+        "计算向量范数，支持指定阶数和维度",
+        "求向量范数",
+        "如何计算向量范数，支持指定阶数和维度",
+        "我想计算向量范数，支持指定阶数和维度",
+        "FEALPy 中用什么接口可以计算向量范数，支持指定阶数和维度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linalg.vector_norm",
+          "role": "primary",
+          "reason": "计算向量范数，支持指定阶数和维度"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.linalg.matrix_norm",
+          "difference": "vector_norm 计算向量范数；matrix_norm 按矩阵语义计算范数",
+          "selection_cue": "明确要求 Frobenius 范数或核范数时选择 bm.linalg.matrix_norm"
+        }
+      ],
+      "tags": [
+        "vector_norm",
+        "linalg.vector_norm",
+        "linalg",
+        "求向量范数",
+        "维度",
+        "向量"
+      ]
+    },
+    {
+      "id": "interface.set_backend",
+      "intent": "切换 FEALPy 当前使用的计算后端",
+      "expressions": [
+        "切换 FEALPy 当前使用的计算后端",
+        "如何切换 FEALPy 当前使用的计算后端",
+        "我想切换 FEALPy 当前使用的计算后端",
+        "FEALPy 中用什么接口可以切换 FEALPy 当前使用的计算后端"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.set_backend",
+          "role": "primary",
+          "reason": "切换 FEALPy 当前使用的计算后端"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "set_backend",
+        "other"
+      ]
+    },
+    {
+      "id": "interface.load_backend",
+      "intent": "加载并返回指定名称的 FEALPy 计算后端",
+      "expressions": [
+        "加载并返回指定名称的 FEALPy 计算后端",
+        "如何加载并返回指定名称的 FEALPy 计算后端",
+        "我想加载并返回指定名称的 FEALPy 计算后端",
+        "FEALPy 中用什么接口可以加载并返回指定名称的 FEALPy 计算后端"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.load_backend",
+          "role": "primary",
+          "reason": "加载并返回指定名称的 FEALPy 计算后端"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "load_backend",
+        "other"
+      ]
+    },
+    {
+      "id": "interface.get_current_backend",
+      "intent": "获取 FEALPy 当前正在使用的计算后端",
+      "expressions": [
+        "获取 FEALPy 当前正在使用的计算后端",
+        "如何获取 FEALPy 当前正在使用的计算后端",
+        "我想获取 FEALPy 当前正在使用的计算后端",
+        "FEALPy 中用什么接口可以获取 FEALPy 当前正在使用的计算后端"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.get_current_backend",
+          "role": "primary",
+          "reason": "获取 FEALPy 当前正在使用的计算后端"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "get_current_backend",
+        "other"
+      ]
+    },
+    {
+      "id": "interface.is_tensor",
+      "intent": "判断一个对象是否为当前后端支持的张量",
+      "expressions": [
+        "判断一个对象是否为当前后端支持的张量",
+        "如何判断一个对象是否为当前后端支持的张量",
+        "我想判断一个对象是否为当前后端支持的张量",
+        "FEALPy 中用什么接口可以判断一个对象是否为当前后端支持的张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.is_tensor",
+          "role": "primary",
+          "reason": "判断一个对象是否为当前后端支持的张量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "is_tensor",
+        "other"
+      ]
+    },
+    {
+      "id": "interface.context",
+      "intent": "获取张量的数据类型和设备等上下文信息",
+      "expressions": [
+        "获取张量的数据类型和设备等上下文信息",
+        "如何获取张量的数据类型和设备等上下文信息",
+        "我想获取张量的数据类型和设备等上下文信息",
+        "FEALPy 中用什么接口可以获取张量的数据类型和设备等上下文信息"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.context",
+          "role": "primary",
+          "reason": "获取张量的数据类型和设备等上下文信息"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "context",
+        "other",
+        "设备",
+        "类型"
+      ]
+    },
+    {
+      "id": "interface.set_default_device",
+      "intent": "设置当前后端创建张量时使用的默认设备",
+      "expressions": [
+        "设置当前后端创建张量时使用的默认设备",
+        "如何设置当前后端创建张量时使用的默认设备",
+        "我想设置当前后端创建张量时使用的默认设备",
+        "FEALPy 中用什么接口可以设置当前后端创建张量时使用的默认设备"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.set_default_device",
+          "role": "primary",
+          "reason": "设置当前后端创建张量时使用的默认设备"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "set_default_device",
+        "other",
+        "设备"
+      ]
+    },
+    {
+      "id": "interface.device_type",
+      "intent": "获取张量所在设备的类型，例如 CPU 或 GPU",
+      "expressions": [
+        "获取张量所在设备的类型，例如 CPU 或 GPU",
+        "如何获取张量所在设备的类型，例如 CPU 或 GPU",
+        "我想获取张量所在设备的类型，例如 CPU 或 GPU",
+        "FEALPy 中用什么接口可以获取张量所在设备的类型，例如 CPU 或 GPU"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.device_type",
+          "role": "primary",
+          "reason": "获取张量所在设备的类型，例如 CPU 或 GPU"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "device_type",
+        "dtype",
+        "设备",
+        "类型"
+      ]
+    },
+    {
+      "id": "interface.device_index",
+      "intent": "获取张量所在设备的编号",
+      "expressions": [
+        "获取张量所在设备的编号",
+        "如何获取张量所在设备的编号",
+        "我想获取张量所在设备的编号",
+        "FEALPy 中用什么接口可以获取张量所在设备的编号"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.device_index",
+          "role": "primary",
+          "reason": "获取张量所在设备的编号"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "device_index",
+        "dtype",
+        "设备"
+      ]
+    },
+    {
+      "id": "interface.get_device",
+      "intent": "获取张量所在的计算设备",
+      "expressions": [
+        "获取张量所在的计算设备",
+        "如何获取张量所在的计算设备",
+        "我想获取张量所在的计算设备",
+        "FEALPy 中用什么接口可以获取张量所在的计算设备"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.get_device",
+          "role": "primary",
+          "reason": "获取张量所在的计算设备"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "get_device",
+        "dtype",
+        "设备"
+      ]
+    },
+    {
+      "id": "interface.device_put",
+      "intent": "将张量放到指定计算设备上",
+      "expressions": [
+        "将张量放到指定计算设备上",
+        "如何将张量放到指定计算设备上",
+        "我想将张量放到指定计算设备上",
+        "FEALPy 中用什么接口可以将张量放到指定计算设备上"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.device_put",
+          "role": "primary",
+          "reason": "将张量放到指定计算设备上"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "device_put",
+        "dtype",
+        "设备"
+      ]
+    },
+    {
+      "id": "interface.to_numpy",
+      "intent": "将当前后端张量转换为 NumPy 数组",
+      "expressions": [
+        "将当前后端张量转换为 NumPy 数组",
+        "如何将当前后端张量转换为 NumPy 数组",
+        "我想将当前后端张量转换为 NumPy 数组",
+        "FEALPy 中用什么接口可以将当前后端张量转换为 NumPy 数组"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.to_numpy",
+          "role": "primary",
+          "reason": "将当前后端张量转换为 NumPy 数组"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "to_numpy",
+        "dtype"
+      ]
+    },
+    {
+      "id": "interface.from_numpy",
+      "intent": "将 NumPy 数组转换为当前后端张量",
+      "expressions": [
+        "将 NumPy 数组转换为当前后端张量",
+        "如何将 NumPy 数组转换为当前后端张量",
+        "我想将 NumPy 数组转换为当前后端张量",
+        "FEALPy 中用什么接口可以将 NumPy 数组转换为当前后端张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.from_numpy",
+          "role": "primary",
+          "reason": "将 NumPy 数组转换为当前后端张量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "from_numpy",
+        "dtype"
+      ]
+    },
+    {
+      "id": "interface.tolist",
+      "intent": "将张量转换为 Python 列表",
+      "expressions": [
+        "将张量转换为 Python 列表",
+        "如何将张量转换为 Python 列表",
+        "我想将张量转换为 Python 列表",
+        "FEALPy 中用什么接口可以将张量转换为 Python 列表"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.tolist",
+          "role": "primary",
+          "reason": "将张量转换为 Python 列表"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "tolist",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "interface.compile",
+      "intent": "编译或优化一个可调用函数以便后续执行",
+      "expressions": [
+        "编译或优化一个可调用函数以便后续执行",
+        "如何编译或优化一个可调用函数以便后续执行",
+        "我想编译或优化一个可调用函数以便后续执行",
+        "FEALPy 中用什么接口可以编译或优化一个可调用函数以便后续执行"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.compile",
+          "role": "primary",
+          "reason": "编译或优化一个可调用函数以便后续执行"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "compile",
+        "other"
+      ]
+    },
+    {
+      "id": "interface.arange",
+      "intent": "按起点、终点和步长创建等间隔数值序列",
+      "expressions": [
+        "按起点、终点和步长创建等间隔数值序列",
+        "如何按起点、终点和步长创建等间隔数值序列",
+        "我想按起点、终点和步长创建等间隔数值序列",
+        "FEALPy 中用什么接口可以按起点、终点和步长创建等间隔数值序列"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.arange",
+          "role": "primary",
+          "reason": "按起点、终点和步长创建等间隔数值序列"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "arange",
+        "creation"
+      ]
+    },
+    {
+      "id": "interface.asarray",
+      "intent": "把输入转换为数组，并尽可能避免不必要的复制",
+      "expressions": [
+        "把输入转换为数组，并尽可能避免不必要的复制",
+        "如何把输入转换为数组，并尽可能避免不必要的复制",
+        "我想把输入转换为数组，并尽可能避免不必要的复制",
+        "FEALPy 中用什么接口可以把输入转换为数组，并尽可能避免不必要的复制"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.asarray",
+          "role": "primary",
+          "reason": "把输入转换为数组，并尽可能避免不必要的复制"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.array",
+          "difference": "asarray 尽量避免复制；array 强调创建数组",
+          "selection_cue": "明确需要新数组时选择 bm.array"
+        }
+      ],
+      "tags": [
+        "asarray",
+        "creation"
+      ]
+    },
+    {
+      "id": "interface.empty",
+      "intent": "创建指定形状但不初始化元素值的张量",
+      "expressions": [
+        "创建指定形状但不初始化元素值的张量",
+        "如何创建指定形状但不初始化元素值的张量",
+        "我想创建指定形状但不初始化元素值的张量",
+        "FEALPy 中用什么接口可以创建指定形状但不初始化元素值的张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.empty",
+          "role": "primary",
+          "reason": "创建指定形状但不初始化元素值的张量"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.empty_like",
+          "difference": "empty 根据显式形状创建；empty_like 复制已有张量的形状",
+          "selection_cue": "以现有张量为模板时选择 bm.empty_like"
+        }
+      ],
+      "tags": [
+        "empty",
+        "creation",
+        "形状"
+      ]
+    },
+    {
+      "id": "interface.empty_like",
+      "intent": "创建与给定张量形状相同但不初始化元素值的张量",
+      "expressions": [
+        "创建与给定张量形状相同但不初始化元素值的张量",
+        "如何创建与给定张量形状相同但不初始化元素值的张量",
+        "我想创建与给定张量形状相同但不初始化元素值的张量",
+        "FEALPy 中用什么接口可以创建与给定张量形状相同但不初始化元素值的张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.empty_like",
+          "role": "primary",
+          "reason": "创建与给定张量形状相同但不初始化元素值的张量"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.empty",
+          "difference": "empty_like 使用已有张量的形状；empty 使用显式目标形状",
+          "selection_cue": "直接给出 shape 时选择 bm.empty"
+        }
+      ],
+      "tags": [
+        "empty_like",
+        "creation",
+        "形状"
+      ]
+    },
+    {
+      "id": "interface.eye",
+      "intent": "创建二维单位矩阵或带指定对角线的矩阵",
+      "expressions": [
+        "创建二维单位矩阵或带指定对角线的矩阵",
+        "如何创建二维单位矩阵或带指定对角线的矩阵",
+        "我想创建二维单位矩阵或带指定对角线的矩阵",
+        "FEALPy 中用什么接口可以创建二维单位矩阵或带指定对角线的矩阵"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.eye",
+          "role": "primary",
+          "reason": "创建二维单位矩阵或带指定对角线的矩阵"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "eye",
+        "creation",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.full",
+      "intent": "创建指定形状且所有元素为同一给定值的张量",
+      "expressions": [
+        "创建指定形状且所有元素为同一给定值的张量",
+        "创建常数填充张量",
+        "如何创建指定形状且所有元素为同一给定值的张量",
+        "我想创建指定形状且所有元素为同一给定值的张量",
+        "FEALPy 中用什么接口可以创建指定形状且所有元素为同一给定值的张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.full",
+          "role": "primary",
+          "reason": "创建指定形状且所有元素为同一给定值的张量"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.full_like",
+          "difference": "full 根据显式形状填充值；full_like 复制已有张量的形状",
+          "selection_cue": "以现有张量为模板时选择 bm.full_like"
+        }
+      ],
+      "tags": [
+        "full",
+        "creation",
+        "创建常数填充张量",
+        "形状"
+      ]
+    },
+    {
+      "id": "interface.full_like",
+      "intent": "创建与给定张量形状相同且填充指定值的张量",
+      "expressions": [
+        "创建与给定张量形状相同且填充指定值的张量",
+        "如何创建与给定张量形状相同且填充指定值的张量",
+        "我想创建与给定张量形状相同且填充指定值的张量",
+        "FEALPy 中用什么接口可以创建与给定张量形状相同且填充指定值的张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.full_like",
+          "role": "primary",
+          "reason": "创建与给定张量形状相同且填充指定值的张量"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.full",
+          "difference": "full_like 使用已有张量的形状；full 使用显式目标形状",
+          "selection_cue": "直接给出 shape 时选择 bm.full"
+        }
+      ],
+      "tags": [
+        "full_like",
+        "creation",
+        "形状"
+      ]
+    },
+    {
+      "id": "interface.linspace",
+      "intent": "在起点和终点之间创建指定数量的等间隔数值",
+      "expressions": [
+        "在起点和终点之间创建指定数量的等间隔数值",
+        "如何在起点和终点之间创建指定数量的等间隔数值",
+        "我想在起点和终点之间创建指定数量的等间隔数值",
+        "FEALPy 中用什么接口可以在起点和终点之间创建指定数量的等间隔数值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.linspace",
+          "role": "primary",
+          "reason": "在起点和终点之间创建指定数量的等间隔数值"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "linspace",
+        "creation"
+      ]
+    },
+    {
+      "id": "interface.meshgrid",
+      "intent": "根据多个一维坐标序列生成坐标网格",
+      "expressions": [
+        "根据多个一维坐标序列生成坐标网格",
+        "如何根据多个一维坐标序列生成坐标网格",
+        "我想根据多个一维坐标序列生成坐标网格",
+        "FEALPy 中用什么接口可以根据多个一维坐标序列生成坐标网格"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.meshgrid",
+          "role": "primary",
+          "reason": "根据多个一维坐标序列生成坐标网格"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "meshgrid",
+        "creation",
+        "网格",
+        "坐标"
+      ]
+    },
+    {
+      "id": "interface.ones",
+      "intent": "创建指定形状的全一张量",
+      "expressions": [
+        "创建指定形状的全一张量",
+        "创建全一张量",
+        "如何创建指定形状的全一张量",
+        "我想创建指定形状的全一张量",
+        "FEALPy 中用什么接口可以创建指定形状的全一张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.ones",
+          "role": "primary",
+          "reason": "创建指定形状的全一张量"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.ones_like",
+          "difference": "ones 根据显式形状创建；ones_like 复制已有张量的形状",
+          "selection_cue": "以现有张量为模板时选择 bm.ones_like"
+        }
+      ],
+      "tags": [
+        "ones",
+        "creation",
+        "创建全一张量",
+        "形状"
+      ]
+    },
+    {
+      "id": "interface.ones_like",
+      "intent": "创建与给定张量形状相同的全一张量",
+      "expressions": [
+        "创建与给定张量形状相同的全一张量",
+        "如何创建与给定张量形状相同的全一张量",
+        "我想创建与给定张量形状相同的全一张量",
+        "FEALPy 中用什么接口可以创建与给定张量形状相同的全一张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.ones_like",
+          "role": "primary",
+          "reason": "创建与给定张量形状相同的全一张量"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.ones",
+          "difference": "ones_like 使用已有张量的形状；ones 使用显式目标形状",
+          "selection_cue": "直接给出 shape 时选择 bm.ones"
+        }
+      ],
+      "tags": [
+        "ones_like",
+        "creation",
+        "形状"
+      ]
+    },
+    {
+      "id": "interface.tril",
+      "intent": "提取矩阵的下三角部分并将其余元素置零",
+      "expressions": [
+        "提取矩阵的下三角部分并将其余元素置零",
+        "如何提取矩阵的下三角部分并将其余元素置零",
+        "我想提取矩阵的下三角部分并将其余元素置零",
+        "FEALPy 中用什么接口可以提取矩阵的下三角部分并将其余元素置零"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.tril",
+          "role": "primary",
+          "reason": "提取矩阵的下三角部分并将其余元素置零"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "tril",
+        "other",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.triu",
+      "intent": "提取矩阵的上三角部分并将其余元素置零",
+      "expressions": [
+        "提取矩阵的上三角部分并将其余元素置零",
+        "如何提取矩阵的上三角部分并将其余元素置零",
+        "我想提取矩阵的上三角部分并将其余元素置零",
+        "FEALPy 中用什么接口可以提取矩阵的上三角部分并将其余元素置零"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.triu",
+          "role": "primary",
+          "reason": "提取矩阵的上三角部分并将其余元素置零"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "triu",
+        "other",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.zeros",
+      "intent": "创建指定形状的全零张量",
+      "expressions": [
+        "创建指定形状的全零张量",
+        "创建全零张量",
+        "如何创建指定形状的全零张量",
+        "我想创建指定形状的全零张量",
+        "FEALPy 中用什么接口可以创建指定形状的全零张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.zeros",
+          "role": "primary",
+          "reason": "创建指定形状的全零张量"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.zeros_like",
+          "difference": "zeros 根据显式形状创建；zeros_like 复制已有张量的形状",
+          "selection_cue": "以现有张量为模板时选择 bm.zeros_like"
+        }
+      ],
+      "tags": [
+        "zeros",
+        "creation",
+        "创建全零张量",
+        "形状"
+      ]
+    },
+    {
+      "id": "interface.zeros_like",
+      "intent": "创建与给定张量形状相同的全零张量",
+      "expressions": [
+        "创建与给定张量形状相同的全零张量",
+        "如何创建与给定张量形状相同的全零张量",
+        "我想创建与给定张量形状相同的全零张量",
+        "FEALPy 中用什么接口可以创建与给定张量形状相同的全零张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.zeros_like",
+          "role": "primary",
+          "reason": "创建与给定张量形状相同的全零张量"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.zeros",
+          "difference": "zeros_like 使用已有张量的形状；zeros 使用显式目标形状",
+          "selection_cue": "直接给出 shape 时选择 bm.zeros"
+        }
+      ],
+      "tags": [
+        "zeros_like",
+        "creation",
+        "形状"
+      ]
+    },
+    {
+      "id": "interface.array",
+      "intent": "根据输入数据创建数组",
+      "expressions": [
+        "根据输入数据创建数组",
+        "如何根据输入数据创建数组",
+        "我想根据输入数据创建数组",
+        "FEALPy 中用什么接口可以根据输入数据创建数组"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.array",
+          "role": "primary",
+          "reason": "根据输入数据创建数组"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.asarray",
+          "difference": "array 强调创建数组；asarray 强调转换并尽量避免复制",
+          "selection_cue": "希望复用已有存储时选择 bm.asarray"
+        },
+        {
+          "interface_id": "bm.tensor",
+          "difference": "array 使用数组命名；tensor 强调创建当前后端张量",
+          "selection_cue": "以统一张量概念表达时选择 bm.tensor"
+        }
+      ],
+      "tags": [
+        "array",
+        "creation"
+      ]
+    },
+    {
+      "id": "interface.tensor",
+      "intent": "根据输入数据创建当前后端的张量",
+      "expressions": [
+        "根据输入数据创建当前后端的张量",
+        "如何根据输入数据创建当前后端的张量",
+        "我想根据输入数据创建当前后端的张量",
+        "FEALPy 中用什么接口可以根据输入数据创建当前后端的张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.tensor",
+          "role": "primary",
+          "reason": "根据输入数据创建当前后端的张量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "tensor",
+        "creation"
+      ]
+    },
+    {
+      "id": "interface.astype",
+      "intent": "将张量转换为指定数据类型",
+      "expressions": [
+        "将张量转换为指定数据类型",
+        "如何将张量转换为指定数据类型",
+        "我想将张量转换为指定数据类型",
+        "FEALPy 中用什么接口可以将张量转换为指定数据类型"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.astype",
+          "role": "primary",
+          "reason": "将张量转换为指定数据类型"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "astype",
+        "dtype",
+        "类型"
+      ]
+    },
+    {
+      "id": "interface.can_cast",
+      "intent": "判断一种数据类型能否安全转换为另一种数据类型",
+      "expressions": [
+        "判断一种数据类型能否安全转换为另一种数据类型",
+        "如何判断一种数据类型能否安全转换为另一种数据类型",
+        "我想判断一种数据类型能否安全转换为另一种数据类型",
+        "FEALPy 中用什么接口可以判断一种数据类型能否安全转换为另一种数据类型"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.can_cast",
+          "role": "primary",
+          "reason": "判断一种数据类型能否安全转换为另一种数据类型"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "can_cast",
+        "dtype",
+        "类型"
+      ]
+    },
+    {
+      "id": "interface.finfo",
+      "intent": "查询浮点数据类型的精度和取值范围",
+      "expressions": [
+        "查询浮点数据类型的精度和取值范围",
+        "如何查询浮点数据类型的精度和取值范围",
+        "我想查询浮点数据类型的精度和取值范围",
+        "FEALPy 中用什么接口可以查询浮点数据类型的精度和取值范围"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.finfo",
+          "role": "primary",
+          "reason": "查询浮点数据类型的精度和取值范围"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "finfo",
+        "dtype",
+        "类型"
+      ]
+    },
+    {
+      "id": "interface.iinfo",
+      "intent": "查询整数数据类型的取值范围",
+      "expressions": [
+        "查询整数数据类型的取值范围",
+        "如何查询整数数据类型的取值范围",
+        "我想查询整数数据类型的取值范围",
+        "FEALPy 中用什么接口可以查询整数数据类型的取值范围"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.iinfo",
+          "role": "primary",
+          "reason": "查询整数数据类型的取值范围"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "iinfo",
+        "dtype",
+        "类型"
+      ]
+    },
+    {
+      "id": "interface.isdtype",
+      "intent": "判断数据类型是否属于指定的数据类型类别",
+      "expressions": [
+        "判断数据类型是否属于指定的数据类型类别",
+        "如何判断数据类型是否属于指定的数据类型类别",
+        "我想判断数据类型是否属于指定的数据类型类别",
+        "FEALPy 中用什么接口可以判断数据类型是否属于指定的数据类型类别"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.isdtype",
+          "role": "primary",
+          "reason": "判断数据类型是否属于指定的数据类型类别"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "isdtype",
+        "dtype",
+        "类型"
+      ]
+    },
+    {
+      "id": "interface.result_type",
+      "intent": "推断多个输入共同运算时应使用的数据类型",
+      "expressions": [
+        "推断多个输入共同运算时应使用的数据类型",
+        "如何推断多个输入共同运算时应使用的数据类型",
+        "我想推断多个输入共同运算时应使用的数据类型",
+        "FEALPy 中用什么接口可以推断多个输入共同运算时应使用的数据类型"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.result_type",
+          "role": "primary",
+          "reason": "推断多个输入共同运算时应使用的数据类型"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "result_type",
+        "dtype",
+        "类型"
+      ]
+    },
+    {
+      "id": "interface.abs",
+      "intent": "逐元素计算输入张量的绝对值",
+      "expressions": [
+        "逐元素计算输入张量的绝对值",
+        "如何逐元素计算输入张量的绝对值",
+        "我想逐元素计算输入张量的绝对值",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的绝对值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.abs",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的绝对值"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "abs",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.acos",
+      "intent": "逐元素计算输入张量的反余弦",
+      "expressions": [
+        "逐元素计算输入张量的反余弦",
+        "如何逐元素计算输入张量的反余弦",
+        "我想逐元素计算输入张量的反余弦",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的反余弦"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.acos",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的反余弦"
+        },
+        {
+          "id": "bm.arccos",
+          "role": "alternative",
+          "reason": "与 bm.acos 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "acos",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.acosh",
+      "intent": "逐元素计算输入张量的反双曲余弦",
+      "expressions": [
+        "逐元素计算输入张量的反双曲余弦",
+        "如何逐元素计算输入张量的反双曲余弦",
+        "我想逐元素计算输入张量的反双曲余弦",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的反双曲余弦"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.acosh",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的反双曲余弦"
+        },
+        {
+          "id": "bm.arccosh",
+          "role": "alternative",
+          "reason": "与 bm.acosh 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "acosh",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.add",
+      "intent": "对输入张量逐元素相加",
+      "expressions": [
+        "对输入张量逐元素相加",
+        "如何对输入张量逐元素相加",
+        "我想对输入张量逐元素相加",
+        "FEALPy 中用什么接口可以对输入张量逐元素相加"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.add",
+          "role": "primary",
+          "reason": "对输入张量逐元素相加"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "add",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.asin",
+      "intent": "逐元素计算输入张量的反正弦",
+      "expressions": [
+        "逐元素计算输入张量的反正弦",
+        "如何逐元素计算输入张量的反正弦",
+        "我想逐元素计算输入张量的反正弦",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的反正弦"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.asin",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的反正弦"
+        },
+        {
+          "id": "bm.arcsin",
+          "role": "alternative",
+          "reason": "与 bm.asin 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "asin",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.asinh",
+      "intent": "逐元素计算输入张量的反双曲正弦",
+      "expressions": [
+        "逐元素计算输入张量的反双曲正弦",
+        "如何逐元素计算输入张量的反双曲正弦",
+        "我想逐元素计算输入张量的反双曲正弦",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的反双曲正弦"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.asinh",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的反双曲正弦"
+        },
+        {
+          "id": "bm.arcsinh",
+          "role": "alternative",
+          "reason": "与 bm.asinh 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "asinh",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.atan",
+      "intent": "逐元素计算输入张量的反正切",
+      "expressions": [
+        "逐元素计算输入张量的反正切",
+        "如何逐元素计算输入张量的反正切",
+        "我想逐元素计算输入张量的反正切",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的反正切"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.atan",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的反正切"
+        },
+        {
+          "id": "bm.arctan",
+          "role": "alternative",
+          "reason": "与 bm.atan 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "atan",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.atan2",
+      "intent": "对输入张量根据纵横坐标计算四象限反正切",
+      "expressions": [
+        "对输入张量根据纵横坐标计算四象限反正切",
+        "如何对输入张量根据纵横坐标计算四象限反正切",
+        "我想对输入张量根据纵横坐标计算四象限反正切",
+        "FEALPy 中用什么接口可以对输入张量根据纵横坐标计算四象限反正切"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.atan2",
+          "role": "primary",
+          "reason": "对输入张量根据纵横坐标计算四象限反正切"
+        },
+        {
+          "id": "bm.arctan2",
+          "role": "alternative",
+          "reason": "与 bm.atan2 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "atan2",
+        "math",
+        "坐标"
+      ]
+    },
+    {
+      "id": "interface.atanh",
+      "intent": "逐元素计算输入张量的反双曲正切",
+      "expressions": [
+        "逐元素计算输入张量的反双曲正切",
+        "如何逐元素计算输入张量的反双曲正切",
+        "我想逐元素计算输入张量的反双曲正切",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的反双曲正切"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.atanh",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的反双曲正切"
+        },
+        {
+          "id": "bm.arctanh",
+          "role": "alternative",
+          "reason": "与 bm.atanh 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "atanh",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.bitwise_and",
+      "intent": "对输入张量逐位与",
+      "expressions": [
+        "对输入张量逐位与",
+        "如何对输入张量逐位与",
+        "我想对输入张量逐位与",
+        "FEALPy 中用什么接口可以对输入张量逐位与"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.bitwise_and",
+          "role": "primary",
+          "reason": "对输入张量逐位与"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "bitwise_and",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.bitwise_left_shift",
+      "intent": "对输入张量逐位左移",
+      "expressions": [
+        "对输入张量逐位左移",
+        "如何对输入张量逐位左移",
+        "我想对输入张量逐位左移",
+        "FEALPy 中用什么接口可以对输入张量逐位左移"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.bitwise_left_shift",
+          "role": "primary",
+          "reason": "对输入张量逐位左移"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "bitwise_left_shift",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.bitwise_invert",
+      "intent": "逐元素计算输入张量的逐位取反结果",
+      "expressions": [
+        "逐元素计算输入张量的逐位取反结果",
+        "如何逐元素计算输入张量的逐位取反结果",
+        "我想逐元素计算输入张量的逐位取反结果",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的逐位取反结果"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.bitwise_invert",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的逐位取反结果"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "bitwise_invert",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.bitwise_or",
+      "intent": "对输入张量逐位或",
+      "expressions": [
+        "对输入张量逐位或",
+        "如何对输入张量逐位或",
+        "我想对输入张量逐位或",
+        "FEALPy 中用什么接口可以对输入张量逐位或"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.bitwise_or",
+          "role": "primary",
+          "reason": "对输入张量逐位或"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "bitwise_or",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.bitwise_right_shift",
+      "intent": "对输入张量逐位右移",
+      "expressions": [
+        "对输入张量逐位右移",
+        "如何对输入张量逐位右移",
+        "我想对输入张量逐位右移",
+        "FEALPy 中用什么接口可以对输入张量逐位右移"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.bitwise_right_shift",
+          "role": "primary",
+          "reason": "对输入张量逐位右移"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "bitwise_right_shift",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.bitwise_xor",
+      "intent": "对输入张量逐位异或",
+      "expressions": [
+        "对输入张量逐位异或",
+        "如何对输入张量逐位异或",
+        "我想对输入张量逐位异或",
+        "FEALPy 中用什么接口可以对输入张量逐位异或"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.bitwise_xor",
+          "role": "primary",
+          "reason": "对输入张量逐位异或"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "bitwise_xor",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.ceil",
+      "intent": "逐元素计算输入张量的向上取整",
+      "expressions": [
+        "逐元素计算输入张量的向上取整",
+        "如何逐元素计算输入张量的向上取整",
+        "我想逐元素计算输入张量的向上取整",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的向上取整"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.ceil",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的向上取整"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "ceil",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.clip",
+      "intent": "对输入张量把元素限制在给定的最小值和最大值之间",
+      "expressions": [
+        "对输入张量把元素限制在给定的最小值和最大值之间",
+        "如何对输入张量把元素限制在给定的最小值和最大值之间",
+        "我想对输入张量把元素限制在给定的最小值和最大值之间",
+        "FEALPy 中用什么接口可以对输入张量把元素限制在给定的最小值和最大值之间"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.clip",
+          "role": "primary",
+          "reason": "对输入张量把元素限制在给定的最小值和最大值之间"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "clip",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.conj",
+      "intent": "逐元素计算输入张量的复共轭",
+      "expressions": [
+        "逐元素计算输入张量的复共轭",
+        "如何逐元素计算输入张量的复共轭",
+        "我想逐元素计算输入张量的复共轭",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的复共轭"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.conj",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的复共轭"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "conj",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.copysign",
+      "intent": "对输入张量把第二个输入的符号复制到第一个输入的绝对值上",
+      "expressions": [
+        "对输入张量把第二个输入的符号复制到第一个输入的绝对值上",
+        "如何对输入张量把第二个输入的符号复制到第一个输入的绝对值上",
+        "我想对输入张量把第二个输入的符号复制到第一个输入的绝对值上",
+        "FEALPy 中用什么接口可以对输入张量把第二个输入的符号复制到第一个输入的绝对值上"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.copysign",
+          "role": "primary",
+          "reason": "对输入张量把第二个输入的符号复制到第一个输入的绝对值上"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "copysign",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.cos",
+      "intent": "逐元素计算输入张量的余弦",
+      "expressions": [
+        "逐元素计算输入张量的余弦",
+        "如何逐元素计算输入张量的余弦",
+        "我想逐元素计算输入张量的余弦",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的余弦"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.cos",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的余弦"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "cos",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.cosh",
+      "intent": "逐元素计算输入张量的双曲余弦",
+      "expressions": [
+        "逐元素计算输入张量的双曲余弦",
+        "如何逐元素计算输入张量的双曲余弦",
+        "我想逐元素计算输入张量的双曲余弦",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的双曲余弦"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.cosh",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的双曲余弦"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "cosh",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.divide",
+      "intent": "对输入张量逐元素相除",
+      "expressions": [
+        "对输入张量逐元素相除",
+        "如何对输入张量逐元素相除",
+        "我想对输入张量逐元素相除",
+        "FEALPy 中用什么接口可以对输入张量逐元素相除"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.divide",
+          "role": "primary",
+          "reason": "对输入张量逐元素相除"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "divide",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.equal",
+      "intent": "判断两个输入的对应元素是否相等",
+      "expressions": [
+        "判断两个输入的对应元素是否相等",
+        "如何判断两个输入的对应元素是否相等",
+        "我想判断两个输入的对应元素是否相等",
+        "FEALPy 中用什么接口可以判断两个输入的对应元素是否相等"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.equal",
+          "role": "primary",
+          "reason": "判断两个输入的对应元素是否相等"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "equal",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.exp",
+      "intent": "逐元素计算输入张量的自然指数",
+      "expressions": [
+        "逐元素计算输入张量的自然指数",
+        "如何逐元素计算输入张量的自然指数",
+        "我想逐元素计算输入张量的自然指数",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的自然指数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.exp",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的自然指数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "exp",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.expm1",
+      "intent": "逐元素计算输入张量的自然指数减一",
+      "expressions": [
+        "逐元素计算输入张量的自然指数减一",
+        "如何逐元素计算输入张量的自然指数减一",
+        "我想逐元素计算输入张量的自然指数减一",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的自然指数减一"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.expm1",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的自然指数减一"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "expm1",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.floor",
+      "intent": "逐元素计算输入张量的向下取整",
+      "expressions": [
+        "逐元素计算输入张量的向下取整",
+        "如何逐元素计算输入张量的向下取整",
+        "我想逐元素计算输入张量的向下取整",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的向下取整"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.floor",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的向下取整"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "floor",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.floor_divide",
+      "intent": "对输入张量逐元素整除",
+      "expressions": [
+        "对输入张量逐元素整除",
+        "如何对输入张量逐元素整除",
+        "我想对输入张量逐元素整除",
+        "FEALPy 中用什么接口可以对输入张量逐元素整除"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.floor_divide",
+          "role": "primary",
+          "reason": "对输入张量逐元素整除"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "floor_divide",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.greater",
+      "intent": "判断第一个输入的对应元素是否大于第二个输入",
+      "expressions": [
+        "判断第一个输入的对应元素是否大于第二个输入",
+        "如何判断第一个输入的对应元素是否大于第二个输入",
+        "我想判断第一个输入的对应元素是否大于第二个输入",
+        "FEALPy 中用什么接口可以判断第一个输入的对应元素是否大于第二个输入"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.greater",
+          "role": "primary",
+          "reason": "判断第一个输入的对应元素是否大于第二个输入"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "greater",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.greater_equal",
+      "intent": "判断第一个输入的对应元素是否大于或等于第二个输入",
+      "expressions": [
+        "判断第一个输入的对应元素是否大于或等于第二个输入",
+        "如何判断第一个输入的对应元素是否大于或等于第二个输入",
+        "我想判断第一个输入的对应元素是否大于或等于第二个输入",
+        "FEALPy 中用什么接口可以判断第一个输入的对应元素是否大于或等于第二个输入"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.greater_equal",
+          "role": "primary",
+          "reason": "判断第一个输入的对应元素是否大于或等于第二个输入"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "greater_equal",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.hypot",
+      "intent": "对输入张量直角三角形斜边长度",
+      "expressions": [
+        "对输入张量直角三角形斜边长度",
+        "如何对输入张量直角三角形斜边长度",
+        "我想对输入张量直角三角形斜边长度",
+        "FEALPy 中用什么接口可以对输入张量直角三角形斜边长度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.hypot",
+          "role": "primary",
+          "reason": "对输入张量直角三角形斜边长度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "hypot",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.imag",
+      "intent": "逐元素计算输入张量的虚部",
+      "expressions": [
+        "逐元素计算输入张量的虚部",
+        "如何逐元素计算输入张量的虚部",
+        "我想逐元素计算输入张量的虚部",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的虚部"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.imag",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的虚部"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "imag",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.isfinite",
+      "intent": "判断各元素是否为有限数值",
+      "expressions": [
+        "判断各元素是否为有限数值",
+        "如何判断各元素是否为有限数值",
+        "我想判断各元素是否为有限数值",
+        "FEALPy 中用什么接口可以判断各元素是否为有限数值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.isfinite",
+          "role": "primary",
+          "reason": "判断各元素是否为有限数值"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "isfinite",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.isinf",
+      "intent": "判断各元素是否为正无穷或负无穷",
+      "expressions": [
+        "判断各元素是否为正无穷或负无穷",
+        "如何判断各元素是否为正无穷或负无穷",
+        "我想判断各元素是否为正无穷或负无穷",
+        "FEALPy 中用什么接口可以判断各元素是否为正无穷或负无穷"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.isinf",
+          "role": "primary",
+          "reason": "判断各元素是否为正无穷或负无穷"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "isinf",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.isnan",
+      "intent": "判断各元素是否为非数值 NaN",
+      "expressions": [
+        "判断各元素是否为非数值 NaN",
+        "如何判断各元素是否为非数值 NaN",
+        "我想判断各元素是否为非数值 NaN",
+        "FEALPy 中用什么接口可以判断各元素是否为非数值 NaN"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.isnan",
+          "role": "primary",
+          "reason": "判断各元素是否为非数值 NaN"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "isnan",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.less",
+      "intent": "判断第一个输入的对应元素是否小于第二个输入",
+      "expressions": [
+        "判断第一个输入的对应元素是否小于第二个输入",
+        "如何判断第一个输入的对应元素是否小于第二个输入",
+        "我想判断第一个输入的对应元素是否小于第二个输入",
+        "FEALPy 中用什么接口可以判断第一个输入的对应元素是否小于第二个输入"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.less",
+          "role": "primary",
+          "reason": "判断第一个输入的对应元素是否小于第二个输入"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "less",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.less_equal",
+      "intent": "判断第一个输入的对应元素是否小于或等于第二个输入",
+      "expressions": [
+        "判断第一个输入的对应元素是否小于或等于第二个输入",
+        "如何判断第一个输入的对应元素是否小于或等于第二个输入",
+        "我想判断第一个输入的对应元素是否小于或等于第二个输入",
+        "FEALPy 中用什么接口可以判断第一个输入的对应元素是否小于或等于第二个输入"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.less_equal",
+          "role": "primary",
+          "reason": "判断第一个输入的对应元素是否小于或等于第二个输入"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "less_equal",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.log",
+      "intent": "逐元素计算输入张量的自然对数",
+      "expressions": [
+        "逐元素计算输入张量的自然对数",
+        "如何逐元素计算输入张量的自然对数",
+        "我想逐元素计算输入张量的自然对数",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的自然对数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.log",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的自然对数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "log",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.log1p",
+      "intent": "逐元素计算输入张量的一加输入值的自然对数",
+      "expressions": [
+        "逐元素计算输入张量的一加输入值的自然对数",
+        "如何逐元素计算输入张量的一加输入值的自然对数",
+        "我想逐元素计算输入张量的一加输入值的自然对数",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的一加输入值的自然对数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.log1p",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的一加输入值的自然对数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "log1p",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.log2",
+      "intent": "逐元素计算输入张量的以二为底的对数",
+      "expressions": [
+        "逐元素计算输入张量的以二为底的对数",
+        "如何逐元素计算输入张量的以二为底的对数",
+        "我想逐元素计算输入张量的以二为底的对数",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的以二为底的对数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.log2",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的以二为底的对数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "log2",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.log10",
+      "intent": "逐元素计算输入张量的以十为底的对数",
+      "expressions": [
+        "逐元素计算输入张量的以十为底的对数",
+        "如何逐元素计算输入张量的以十为底的对数",
+        "我想逐元素计算输入张量的以十为底的对数",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的以十为底的对数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.log10",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的以十为底的对数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "log10",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.logaddexp",
+      "intent": "对输入张量两个输入指数和的对数",
+      "expressions": [
+        "对输入张量两个输入指数和的对数",
+        "如何对输入张量两个输入指数和的对数",
+        "我想对输入张量两个输入指数和的对数",
+        "FEALPy 中用什么接口可以对输入张量两个输入指数和的对数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.logaddexp",
+          "role": "primary",
+          "reason": "对输入张量两个输入指数和的对数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "logaddexp",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.logical_and",
+      "intent": "对两个布尔输入逐元素执行逻辑与",
+      "expressions": [
+        "对两个布尔输入逐元素执行逻辑与",
+        "如何对两个布尔输入逐元素执行逻辑与",
+        "我想对两个布尔输入逐元素执行逻辑与",
+        "FEALPy 中用什么接口可以对两个布尔输入逐元素执行逻辑与"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.logical_and",
+          "role": "primary",
+          "reason": "对两个布尔输入逐元素执行逻辑与"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "logical_and",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.logical_not",
+      "intent": "对布尔输入逐元素执行逻辑非",
+      "expressions": [
+        "对布尔输入逐元素执行逻辑非",
+        "如何对布尔输入逐元素执行逻辑非",
+        "我想对布尔输入逐元素执行逻辑非",
+        "FEALPy 中用什么接口可以对布尔输入逐元素执行逻辑非"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.logical_not",
+          "role": "primary",
+          "reason": "对布尔输入逐元素执行逻辑非"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "logical_not",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.logical_or",
+      "intent": "对两个布尔输入逐元素执行逻辑或",
+      "expressions": [
+        "对两个布尔输入逐元素执行逻辑或",
+        "如何对两个布尔输入逐元素执行逻辑或",
+        "我想对两个布尔输入逐元素执行逻辑或",
+        "FEALPy 中用什么接口可以对两个布尔输入逐元素执行逻辑或"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.logical_or",
+          "role": "primary",
+          "reason": "对两个布尔输入逐元素执行逻辑或"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "logical_or",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.logical_xor",
+      "intent": "对两个布尔输入逐元素执行逻辑异或",
+      "expressions": [
+        "对两个布尔输入逐元素执行逻辑异或",
+        "如何对两个布尔输入逐元素执行逻辑异或",
+        "我想对两个布尔输入逐元素执行逻辑异或",
+        "FEALPy 中用什么接口可以对两个布尔输入逐元素执行逻辑异或"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.logical_xor",
+          "role": "primary",
+          "reason": "对两个布尔输入逐元素执行逻辑异或"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "logical_xor",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.maximum",
+      "intent": "对输入张量两个输入逐元素比较后的较大值",
+      "expressions": [
+        "对输入张量两个输入逐元素比较后的较大值",
+        "如何对输入张量两个输入逐元素比较后的较大值",
+        "我想对输入张量两个输入逐元素比较后的较大值",
+        "FEALPy 中用什么接口可以对输入张量两个输入逐元素比较后的较大值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.maximum",
+          "role": "primary",
+          "reason": "对输入张量两个输入逐元素比较后的较大值"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "maximum",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.minimum",
+      "intent": "对输入张量两个输入逐元素比较后的较小值",
+      "expressions": [
+        "对输入张量两个输入逐元素比较后的较小值",
+        "如何对输入张量两个输入逐元素比较后的较小值",
+        "我想对输入张量两个输入逐元素比较后的较小值",
+        "FEALPy 中用什么接口可以对输入张量两个输入逐元素比较后的较小值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.minimum",
+          "role": "primary",
+          "reason": "对输入张量两个输入逐元素比较后的较小值"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "minimum",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.multiply",
+      "intent": "对输入张量逐元素相乘",
+      "expressions": [
+        "对输入张量逐元素相乘",
+        "如何对输入张量逐元素相乘",
+        "我想对输入张量逐元素相乘",
+        "FEALPy 中用什么接口可以对输入张量逐元素相乘"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.multiply",
+          "role": "primary",
+          "reason": "对输入张量逐元素相乘"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "multiply",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.negative",
+      "intent": "逐元素计算输入张量的相反数",
+      "expressions": [
+        "逐元素计算输入张量的相反数",
+        "如何逐元素计算输入张量的相反数",
+        "我想逐元素计算输入张量的相反数",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的相反数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.negative",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的相反数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "negative",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.not_equal",
+      "intent": "判断两个输入的对应元素是否不相等",
+      "expressions": [
+        "判断两个输入的对应元素是否不相等",
+        "如何判断两个输入的对应元素是否不相等",
+        "我想判断两个输入的对应元素是否不相等",
+        "FEALPy 中用什么接口可以判断两个输入的对应元素是否不相等"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.not_equal",
+          "role": "primary",
+          "reason": "判断两个输入的对应元素是否不相等"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "not_equal",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.positive",
+      "intent": "逐元素计算输入张量的正值恒等变换",
+      "expressions": [
+        "逐元素计算输入张量的正值恒等变换",
+        "如何逐元素计算输入张量的正值恒等变换",
+        "我想逐元素计算输入张量的正值恒等变换",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的正值恒等变换"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.positive",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的正值恒等变换"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "positive",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.pow",
+      "intent": "对输入张量逐元素幂",
+      "expressions": [
+        "对输入张量逐元素幂",
+        "如何对输入张量逐元素幂",
+        "我想对输入张量逐元素幂",
+        "FEALPy 中用什么接口可以对输入张量逐元素幂"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.pow",
+          "role": "primary",
+          "reason": "对输入张量逐元素幂"
+        },
+        {
+          "id": "bm.power",
+          "role": "alternative",
+          "reason": "与 bm.pow 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "pow",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.real",
+      "intent": "逐元素计算输入张量的实部",
+      "expressions": [
+        "逐元素计算输入张量的实部",
+        "如何逐元素计算输入张量的实部",
+        "我想逐元素计算输入张量的实部",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的实部"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.real",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的实部"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "real",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.remainder",
+      "intent": "对输入张量逐元素除法的余数",
+      "expressions": [
+        "对输入张量逐元素除法的余数",
+        "如何对输入张量逐元素除法的余数",
+        "我想对输入张量逐元素除法的余数",
+        "FEALPy 中用什么接口可以对输入张量逐元素除法的余数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.remainder",
+          "role": "primary",
+          "reason": "对输入张量逐元素除法的余数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "remainder",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.round",
+      "intent": "逐元素计算输入张量的舍入值",
+      "expressions": [
+        "逐元素计算输入张量的舍入值",
+        "如何逐元素计算输入张量的舍入值",
+        "我想逐元素计算输入张量的舍入值",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的舍入值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.round",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的舍入值"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "round",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.sign",
+      "intent": "逐元素计算输入张量的符号值",
+      "expressions": [
+        "逐元素计算输入张量的符号值",
+        "如何逐元素计算输入张量的符号值",
+        "我想逐元素计算输入张量的符号值",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的符号值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.sign",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的符号值"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "sign",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.sin",
+      "intent": "逐元素计算输入张量的正弦",
+      "expressions": [
+        "逐元素计算输入张量的正弦",
+        "如何逐元素计算输入张量的正弦",
+        "我想逐元素计算输入张量的正弦",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的正弦"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.sin",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的正弦"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "sin",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.sinh",
+      "intent": "逐元素计算输入张量的双曲正弦",
+      "expressions": [
+        "逐元素计算输入张量的双曲正弦",
+        "如何逐元素计算输入张量的双曲正弦",
+        "我想逐元素计算输入张量的双曲正弦",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的双曲正弦"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.sinh",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的双曲正弦"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "sinh",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.square",
+      "intent": "逐元素计算输入张量的平方",
+      "expressions": [
+        "逐元素计算输入张量的平方",
+        "如何逐元素计算输入张量的平方",
+        "我想逐元素计算输入张量的平方",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的平方"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.square",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的平方"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "square",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.sqrt",
+      "intent": "逐元素计算输入张量的平方根",
+      "expressions": [
+        "逐元素计算输入张量的平方根",
+        "如何逐元素计算输入张量的平方根",
+        "我想逐元素计算输入张量的平方根",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的平方根"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.sqrt",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的平方根"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "sqrt",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.subtract",
+      "intent": "对输入张量逐元素相减",
+      "expressions": [
+        "对输入张量逐元素相减",
+        "如何对输入张量逐元素相减",
+        "我想对输入张量逐元素相减",
+        "FEALPy 中用什么接口可以对输入张量逐元素相减"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.subtract",
+          "role": "primary",
+          "reason": "对输入张量逐元素相减"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "subtract",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.tan",
+      "intent": "逐元素计算输入张量的正切",
+      "expressions": [
+        "逐元素计算输入张量的正切",
+        "如何逐元素计算输入张量的正切",
+        "我想逐元素计算输入张量的正切",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的正切"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.tan",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的正切"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "tan",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.tanh",
+      "intent": "逐元素计算输入张量的双曲正切",
+      "expressions": [
+        "逐元素计算输入张量的双曲正切",
+        "如何逐元素计算输入张量的双曲正切",
+        "我想逐元素计算输入张量的双曲正切",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的双曲正切"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.tanh",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的双曲正切"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "tanh",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.trunc",
+      "intent": "逐元素计算输入张量的向零截断后的整数部分",
+      "expressions": [
+        "逐元素计算输入张量的向零截断后的整数部分",
+        "如何逐元素计算输入张量的向零截断后的整数部分",
+        "我想逐元素计算输入张量的向零截断后的整数部分",
+        "FEALPy 中用什么接口可以逐元素计算输入张量的向零截断后的整数部分"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.trunc",
+          "role": "primary",
+          "reason": "逐元素计算输入张量的向零截断后的整数部分"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "trunc",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.take",
+      "intent": "按给定索引从张量中取出元素",
+      "expressions": [
+        "按给定索引从张量中取出元素",
+        "如何按给定索引从张量中取出元素",
+        "我想按给定索引从张量中取出元素",
+        "FEALPy 中用什么接口可以按给定索引从张量中取出元素"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.take",
+          "role": "primary",
+          "reason": "按给定索引从张量中取出元素"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "take",
+        "manipulation",
+        "索引"
+      ]
+    },
+    {
+      "id": "interface.matmul",
+      "intent": "执行矩阵乘法或批量矩阵乘法",
+      "expressions": [
+        "执行矩阵乘法或批量矩阵乘法",
+        "如何执行矩阵乘法或批量矩阵乘法",
+        "我想执行矩阵乘法或批量矩阵乘法",
+        "FEALPy 中用什么接口可以执行矩阵乘法或批量矩阵乘法"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.matmul",
+          "role": "primary",
+          "reason": "执行矩阵乘法或批量矩阵乘法"
+        },
+        {
+          "id": "bm.linalg.matmul",
+          "role": "alternative",
+          "reason": "与 bm.matmul 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "matmul",
+        "linalg",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.matrix_transpose",
+      "intent": "交换矩阵最后两个维度以得到矩阵转置",
+      "expressions": [
+        "交换矩阵最后两个维度以得到矩阵转置",
+        "如何交换矩阵最后两个维度以得到矩阵转置",
+        "我想交换矩阵最后两个维度以得到矩阵转置",
+        "FEALPy 中用什么接口可以交换矩阵最后两个维度以得到矩阵转置"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.matrix_transpose",
+          "role": "primary",
+          "reason": "交换矩阵最后两个维度以得到矩阵转置"
+        },
+        {
+          "id": "bm.linalg.matrix_transpose",
+          "role": "alternative",
+          "reason": "与 bm.matrix_transpose 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "matrix_transpose",
+        "linalg",
+        "维度",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.tensordot",
+      "intent": "沿指定维度对两个张量执行缩并",
+      "expressions": [
+        "沿指定维度对两个张量执行缩并",
+        "如何沿指定维度对两个张量执行缩并",
+        "我想沿指定维度对两个张量执行缩并",
+        "FEALPy 中用什么接口可以沿指定维度对两个张量执行缩并"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.tensordot",
+          "role": "primary",
+          "reason": "沿指定维度对两个张量执行缩并"
+        },
+        {
+          "id": "bm.linalg.tensordot",
+          "role": "alternative",
+          "reason": "与 bm.tensordot 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "tensordot",
+        "linalg",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.vecdot",
+      "intent": "沿指定维度计算两个向量的点积",
+      "expressions": [
+        "沿指定维度计算两个向量的点积",
+        "如何沿指定维度计算两个向量的点积",
+        "我想沿指定维度计算两个向量的点积",
+        "FEALPy 中用什么接口可以沿指定维度计算两个向量的点积"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.vecdot",
+          "role": "primary",
+          "reason": "沿指定维度计算两个向量的点积"
+        },
+        {
+          "id": "bm.linalg.vecdot",
+          "role": "alternative",
+          "reason": "与 bm.vecdot 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "vecdot",
+        "linalg",
+        "维度",
+        "向量"
+      ]
+    },
+    {
+      "id": "interface.cross",
+      "intent": "计算三维向量或向量数组的叉积",
+      "expressions": [
+        "计算三维向量或向量数组的叉积",
+        "如何计算三维向量或向量数组的叉积",
+        "我想计算三维向量或向量数组的叉积",
+        "FEALPy 中用什么接口可以计算三维向量或向量数组的叉积"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.cross",
+          "role": "primary",
+          "reason": "计算三维向量或向量数组的叉积"
+        },
+        {
+          "id": "bm.linalg.cross",
+          "role": "alternative",
+          "reason": "与 bm.cross 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "cross",
+        "linalg",
+        "向量"
+      ]
+    },
+    {
+      "id": "interface.dot",
+      "intent": "计算两个输入的点积或按相应规则执行乘积求和",
+      "expressions": [
+        "计算两个输入的点积或按相应规则执行乘积求和",
+        "如何计算两个输入的点积或按相应规则执行乘积求和",
+        "我想计算两个输入的点积或按相应规则执行乘积求和",
+        "FEALPy 中用什么接口可以计算两个输入的点积或按相应规则执行乘积求和"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.dot",
+          "role": "primary",
+          "reason": "计算两个输入的点积或按相应规则执行乘积求和"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "dot",
+        "linalg"
+      ]
+    },
+    {
+      "id": "interface.einsum",
+      "intent": "使用爱因斯坦求和表达式描述张量运算",
+      "expressions": [
+        "使用爱因斯坦求和表达式描述张量运算",
+        "如何使用爱因斯坦求和表达式描述张量运算",
+        "我想使用爱因斯坦求和表达式描述张量运算",
+        "FEALPy 中用什么接口可以使用爱因斯坦求和表达式描述张量运算"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.einsum",
+          "role": "primary",
+          "reason": "使用爱因斯坦求和表达式描述张量运算"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "einsum",
+        "linalg"
+      ]
+    },
+    {
+      "id": "interface.trace",
+      "intent": "计算矩阵对角线元素之和",
+      "expressions": [
+        "计算矩阵对角线元素之和",
+        "如何计算矩阵对角线元素之和",
+        "我想计算矩阵对角线元素之和",
+        "FEALPy 中用什么接口可以计算矩阵对角线元素之和"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.trace",
+          "role": "primary",
+          "reason": "计算矩阵对角线元素之和"
+        },
+        {
+          "id": "bm.linalg.trace",
+          "role": "alternative",
+          "reason": "与 bm.trace 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "trace",
+        "linalg",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.broadcast_arrays",
+      "intent": "将多个张量广播成相互兼容的共同形状",
+      "expressions": [
+        "将多个张量广播成相互兼容的共同形状",
+        "如何将多个张量广播成相互兼容的共同形状",
+        "我想将多个张量广播成相互兼容的共同形状",
+        "FEALPy 中用什么接口可以将多个张量广播成相互兼容的共同形状"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.broadcast_arrays",
+          "role": "primary",
+          "reason": "将多个张量广播成相互兼容的共同形状"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "broadcast_arrays",
+        "manipulation",
+        "形状"
+      ]
+    },
+    {
+      "id": "interface.broadcast_to",
+      "intent": "将张量广播到指定目标形状",
+      "expressions": [
+        "将张量广播到指定目标形状",
+        "如何将张量广播到指定目标形状",
+        "我想将张量广播到指定目标形状",
+        "FEALPy 中用什么接口可以将张量广播到指定目标形状"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.broadcast_to",
+          "role": "primary",
+          "reason": "将张量广播到指定目标形状"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "broadcast_to",
+        "manipulation",
+        "形状"
+      ]
+    },
+    {
+      "id": "interface.concat",
+      "intent": "沿已有维度连接多个张量",
+      "expressions": [
+        "沿已有维度连接多个张量",
+        "连接多个张量",
+        "如何沿已有维度连接多个张量",
+        "我想沿已有维度连接多个张量",
+        "FEALPy 中用什么接口可以沿已有维度连接多个张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.concat",
+          "role": "primary",
+          "reason": "沿已有维度连接多个张量"
+        },
+        {
+          "id": "bm.concatenate",
+          "role": "alternative",
+          "reason": "与 bm.concat 表示相同计算能力的兼容入口"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.stack",
+          "difference": "concat 沿已有维度连接；stack 会新增一个维度",
+          "selection_cue": "要求新增维度时选择 bm.stack"
+        }
+      ],
+      "tags": [
+        "concat",
+        "manipulation",
+        "连接多个张量",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.expand_dims",
+      "intent": "在指定位置为张量增加一个长度为一的新维度",
+      "expressions": [
+        "在指定位置为张量增加一个长度为一的新维度",
+        "增加新维度",
+        "如何在指定位置为张量增加一个长度为一的新维度",
+        "我想在指定位置为张量增加一个长度为一的新维度",
+        "FEALPy 中用什么接口可以在指定位置为张量增加一个长度为一的新维度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.expand_dims",
+          "role": "primary",
+          "reason": "在指定位置为张量增加一个长度为一的新维度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "expand_dims",
+        "manipulation",
+        "增加新维度",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.flip",
+      "intent": "沿指定维度反转张量中的元素顺序",
+      "expressions": [
+        "沿指定维度反转张量中的元素顺序",
+        "如何沿指定维度反转张量中的元素顺序",
+        "我想沿指定维度反转张量中的元素顺序",
+        "FEALPy 中用什么接口可以沿指定维度反转张量中的元素顺序"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.flip",
+          "role": "primary",
+          "reason": "沿指定维度反转张量中的元素顺序"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "flip",
+        "manipulation",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.moveaxis",
+      "intent": "把张量的一个或多个维度移动到新的位置",
+      "expressions": [
+        "把张量的一个或多个维度移动到新的位置",
+        "如何把张量的一个或多个维度移动到新的位置",
+        "我想把张量的一个或多个维度移动到新的位置",
+        "FEALPy 中用什么接口可以把张量的一个或多个维度移动到新的位置"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.moveaxis",
+          "role": "primary",
+          "reason": "把张量的一个或多个维度移动到新的位置"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.permute_dims",
+          "difference": "moveaxis 指定源轴和目标位置；permute_dims 给出全部轴的新顺序",
+          "selection_cue": "给出完整轴排列时选择 bm.permute_dims"
+        }
+      ],
+      "tags": [
+        "moveaxis",
+        "manipulation",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.permute_dims",
+      "intent": "按照给定顺序重新排列张量的全部维度",
+      "expressions": [
+        "按照给定顺序重新排列张量的全部维度",
+        "如何按照给定顺序重新排列张量的全部维度",
+        "我想按照给定顺序重新排列张量的全部维度",
+        "FEALPy 中用什么接口可以按照给定顺序重新排列张量的全部维度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.permute_dims",
+          "role": "primary",
+          "reason": "按照给定顺序重新排列张量的全部维度"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.reshape",
+          "difference": "permute_dims 重排轴顺序；reshape 改变维度大小",
+          "selection_cue": "给出目标 shape 时选择 bm.reshape"
+        }
+      ],
+      "tags": [
+        "permute_dims",
+        "manipulation",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.repeat",
+      "intent": "逐元素重复张量中的值",
+      "expressions": [
+        "逐元素重复张量中的值",
+        "如何逐元素重复张量中的值",
+        "我想逐元素重复张量中的值",
+        "FEALPy 中用什么接口可以逐元素重复张量中的值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.repeat",
+          "role": "primary",
+          "reason": "逐元素重复张量中的值"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.tile",
+          "difference": "repeat 逐元素重复；tile 按维度平铺整个张量",
+          "selection_cue": "要求按各维度复制整个数组时选择 bm.tile"
+        }
+      ],
+      "tags": [
+        "repeat",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "interface.reshape",
+      "intent": "在元素总数不变的情况下将张量变为指定形状",
+      "expressions": [
+        "在元素总数不变的情况下将张量变为指定形状",
+        "重设张量形状",
+        "如何在元素总数不变的情况下将张量变为指定形状",
+        "我想在元素总数不变的情况下将张量变为指定形状",
+        "FEALPy 中用什么接口可以在元素总数不变的情况下将张量变为指定形状"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.reshape",
+          "role": "primary",
+          "reason": "在元素总数不变的情况下将张量变为指定形状"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.permute_dims",
+          "difference": "reshape 改变维度大小；permute_dims 只重新排列维度顺序",
+          "selection_cue": "只交换轴顺序时选择 bm.permute_dims"
+        },
+        {
+          "interface_id": "bm.moveaxis",
+          "difference": "reshape 指定新形状；moveaxis 把特定轴移动到新位置",
+          "selection_cue": "明确移动某一轴时选择 bm.moveaxis"
+        }
+      ],
+      "tags": [
+        "reshape",
+        "manipulation",
+        "重设张量形状",
+        "形状"
+      ]
+    },
+    {
+      "id": "interface.roll",
+      "intent": "沿指定维度循环移动张量元素",
+      "expressions": [
+        "沿指定维度循环移动张量元素",
+        "如何沿指定维度循环移动张量元素",
+        "我想沿指定维度循环移动张量元素",
+        "FEALPy 中用什么接口可以沿指定维度循环移动张量元素"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.roll",
+          "role": "primary",
+          "reason": "沿指定维度循环移动张量元素"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "roll",
+        "manipulation",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.squeeze",
+      "intent": "删除张量中长度为一的维度",
+      "expressions": [
+        "删除张量中长度为一的维度",
+        "去掉单维度",
+        "如何删除张量中长度为一的维度",
+        "我想删除张量中长度为一的维度",
+        "FEALPy 中用什么接口可以删除张量中长度为一的维度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.squeeze",
+          "role": "primary",
+          "reason": "删除张量中长度为一的维度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "squeeze",
+        "manipulation",
+        "去掉单维度",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.stack",
+      "intent": "沿新增加的维度堆叠多个张量",
+      "expressions": [
+        "沿新增加的维度堆叠多个张量",
+        "堆叠多个张量",
+        "如何沿新增加的维度堆叠多个张量",
+        "我想沿新增加的维度堆叠多个张量",
+        "FEALPy 中用什么接口可以沿新增加的维度堆叠多个张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.stack",
+          "role": "primary",
+          "reason": "沿新增加的维度堆叠多个张量"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.concat",
+          "difference": "stack 新增维度后堆叠；concat 沿已有维度连接",
+          "selection_cue": "不增加维度时选择 bm.concat"
+        }
+      ],
+      "tags": [
+        "stack",
+        "manipulation",
+        "堆叠多个张量",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.tile",
+      "intent": "按照各维度的重复次数平铺整个张量",
+      "expressions": [
+        "按照各维度的重复次数平铺整个张量",
+        "如何按照各维度的重复次数平铺整个张量",
+        "我想按照各维度的重复次数平铺整个张量",
+        "FEALPy 中用什么接口可以按照各维度的重复次数平铺整个张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.tile",
+          "role": "primary",
+          "reason": "按照各维度的重复次数平铺整个张量"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.repeat",
+          "difference": "tile 平铺整个张量；repeat 逐元素重复",
+          "selection_cue": "要求每个元素分别重复时选择 bm.repeat"
+        }
+      ],
+      "tags": [
+        "tile",
+        "manipulation",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.unstack",
+      "intent": "沿指定维度把一个张量拆成多个张量",
+      "expressions": [
+        "沿指定维度把一个张量拆成多个张量",
+        "如何沿指定维度把一个张量拆成多个张量",
+        "我想沿指定维度把一个张量拆成多个张量",
+        "FEALPy 中用什么接口可以沿指定维度把一个张量拆成多个张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.unstack",
+          "role": "primary",
+          "reason": "沿指定维度把一个张量拆成多个张量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "unstack",
+        "manipulation",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.insert",
+      "intent": "在指定位置向数组插入元素",
+      "expressions": [
+        "在指定位置向数组插入元素",
+        "如何在指定位置向数组插入元素",
+        "我想在指定位置向数组插入元素",
+        "FEALPy 中用什么接口可以在指定位置向数组插入元素"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.insert",
+          "role": "primary",
+          "reason": "在指定位置向数组插入元素"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "insert",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "interface.split",
+      "intent": "沿指定维度把张量切分成多个部分",
+      "expressions": [
+        "沿指定维度把张量切分成多个部分",
+        "如何沿指定维度把张量切分成多个部分",
+        "我想沿指定维度把张量切分成多个部分",
+        "FEALPy 中用什么接口可以沿指定维度把张量切分成多个部分"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.split",
+          "role": "primary",
+          "reason": "沿指定维度把张量切分成多个部分"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "split",
+        "manipulation",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.swapaxes",
+      "intent": "交换张量的两个指定维度",
+      "expressions": [
+        "交换张量的两个指定维度",
+        "如何交换张量的两个指定维度",
+        "我想交换张量的两个指定维度",
+        "FEALPy 中用什么接口可以交换张量的两个指定维度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.swapaxes",
+          "role": "primary",
+          "reason": "交换张量的两个指定维度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "swapaxes",
+        "manipulation",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.argmax",
+      "intent": "返回张量最大元素所在的位置索引",
+      "expressions": [
+        "返回张量最大元素所在的位置索引",
+        "如何返回张量最大元素所在的位置索引",
+        "我想返回张量最大元素所在的位置索引",
+        "FEALPy 中用什么接口可以返回张量最大元素所在的位置索引"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.argmax",
+          "role": "primary",
+          "reason": "返回张量最大元素所在的位置索引"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.max",
+          "difference": "argmax 返回最大值的位置；max 返回最大值本身",
+          "selection_cue": "问题只要求最大值时选择 bm.max"
+        }
+      ],
+      "tags": [
+        "argmax",
+        "reduction",
+        "索引"
+      ]
+    },
+    {
+      "id": "interface.argmin",
+      "intent": "返回张量最小元素所在的位置索引",
+      "expressions": [
+        "返回张量最小元素所在的位置索引",
+        "如何返回张量最小元素所在的位置索引",
+        "我想返回张量最小元素所在的位置索引",
+        "FEALPy 中用什么接口可以返回张量最小元素所在的位置索引"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.argmin",
+          "role": "primary",
+          "reason": "返回张量最小元素所在的位置索引"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.min",
+          "difference": "argmin 返回最小值的位置；min 返回最小值本身",
+          "selection_cue": "问题只要求最小值时选择 bm.min"
+        }
+      ],
+      "tags": [
+        "argmin",
+        "reduction",
+        "索引"
+      ]
+    },
+    {
+      "id": "interface.nonzero",
+      "intent": "返回张量中所有非零元素的位置索引",
+      "expressions": [
+        "返回张量中所有非零元素的位置索引",
+        "查找非零位置",
+        "如何返回张量中所有非零元素的位置索引",
+        "我想返回张量中所有非零元素的位置索引",
+        "FEALPy 中用什么接口可以返回张量中所有非零元素的位置索引"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.nonzero",
+          "role": "primary",
+          "reason": "返回张量中所有非零元素的位置索引"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.where",
+          "difference": "nonzero 返回位置索引；where 根据条件选择结果值",
+          "selection_cue": "需要在两个值之间选择时使用 bm.where"
+        }
+      ],
+      "tags": [
+        "nonzero",
+        "manipulation",
+        "查找非零位置",
+        "索引"
+      ]
+    },
+    {
+      "id": "interface.searchsorted",
+      "intent": "在有序序列中查找插入值后仍保持有序的位置",
+      "expressions": [
+        "在有序序列中查找插入值后仍保持有序的位置",
+        "如何在有序序列中查找插入值后仍保持有序的位置",
+        "我想在有序序列中查找插入值后仍保持有序的位置",
+        "FEALPy 中用什么接口可以在有序序列中查找插入值后仍保持有序的位置"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.searchsorted",
+          "role": "primary",
+          "reason": "在有序序列中查找插入值后仍保持有序的位置"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "searchsorted",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "interface.where",
+      "intent": "根据布尔条件从两个输入中逐元素选择值",
+      "expressions": [
+        "根据布尔条件从两个输入中逐元素选择值",
+        "如何根据布尔条件从两个输入中逐元素选择值",
+        "我想根据布尔条件从两个输入中逐元素选择值",
+        "FEALPy 中用什么接口可以根据布尔条件从两个输入中逐元素选择值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.where",
+          "role": "primary",
+          "reason": "根据布尔条件从两个输入中逐元素选择值"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.nonzero",
+          "difference": "where 在两个输入中选择值；nonzero 返回非零元素的位置",
+          "selection_cue": "只需要非零位置时选择 bm.nonzero"
+        }
+      ],
+      "tags": [
+        "where",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "interface.bincount",
+      "intent": "统计非负整数张量中每个取值出现的次数",
+      "expressions": [
+        "统计非负整数张量中每个取值出现的次数",
+        "如何统计非负整数张量中每个取值出现的次数",
+        "我想统计非负整数张量中每个取值出现的次数",
+        "FEALPy 中用什么接口可以统计非负整数张量中每个取值出现的次数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.bincount",
+          "role": "primary",
+          "reason": "统计非负整数张量中每个取值出现的次数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "bincount",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "interface.isin",
+      "intent": "判断输入中的每个元素是否出现在候选元素集合中",
+      "expressions": [
+        "判断输入中的每个元素是否出现在候选元素集合中",
+        "如何判断输入中的每个元素是否出现在候选元素集合中",
+        "我想判断输入中的每个元素是否出现在候选元素集合中",
+        "FEALPy 中用什么接口可以判断输入中的每个元素是否出现在候选元素集合中"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.isin",
+          "role": "primary",
+          "reason": "判断输入中的每个元素是否出现在候选元素集合中"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "isin",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.unique_all",
+      "intent": "获取唯一元素以及索引、逆映射和计数等完整信息",
+      "expressions": [
+        "获取唯一元素以及索引、逆映射和计数等完整信息",
+        "如何获取唯一元素以及索引、逆映射和计数等完整信息",
+        "我想获取唯一元素以及索引、逆映射和计数等完整信息",
+        "FEALPy 中用什么接口可以获取唯一元素以及索引、逆映射和计数等完整信息"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.unique_all",
+          "role": "primary",
+          "reason": "获取唯一元素以及索引、逆映射和计数等完整信息"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "unique_all",
+        "manipulation",
+        "索引"
+      ]
+    },
+    {
+      "id": "interface.unique",
+      "intent": "获取张量中的唯一元素并去除重复值",
+      "expressions": [
+        "获取张量中的唯一元素并去除重复值",
+        "如何获取张量中的唯一元素并去除重复值",
+        "我想获取张量中的唯一元素并去除重复值",
+        "FEALPy 中用什么接口可以获取张量中的唯一元素并去除重复值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.unique",
+          "role": "primary",
+          "reason": "获取张量中的唯一元素并去除重复值"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "unique",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "interface.argsort",
+      "intent": "返回张量排序后各元素对应的原始索引",
+      "expressions": [
+        "返回张量排序后各元素对应的原始索引",
+        "获取排序索引",
+        "如何返回张量排序后各元素对应的原始索引",
+        "我想返回张量排序后各元素对应的原始索引",
+        "FEALPy 中用什么接口可以返回张量排序后各元素对应的原始索引"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.argsort",
+          "role": "primary",
+          "reason": "返回张量排序后各元素对应的原始索引"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.sort",
+          "difference": "argsort 返回排序索引；sort 返回排序后的值",
+          "selection_cue": "问题要求排序值时选择 bm.sort"
+        }
+      ],
+      "tags": [
+        "argsort",
+        "manipulation",
+        "获取排序索引",
+        "索引",
+        "排序"
+      ]
+    },
+    {
+      "id": "interface.sort",
+      "intent": "返回沿指定维度排序后的元素值",
+      "expressions": [
+        "返回沿指定维度排序后的元素值",
+        "对元素排序",
+        "如何返回沿指定维度排序后的元素值",
+        "我想返回沿指定维度排序后的元素值",
+        "FEALPy 中用什么接口可以返回沿指定维度排序后的元素值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.sort",
+          "role": "primary",
+          "reason": "返回沿指定维度排序后的元素值"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.argsort",
+          "difference": "sort 返回排序后的值；argsort 返回排序对应的原始索引",
+          "selection_cue": "问题要求索引或排列次序时选择 bm.argsort"
+        }
+      ],
+      "tags": [
+        "sort",
+        "manipulation",
+        "对元素排序",
+        "维度",
+        "排序"
+      ]
+    },
+    {
+      "id": "interface.lexsort",
+      "intent": "使用多个键对数据执行稳定的字典序排序",
+      "expressions": [
+        "使用多个键对数据执行稳定的字典序排序",
+        "如何使用多个键对数据执行稳定的字典序排序",
+        "我想使用多个键对数据执行稳定的字典序排序",
+        "FEALPy 中用什么接口可以使用多个键对数据执行稳定的字典序排序"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.lexsort",
+          "role": "primary",
+          "reason": "使用多个键对数据执行稳定的字典序排序"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "lexsort",
+        "manipulation",
+        "排序"
+      ]
+    },
+    {
+      "id": "interface.cumulative_sum",
+      "intent": "沿指定维度计算包含初始值语义的累计和",
+      "expressions": [
+        "沿指定维度计算包含初始值语义的累计和",
+        "如何沿指定维度计算包含初始值语义的累计和",
+        "我想沿指定维度计算包含初始值语义的累计和",
+        "FEALPy 中用什么接口可以沿指定维度计算包含初始值语义的累计和"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.cumulative_sum",
+          "role": "primary",
+          "reason": "沿指定维度计算包含初始值语义的累计和"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.cumsum",
+          "difference": "两者都是累计和接口，但 cumulative_sum 遵循数组 API 的初始值语义",
+          "selection_cue": "一般兼容旧调用时优先确认是否需要 bm.cumsum"
+        }
+      ],
+      "tags": [
+        "cumulative_sum",
+        "reduction",
+        "维度",
+        "累计"
+      ]
+    },
+    {
+      "id": "interface.max",
+      "intent": "计算张量全部元素或指定维度上的最大值",
+      "expressions": [
+        "计算张量全部元素或指定维度上的最大值",
+        "如何计算张量全部元素或指定维度上的最大值",
+        "我想计算张量全部元素或指定维度上的最大值",
+        "FEALPy 中用什么接口可以计算张量全部元素或指定维度上的最大值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.max",
+          "role": "primary",
+          "reason": "计算张量全部元素或指定维度上的最大值"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.argmax",
+          "difference": "max 返回最大值；argmax 返回最大值所在索引",
+          "selection_cue": "问题询问位置或索引时选择 bm.argmax"
+        },
+        {
+          "interface_id": "bm.maximum",
+          "difference": "max 对单个张量做归约；maximum 对两个输入逐元素取较大值",
+          "selection_cue": "比较两个张量对应元素时选择 bm.maximum"
+        }
+      ],
+      "tags": [
+        "max",
+        "reduction",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.mean",
+      "intent": "计算张量全部元素或指定维度上的平均值",
+      "expressions": [
+        "计算张量全部元素或指定维度上的平均值",
+        "求平均值",
+        "如何计算张量全部元素或指定维度上的平均值",
+        "我想计算张量全部元素或指定维度上的平均值",
+        "FEALPy 中用什么接口可以计算张量全部元素或指定维度上的平均值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.mean",
+          "role": "primary",
+          "reason": "计算张量全部元素或指定维度上的平均值"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "mean",
+        "reduction",
+        "求平均值",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.min",
+      "intent": "计算张量全部元素或指定维度上的最小值",
+      "expressions": [
+        "计算张量全部元素或指定维度上的最小值",
+        "如何计算张量全部元素或指定维度上的最小值",
+        "我想计算张量全部元素或指定维度上的最小值",
+        "FEALPy 中用什么接口可以计算张量全部元素或指定维度上的最小值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.min",
+          "role": "primary",
+          "reason": "计算张量全部元素或指定维度上的最小值"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.argmin",
+          "difference": "min 返回最小值；argmin 返回最小值所在索引",
+          "selection_cue": "问题询问位置或索引时选择 bm.argmin"
+        },
+        {
+          "interface_id": "bm.minimum",
+          "difference": "min 对单个张量做归约；minimum 对两个输入逐元素取较小值",
+          "selection_cue": "比较两个张量对应元素时选择 bm.minimum"
+        }
+      ],
+      "tags": [
+        "min",
+        "reduction",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.prod",
+      "intent": "计算张量全部元素或指定维度上的乘积",
+      "expressions": [
+        "计算张量全部元素或指定维度上的乘积",
+        "求元素乘积",
+        "如何计算张量全部元素或指定维度上的乘积",
+        "我想计算张量全部元素或指定维度上的乘积",
+        "FEALPy 中用什么接口可以计算张量全部元素或指定维度上的乘积"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.prod",
+          "role": "primary",
+          "reason": "计算张量全部元素或指定维度上的乘积"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "prod",
+        "reduction",
+        "求元素乘积",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.std",
+      "intent": "计算张量全部元素或指定维度上的标准差",
+      "expressions": [
+        "计算张量全部元素或指定维度上的标准差",
+        "求标准差",
+        "如何计算张量全部元素或指定维度上的标准差",
+        "我想计算张量全部元素或指定维度上的标准差",
+        "FEALPy 中用什么接口可以计算张量全部元素或指定维度上的标准差"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.std",
+          "role": "primary",
+          "reason": "计算张量全部元素或指定维度上的标准差"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "std",
+        "reduction",
+        "求标准差",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.sum",
+      "intent": "计算张量全部元素或指定维度上的元素之和",
+      "expressions": [
+        "计算张量全部元素或指定维度上的元素之和",
+        "求总和",
+        "如何计算张量全部元素或指定维度上的元素之和",
+        "我想计算张量全部元素或指定维度上的元素之和",
+        "FEALPy 中用什么接口可以计算张量全部元素或指定维度上的元素之和"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.sum",
+          "role": "primary",
+          "reason": "计算张量全部元素或指定维度上的元素之和"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.cumsum",
+          "difference": "普通求和返回归约结果；累计和保留各位置的中间结果",
+          "selection_cue": "出现累计、前缀和时选择 bm.cumsum"
+        },
+        {
+          "interface_id": "bm.add",
+          "difference": "求和归约一个张量中的多个元素；add 对两个输入逐元素相加",
+          "selection_cue": "出现两个张量逐元素相加时选择 bm.add"
+        }
+      ],
+      "tags": [
+        "sum",
+        "reduction",
+        "求总和",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.var",
+      "intent": "计算张量全部元素或指定维度上的方差",
+      "expressions": [
+        "计算张量全部元素或指定维度上的方差",
+        "求方差",
+        "如何计算张量全部元素或指定维度上的方差",
+        "我想计算张量全部元素或指定维度上的方差",
+        "FEALPy 中用什么接口可以计算张量全部元素或指定维度上的方差"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.var",
+          "role": "primary",
+          "reason": "计算张量全部元素或指定维度上的方差"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "var",
+        "reduction",
+        "求方差",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.cumsum",
+      "intent": "沿指定维度计算累计和并保留各位置的中间结果",
+      "expressions": [
+        "沿指定维度计算累计和并保留各位置的中间结果",
+        "如何沿指定维度计算累计和并保留各位置的中间结果",
+        "我想沿指定维度计算累计和并保留各位置的中间结果",
+        "FEALPy 中用什么接口可以沿指定维度计算累计和并保留各位置的中间结果"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.cumsum",
+          "role": "primary",
+          "reason": "沿指定维度计算累计和并保留各位置的中间结果"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.sum",
+          "difference": "累计和保留各位置的中间结果；普通求和返回归约结果",
+          "selection_cue": "只要求总和时选择 bm.sum"
+        }
+      ],
+      "tags": [
+        "cumsum",
+        "reduction",
+        "维度",
+        "累计"
+      ]
+    },
+    {
+      "id": "interface.cumprod",
+      "intent": "沿指定维度计算累计乘积并保留各位置的中间结果",
+      "expressions": [
+        "沿指定维度计算累计乘积并保留各位置的中间结果",
+        "如何沿指定维度计算累计乘积并保留各位置的中间结果",
+        "我想沿指定维度计算累计乘积并保留各位置的中间结果",
+        "FEALPy 中用什么接口可以沿指定维度计算累计乘积并保留各位置的中间结果"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.cumprod",
+          "role": "primary",
+          "reason": "沿指定维度计算累计乘积并保留各位置的中间结果"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "cumprod",
+        "reduction",
+        "维度",
+        "累计"
+      ]
+    },
+    {
+      "id": "interface.all",
+      "intent": "判断张量全部元素或指定维度上的元素是否都为真",
+      "expressions": [
+        "判断张量全部元素或指定维度上的元素是否都为真",
+        "如何判断张量全部元素或指定维度上的元素是否都为真",
+        "我想判断张量全部元素或指定维度上的元素是否都为真",
+        "FEALPy 中用什么接口可以判断张量全部元素或指定维度上的元素是否都为真"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.all",
+          "role": "primary",
+          "reason": "判断张量全部元素或指定维度上的元素是否都为真"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "all",
+        "reduction",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.any",
+      "intent": "判断张量全部元素或指定维度上是否至少有一个元素为真",
+      "expressions": [
+        "判断张量全部元素或指定维度上是否至少有一个元素为真",
+        "如何判断张量全部元素或指定维度上是否至少有一个元素为真",
+        "我想判断张量全部元素或指定维度上是否至少有一个元素为真",
+        "FEALPy 中用什么接口可以判断张量全部元素或指定维度上是否至少有一个元素为真"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.any",
+          "role": "primary",
+          "reason": "判断张量全部元素或指定维度上是否至少有一个元素为真"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "any",
+        "reduction",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.allclose",
+      "intent": "判断两个张量在给定容差内是否整体近似相等",
+      "expressions": [
+        "判断两个张量在给定容差内是否整体近似相等",
+        "如何判断两个张量在给定容差内是否整体近似相等",
+        "我想判断两个张量在给定容差内是否整体近似相等",
+        "FEALPy 中用什么接口可以判断两个张量在给定容差内是否整体近似相等"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.allclose",
+          "role": "primary",
+          "reason": "判断两个张量在给定容差内是否整体近似相等"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "allclose",
+        "comparison"
+      ]
+    },
+    {
+      "id": "interface.copy",
+      "intent": "复制张量并得到独立的新张量",
+      "expressions": [
+        "复制张量并得到独立的新张量",
+        "如何复制张量并得到独立的新张量",
+        "我想复制张量并得到独立的新张量",
+        "FEALPy 中用什么接口可以复制张量并得到独立的新张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.copy",
+          "role": "primary",
+          "reason": "复制张量并得到独立的新张量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "copy",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "interface.size",
+      "intent": "获取张量的元素总数或指定维度的长度",
+      "expressions": [
+        "获取张量的元素总数或指定维度的长度",
+        "如何获取张量的元素总数或指定维度的长度",
+        "我想获取张量的元素总数或指定维度的长度",
+        "FEALPy 中用什么接口可以获取张量的元素总数或指定维度的长度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.size",
+          "role": "primary",
+          "reason": "获取张量的元素总数或指定维度的长度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "size",
+        "manipulation",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.apply_along_axis",
+      "intent": "沿数组指定维度对一维切片应用函数",
+      "expressions": [
+        "沿数组指定维度对一维切片应用函数",
+        "如何沿数组指定维度对一维切片应用函数",
+        "我想沿数组指定维度对一维切片应用函数",
+        "FEALPy 中用什么接口可以沿数组指定维度对一维切片应用函数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.apply_along_axis",
+          "role": "primary",
+          "reason": "沿数组指定维度对一维切片应用函数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "apply_along_axis",
+        "other",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.vmap",
+      "intent": "把处理单个样本的函数向量化为批量函数",
+      "expressions": [
+        "把处理单个样本的函数向量化为批量函数",
+        "如何把处理单个样本的函数向量化为批量函数",
+        "我想把处理单个样本的函数向量化为批量函数",
+        "FEALPy 中用什么接口可以把处理单个样本的函数向量化为批量函数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.vmap",
+          "role": "primary",
+          "reason": "把处理单个样本的函数向量化为批量函数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "vmap",
+        "other",
+        "向量"
+      ]
+    },
+    {
+      "id": "interface.grad",
+      "intent": "构造计算标量函数梯度的函数",
+      "expressions": [
+        "构造计算标量函数梯度的函数",
+        "如何构造计算标量函数梯度的函数",
+        "我想构造计算标量函数梯度的函数",
+        "FEALPy 中用什么接口可以构造计算标量函数梯度的函数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.grad",
+          "role": "primary",
+          "reason": "构造计算标量函数梯度的函数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "grad",
+        "other",
+        "梯度"
+      ]
+    },
+    {
+      "id": "interface.jvp",
+      "intent": "计算函数在给定切向量方向上的 Jacobian-向量积",
+      "expressions": [
+        "计算函数在给定切向量方向上的 Jacobian-向量积",
+        "如何计算函数在给定切向量方向上的 Jacobian-向量积",
+        "我想计算函数在给定切向量方向上的 Jacobian-向量积",
+        "FEALPy 中用什么接口可以计算函数在给定切向量方向上的 Jacobian-向量积"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.jvp",
+          "role": "primary",
+          "reason": "计算函数在给定切向量方向上的 Jacobian-向量积"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "jvp",
+        "other",
+        "向量"
+      ]
+    },
+    {
+      "id": "interface.vjp",
+      "intent": "计算给定余切向量与函数 Jacobian 的向量-Jacobian 积",
+      "expressions": [
+        "计算给定余切向量与函数 Jacobian 的向量-Jacobian 积",
+        "如何计算给定余切向量与函数 Jacobian 的向量-Jacobian 积",
+        "我想计算给定余切向量与函数 Jacobian 的向量-Jacobian 积",
+        "FEALPy 中用什么接口可以计算给定余切向量与函数 Jacobian 的向量-Jacobian 积"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.vjp",
+          "role": "primary",
+          "reason": "计算给定余切向量与函数 Jacobian 的向量-Jacobian 积"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "vjp",
+        "other",
+        "向量"
+      ]
+    },
+    {
+      "id": "interface.jacfwd",
+      "intent": "使用前向模式自动微分计算函数的 Jacobian",
+      "expressions": [
+        "使用前向模式自动微分计算函数的 Jacobian",
+        "如何使用前向模式自动微分计算函数的 Jacobian",
+        "我想使用前向模式自动微分计算函数的 Jacobian",
+        "FEALPy 中用什么接口可以使用前向模式自动微分计算函数的 Jacobian"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.jacfwd",
+          "role": "primary",
+          "reason": "使用前向模式自动微分计算函数的 Jacobian"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "jacfwd",
+        "other"
+      ]
+    },
+    {
+      "id": "interface.jacrev",
+      "intent": "使用反向模式自动微分计算函数的 Jacobian",
+      "expressions": [
+        "使用反向模式自动微分计算函数的 Jacobian",
+        "如何使用反向模式自动微分计算函数的 Jacobian",
+        "我想使用反向模式自动微分计算函数的 Jacobian",
+        "FEALPy 中用什么接口可以使用反向模式自动微分计算函数的 Jacobian"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.jacrev",
+          "role": "primary",
+          "reason": "使用反向模式自动微分计算函数的 Jacobian"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "jacrev",
+        "other"
+      ]
+    },
+    {
+      "id": "interface.hessian",
+      "intent": "计算标量函数的 Hessian 矩阵",
+      "expressions": [
+        "计算标量函数的 Hessian 矩阵",
+        "如何计算标量函数的 Hessian 矩阵",
+        "我想计算标量函数的 Hessian 矩阵",
+        "FEALPy 中用什么接口可以计算标量函数的 Hessian 矩阵"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.hessian",
+          "role": "primary",
+          "reason": "计算标量函数的 Hessian 矩阵"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "hessian",
+        "other",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.set_at",
+      "intent": "在指定索引位置写入或替换张量元素",
+      "expressions": [
+        "在指定索引位置写入或替换张量元素",
+        "如何在指定索引位置写入或替换张量元素",
+        "我想在指定索引位置写入或替换张量元素",
+        "FEALPy 中用什么接口可以在指定索引位置写入或替换张量元素"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.set_at",
+          "role": "primary",
+          "reason": "在指定索引位置写入或替换张量元素"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "set_at",
+        "manipulation",
+        "索引"
+      ]
+    },
+    {
+      "id": "interface.add_at",
+      "intent": "把给定值累加到张量的指定索引位置",
+      "expressions": [
+        "把给定值累加到张量的指定索引位置",
+        "如何把给定值累加到张量的指定索引位置",
+        "我想把给定值累加到张量的指定索引位置",
+        "FEALPy 中用什么接口可以把给定值累加到张量的指定索引位置"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.add_at",
+          "role": "primary",
+          "reason": "把给定值累加到张量的指定索引位置"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "add_at",
+        "manipulation",
+        "索引"
+      ]
+    },
+    {
+      "id": "interface.index_add",
+      "intent": "沿指定维度按索引把源张量累加到目标张量",
+      "expressions": [
+        "沿指定维度按索引把源张量累加到目标张量",
+        "如何沿指定维度按索引把源张量累加到目标张量",
+        "我想沿指定维度按索引把源张量累加到目标张量",
+        "FEALPy 中用什么接口可以沿指定维度按索引把源张量累加到目标张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.index_add",
+          "role": "primary",
+          "reason": "沿指定维度按索引把源张量累加到目标张量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "index_add",
+        "manipulation",
+        "索引",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.scatter",
+      "intent": "沿指定维度按索引把值写入目标张量",
+      "expressions": [
+        "沿指定维度按索引把值写入目标张量",
+        "如何沿指定维度按索引把值写入目标张量",
+        "我想沿指定维度按索引把值写入目标张量",
+        "FEALPy 中用什么接口可以沿指定维度按索引把值写入目标张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.scatter",
+          "role": "primary",
+          "reason": "沿指定维度按索引把值写入目标张量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "scatter",
+        "manipulation",
+        "索引",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.scatter_add",
+      "intent": "沿指定维度按索引把值累加到目标张量",
+      "expressions": [
+        "沿指定维度按索引把值累加到目标张量",
+        "如何沿指定维度按索引把值累加到目标张量",
+        "我想沿指定维度按索引把值累加到目标张量",
+        "FEALPy 中用什么接口可以沿指定维度按索引把值累加到目标张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.scatter_add",
+          "role": "primary",
+          "reason": "沿指定维度按索引把值累加到目标张量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "scatter_add",
+        "manipulation",
+        "索引",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.query_point",
+      "intent": "在周期盒及给定搜索半径下查询点的邻居",
+      "expressions": [
+        "在周期盒及给定搜索半径下查询点的邻居",
+        "如何在周期盒及给定搜索半径下查询点的邻居",
+        "我想在周期盒及给定搜索半径下查询点的邻居",
+        "FEALPy 中用什么接口可以在周期盒及给定搜索半径下查询点的邻居"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.query_point",
+          "role": "primary",
+          "reason": "在周期盒及给定搜索半径下查询点的邻居"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "query_point",
+        "other"
+      ]
+    },
+    {
+      "id": "interface.multi_index_matrix",
+      "intent": "生成给定次数和维数的多重指标矩阵",
+      "expressions": [
+        "生成给定次数和维数的多重指标矩阵",
+        "如何生成给定次数和维数的多重指标矩阵",
+        "我想生成给定次数和维数的多重指标矩阵",
+        "FEALPy 中用什么接口可以生成给定次数和维数的多重指标矩阵"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.multi_index_matrix",
+          "role": "primary",
+          "reason": "生成给定次数和维数的多重指标矩阵"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "multi_index_matrix",
+        "other",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.edge_length",
+      "intent": "根据节点坐标和边连接关系计算每条边的长度",
+      "expressions": [
+        "根据节点坐标和边连接关系计算每条边的长度",
+        "如何根据节点坐标和边连接关系计算每条边的长度",
+        "我想根据节点坐标和边连接关系计算每条边的长度",
+        "FEALPy 中用什么接口可以根据节点坐标和边连接关系计算每条边的长度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.edge_length",
+          "role": "primary",
+          "reason": "根据节点坐标和边连接关系计算每条边的长度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "edge_length",
+        "other",
+        "坐标"
+      ]
+    },
+    {
+      "id": "interface.edge_normal",
+      "intent": "计算二维网格边的法向量",
+      "expressions": [
+        "计算二维网格边的法向量",
+        "如何计算二维网格边的法向量",
+        "我想计算二维网格边的法向量",
+        "FEALPy 中用什么接口可以计算二维网格边的法向量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.edge_normal",
+          "role": "primary",
+          "reason": "计算二维网格边的法向量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "edge_normal",
+        "other",
+        "向量",
+        "网格"
+      ]
+    },
+    {
+      "id": "interface.edge_tangent",
+      "intent": "计算网格边的切向量",
+      "expressions": [
+        "计算网格边的切向量",
+        "如何计算网格边的切向量",
+        "我想计算网格边的切向量",
+        "FEALPy 中用什么接口可以计算网格边的切向量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.edge_tangent",
+          "role": "primary",
+          "reason": "计算网格边的切向量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "edge_tangent",
+        "other",
+        "向量",
+        "网格"
+      ]
+    },
+    {
+      "id": "interface.tensorprod",
+      "intent": "计算多个张量的一般化张量积",
+      "expressions": [
+        "计算多个张量的一般化张量积",
+        "如何计算多个张量的一般化张量积",
+        "我想计算多个张量的一般化张量积",
+        "FEALPy 中用什么接口可以计算多个张量的一般化张量积"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.tensorprod",
+          "role": "primary",
+          "reason": "计算多个张量的一般化张量积"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "tensorprod",
+        "other"
+      ]
+    },
+    {
+      "id": "interface.bc_to_points",
+      "intent": "利用重心坐标将网格实体上的点转换为物理坐标",
+      "expressions": [
+        "利用重心坐标将网格实体上的点转换为物理坐标",
+        "如何利用重心坐标将网格实体上的点转换为物理坐标",
+        "我想利用重心坐标将网格实体上的点转换为物理坐标",
+        "FEALPy 中用什么接口可以利用重心坐标将网格实体上的点转换为物理坐标"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.bc_to_points",
+          "role": "primary",
+          "reason": "利用重心坐标将网格实体上的点转换为物理坐标"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "bc_to_points",
+        "other",
+        "网格",
+        "坐标"
+      ]
+    },
+    {
+      "id": "interface.barycenter",
+      "intent": "计算网格实体顶点的重心坐标位置",
+      "expressions": [
+        "计算网格实体顶点的重心坐标位置",
+        "如何计算网格实体顶点的重心坐标位置",
+        "我想计算网格实体顶点的重心坐标位置",
+        "FEALPy 中用什么接口可以计算网格实体顶点的重心坐标位置"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.barycenter",
+          "role": "primary",
+          "reason": "计算网格实体顶点的重心坐标位置"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "barycenter",
+        "other",
+        "网格",
+        "坐标"
+      ]
+    },
+    {
+      "id": "interface.simplex_measure",
+      "intent": "计算单纯形网格实体的几何测度",
+      "expressions": [
+        "计算单纯形网格实体的几何测度",
+        "如何计算单纯形网格实体的几何测度",
+        "我想计算单纯形网格实体的几何测度",
+        "FEALPy 中用什么接口可以计算单纯形网格实体的几何测度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.simplex_measure",
+          "role": "primary",
+          "reason": "计算单纯形网格实体的几何测度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "simplex_measure",
+        "other",
+        "网格"
+      ]
+    },
+    {
+      "id": "interface.simplex_shape_function",
+      "intent": "计算单纯形有限元形函数值",
+      "expressions": [
+        "计算单纯形有限元形函数值",
+        "如何计算单纯形有限元形函数值",
+        "我想计算单纯形有限元形函数值",
+        "FEALPy 中用什么接口可以计算单纯形有限元形函数值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.simplex_shape_function",
+          "role": "primary",
+          "reason": "计算单纯形有限元形函数值"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "simplex_shape_function",
+        "other"
+      ]
+    },
+    {
+      "id": "interface.simplex_grad_shape_function",
+      "intent": "计算单纯形有限元形函数的梯度",
+      "expressions": [
+        "计算单纯形有限元形函数的梯度",
+        "如何计算单纯形有限元形函数的梯度",
+        "我想计算单纯形有限元形函数的梯度",
+        "FEALPy 中用什么接口可以计算单纯形有限元形函数的梯度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.simplex_grad_shape_function",
+          "role": "primary",
+          "reason": "计算单纯形有限元形函数的梯度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "simplex_grad_shape_function",
+        "other",
+        "梯度"
+      ]
+    },
+    {
+      "id": "interface.simplex_hess_shape_function",
+      "intent": "计算单纯形有限元形函数的 Hessian",
+      "expressions": [
+        "计算单纯形有限元形函数的 Hessian",
+        "如何计算单纯形有限元形函数的 Hessian",
+        "我想计算单纯形有限元形函数的 Hessian",
+        "FEALPy 中用什么接口可以计算单纯形有限元形函数的 Hessian"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.simplex_hess_shape_function",
+          "role": "primary",
+          "reason": "计算单纯形有限元形函数的 Hessian"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "simplex_hess_shape_function",
+        "other"
+      ]
+    },
+    {
+      "id": "interface.tensor_measure",
+      "intent": "计算由张量积结构表示的网格实体测度",
+      "expressions": [
+        "计算由张量积结构表示的网格实体测度",
+        "如何计算由张量积结构表示的网格实体测度",
+        "我想计算由张量积结构表示的网格实体测度",
+        "FEALPy 中用什么接口可以计算由张量积结构表示的网格实体测度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.tensor_measure",
+          "role": "primary",
+          "reason": "计算由张量积结构表示的网格实体测度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "tensor_measure",
+        "other",
+        "网格"
+      ]
+    },
+    {
+      "id": "interface.interval_grad_lambda",
+      "intent": "计算区间单元重心坐标函数的梯度",
+      "expressions": [
+        "计算区间单元重心坐标函数的梯度",
+        "如何计算区间单元重心坐标函数的梯度",
+        "我想计算区间单元重心坐标函数的梯度",
+        "FEALPy 中用什么接口可以计算区间单元重心坐标函数的梯度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.interval_grad_lambda",
+          "role": "primary",
+          "reason": "计算区间单元重心坐标函数的梯度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "interval_grad_lambda",
+        "other",
+        "梯度",
+        "坐标"
+      ]
+    },
+    {
+      "id": "interface.triangle_area_3d",
+      "intent": "计算三维空间中三角形的面积",
+      "expressions": [
+        "计算三维空间中三角形的面积",
+        "如何计算三维空间中三角形的面积",
+        "我想计算三维空间中三角形的面积",
+        "FEALPy 中用什么接口可以计算三维空间中三角形的面积"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.triangle_area_3d",
+          "role": "primary",
+          "reason": "计算三维空间中三角形的面积"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "triangle_area_3d",
+        "other"
+      ]
+    },
+    {
+      "id": "interface.triangle_grad_lambda_2d",
+      "intent": "计算二维三角形重心坐标函数的梯度",
+      "expressions": [
+        "计算二维三角形重心坐标函数的梯度",
+        "如何计算二维三角形重心坐标函数的梯度",
+        "我想计算二维三角形重心坐标函数的梯度",
+        "FEALPy 中用什么接口可以计算二维三角形重心坐标函数的梯度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.triangle_grad_lambda_2d",
+          "role": "primary",
+          "reason": "计算二维三角形重心坐标函数的梯度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "triangle_grad_lambda_2d",
+        "other",
+        "梯度",
+        "坐标"
+      ]
+    },
+    {
+      "id": "interface.triangle_grad_lambda_3d",
+      "intent": "计算三维空间三角形重心坐标函数的梯度",
+      "expressions": [
+        "计算三维空间三角形重心坐标函数的梯度",
+        "如何计算三维空间三角形重心坐标函数的梯度",
+        "我想计算三维空间三角形重心坐标函数的梯度",
+        "FEALPy 中用什么接口可以计算三维空间三角形重心坐标函数的梯度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.triangle_grad_lambda_3d",
+          "role": "primary",
+          "reason": "计算三维空间三角形重心坐标函数的梯度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "triangle_grad_lambda_3d",
+        "other",
+        "梯度",
+        "坐标"
+      ]
+    },
+    {
+      "id": "interface.quadrangle_grad_lambda_2d",
+      "intent": "计算二维四边形参考坐标函数的梯度",
+      "expressions": [
+        "计算二维四边形参考坐标函数的梯度",
+        "如何计算二维四边形参考坐标函数的梯度",
+        "我想计算二维四边形参考坐标函数的梯度",
+        "FEALPy 中用什么接口可以计算二维四边形参考坐标函数的梯度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.quadrangle_grad_lambda_2d",
+          "role": "primary",
+          "reason": "计算二维四边形参考坐标函数的梯度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "quadrangle_grad_lambda_2d",
+        "other",
+        "梯度",
+        "坐标"
+      ]
+    },
+    {
+      "id": "interface.tetrahedron_grad_lambda_3d",
+      "intent": "计算三维四面体重心坐标函数的梯度",
+      "expressions": [
+        "计算三维四面体重心坐标函数的梯度",
+        "如何计算三维四面体重心坐标函数的梯度",
+        "我想计算三维四面体重心坐标函数的梯度",
+        "FEALPy 中用什么接口可以计算三维四面体重心坐标函数的梯度"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.tetrahedron_grad_lambda_3d",
+          "role": "primary",
+          "reason": "计算三维四面体重心坐标函数的梯度"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "tetrahedron_grad_lambda_3d",
+        "other",
+        "梯度",
+        "坐标"
+      ]
+    },
+    {
+      "id": "interface.signbit",
+      "intent": "判断各元素的符号位是否为负",
+      "expressions": [
+        "判断各元素的符号位是否为负",
+        "如何判断各元素的符号位是否为负",
+        "我想判断各元素的符号位是否为负",
+        "FEALPy 中用什么接口可以判断各元素的符号位是否为负"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.signbit",
+          "role": "primary",
+          "reason": "判断各元素的符号位是否为负"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "signbit",
+        "math"
+      ]
+    },
+    {
+      "id": "interface.take_along_axis",
+      "intent": "沿指定维度按照索引张量取出元素",
+      "expressions": [
+        "沿指定维度按照索引张量取出元素",
+        "如何沿指定维度按照索引张量取出元素",
+        "我想沿指定维度按照索引张量取出元素",
+        "FEALPy 中用什么接口可以沿指定维度按照索引张量取出元素"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.take_along_axis",
+          "role": "primary",
+          "reason": "沿指定维度按照索引张量取出元素"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "take_along_axis",
+        "manipulation",
+        "索引",
+        "维度"
+      ]
+    },
+    {
+      "id": "interface.transpose",
+      "intent": "按照给定轴顺序转置张量",
+      "expressions": [
+        "按照给定轴顺序转置张量",
+        "如何按照给定轴顺序转置张量",
+        "我想按照给定轴顺序转置张量",
+        "FEALPy 中用什么接口可以按照给定轴顺序转置张量"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.transpose",
+          "role": "primary",
+          "reason": "按照给定轴顺序转置张量"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "transpose",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "interface.unique_counts",
+      "intent": "获取唯一元素及每个唯一值的出现次数",
+      "expressions": [
+        "获取唯一元素及每个唯一值的出现次数",
+        "如何获取唯一元素及每个唯一值的出现次数",
+        "我想获取唯一元素及每个唯一值的出现次数",
+        "FEALPy 中用什么接口可以获取唯一元素及每个唯一值的出现次数"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.unique_counts",
+          "role": "primary",
+          "reason": "获取唯一元素及每个唯一值的出现次数"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "unique_counts",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "interface.unique_inverse",
+      "intent": "获取唯一元素及可重建原输入的逆映射索引",
+      "expressions": [
+        "获取唯一元素及可重建原输入的逆映射索引",
+        "如何获取唯一元素及可重建原输入的逆映射索引",
+        "我想获取唯一元素及可重建原输入的逆映射索引",
+        "FEALPy 中用什么接口可以获取唯一元素及可重建原输入的逆映射索引"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.unique_inverse",
+          "role": "primary",
+          "reason": "获取唯一元素及可重建原输入的逆映射索引"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "unique_inverse",
+        "manipulation",
+        "索引"
+      ]
+    },
+    {
+      "id": "interface.unique_values",
+      "intent": "只获取张量中的唯一元素值",
+      "expressions": [
+        "只获取张量中的唯一元素值",
+        "如何只获取张量中的唯一元素值",
+        "我想只获取张量中的唯一元素值",
+        "FEALPy 中用什么接口可以只获取张量中的唯一元素值"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.unique_values",
+          "role": "primary",
+          "reason": "只获取张量中的唯一元素值"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "unique_values",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "interface.setdiff1d",
+      "intent": "获取只出现在第一个输入而未出现在第二个输入中的元素",
+      "expressions": [
+        "获取只出现在第一个输入而未出现在第二个输入中的元素",
+        "如何获取只出现在第一个输入而未出现在第二个输入中的元素",
+        "我想获取只出现在第一个输入而未出现在第二个输入中的元素",
+        "FEALPy 中用什么接口可以获取只出现在第一个输入而未出现在第二个输入中的元素"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.setdiff1d",
+          "role": "primary",
+          "reason": "获取只出现在第一个输入而未出现在第二个输入中的元素"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "setdiff1d",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "interface.coo_spmm",
+      "intent": "执行 COO 格式稀疏矩阵与稠密向量或矩阵的乘法",
+      "expressions": [
+        "执行 COO 格式稀疏矩阵与稠密向量或矩阵的乘法",
+        "如何执行 COO 格式稀疏矩阵与稠密向量或矩阵的乘法",
+        "我想执行 COO 格式稀疏矩阵与稠密向量或矩阵的乘法",
+        "FEALPy 中用什么接口可以执行 COO 格式稀疏矩阵与稠密向量或矩阵的乘法"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.coo_spmm",
+          "role": "primary",
+          "reason": "执行 COO 格式稀疏矩阵与稠密向量或矩阵的乘法"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "coo_spmm",
+        "linalg",
+        "矩阵",
+        "向量"
+      ]
+    },
+    {
+      "id": "interface.csr_spmm",
+      "intent": "执行 CSR 格式稀疏矩阵与稠密向量或矩阵的乘法",
+      "expressions": [
+        "执行 CSR 格式稀疏矩阵与稠密向量或矩阵的乘法",
+        "如何执行 CSR 格式稀疏矩阵与稠密向量或矩阵的乘法",
+        "我想执行 CSR 格式稀疏矩阵与稠密向量或矩阵的乘法",
+        "FEALPy 中用什么接口可以执行 CSR 格式稀疏矩阵与稠密向量或矩阵的乘法"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.csr_spmm",
+          "role": "primary",
+          "reason": "执行 CSR 格式稀疏矩阵与稠密向量或矩阵的乘法"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "csr_spmm",
+        "linalg",
+        "矩阵",
+        "向量"
+      ]
+    },
+    {
+      "id": "interface.csr_spspmm",
+      "intent": "执行两个 CSR 格式稀疏矩阵的乘法",
+      "expressions": [
+        "执行两个 CSR 格式稀疏矩阵的乘法",
+        "如何执行两个 CSR 格式稀疏矩阵的乘法",
+        "我想执行两个 CSR 格式稀疏矩阵的乘法",
+        "FEALPy 中用什么接口可以执行两个 CSR 格式稀疏矩阵的乘法"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.csr_spspmm",
+          "role": "primary",
+          "reason": "执行两个 CSR 格式稀疏矩阵的乘法"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "csr_spspmm",
+        "linalg",
+        "矩阵"
+      ]
+    },
+    {
+      "id": "interface.coo_tocsr",
+      "intent": "把 COO 格式的稀疏矩阵转换为 CSR 格式",
+      "expressions": [
+        "把 COO 格式的稀疏矩阵转换为 CSR 格式",
+        "如何把 COO 格式的稀疏矩阵转换为 CSR 格式",
+        "我想把 COO 格式的稀疏矩阵转换为 CSR 格式",
+        "FEALPy 中用什么接口可以把 COO 格式的稀疏矩阵转换为 CSR 格式"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.coo_tocsr",
+          "role": "primary",
+          "reason": "把 COO 格式的稀疏矩阵转换为 CSR 格式"
+        }
+      ],
+      "contrasts": [],
+      "tags": [
+        "coo_tocsr",
+        "manipulation",
+        "矩阵"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,32 @@
 # FEALPy Backend Copilot 数据 v02：元数据结构讨论稿
 
+> 当前实施状态（2026-09-20）：v02 已收敛为“接口检索 MVP”。当前生效的数据文件是
+> `all_interfaces.json`，结构示例是 `trial_data.json`，可复现生成脚本是
+> `build_retrieval_data.py`。本文后半部分及 `metadata.schema.json`、
+> `metadata.example.json` 保留的是后续参数、返回值和后端差异阶段的完整结构草案，
+> 不代表当前 `all_interfaces.json` 必须提供这些字段。
+
+## 0. 当前生效的检索 MVP
+
+当前版本只解决：根据用户对计算功能的描述，返回正确的 FEALPy `bm.*` 接口。
+
+生效字段如下：
+
+- 顶层：`schema_version`、`dataset_version`、`scope`；
+- 接口表：`id`、`name`、`summary`、`category`、`source`；
+- 能力表：`id`、`intent`、`expressions`、`target_interfaces`、`contrasts`、`tags`。
+
+当前数据包括 233 个接口和 218 条能力。同一计算能力存在多个公开入口时，只建立
+一条能力记录：首选入口标为 `primary`，等价入口标为 `alternative`。例如
+`bm.matmul` 与 `bm.linalg.matmul` 不会生成两个相互竞争的向量文档。
+
+与 v01 的 220 个接口相比，本轮源码审计补入了当前公共映射和后端类中的 13 个遗漏
+接口，包括 `signbit`、`take_along_axis`、`concatenate`、`transpose`、唯一值拆分接口，
+以及 COO/CSR 稀疏矩阵辅助接口。常量和 dtype 属性不是可调用接口，因此不进入本数据集。
+
+当前版本明确不提供完整参数、返回值和 NumPy/PyTorch 映射；这些字段将在检索准确率
+达到要求后，作为接口详情层增量补充。
+
 ## 1. 本版本要解决的问题
 
 v01 以 FEALPy 接口为唯一记录单元，适合保存签名和源码映射，但大量可检索文本只是“函数名 + 通用分类”的模板化描述。用户通常不会先说接口名，而是描述计算目标，例如“删除长度为 1 的维度”“返回排序后的索引”。因此 v02 将数据拆成两个相互引用的实体：
@@ -308,4 +335,3 @@ capability 还需要记录：
 - capability -> interface -> backend 的答案链路可以追溯；
 - 无 category 硬过滤的 v01 基线已固定；
 - 新结构在同一开发集上至少分别报告 capability 与 interface 两级指标。
-

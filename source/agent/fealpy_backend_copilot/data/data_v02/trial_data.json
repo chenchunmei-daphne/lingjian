@@ -1,0 +1,55 @@
+{
+  "schema_version": "2.0.0-retrieval-mvp",
+  "dataset_version": "data_v02",
+  "scope": "根据用户描述的计算功能检索正确的 FEALPy bm.* 接口",
+  "interfaces": [
+    {
+      "id": "bm.sum",
+      "name": "sum",
+      "summary": "计算张量全部元素或指定维度上的元素之和",
+      "category": "reduction",
+      "source": "fealpy/backend/numpy_backend.py"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "reduction.sum",
+      "intent": "计算张量元素之和",
+      "expressions": [
+        "计算张量所有元素的和",
+        "把数组中的数全部加起来",
+        "求一个张量的总和",
+        "沿指定轴求和",
+        "计算每一行的和",
+        "计算每一列的和"
+      ],
+      "target_interfaces": [
+        {
+          "id": "bm.sum",
+          "role": "primary",
+          "reason": "用于对张量的全部元素或指定维度执行加法归约"
+        }
+      ],
+      "contrasts": [
+        {
+          "interface_id": "bm.cumsum",
+          "difference": "bm.sum 返回归约后的总和；bm.cumsum 返回各位置的累计和",
+          "selection_cue": "用户提到累计和、前缀和或保留中间累加结果时，应选择 bm.cumsum"
+        },
+        {
+          "interface_id": "bm.add",
+          "difference": "bm.sum 对一个张量中的多个元素做归约；bm.add 对两个输入逐元素相加",
+          "selection_cue": "用户要求两个张量逐元素相加时，应选择 bm.add"
+        }
+      ],
+      "tags": [
+        "求和",
+        "总和",
+        "归约",
+        "逐行求和",
+        "逐列求和",
+        "sum"
+      ]
+    }
+  ]
+}
