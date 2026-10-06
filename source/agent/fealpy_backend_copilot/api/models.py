@@ -11,6 +11,7 @@ class ChatRequest(BaseModel):
     query: str = Field(min_length=1, max_length=4000)
     session_id: str = Field(default="default", min_length=1, max_length=128)
     top_k: int = Field(default=5, ge=1, le=20)
+    model: Optional[str] = Field(default=None, min_length=1, max_length=256)
 
 
 class MatchResponse(BaseModel):
@@ -32,6 +33,12 @@ class ChatResponse(BaseModel):
     answer_source: str
     validation_errors: List[str]
     matches: List[MatchResponse]
+    model_used: Optional[str] = None
+
+
+class ModelListResponse(BaseModel):
+    models: List[str]
+    default_model: Optional[str] = None
 
 
 class SearchRequest(BaseModel):
@@ -58,4 +65,3 @@ class HealthResponse(BaseModel):
     qwen_configured: bool
     collection: str
     error: Optional[str] = None
-

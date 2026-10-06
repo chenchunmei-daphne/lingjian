@@ -31,12 +31,19 @@ class FakeService:
             "error": None,
         }
 
-    def chat(self, query, session_id, top_k):
+    def chat(self, query, session_id, top_k, model=None):
         return {
             "answer": "使用 bm.zeros。", "matched": True,
             "intent": {"original_query": query, "operation": "zeros"},
             "intent_source": "qwen", "answer_source": "qwen",
             "validation_errors": [], "matches": [],
+            "model_used": model or "qwen3.7-test",
+        }
+
+    def models(self, refresh=False):
+        return {
+            "models": ["qwen3.7-test", "deepseek-v4-test"],
+            "default_model": "qwen3.7-test",
         }
 
     def search(self, query, top_k, backend, category):
@@ -70,6 +77,22 @@ class ApiTests(unittest.TestCase):
         )
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["answer_source"], "qwen")
+
+    def test_chat_accepts_selected_model(self):
+        response = self.client.post(
+            "/api/chat",
+            json={"query": "创建全零张量", "model": "deepseek-v4-test"},
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["model_used"], "deepseek-v4-test")
+
+    def test_models(self):
+        response = self.client.get("/api/models")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            response.json()["models"],
+            ["qwen3.7-test", "deepseek-v4-test"],
+        )
 
     def test_chat_validation(self):
         response = self.client.post("/api/chat", json={"query": ""})

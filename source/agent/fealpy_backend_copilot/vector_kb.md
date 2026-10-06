@@ -1,5 +1,9 @@
 # FEALPy 接口向量知识库
 
+> 当前程序已切换到 v02：数据为 `data/data_v02/all_interfaces.json`，数据库为
+> `vector_store/vector_store_v02/chroma`，Collection 为
+> `fealpy_capabilities_v02`。下文涉及 v01 的路径和接口字段仅作为历史设计记录。
+
 ## 文件结构
 
 ```text

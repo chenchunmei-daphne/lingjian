@@ -1,4 +1,4 @@
-"""Query the persistent FEALPy interface vector knowledge base."""
+"""Query the capability-centred v02 FEALPy vector knowledge base."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from pathlib import Path
 import chromadb
 from sentence_transformers import SentenceTransformer
 
-from vector_kb import DEFAULT_COLLECTION, DEFAULT_DB_DIR, DEFAULT_MODEL_DIR
+from vector_kb_v02 import DEFAULT_COLLECTION, DEFAULT_DB_DIR, DEFAULT_MODEL_DIR
 
 
 def parse_args() -> argparse.Namespace:
@@ -52,9 +52,12 @@ def main() -> None:
         zip(result["ids"][0], result["metadatas"][0], result["distances"][0]),
         start=1,
     ):
-        print(f"{rank}. {item_id}  cosine_distance={distance:.4f}")
-        print(f"   NumPy:  {metadata.get('numpy_api') or '无单一对应 API'}")
-        print(f"   PyTorch: {metadata.get('pytorch_api') or '无单一对应 API'}")
+        print(
+            f"{rank}. {metadata.get('primary_interface')}  "
+            f"capability={item_id}  cosine_distance={distance:.4f}"
+        )
+        print(f"   Intent: {metadata.get('intent')}")
+        print(f"   Alternatives: {metadata.get('alternative_interfaces')}")
         print(f"   Source:  {metadata.get('source')}")
 
 

@@ -19,15 +19,13 @@ PROMPT_PATH = Path(__file__).resolve().parent / "prompts" / "answer_prompt.txt"
 def _context(result: SearchResult) -> dict:
     record = result.record
     return {
-        "id": record.get("id"),
-        "full_name": record.get("full_name"),
+        "id": result.id,
+        "full_name": record.get("full_name") or result.id,
         "category": record.get("category"),
-        "description": record.get("description"),
-        "signature": record.get("signature"),
-        "parameters": record.get("parameters"),
-        "backends": record.get("backends"),
-        "backend_diff_notes": record.get("backend_diff_notes"),
-        "examples": record.get("examples"),
+        "summary": record.get("summary") or record.get("description"),
+        "capability_intent": record.get("capability_intent"),
+        "match_reason": record.get("match_reason"),
+        "target_role": record.get("target_role"),
         "source": record.get("source"),
         "retrieval_score": round(result.score, 6),
     }
@@ -47,6 +45,7 @@ class LLMAnswerGenerator:
         intent: QueryIntent,
         results: List[SearchResult],
         history: Optional[List[dict]] = None,
+        model: Optional[str] = None,
     ) -> AgentAnswer:
         if not results:
             answer = self.fallback.generate(query, intent, results)
@@ -73,7 +72,9 @@ class LLMAnswerGenerator:
                     ),
                 )
             )
-            text = self.client.complete([{"role": "user", "content": prompt}])
+            text = self.client.complete(
+                [{"role": "user", "content": prompt}], model=model
+            )
             validation = self.validator.validate(text, intent, results)
             if not validation.valid:
                 answer = self.fallback.generate(query, intent, results)
@@ -90,6 +91,7 @@ class LLMAnswerGenerator:
                 text=text,
                 answer_source="qwen",
                 validation_errors=[],
+                model_used=getattr(self.client, "last_model", None),
             )
         except Exception:
             self.last_source = "template_fallback"

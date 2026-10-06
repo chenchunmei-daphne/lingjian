@@ -30,6 +30,7 @@ class HybridFealpyBackendAgent:
         query: str,
         top_k: int = 5,
         session_id: str = "default",
+        model: str | None = None,
     ) -> AgentAnswer:
         history = self.memory.context(session_id)
         intent = self.intent_parser.parse(
@@ -37,11 +38,13 @@ class HybridFealpyBackendAgent:
             top_k=top_k,
             history=history,
             previous_intent=self.memory.previous_intent(session_id),
+            model=model,
         )
         results = self.retriever.search(intent)
         answer = self.answer_generator.generate(
-            query, intent, results, history=history
+            query, intent, results, history=history, model=model
         )
+        answer.model_used = getattr(self.client, "last_model", None)
         answer.intent_source = self.intent_parser.last_source
         answer.answer_source = self.answer_generator.last_source
         self.memory.add(session_id, answer)

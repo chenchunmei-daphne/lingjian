@@ -15,7 +15,7 @@ from typing import Optional
 from hybrid_agent import HybridFealpyBackendAgent
 from intent_parser import RuleBasedIntentParser
 from schemas import QueryIntent
-from vector_kb import DEFAULT_COLLECTION, DEFAULT_DB_DIR, PROJECT_DIR
+from vector_kb_v02 import DEFAULT_COLLECTION, DEFAULT_DB_DIR, PROJECT_DIR
 
 
 LOGGER = logging.getLogger("fealpy_backend_copilot")
@@ -62,13 +62,21 @@ class AgentService:
                 LOGGER.exception("Failed to initialize FEALPy assistant")
                 raise
 
-    def chat(self, query: str, session_id: str, top_k: int) -> dict:
+    def chat(
+        self,
+        query: str,
+        session_id: str,
+        top_k: int,
+        model: Optional[str] = None,
+    ) -> dict:
         if not self.ready or self.agent is None:
             raise RuntimeError(self.error or "Agent service is not ready")
         request_id = uuid.uuid4().hex[:12]
         started = time.perf_counter()
         with self._lock:
-            answer = self.agent.run(query, top_k=top_k, session_id=session_id)
+            answer = self.agent.run(
+                query, top_k=top_k, session_id=session_id, model=model
+            )
         elapsed = time.perf_counter() - started
         LOGGER.info(
             "chat request_id=%s session_id=%s matched=%s intent=%s answer=%s elapsed=%.3f",
@@ -87,7 +95,18 @@ class AgentService:
             "answer_source": answer.answer_source,
             "validation_errors": answer.validation_errors,
             "matches": [_match(result) for result in answer.matches],
+            "model_used": answer.model_used,
         }
+
+    def models(self, refresh: bool = False) -> dict:
+        if not self.ready or self.agent is None:
+            raise RuntimeError(self.error or "Agent service is not ready")
+        client = getattr(self.agent, "client", None)
+        if client is None or not hasattr(client, "list_models"):
+            return {"models": [], "default_model": None}
+        with self._lock:
+            models = client.list_models(refresh=refresh)
+        return {"models": models, "default_model": getattr(client, "model", None)}
 
     def search(
         self,
@@ -139,4 +158,3 @@ class AgentService:
             "collection": str(manifest.get("collection", DEFAULT_COLLECTION)),
             "error": self.error,
         }
-

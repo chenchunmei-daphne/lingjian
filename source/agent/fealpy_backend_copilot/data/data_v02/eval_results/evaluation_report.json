@@ -1,0 +1,3811 @@
+{
+  "config": {
+    "benchmark": "D:\\chen\\repo\\lingjian\\source\\agent\\fealpy_backend_copilot\\data\\data_v01\\eval_questions_55.json",
+    "mode": "rule",
+    "top_k": 5,
+    "limit": null
+  },
+  "summary": {
+    "total": 55,
+    "recall_at_1": 0.8363636363636363,
+    "recall_at_2": 0.9090909090909091,
+    "recall_at_3": 0.9272727272727272,
+    "recall_at_4": 0.9636363636363636,
+    "recall_at_5": 0.9818181818181818,
+    "answer_accuracy": 0.8363636363636363,
+    "answer_correct_count": 46,
+    "failure_counts": {
+      "retrieval_miss": 1,
+      "answer_error_after_retrieval_hit": 8,
+      "pipeline_error": 0
+    },
+    "by_category": {
+      "creation": {
+        "total": 11,
+        "recall_at_5": 1.0,
+        "answer_accuracy": 0.727273
+      },
+      "linalg": {
+        "total": 15,
+        "recall_at_5": 1.0,
+        "answer_accuracy": 1.0
+      },
+      "manipulation": {
+        "total": 16,
+        "recall_at_5": 0.9375,
+        "answer_accuracy": 0.75
+      },
+      "other": {
+        "total": 3,
+        "recall_at_5": 1.0,
+        "answer_accuracy": 1.0
+      },
+      "reduction": {
+        "total": 10,
+        "recall_at_5": 1.0,
+        "answer_accuracy": 0.8
+      }
+    },
+    "by_difficulty": {
+      "basic": {
+        "total": 23,
+        "recall_at_5": 1.0,
+        "answer_accuracy": 0.869565
+      },
+      "intermediate": {
+        "total": 2,
+        "recall_at_5": 1.0,
+        "answer_accuracy": 1.0
+      },
+      "medium": {
+        "total": 30,
+        "recall_at_5": 0.966667,
+        "answer_accuracy": 0.8
+      }
+    },
+    "mean_retrieval_seconds": 0.1205,
+    "mean_chat_seconds": 0.0741
+  },
+  "samples": [
+    {
+      "id": "B001",
+      "query": "我想让后续随机数结果可以复现，FEALPy 后端里怎么设置随机种子？",
+      "expected_api": [
+        "bm.random.seed"
+      ],
+      "expected_category": "other",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.seed",
+          "full_name": "bm.random.seed",
+          "category": "other",
+          "score": 0.81428238,
+          "distance": 0.20571762
+        },
+        {
+          "rank": 2,
+          "id": "bm.random.randint",
+          "full_name": "bm.random.randint",
+          "category": "creation",
+          "score": 0.66488127,
+          "distance": 0.43511873
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.65024546,
+          "distance": 0.44975454
+        },
+        {
+          "rank": 4,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.64805464,
+          "distance": 0.45194536
+        },
+        {
+          "rank": 5,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.63391087,
+          "distance": 0.46608913
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.random.seed",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.random.seed`\n\n理由：设置随机数生成器的种子，使随机结果可复现\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.random.randint`、`bm.random.rand`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.5299,
+      "chat_seconds": 0.0758
+    },
+    {
+      "id": "B002",
+      "query": "怎么生成一个形状为 2×3 的均匀分布随机张量？",
+      "expected_api": [
+        "bm.random.rand"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 1.0830745,
+          "distance": 0.3469255
+        },
+        {
+          "rank": 2,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.74636205,
+          "distance": 0.33363795
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randint",
+          "full_name": "bm.random.randint",
+          "category": "creation",
+          "score": 0.66560407,
+          "distance": 0.41439593
+        },
+        {
+          "rank": 4,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.62481256,
+          "distance": 0.45518744
+        },
+        {
+          "rank": 5,
+          "id": "bm.full_like",
+          "full_name": "bm.full_like",
+          "category": "creation",
+          "score": 0.61740519,
+          "distance": 0.46259481
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.random.rand",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.random.rand`\n\n理由：创建服从零到一均匀分布的随机张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.random.randn`、`bm.random.randint`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.2115,
+      "chat_seconds": 0.0714
+    },
+    {
+      "id": "B003",
+      "query": "如何生成 0 到 9 之间的随机整数张量？",
+      "expected_api": [
+        "bm.random.randint"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.randint",
+          "full_name": "bm.random.randint",
+          "category": "creation",
+          "score": 1.11811285,
+          "distance": 0.31188715
+        },
+        {
+          "rank": 2,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.71649458,
+          "distance": 0.36350542
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.7072065,
+          "distance": 0.3727935
+        },
+        {
+          "rank": 4,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.63316198,
+          "distance": 0.44683802
+        },
+        {
+          "rank": 5,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.61667361,
+          "distance": 0.46332639
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.random.randint",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.random.randint`\n\n理由：创建指定整数区间内的随机整数张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.random.rand`、`bm.random.randn`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1233,
+      "chat_seconds": 0.0783
+    },
+    {
+      "id": "B004",
+      "query": "怎么生成一个 2×3 的标准正态分布随机张量？",
+      "expected_api": [
+        "bm.random.randn"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 1.15366714,
+          "distance": 0.27633286
+        },
+        {
+          "rank": 2,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.69471981,
+          "distance": 0.38528019
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randint",
+          "full_name": "bm.random.randint",
+          "category": "creation",
+          "score": 0.63019015,
+          "distance": 0.44980985
+        },
+        {
+          "rank": 4,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.56609924,
+          "distance": 0.51390076
+        },
+        {
+          "rank": 5,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.56403877,
+          "distance": 0.51596123
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.random.randn",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.random.randn`\n\n理由：创建服从标准正态分布的随机张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.random.rand`、`bm.random.randint`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1051,
+      "chat_seconds": 0.0768
+    },
+    {
+      "id": "B005",
+      "query": "如何创建一个 3×4 的全零张量？",
+      "expected_api": [
+        "bm.zeros"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 1.10838224,
+          "distance": 0.34161776
+        },
+        {
+          "rank": 2,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.74007849,
+          "distance": 0.35992151
+        },
+        {
+          "rank": 3,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.62783589,
+          "distance": 0.45216411
+        },
+        {
+          "rank": 4,
+          "id": "bm.empty_like",
+          "full_name": "bm.empty_like",
+          "category": "creation",
+          "score": 0.62246271,
+          "distance": 0.45753729
+        },
+        {
+          "rank": 5,
+          "id": "bm.ones_like",
+          "full_name": "bm.ones_like",
+          "category": "creation",
+          "score": 0.61744423,
+          "distance": 0.46255577
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.zeros",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.zeros`\n\n理由：创建指定形状的全零张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.zeros_like`、`bm.empty`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1229,
+      "chat_seconds": 0.0709
+    },
+    {
+      "id": "B006",
+      "query": "FEALPy 后端怎么创建一个 5×5 的全 1 张量？",
+      "expected_api": [
+        "bm.ones"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.ones",
+          "full_name": "bm.ones",
+          "category": "creation",
+          "score": 0.83452274,
+          "distance": 0.30547726
+        },
+        {
+          "rank": 2,
+          "id": "bm.ones_like",
+          "full_name": "bm.ones_like",
+          "category": "creation",
+          "score": 0.83001818,
+          "distance": 0.30998182
+        },
+        {
+          "rank": 3,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 0.80193795,
+          "distance": 0.33806205
+        },
+        {
+          "rank": 4,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.7882302,
+          "distance": 0.3517698
+        },
+        {
+          "rank": 5,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.7761107,
+          "distance": 0.3438893
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.ones",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.ones`\n\n理由：创建指定形状的全一张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.ones_like`、`bm.zeros`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0925,
+      "chat_seconds": 0.0812
+    },
+    {
+      "id": "B007",
+      "query": "怎么创建形状为 (2,3) 且所有元素都等于 7 的张量？",
+      "expected_api": [
+        "bm.full"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.74418632,
+          "distance": 0.35581368
+        },
+        {
+          "rank": 2,
+          "id": "bm.empty_like",
+          "full_name": "bm.empty_like",
+          "category": "creation",
+          "score": 0.70590541,
+          "distance": 0.39409459
+        },
+        {
+          "rank": 3,
+          "id": "bm.full_like",
+          "full_name": "bm.full_like",
+          "category": "creation",
+          "score": 0.69607112,
+          "distance": 0.40392888
+        },
+        {
+          "rank": 4,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.69463412,
+          "distance": 0.40536588
+        },
+        {
+          "rank": 5,
+          "id": "bm.ones_like",
+          "full_name": "bm.ones_like",
+          "category": "creation",
+          "score": 0.67415245,
+          "distance": 0.40584755
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.full",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.full`\n\n理由：创建指定形状且所有元素为同一给定值的张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.empty_like`、`bm.full_like`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1542,
+      "chat_seconds": 0.0743
+    },
+    {
+      "id": "B008",
+      "query": "如何创建一个 4 阶单位矩阵？",
+      "expected_api": [
+        "bm.eye"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.eye",
+          "full_name": "bm.eye",
+          "category": "creation",
+          "score": 0.65217938,
+          "distance": 0.42782062
+        },
+        {
+          "rank": 2,
+          "id": "bm.arange",
+          "full_name": "bm.arange",
+          "category": "creation",
+          "score": 0.5722204,
+          "distance": 0.5077796
+        },
+        {
+          "rank": 3,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.53241666,
+          "distance": 0.54758334
+        },
+        {
+          "rank": 4,
+          "id": "bm.ones_like",
+          "full_name": "bm.ones_like",
+          "category": "creation",
+          "score": 0.52412708,
+          "distance": 0.55587292
+        },
+        {
+          "rank": 5,
+          "id": "bm.linspace",
+          "full_name": "bm.linspace",
+          "category": "creation",
+          "score": 0.522725,
+          "distance": 0.557275
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.eye",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.eye`\n\n理由：创建二维单位矩阵或带指定对角线的矩阵\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.arange`、`bm.asarray`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0916,
+      "chat_seconds": 0.064
+    },
+    {
+      "id": "B009",
+      "query": "怎么生成从 0 开始、小于 10、步长为 2 的序列？",
+      "expected_api": [
+        "bm.arange"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.arange",
+          "full_name": "bm.arange",
+          "category": "creation",
+          "score": 1.04829948,
+          "distance": 0.38170052
+        },
+        {
+          "rank": 2,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.57553663,
+          "distance": 0.50446337
+        },
+        {
+          "rank": 3,
+          "id": "bm.eye",
+          "full_name": "bm.eye",
+          "category": "creation",
+          "score": 0.56450732,
+          "distance": 0.51549268
+        },
+        {
+          "rank": 4,
+          "id": "bm.array",
+          "full_name": "bm.array",
+          "category": "creation",
+          "score": 0.55039598,
+          "distance": 0.52960402
+        },
+        {
+          "rank": 5,
+          "id": "bm.linspace",
+          "full_name": "bm.linspace",
+          "category": "creation",
+          "score": 0.54326149,
+          "distance": 0.53673851
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.arange",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.arange`\n\n理由：按起点、终点和步长创建等间隔数值序列\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.asarray`、`bm.eye`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.13,
+      "chat_seconds": 0.0758
+    },
+    {
+      "id": "B010",
+      "query": "如何在 0 到 1 之间均匀取 100 个点？",
+      "expected_api": [
+        "bm.linspace"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.52915776,
+          "distance": 0.47084224
+        },
+        {
+          "rank": 2,
+          "id": "bm.linspace",
+          "full_name": "bm.linspace",
+          "category": "creation",
+          "score": 0.47269489,
+          "distance": 0.54730511
+        },
+        {
+          "rank": 3,
+          "id": "bm.dot",
+          "full_name": "bm.dot",
+          "category": "linalg",
+          "score": 0.46958482,
+          "distance": 0.53041518
+        },
+        {
+          "rank": 4,
+          "id": "bm.triu",
+          "full_name": "bm.triu",
+          "category": "other",
+          "score": 0.46750325,
+          "distance": 0.53249675
+        },
+        {
+          "rank": 5,
+          "id": "bm.tril",
+          "full_name": "bm.tril",
+          "category": "other",
+          "score": 0.45578122,
+          "distance": 0.54421878
+        }
+      ],
+      "retrieval_hit_rank": 2,
+      "recall_at": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.random.rand",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.random.rand`\n\n理由：创建服从零到一均匀分布的随机张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.linspace`、`bm.dot`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": "answer_error_after_retrieval_hit",
+      "error": null,
+      "retrieval_seconds": 0.0989,
+      "chat_seconds": 0.0662
+    },
+    {
+      "id": "B011",
+      "query": "我有一个 Python 列表，怎么把它转换成 FEALPy 后端数组？",
+      "expected_api": [
+        "bm.asarray"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.tolist",
+          "full_name": "bm.tolist",
+          "category": "manipulation",
+          "score": 0.72889071,
+          "distance": 0.33110929
+        },
+        {
+          "rank": 2,
+          "id": "bm.to_numpy",
+          "full_name": "bm.to_numpy",
+          "category": "dtype",
+          "score": 0.7087818,
+          "distance": 0.3112182
+        },
+        {
+          "rank": 3,
+          "id": "bm.from_numpy",
+          "full_name": "bm.from_numpy",
+          "category": "dtype",
+          "score": 0.70095565,
+          "distance": 0.31904435
+        },
+        {
+          "rank": 4,
+          "id": "bm.asarray",
+          "full_name": "bm.asarray",
+          "category": "creation",
+          "score": 0.688612,
+          "distance": 0.331388
+        },
+        {
+          "rank": 5,
+          "id": "bm.set_backend",
+          "full_name": "bm.set_backend",
+          "category": "other",
+          "score": 0.67569896,
+          "distance": 0.34430104
+        }
+      ],
+      "retrieval_hit_rank": 4,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.tolist",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.tolist`\n\n理由：将张量转换为 Python 列表\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.to_numpy`、`bm.from_numpy`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": "answer_error_after_retrieval_hit",
+      "error": null,
+      "retrieval_seconds": 0.1372,
+      "chat_seconds": 0.0717
+    },
+    {
+      "id": "B012",
+      "query": "已有张量 x，怎样创建一个和 x 形状相同的全零张量？",
+      "expected_api": [
+        "bm.zeros_like"
+      ],
+      "expected_category": "creation",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.zeros",
+          "full_name": "bm.zeros",
+          "category": "creation",
+          "score": 1.14861756,
+          "distance": 0.28138244
+        },
+        {
+          "rank": 2,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.84971831,
+          "distance": 0.25028169
+        },
+        {
+          "rank": 3,
+          "id": "bm.empty_like",
+          "full_name": "bm.empty_like",
+          "category": "creation",
+          "score": 0.75742658,
+          "distance": 0.32257342
+        },
+        {
+          "rank": 4,
+          "id": "bm.ones_like",
+          "full_name": "bm.ones_like",
+          "category": "creation",
+          "score": 0.73364361,
+          "distance": 0.34635639
+        },
+        {
+          "rank": 5,
+          "id": "bm.full_like",
+          "full_name": "bm.full_like",
+          "category": "creation",
+          "score": 0.72844066,
+          "distance": 0.35155934
+        }
+      ],
+      "retrieval_hit_rank": 2,
+      "recall_at": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.zeros",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.zeros`\n\n理由：创建指定形状的全零张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.zeros_like`、`bm.empty_like`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": "answer_error_after_retrieval_hit",
+      "error": null,
+      "retrieval_seconds": 0.1069,
+      "chat_seconds": 0.0761
+    },
+    {
+      "id": "B013",
+      "query": "给定矩阵 A 和右端项 b，如何求解线性方程组 Ax=b？",
+      "expected_api": [
+        "bm.linalg.solve"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.solve",
+          "full_name": "bm.linalg.solve",
+          "category": "linalg",
+          "score": 1.09355385,
+          "distance": 0.35644615
+        },
+        {
+          "rank": 2,
+          "id": "bm.trace",
+          "full_name": "bm.trace",
+          "category": "linalg",
+          "score": 0.63608785,
+          "distance": 0.44391215
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.diagonal",
+          "full_name": "bm.linalg.diagonal",
+          "category": "linalg",
+          "score": 0.63498374,
+          "distance": 0.44501626
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.trace",
+          "full_name": "bm.linalg.trace",
+          "category": "linalg",
+          "score": 0.62608785,
+          "distance": 0.44391215
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.svd",
+          "full_name": "bm.linalg.svd",
+          "category": "linalg",
+          "score": 0.61641385,
+          "distance": 0.46358615
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.solve",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.solve`\n\n理由：求解线性方程组\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.trace`、`bm.linalg.diagonal`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1678,
+      "chat_seconds": 0.0798
+    },
+    {
+      "id": "B014",
+      "query": "如何计算一个方阵的逆矩阵？",
+      "expected_api": [
+        "bm.linalg.inv"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.inv",
+          "full_name": "bm.linalg.inv",
+          "category": "linalg",
+          "score": 0.65467274,
+          "distance": 0.34532726
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.pinv",
+          "full_name": "bm.linalg.pinv",
+          "category": "linalg",
+          "score": 0.58055979,
+          "distance": 0.41944021
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.svd",
+          "full_name": "bm.linalg.svd",
+          "category": "linalg",
+          "score": 0.54494286,
+          "distance": 0.45505714
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.eigh",
+          "full_name": "bm.linalg.eigh",
+          "category": "linalg",
+          "score": 0.54263836,
+          "distance": 0.45736164
+        },
+        {
+          "rank": 5,
+          "id": "bm.trace",
+          "full_name": "bm.trace",
+          "category": "linalg",
+          "score": 0.53784209,
+          "distance": 0.46215791
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.inv",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.inv`\n\n理由：计算可逆方阵的逆矩阵\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.linalg.pinv`、`bm.linalg.svd`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0844,
+      "chat_seconds": 0.0626
+    },
+    {
+      "id": "B015",
+      "query": "怎么求矩阵 A 的行列式？",
+      "expected_api": [
+        "bm.linalg.det"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.det",
+          "full_name": "bm.linalg.det",
+          "category": "linalg",
+          "score": 0.57111879,
+          "distance": 0.44888121
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.matrix_rank",
+          "full_name": "bm.linalg.matrix_rank",
+          "category": "linalg",
+          "score": 0.52998126,
+          "distance": 0.47001874
+        },
+        {
+          "rank": 3,
+          "id": "bm.trace",
+          "full_name": "bm.trace",
+          "category": "linalg",
+          "score": 0.52320313,
+          "distance": 0.47679687
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.trace",
+          "full_name": "bm.linalg.trace",
+          "category": "linalg",
+          "score": 0.51320313,
+          "distance": 0.47679687
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.matrix_norm",
+          "full_name": "bm.linalg.matrix_norm",
+          "category": "linalg",
+          "score": 0.49985641,
+          "distance": 0.50014359
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.det",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.det`\n\n理由：计算方阵的行列式\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.linalg.matrix_rank`、`bm.trace`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.107,
+      "chat_seconds": 0.0621
+    },
+    {
+      "id": "B016",
+      "query": "我想对矩阵做奇异值分解，应该用哪个 bm 接口？",
+      "expected_api": [
+        "bm.linalg.svd"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.svd",
+          "full_name": "bm.linalg.svd",
+          "category": "linalg",
+          "score": 0.78652427,
+          "distance": 0.31347573
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.svdvals",
+          "full_name": "bm.linalg.svdvals",
+          "category": "linalg",
+          "score": 0.74786494,
+          "distance": 0.35213506
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.qr",
+          "full_name": "bm.linalg.qr",
+          "category": "linalg",
+          "score": 0.66871223,
+          "distance": 0.43128777
+        },
+        {
+          "rank": 4,
+          "id": "bm.matmul",
+          "full_name": "bm.matmul",
+          "category": "linalg",
+          "score": 0.65973953,
+          "distance": 0.44026047
+        },
+        {
+          "rank": 5,
+          "id": "bm.matrix_transpose",
+          "full_name": "bm.matrix_transpose",
+          "category": "linalg",
+          "score": 0.65903381,
+          "distance": 0.44096619
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.svd",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.svd`\n\n理由：对矩阵进行奇异值分解并返回奇异向量和奇异值\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.linalg.svdvals`、`bm.linalg.qr`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1666,
+      "chat_seconds": 0.0719
+    },
+    {
+      "id": "B017",
+      "query": "如何对矩阵进行 QR 分解？",
+      "expected_api": [
+        "bm.linalg.qr"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.qr",
+          "full_name": "bm.linalg.qr",
+          "category": "linalg",
+          "score": 0.87027784,
+          "distance": 0.26972216
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.svd",
+          "full_name": "bm.linalg.svd",
+          "category": "linalg",
+          "score": 0.69489389,
+          "distance": 0.42510611
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.cholesky",
+          "full_name": "bm.linalg.cholesky",
+          "category": "linalg",
+          "score": 0.61637179,
+          "distance": 0.48362821
+        },
+        {
+          "rank": 4,
+          "id": "bm.csr_spspmm",
+          "full_name": "bm.csr_spspmm",
+          "category": "linalg",
+          "score": 0.60340358,
+          "distance": 0.47659642
+        },
+        {
+          "rank": 5,
+          "id": "bm.csr_spmm",
+          "full_name": "bm.csr_spmm",
+          "category": "linalg",
+          "score": 0.59939213,
+          "distance": 0.48060787
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.qr",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.qr`\n\n理由：对矩阵进行 QR 分解\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.linalg.svd`、`bm.linalg.cholesky`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0751,
+      "chat_seconds": 0.0594
+    },
+    {
+      "id": "B018",
+      "query": "正定矩阵怎么做 Cholesky 分解？",
+      "expected_api": [
+        "bm.linalg.cholesky"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.cholesky",
+          "full_name": "bm.linalg.cholesky",
+          "category": "linalg",
+          "score": 0.83730429,
+          "distance": 0.28269571
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.svd",
+          "full_name": "bm.linalg.svd",
+          "category": "linalg",
+          "score": 0.65169892,
+          "distance": 0.44830108
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.qr",
+          "full_name": "bm.linalg.qr",
+          "category": "linalg",
+          "score": 0.62483678,
+          "distance": 0.47516322
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.eigh",
+          "full_name": "bm.linalg.eigh",
+          "category": "linalg",
+          "score": 0.58095516,
+          "distance": 0.49904484
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.eigvalsh",
+          "full_name": "bm.linalg.eigvalsh",
+          "category": "linalg",
+          "score": 0.56550647,
+          "distance": 0.51449353
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.cholesky",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.cholesky`\n\n理由：对对称正定矩阵进行 Cholesky 分解\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.linalg.svd`、`bm.linalg.qr`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0808,
+      "chat_seconds": 0.0631
+    },
+    {
+      "id": "B019",
+      "query": "怎么计算一个矩阵的秩？",
+      "expected_api": [
+        "bm.linalg.matrix_rank"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.matrix_rank",
+          "full_name": "bm.linalg.matrix_rank",
+          "category": "linalg",
+          "score": 0.72394538,
+          "distance": 0.27605462
+        },
+        {
+          "rank": 2,
+          "id": "bm.tril",
+          "full_name": "bm.tril",
+          "category": "other",
+          "score": 0.55066937,
+          "distance": 0.44933063
+        },
+        {
+          "rank": 3,
+          "id": "bm.triu",
+          "full_name": "bm.triu",
+          "category": "other",
+          "score": 0.54933715,
+          "distance": 0.45066285
+        },
+        {
+          "rank": 4,
+          "id": "bm.trace",
+          "full_name": "bm.trace",
+          "category": "linalg",
+          "score": 0.53330618,
+          "distance": 0.46669382
+        },
+        {
+          "rank": 5,
+          "id": "bm.matrix_transpose",
+          "full_name": "bm.matrix_transpose",
+          "category": "linalg",
+          "score": 0.52776217,
+          "distance": 0.47223783
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.matrix_rank",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.matrix_rank`\n\n理由：计算矩阵的秩\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.tril`、`bm.triu`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0679,
+      "chat_seconds": 0.0588
+    },
+    {
+      "id": "B020",
+      "query": "如何计算向量的 2 范数？",
+      "expected_api": [
+        "bm.linalg.vector_norm"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.vector_norm",
+          "full_name": "bm.linalg.vector_norm",
+          "category": "linalg",
+          "score": 0.69813678,
+          "distance": 0.40186322
+        },
+        {
+          "rank": 2,
+          "id": "bm.vecdot",
+          "full_name": "bm.vecdot",
+          "category": "linalg",
+          "score": 0.67264457,
+          "distance": 0.40735543
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.vecdot",
+          "full_name": "bm.linalg.vecdot",
+          "category": "linalg",
+          "score": 0.66264457,
+          "distance": 0.40735543
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.outer",
+          "full_name": "bm.linalg.outer",
+          "category": "linalg",
+          "score": 0.64206805,
+          "distance": 0.43793195
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.matrix_norm",
+          "full_name": "bm.linalg.matrix_norm",
+          "category": "linalg",
+          "score": 0.62943516,
+          "distance": 0.47056484
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.vector_norm",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.vector_norm`\n\n理由：计算向量范数，支持指定阶数和维度\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.vecdot`、`bm.linalg.vecdot`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0733,
+      "chat_seconds": 0.0649
+    },
+    {
+      "id": "B021",
+      "query": "怎样把张量 x 从 (2,3,4) 改成 (6,4)？",
+      "expected_api": [
+        "bm.reshape"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.bitwise_right_shift",
+          "full_name": "bm.bitwise_right_shift",
+          "category": "math",
+          "score": 0.57182413,
+          "distance": 0.42817587
+        },
+        {
+          "rank": 2,
+          "id": "bm.bitwise_left_shift",
+          "full_name": "bm.bitwise_left_shift",
+          "category": "math",
+          "score": 0.56153631,
+          "distance": 0.43846369
+        },
+        {
+          "rank": 3,
+          "id": "bm.tolist",
+          "full_name": "bm.tolist",
+          "category": "manipulation",
+          "score": 0.54997253,
+          "distance": 0.45002747
+        },
+        {
+          "rank": 4,
+          "id": "bm.moveaxis",
+          "full_name": "bm.moveaxis",
+          "category": "manipulation",
+          "score": 0.54764915,
+          "distance": 0.45235085
+        },
+        {
+          "rank": 5,
+          "id": "bm.reshape",
+          "full_name": "bm.reshape",
+          "category": "manipulation",
+          "score": 0.54548663,
+          "distance": 0.45451337
+        }
+      ],
+      "retrieval_hit_rank": 5,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": true
+      },
+      "answer_api": "bm.bitwise_right_shift",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.bitwise_right_shift`\n\n理由：对输入张量逐位右移\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.bitwise_left_shift`、`bm.tolist`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": "answer_error_after_retrieval_hit",
+      "error": null,
+      "retrieval_seconds": 0.0976,
+      "chat_seconds": 0.0722
+    },
+    {
+      "id": "B022",
+      "query": "有两个形状相同的张量，怎么沿第 0 维拼接？",
+      "expected_api": [
+        "bm.concat"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.concat",
+          "full_name": "bm.concat",
+          "category": "manipulation",
+          "score": 1.02583563,
+          "distance": 0.40416437
+        },
+        {
+          "rank": 2,
+          "id": "bm.concatenate",
+          "full_name": "bm.concatenate",
+          "category": "manipulation",
+          "score": 1.01583563,
+          "distance": 0.40416437
+        },
+        {
+          "rank": 3,
+          "id": "bm.unstack",
+          "full_name": "bm.unstack",
+          "category": "manipulation",
+          "score": 0.62274958,
+          "distance": 0.45725042
+        },
+        {
+          "rank": 4,
+          "id": "bm.tile",
+          "full_name": "bm.tile",
+          "category": "manipulation",
+          "score": 0.62095054,
+          "distance": 0.45904946
+        },
+        {
+          "rank": 5,
+          "id": "bm.broadcast_arrays",
+          "full_name": "bm.broadcast_arrays",
+          "category": "manipulation",
+          "score": 0.61891945,
+          "distance": 0.46108055
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.concat",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.concat`\n\n理由：沿已有维度连接多个张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.concatenate`、`bm.unstack`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.134,
+      "chat_seconds": 0.0683
+    },
+    {
+      "id": "B023",
+      "query": "如何把多个张量沿一个新的维度堆叠起来？",
+      "expected_api": [
+        "bm.stack"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.stack",
+          "full_name": "bm.stack",
+          "category": "manipulation",
+          "score": 1.17942589,
+          "distance": 0.25057411
+        },
+        {
+          "rank": 2,
+          "id": "bm.concat",
+          "full_name": "bm.concat",
+          "category": "manipulation",
+          "score": 0.71747346,
+          "distance": 0.36252654
+        },
+        {
+          "rank": 3,
+          "id": "bm.concatenate",
+          "full_name": "bm.concatenate",
+          "category": "manipulation",
+          "score": 0.70747346,
+          "distance": 0.36252654
+        },
+        {
+          "rank": 4,
+          "id": "bm.unstack",
+          "full_name": "bm.unstack",
+          "category": "manipulation",
+          "score": 0.70414521,
+          "distance": 0.37585479
+        },
+        {
+          "rank": 5,
+          "id": "bm.tile",
+          "full_name": "bm.tile",
+          "category": "manipulation",
+          "score": 0.69760604,
+          "distance": 0.38239396
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.stack",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.stack`\n\n理由：沿新增加的维度堆叠多个张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.concat`、`bm.concatenate`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1289,
+      "chat_seconds": 0.0719
+    },
+    {
+      "id": "B024",
+      "query": "张量中有长度为 1 的维度，怎么把这个维度去掉？",
+      "expected_api": [
+        "bm.squeeze"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.squeeze",
+          "full_name": "bm.squeeze",
+          "category": "manipulation",
+          "score": 0.78959306,
+          "distance": 0.23040694
+        },
+        {
+          "rank": 2,
+          "id": "bm.expand_dims",
+          "full_name": "bm.expand_dims",
+          "category": "manipulation",
+          "score": 0.63669503,
+          "distance": 0.36330497
+        },
+        {
+          "rank": 3,
+          "id": "bm.size",
+          "full_name": "bm.size",
+          "category": "manipulation",
+          "score": 0.62013423,
+          "distance": 0.37986577
+        },
+        {
+          "rank": 4,
+          "id": "bm.unstack",
+          "full_name": "bm.unstack",
+          "category": "manipulation",
+          "score": 0.61105645,
+          "distance": 0.38894355
+        },
+        {
+          "rank": 5,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.60994388,
+          "distance": 0.47005612
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.squeeze",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.squeeze`\n\n理由：删除张量中长度为一的维度\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.expand_dims`、`bm.size`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.106,
+      "chat_seconds": 0.0647
+    },
+    {
+      "id": "B025",
+      "query": "怎样给张量增加一个新的维度？",
+      "expected_api": [
+        "bm.expand_dims"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.expand_dims",
+          "full_name": "bm.expand_dims",
+          "category": "manipulation",
+          "score": 0.73493904,
+          "distance": 0.26506096
+        },
+        {
+          "rank": 2,
+          "id": "bm.moveaxis",
+          "full_name": "bm.moveaxis",
+          "category": "manipulation",
+          "score": 0.68929255,
+          "distance": 0.31070745
+        },
+        {
+          "rank": 3,
+          "id": "bm.full_like",
+          "full_name": "bm.full_like",
+          "category": "creation",
+          "score": 0.66712375,
+          "distance": 0.41287625
+        },
+        {
+          "rank": 4,
+          "id": "bm.tile",
+          "full_name": "bm.tile",
+          "category": "manipulation",
+          "score": 0.64613861,
+          "distance": 0.35386139
+        },
+        {
+          "rank": 5,
+          "id": "bm.swapaxes",
+          "full_name": "bm.swapaxes",
+          "category": "manipulation",
+          "score": 0.6451093,
+          "distance": 0.3548907
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.expand_dims",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.expand_dims`\n\n理由：在指定位置为张量增加一个长度为一的新维度\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.moveaxis`、`bm.full_like`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0678,
+      "chat_seconds": 0.0595
+    },
+    {
+      "id": "B026",
+      "query": "如何把三维张量的维度顺序从 (0,1,2) 改成 (2,0,1)？",
+      "expected_api": [
+        "bm.permute_dims"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.permute_dims",
+          "full_name": "bm.permute_dims",
+          "category": "manipulation",
+          "score": 0.64008957,
+          "distance": 0.35991043
+        },
+        {
+          "rank": 2,
+          "id": "bm.flip",
+          "full_name": "bm.flip",
+          "category": "manipulation",
+          "score": 0.58939731,
+          "distance": 0.41060269
+        },
+        {
+          "rank": 3,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.58873154,
+          "distance": 0.49126846
+        },
+        {
+          "rank": 4,
+          "id": "bm.squeeze",
+          "full_name": "bm.squeeze",
+          "category": "manipulation",
+          "score": 0.57987756,
+          "distance": 0.42012244
+        },
+        {
+          "rank": 5,
+          "id": "bm.expand_dims",
+          "full_name": "bm.expand_dims",
+          "category": "manipulation",
+          "score": 0.57717812,
+          "distance": 0.42282188
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.permute_dims",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.permute_dims`\n\n理由：按照给定顺序重新排列张量的全部维度\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.flip`、`bm.empty`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1139,
+      "chat_seconds": 0.0751
+    },
+    {
+      "id": "B027",
+      "query": "我想把张量的第 0 维移动到最后一维，用什么接口？",
+      "expected_api": [
+        "bm.moveaxis"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.moveaxis",
+          "full_name": "bm.moveaxis",
+          "category": "manipulation",
+          "score": 0.66284611,
+          "distance": 0.35715389
+        },
+        {
+          "rank": 2,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.64146039,
+          "distance": 0.45853961
+        },
+        {
+          "rank": 3,
+          "id": "bm.permute_dims",
+          "full_name": "bm.permute_dims",
+          "category": "manipulation",
+          "score": 0.6176333,
+          "distance": 0.4023667
+        },
+        {
+          "rank": 4,
+          "id": "bm.expand_dims",
+          "full_name": "bm.expand_dims",
+          "category": "manipulation",
+          "score": 0.60602959,
+          "distance": 0.41397041
+        },
+        {
+          "rank": 5,
+          "id": "bm.swapaxes",
+          "full_name": "bm.swapaxes",
+          "category": "manipulation",
+          "score": 0.60554173,
+          "distance": 0.41445827
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.moveaxis",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.moveaxis`\n\n理由：把张量的一个或多个维度移动到新的位置\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.zeros_like`、`bm.permute_dims`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0829,
+      "chat_seconds": 0.064
+    },
+    {
+      "id": "B028",
+      "query": "如何把张量沿指定轴反转？",
+      "expected_api": [
+        "bm.flip"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.flip",
+          "full_name": "bm.flip",
+          "category": "manipulation",
+          "score": 0.61713958,
+          "distance": 0.38286042
+        },
+        {
+          "rank": 2,
+          "id": "bm.transpose",
+          "full_name": "bm.transpose",
+          "category": "manipulation",
+          "score": 0.61204928,
+          "distance": 0.38795072
+        },
+        {
+          "rank": 3,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.60422571,
+          "distance": 0.47577429
+        },
+        {
+          "rank": 4,
+          "id": "bm.bitwise_right_shift",
+          "full_name": "bm.bitwise_right_shift",
+          "category": "math",
+          "score": 0.5788455,
+          "distance": 0.4211545
+        },
+        {
+          "rank": 5,
+          "id": "bm.bitwise_left_shift",
+          "full_name": "bm.bitwise_left_shift",
+          "category": "math",
+          "score": 0.5784514,
+          "distance": 0.4215486
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.flip",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.flip`\n\n理由：沿指定维度反转张量中的元素顺序\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.transpose`、`bm.full`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0986,
+      "chat_seconds": 0.0644
+    },
+    {
+      "id": "B029",
+      "query": "怎样把张量中的元素重复多次？",
+      "expected_api": [
+        "bm.repeat"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.unique",
+          "full_name": "bm.unique",
+          "category": "manipulation",
+          "score": 0.66081923,
+          "distance": 0.33918077
+        },
+        {
+          "rank": 2,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.65663888,
+          "distance": 0.42336112
+        },
+        {
+          "rank": 3,
+          "id": "bm.repeat",
+          "full_name": "bm.repeat",
+          "category": "manipulation",
+          "score": 0.64974761,
+          "distance": 0.35025239
+        },
+        {
+          "rank": 4,
+          "id": "bm.empty_like",
+          "full_name": "bm.empty_like",
+          "category": "creation",
+          "score": 0.64570458,
+          "distance": 0.43429542
+        },
+        {
+          "rank": 5,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.62954964,
+          "distance": 0.45045036
+        }
+      ],
+      "retrieval_hit_rank": 3,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.unique",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.unique`\n\n理由：获取张量中的唯一元素并去除重复值\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.full`、`bm.repeat`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": "answer_error_after_retrieval_hit",
+      "error": null,
+      "retrieval_seconds": 0.0829,
+      "chat_seconds": 0.0657
+    },
+    {
+      "id": "B030",
+      "query": "如何按照 (2,3) 的重复次数平铺一个张量？",
+      "expected_api": [
+        "bm.tile"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.tile",
+          "full_name": "bm.tile",
+          "category": "manipulation",
+          "score": 0.692454,
+          "distance": 0.327546
+        },
+        {
+          "rank": 2,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.62185277,
+          "distance": 0.45814723
+        },
+        {
+          "rank": 3,
+          "id": "bm.ones_like",
+          "full_name": "bm.ones_like",
+          "category": "creation",
+          "score": 0.61656143,
+          "distance": 0.46343857
+        },
+        {
+          "rank": 4,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.61343052,
+          "distance": 0.46656948
+        },
+        {
+          "rank": 5,
+          "id": "bm.full_like",
+          "full_name": "bm.full_like",
+          "category": "creation",
+          "score": 0.60936733,
+          "distance": 0.47063267
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.tile",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.tile`\n\n理由：按照各维度的重复次数平铺整个张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.random.randn`、`bm.ones_like`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0927,
+      "chat_seconds": 0.0672
+    },
+    {
+      "id": "B031",
+      "query": "怎么计算张量所有元素的和？",
+      "expected_api": [
+        "bm.sum"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.sum",
+          "full_name": "bm.sum",
+          "category": "reduction",
+          "score": 0.70521224,
+          "distance": 0.29478776
+        },
+        {
+          "rank": 2,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.69565232,
+          "distance": 0.38434768
+        },
+        {
+          "rank": 3,
+          "id": "bm.mean",
+          "full_name": "bm.mean",
+          "category": "reduction",
+          "score": 0.64075279,
+          "distance": 0.35924721
+        },
+        {
+          "rank": 4,
+          "id": "bm.prod",
+          "full_name": "bm.prod",
+          "category": "reduction",
+          "score": 0.63695383,
+          "distance": 0.36304617
+        },
+        {
+          "rank": 5,
+          "id": "bm.min",
+          "full_name": "bm.min",
+          "category": "reduction",
+          "score": 0.62391263,
+          "distance": 0.37608737
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.sum",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.sum`\n\n理由：计算张量全部元素或指定维度上的元素之和\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.full`、`bm.mean`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0614,
+      "chat_seconds": 0.0676
+    },
+    {
+      "id": "B032",
+      "query": "如何沿 axis=1 计算张量的平均值？",
+      "expected_api": [
+        "bm.mean"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.mean",
+          "full_name": "bm.mean",
+          "category": "reduction",
+          "score": 1.10553866,
+          "distance": 0.32446134
+        },
+        {
+          "rank": 2,
+          "id": "bm.min",
+          "full_name": "bm.min",
+          "category": "reduction",
+          "score": 0.67080052,
+          "distance": 0.40919948
+        },
+        {
+          "rank": 3,
+          "id": "bm.std",
+          "full_name": "bm.std",
+          "category": "reduction",
+          "score": 0.65837826,
+          "distance": 0.42162174
+        },
+        {
+          "rank": 4,
+          "id": "bm.max",
+          "full_name": "bm.max",
+          "category": "reduction",
+          "score": 0.65614613,
+          "distance": 0.42385387
+        },
+        {
+          "rank": 5,
+          "id": "bm.sum",
+          "full_name": "bm.sum",
+          "category": "reduction",
+          "score": 0.64622386,
+          "distance": 0.43377614
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.mean",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.mean`\n\n理由：计算张量全部元素或指定维度上的平均值\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.min`、`bm.std`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0843,
+      "chat_seconds": 0.0639
+    },
+    {
+      "id": "B033",
+      "query": "怎样求张量在指定轴上的最大值？",
+      "expected_api": [
+        "bm.max"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.max",
+          "full_name": "bm.max",
+          "category": "reduction",
+          "score": 0.63967961,
+          "distance": 0.36032039
+        },
+        {
+          "rank": 2,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.635574,
+          "distance": 0.444426
+        },
+        {
+          "rank": 3,
+          "id": "bm.full_like",
+          "full_name": "bm.full_like",
+          "category": "creation",
+          "score": 0.61950554,
+          "distance": 0.46049446
+        },
+        {
+          "rank": 4,
+          "id": "bm.argmax",
+          "full_name": "bm.argmax",
+          "category": "reduction",
+          "score": 0.59945917,
+          "distance": 0.40054083
+        },
+        {
+          "rank": 5,
+          "id": "bm.clip",
+          "full_name": "bm.clip",
+          "category": "math",
+          "score": 0.58538598,
+          "distance": 0.41461402
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.max",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.max`\n\n理由：计算张量全部元素或指定维度上的最大值\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.full`、`bm.full_like`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0783,
+      "chat_seconds": 0.06
+    },
+    {
+      "id": "B034",
+      "query": "怎么求一个张量的最小值？",
+      "expected_api": [
+        "bm.min"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.min",
+          "full_name": "bm.min",
+          "category": "reduction",
+          "score": 0.68189883,
+          "distance": 0.31810117
+        },
+        {
+          "rank": 2,
+          "id": "bm.argmin",
+          "full_name": "bm.argmin",
+          "category": "reduction",
+          "score": 0.64827794,
+          "distance": 0.35172206
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.64741697,
+          "distance": 0.43258303
+        },
+        {
+          "rank": 4,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.64607515,
+          "distance": 0.43392485
+        },
+        {
+          "rank": 5,
+          "id": "bm.random.rand",
+          "full_name": "bm.random.rand",
+          "category": "creation",
+          "score": 0.63775249,
+          "distance": 0.44224751
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.min",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.min`\n\n理由：计算张量全部元素或指定维度上的最小值\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.argmin`、`bm.random.randn`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0681,
+      "chat_seconds": 0.0652
+    },
+    {
+      "id": "B035",
+      "query": "如何计算张量的标准差？",
+      "expected_api": [
+        "bm.std"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.67357005,
+          "distance": 0.40642995
+        },
+        {
+          "rank": 2,
+          "id": "bm.std",
+          "full_name": "bm.std",
+          "category": "reduction",
+          "score": 0.66497386,
+          "distance": 0.33502614
+        },
+        {
+          "rank": 3,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.63478942,
+          "distance": 0.44521058
+        },
+        {
+          "rank": 4,
+          "id": "bm.var",
+          "full_name": "bm.var",
+          "category": "reduction",
+          "score": 0.61703265,
+          "distance": 0.38296735
+        },
+        {
+          "rank": 5,
+          "id": "bm.mean",
+          "full_name": "bm.mean",
+          "category": "reduction",
+          "score": 0.56697083,
+          "distance": 0.43302917
+        }
+      ],
+      "retrieval_hit_rank": 2,
+      "recall_at": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.random.randn",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.random.randn`\n\n理由：创建服从标准正态分布的随机张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.std`、`bm.tensor`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": "answer_error_after_retrieval_hit",
+      "error": null,
+      "retrieval_seconds": 0.077,
+      "chat_seconds": 0.0617
+    },
+    {
+      "id": "B036",
+      "query": "怎样计算张量的方差？",
+      "expected_api": [
+        "bm.var"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.var",
+          "full_name": "bm.var",
+          "category": "reduction",
+          "score": 0.65049374,
+          "distance": 0.34950626
+        },
+        {
+          "rank": 2,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.6336961,
+          "distance": 0.4463039
+        },
+        {
+          "rank": 3,
+          "id": "bm.random.randn",
+          "full_name": "bm.random.randn",
+          "category": "creation",
+          "score": 0.62335451,
+          "distance": 0.45664549
+        },
+        {
+          "rank": 4,
+          "id": "bm.std",
+          "full_name": "bm.std",
+          "category": "reduction",
+          "score": 0.61185086,
+          "distance": 0.38814914
+        },
+        {
+          "rank": 5,
+          "id": "bm.tensorprod",
+          "full_name": "bm.tensorprod",
+          "category": "other",
+          "score": 0.54954559,
+          "distance": 0.45045441
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.var",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.var`\n\n理由：计算张量全部元素或指定维度上的方差\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.tensor`、`bm.random.randn`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0674,
+      "chat_seconds": 0.0652
+    },
+    {
+      "id": "B037",
+      "query": "如何计算一个张量所有元素的乘积？",
+      "expected_api": [
+        "bm.prod"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.70588793,
+          "distance": 0.37411207
+        },
+        {
+          "rank": 2,
+          "id": "bm.prod",
+          "full_name": "bm.prod",
+          "category": "reduction",
+          "score": 0.70388877,
+          "distance": 0.29611123
+        },
+        {
+          "rank": 3,
+          "id": "bm.sum",
+          "full_name": "bm.sum",
+          "category": "reduction",
+          "score": 0.65159523,
+          "distance": 0.34840477
+        },
+        {
+          "rank": 4,
+          "id": "bm.mean",
+          "full_name": "bm.mean",
+          "category": "reduction",
+          "score": 0.62566632,
+          "distance": 0.37433368
+        },
+        {
+          "rank": 5,
+          "id": "bm.min",
+          "full_name": "bm.min",
+          "category": "reduction",
+          "score": 0.61105859,
+          "distance": 0.38894141
+        }
+      ],
+      "retrieval_hit_rank": 2,
+      "recall_at": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.full",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.full`\n\n理由：创建指定形状且所有元素为同一给定值的张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.prod`、`bm.sum`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": "answer_error_after_retrieval_hit",
+      "error": null,
+      "retrieval_seconds": 0.0947,
+      "chat_seconds": 0.0618
+    },
+    {
+      "id": "B038",
+      "query": "我不只想要最大值，还想知道最大值所在的位置，应该用什么接口？",
+      "expected_api": [
+        "bm.argmax"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.argmax",
+          "full_name": "bm.argmax",
+          "category": "reduction",
+          "score": 0.72080346,
+          "distance": 0.35919654
+        },
+        {
+          "rank": 2,
+          "id": "bm.max",
+          "full_name": "bm.max",
+          "category": "reduction",
+          "score": 0.67717935,
+          "distance": 0.40282065
+        },
+        {
+          "rank": 3,
+          "id": "bm.argmin",
+          "full_name": "bm.argmin",
+          "category": "reduction",
+          "score": 0.62583126,
+          "distance": 0.45416874
+        },
+        {
+          "rank": 4,
+          "id": "bm.maximum",
+          "full_name": "bm.maximum",
+          "category": "math",
+          "score": 0.61054575,
+          "distance": 0.38945425
+        },
+        {
+          "rank": 5,
+          "id": "bm.clip",
+          "full_name": "bm.clip",
+          "category": "math",
+          "score": 0.5820002,
+          "distance": 0.4179998
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.argmax",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.argmax`\n\n理由：返回张量最大元素所在的位置索引\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.max`、`bm.argmin`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1412,
+      "chat_seconds": 0.0686
+    },
+    {
+      "id": "B039",
+      "query": "怎么找到张量最小元素对应的索引？",
+      "expected_api": [
+        "bm.argmin"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.argmin",
+          "full_name": "bm.argmin",
+          "category": "reduction",
+          "score": 0.7312184,
+          "distance": 0.2687816
+        },
+        {
+          "rank": 2,
+          "id": "bm.argmax",
+          "full_name": "bm.argmax",
+          "category": "reduction",
+          "score": 0.62711728,
+          "distance": 0.37288272
+        },
+        {
+          "rank": 3,
+          "id": "bm.min",
+          "full_name": "bm.min",
+          "category": "reduction",
+          "score": 0.61555874,
+          "distance": 0.38444126
+        },
+        {
+          "rank": 4,
+          "id": "bm.empty_like",
+          "full_name": "bm.empty_like",
+          "category": "creation",
+          "score": 0.60065974,
+          "distance": 0.47934026
+        },
+        {
+          "rank": 5,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.59255602,
+          "distance": 0.48744398
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.argmin",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.argmin`\n\n理由：返回张量最小元素所在的位置索引\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.argmax`、`bm.min`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1129,
+      "chat_seconds": 0.1088
+    },
+    {
+      "id": "B040",
+      "query": "如何沿某个轴计算累计和？",
+      "expected_api": [
+        "bm.cumsum"
+      ],
+      "expected_category": "reduction",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.cumsum",
+          "full_name": "bm.cumsum",
+          "category": "reduction",
+          "score": 0.59574479,
+          "distance": 0.40425521
+        },
+        {
+          "rank": 2,
+          "id": "bm.cumulative_sum",
+          "full_name": "bm.cumulative_sum",
+          "category": "reduction",
+          "score": 0.57241207,
+          "distance": 0.42758793
+        },
+        {
+          "rank": 3,
+          "id": "bm.cumprod",
+          "full_name": "bm.cumprod",
+          "category": "reduction",
+          "score": 0.56851405,
+          "distance": 0.43148595
+        },
+        {
+          "rank": 4,
+          "id": "bm.sum",
+          "full_name": "bm.sum",
+          "category": "reduction",
+          "score": 0.52489793,
+          "distance": 0.47510207
+        },
+        {
+          "rank": 5,
+          "id": "bm.trace",
+          "full_name": "bm.trace",
+          "category": "linalg",
+          "score": 0.48783857,
+          "distance": 0.51216143
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.cumsum",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.cumsum`\n\n理由：沿指定维度计算累计和并保留各位置的中间结果\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.cumulative_sum`、`bm.cumprod`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1088,
+      "chat_seconds": 0.0833
+    },
+    {
+      "id": "B041",
+      "query": "根据布尔条件 condition，在 x 和 y 中逐元素选择值应该用什么接口？",
+      "expected_api": [
+        "bm.where"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.where",
+          "full_name": "bm.where",
+          "category": "manipulation",
+          "score": 0.7514083,
+          "distance": 0.2685917
+        },
+        {
+          "rank": 2,
+          "id": "bm.logical_or",
+          "full_name": "bm.logical_or",
+          "category": "comparison",
+          "score": 0.63960183,
+          "distance": 0.36039817
+        },
+        {
+          "rank": 3,
+          "id": "bm.pow",
+          "full_name": "bm.pow",
+          "category": "math",
+          "score": 0.62668318,
+          "distance": 0.37331682
+        },
+        {
+          "rank": 4,
+          "id": "bm.logical_xor",
+          "full_name": "bm.logical_xor",
+          "category": "comparison",
+          "score": 0.62629735,
+          "distance": 0.37370265
+        },
+        {
+          "rank": 5,
+          "id": "bm.logical_and",
+          "full_name": "bm.logical_and",
+          "category": "comparison",
+          "score": 0.62406445,
+          "distance": 0.37593555
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.where",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.where`\n\n理由：根据布尔条件从两个输入中逐元素选择值\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.logical_or`、`bm.pow`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1814,
+      "chat_seconds": 0.0824
+    },
+    {
+      "id": "B042",
+      "query": "如何找出张量中所有非零元素的位置？",
+      "expected_api": [
+        "bm.nonzero"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.nonzero",
+          "full_name": "bm.nonzero",
+          "category": "manipulation",
+          "score": 0.69346696,
+          "distance": 0.30653304
+        },
+        {
+          "rank": 2,
+          "id": "bm.empty_like",
+          "full_name": "bm.empty_like",
+          "category": "creation",
+          "score": 0.64674886,
+          "distance": 0.43325114
+        },
+        {
+          "rank": 3,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.64348109,
+          "distance": 0.43651891
+        },
+        {
+          "rank": 4,
+          "id": "bm.zeros_like",
+          "full_name": "bm.zeros_like",
+          "category": "creation",
+          "score": 0.63494922,
+          "distance": 0.44505078
+        },
+        {
+          "rank": 5,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.62745752,
+          "distance": 0.45254248
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.nonzero",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.nonzero`\n\n理由：返回张量中所有非零元素的位置索引\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.empty_like`、`bm.empty`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1034,
+      "chat_seconds": 0.0718
+    },
+    {
+      "id": "B043",
+      "query": "怎样把张量沿最后一维从小到大排序并得到排序后的值？",
+      "expected_api": [
+        "bm.sort"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.permute_dims",
+          "full_name": "bm.permute_dims",
+          "category": "manipulation",
+          "score": 0.66382325,
+          "distance": 0.33617675
+        },
+        {
+          "rank": 2,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.65371104,
+          "distance": 0.42628896
+        },
+        {
+          "rank": 3,
+          "id": "bm.flip",
+          "full_name": "bm.flip",
+          "category": "manipulation",
+          "score": 0.62273991,
+          "distance": 0.37726009
+        },
+        {
+          "rank": 4,
+          "id": "bm.min",
+          "full_name": "bm.min",
+          "category": "reduction",
+          "score": 0.61260259,
+          "distance": 0.38739741
+        },
+        {
+          "rank": 5,
+          "id": "bm.argsort",
+          "full_name": "bm.argsort",
+          "category": "manipulation",
+          "score": 0.59763545,
+          "distance": 0.40236455
+        }
+      ],
+      "retrieval_hit_rank": null,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "answer_api": "bm.permute_dims",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.permute_dims`\n\n理由：按照给定顺序重新排列张量的全部维度\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.tensor`、`bm.flip`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": "retrieval_miss",
+      "error": null,
+      "retrieval_seconds": 0.1164,
+      "chat_seconds": 0.075
+    },
+    {
+      "id": "B044",
+      "query": "我需要的不是排序后的值，而是排序对应的索引，应该用哪个接口？",
+      "expected_api": [
+        "bm.argsort"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.argsort",
+          "full_name": "bm.argsort",
+          "category": "manipulation",
+          "score": 0.67429239,
+          "distance": 0.32570761
+        },
+        {
+          "rank": 2,
+          "id": "bm.sort",
+          "full_name": "bm.sort",
+          "category": "manipulation",
+          "score": 0.62002766,
+          "distance": 0.37997234
+        },
+        {
+          "rank": 3,
+          "id": "bm.searchsorted",
+          "full_name": "bm.searchsorted",
+          "category": "manipulation",
+          "score": 0.60798997,
+          "distance": 0.39201003
+        },
+        {
+          "rank": 4,
+          "id": "bm.add_at",
+          "full_name": "bm.add_at",
+          "category": "manipulation",
+          "score": 0.59702867,
+          "distance": 0.40297133
+        },
+        {
+          "rank": 5,
+          "id": "bm.scatter",
+          "full_name": "bm.scatter",
+          "category": "manipulation",
+          "score": 0.5946213,
+          "distance": 0.4053787
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.argsort",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.argsort`\n\n理由：返回张量排序后各元素对应的原始索引\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.sort`、`bm.searchsorted`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1119,
+      "chat_seconds": 0.0777
+    },
+    {
+      "id": "B045",
+      "query": "如何获取张量中的唯一元素并去除重复值？",
+      "expected_api": [
+        "bm.unique"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.unique",
+          "full_name": "bm.unique",
+          "category": "manipulation",
+          "score": 0.79013683,
+          "distance": 0.22986317
+        },
+        {
+          "rank": 2,
+          "id": "bm.unique_values",
+          "full_name": "bm.unique_values",
+          "category": "manipulation",
+          "score": 0.68319392,
+          "distance": 0.31680608
+        },
+        {
+          "rank": 3,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.63637026,
+          "distance": 0.44362974
+        },
+        {
+          "rank": 4,
+          "id": "bm.empty_like",
+          "full_name": "bm.empty_like",
+          "category": "creation",
+          "score": 0.6274925,
+          "distance": 0.4525075
+        },
+        {
+          "rank": 5,
+          "id": "bm.unique_counts",
+          "full_name": "bm.unique_counts",
+          "category": "manipulation",
+          "score": 0.60488826,
+          "distance": 0.39511174
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.unique",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.unique`\n\n理由：获取张量中的唯一元素并去除重复值\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.unique_values`、`bm.full`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0924,
+      "chat_seconds": 0.0752
+    },
+    {
+      "id": "B046",
+      "query": "如何把形状为 (3,1) 的张量广播成 (3,4)？",
+      "expected_api": [
+        "bm.broadcast_to"
+      ],
+      "expected_category": "manipulation",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.full",
+          "full_name": "bm.full",
+          "category": "creation",
+          "score": 0.63579191,
+          "distance": 0.44420809
+        },
+        {
+          "rank": 2,
+          "id": "bm.broadcast_arrays",
+          "full_name": "bm.broadcast_arrays",
+          "category": "manipulation",
+          "score": 0.63163114,
+          "distance": 0.36836886
+        },
+        {
+          "rank": 3,
+          "id": "bm.full_like",
+          "full_name": "bm.full_like",
+          "category": "creation",
+          "score": 0.6200843,
+          "distance": 0.4599157
+        },
+        {
+          "rank": 4,
+          "id": "bm.broadcast_to",
+          "full_name": "bm.broadcast_to",
+          "category": "manipulation",
+          "score": 0.61853063,
+          "distance": 0.38146937
+        },
+        {
+          "rank": 5,
+          "id": "bm.empty",
+          "full_name": "bm.empty",
+          "category": "creation",
+          "score": 0.60750379,
+          "distance": 0.47249621
+        }
+      ],
+      "retrieval_hit_rank": 4,
+      "recall_at": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.full",
+      "answer_correct": false,
+      "answer_text": "推荐接口：`bm.full`\n\n理由：创建指定形状且所有元素为同一给定值的张量\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.broadcast_arrays`、`bm.full_like`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": "answer_error_after_retrieval_hit",
+      "error": null,
+      "retrieval_seconds": 0.1005,
+      "chat_seconds": 0.074
+    },
+    {
+      "id": "B047",
+      "query": "我想用爱因斯坦求和记号进行张量运算，例如 ij,jk->ik，用什么接口？",
+      "expected_api": [
+        "bm.einsum"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.einsum",
+          "full_name": "bm.einsum",
+          "category": "linalg",
+          "score": 1.09193497,
+          "distance": 0.27806503
+        },
+        {
+          "rank": 2,
+          "id": "bm.sum",
+          "full_name": "bm.sum",
+          "category": "reduction",
+          "score": 0.97591853,
+          "distance": 0.39408147
+        },
+        {
+          "rank": 3,
+          "id": "bm.bitwise_and",
+          "full_name": "bm.bitwise_and",
+          "category": "math",
+          "score": 0.62554719,
+          "distance": 0.39445281
+        },
+        {
+          "rank": 4,
+          "id": "bm.logaddexp",
+          "full_name": "bm.logaddexp",
+          "category": "math",
+          "score": 0.62516042,
+          "distance": 0.39483958
+        },
+        {
+          "rank": 5,
+          "id": "bm.device_index",
+          "full_name": "bm.device_index",
+          "category": "dtype",
+          "score": 0.61899837,
+          "distance": 0.40100163
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.einsum",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.einsum`\n\n理由：使用爱因斯坦求和表达式描述张量运算\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.sum`、`bm.bitwise_and`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.2124,
+      "chat_seconds": 0.0899
+    },
+    {
+      "id": "B048",
+      "query": "两个矩阵 A 和 B 做矩阵乘法，在 bm 中应该调用什么？",
+      "expected_api": [
+        "bm.matmul"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.matmul",
+          "full_name": "bm.matmul",
+          "category": "linalg",
+          "score": 1.05380576,
+          "distance": 0.37619424
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.matmul",
+          "full_name": "bm.linalg.matmul",
+          "category": "linalg",
+          "score": 1.04380576,
+          "distance": 0.37619424
+        },
+        {
+          "rank": 3,
+          "id": "bm.dot",
+          "full_name": "bm.dot",
+          "category": "linalg",
+          "score": 0.62247171,
+          "distance": 0.45752829
+        },
+        {
+          "rank": 4,
+          "id": "bm.matrix_transpose",
+          "full_name": "bm.matrix_transpose",
+          "category": "linalg",
+          "score": 0.61998542,
+          "distance": 0.46001458
+        },
+        {
+          "rank": 5,
+          "id": "bm.csr_spspmm",
+          "full_name": "bm.csr_spspmm",
+          "category": "linalg",
+          "score": 0.61168893,
+          "distance": 0.46831107
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.matmul",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.matmul`\n\n理由：执行矩阵乘法或批量矩阵乘法\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.linalg.matmul`、`bm.dot`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1094,
+      "chat_seconds": 0.0908
+    },
+    {
+      "id": "B049",
+      "query": "怎么把 FEALPy 当前计算后端切换成 PyTorch？",
+      "expected_api": [
+        "bm.set_backend"
+      ],
+      "expected_category": "other",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.set_backend",
+          "full_name": "bm.set_backend",
+          "category": "other",
+          "score": 0.68852158,
+          "distance": 0.33147842
+        },
+        {
+          "rank": 2,
+          "id": "bm.get_current_backend",
+          "full_name": "bm.get_current_backend",
+          "category": "other",
+          "score": 0.63187953,
+          "distance": 0.38812047
+        },
+        {
+          "rank": 3,
+          "id": "bm.to_numpy",
+          "full_name": "bm.to_numpy",
+          "category": "dtype",
+          "score": 0.61501791,
+          "distance": 0.40498209
+        },
+        {
+          "rank": 4,
+          "id": "bm.from_numpy",
+          "full_name": "bm.from_numpy",
+          "category": "dtype",
+          "score": 0.61500539,
+          "distance": 0.40499461
+        },
+        {
+          "rank": 5,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.58885707,
+          "distance": 0.43114293
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.set_backend",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.set_backend`\n\n理由：切换 FEALPy 当前使用的计算后端\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.get_current_backend`、`bm.to_numpy`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1441,
+      "chat_seconds": 0.0701
+    },
+    {
+      "id": "B050",
+      "query": "如何查看 FEALPy 当前正在使用哪个后端？",
+      "expected_api": [
+        "bm.get_current_backend"
+      ],
+      "expected_category": "other",
+      "difficulty": "medium",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.get_current_backend",
+          "full_name": "bm.get_current_backend",
+          "category": "other",
+          "score": 0.75711437,
+          "distance": 0.26288563
+        },
+        {
+          "rank": 2,
+          "id": "bm.set_backend",
+          "full_name": "bm.set_backend",
+          "category": "other",
+          "score": 0.70442214,
+          "distance": 0.31557786
+        },
+        {
+          "rank": 3,
+          "id": "bm.is_tensor",
+          "full_name": "bm.is_tensor",
+          "category": "other",
+          "score": 0.66933532,
+          "distance": 0.35066468
+        },
+        {
+          "rank": 4,
+          "id": "bm.load_backend",
+          "full_name": "bm.load_backend",
+          "category": "other",
+          "score": 0.64774324,
+          "distance": 0.37225676
+        },
+        {
+          "rank": 5,
+          "id": "bm.tensor",
+          "full_name": "bm.tensor",
+          "category": "creation",
+          "score": 0.64427866,
+          "distance": 0.37572134
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.get_current_backend",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.get_current_backend`\n\n理由：获取 FEALPy 当前正在使用的计算后端\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.set_backend`、`bm.is_tensor`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.0975,
+      "chat_seconds": 0.0928
+    },
+    {
+      "id": "B051",
+      "query": "如何计算一个向量 x 的 2 范数（欧几里得范数）？",
+      "expected_api": [
+        "bm.linalg.vector_norm"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.vector_norm",
+          "full_name": "bm.linalg.vector_norm",
+          "category": "linalg",
+          "score": 0.66456172,
+          "distance": 0.43543828
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.matrix_norm",
+          "full_name": "bm.linalg.matrix_norm",
+          "category": "linalg",
+          "score": 0.62880299,
+          "distance": 0.47119701
+        },
+        {
+          "rank": 3,
+          "id": "bm.vecdot",
+          "full_name": "bm.vecdot",
+          "category": "linalg",
+          "score": 0.61654116,
+          "distance": 0.46345884
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.vecdot",
+          "full_name": "bm.linalg.vecdot",
+          "category": "linalg",
+          "score": 0.60654116,
+          "distance": 0.46345884
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.outer",
+          "full_name": "bm.linalg.outer",
+          "category": "linalg",
+          "score": 0.58601256,
+          "distance": 0.49398744
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.vector_norm",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.vector_norm`\n\n理由：计算向量范数，支持指定阶数和维度\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.linalg.matrix_norm`、`bm.vecdot`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1413,
+      "chat_seconds": 0.0965
+    },
+    {
+      "id": "B052",
+      "query": "我想计算向量 x 的 1 范数，也就是所有元素绝对值之和，FEALPy 后端应该使用哪个接口？",
+      "expected_api": [
+        "bm.linalg.vector_norm"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.vector_norm",
+          "full_name": "bm.linalg.vector_norm",
+          "category": "linalg",
+          "score": 0.80038501,
+          "distance": 0.33961499
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.matrix_norm",
+          "full_name": "bm.linalg.matrix_norm",
+          "category": "linalg",
+          "score": 0.72533953,
+          "distance": 0.39466047
+        },
+        {
+          "rank": 3,
+          "id": "bm.unique_all",
+          "full_name": "bm.unique_all",
+          "category": "manipulation",
+          "score": 0.68086912,
+          "distance": 0.33913088
+        },
+        {
+          "rank": 4,
+          "id": "bm.max",
+          "full_name": "bm.max",
+          "category": "reduction",
+          "score": 0.65525403,
+          "distance": 0.36474597
+        },
+        {
+          "rank": 5,
+          "id": "bm.sum",
+          "full_name": "bm.sum",
+          "category": "reduction",
+          "score": 0.65446862,
+          "distance": 0.36553138
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.vector_norm",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.vector_norm`\n\n理由：计算向量范数，支持指定阶数和维度\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.linalg.matrix_norm`、`bm.unique_all`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1377,
+      "chat_seconds": 0.1102
+    },
+    {
+      "id": "B053",
+      "query": "对于一个二维张量，我想沿指定 axis 计算每一行或每一列的向量范数，应该使用什么接口？",
+      "expected_api": [
+        "bm.linalg.vector_norm"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "intermediate",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.vector_norm",
+          "full_name": "bm.linalg.vector_norm",
+          "category": "linalg",
+          "score": 1.14332347,
+          "distance": 0.28667653
+        },
+        {
+          "rank": 2,
+          "id": "bm.vecdot",
+          "full_name": "bm.vecdot",
+          "category": "linalg",
+          "score": 0.75023172,
+          "distance": 0.34976828
+        },
+        {
+          "rank": 3,
+          "id": "bm.tensordot",
+          "full_name": "bm.tensordot",
+          "category": "linalg",
+          "score": 0.7438089,
+          "distance": 0.3561911
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.vecdot",
+          "full_name": "bm.linalg.vecdot",
+          "category": "linalg",
+          "score": 0.74023172,
+          "distance": 0.34976828
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.tensordot",
+          "full_name": "bm.linalg.tensordot",
+          "category": "linalg",
+          "score": 0.7338089,
+          "distance": 0.3561911
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.vector_norm",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.vector_norm`\n\n理由：计算向量范数，支持指定阶数和维度\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.vecdot`、`bm.tensordot`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1712,
+      "chat_seconds": 0.1133
+    },
+    {
+      "id": "B054",
+      "query": "如何计算矩阵 A 的 Frobenius 范数？",
+      "expected_api": [
+        "bm.linalg.matrix_norm"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "basic",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.matrix_norm",
+          "full_name": "bm.linalg.matrix_norm",
+          "category": "linalg",
+          "score": 1.21056121,
+          "distance": 0.27943879
+        },
+        {
+          "rank": 2,
+          "id": "bm.linalg.matrix_rank",
+          "full_name": "bm.linalg.matrix_rank",
+          "category": "linalg",
+          "score": 0.63918242,
+          "distance": 0.46081758
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.svdvals",
+          "full_name": "bm.linalg.svdvals",
+          "category": "linalg",
+          "score": 0.63363166,
+          "distance": 0.44636834
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.vector_norm",
+          "full_name": "bm.linalg.vector_norm",
+          "category": "linalg",
+          "score": 0.62333236,
+          "distance": 0.47666764
+        },
+        {
+          "rank": 5,
+          "id": "bm.trace",
+          "full_name": "bm.trace",
+          "category": "linalg",
+          "score": 0.61320457,
+          "distance": 0.48679543
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.matrix_norm",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.matrix_norm`\n\n理由：计算矩阵范数，例如 Frobenius 范数或核范数\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.linalg.matrix_rank`、`bm.linalg.svdvals`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1123,
+      "chat_seconds": 0.083
+    },
+    {
+      "id": "B055",
+      "query": "我需要计算矩阵 A 的核范数（nuclear norm），在 FEALPy 后端中应该使用哪个接口？",
+      "expected_api": [
+        "bm.linalg.matrix_norm"
+      ],
+      "expected_category": "linalg",
+      "difficulty": "intermediate",
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "bm.linalg.matrix_norm",
+          "full_name": "bm.linalg.matrix_norm",
+          "category": "linalg",
+          "score": 0.80457097,
+          "distance": 0.31542903
+        },
+        {
+          "rank": 2,
+          "id": "bm.matmul",
+          "full_name": "bm.matmul",
+          "category": "linalg",
+          "score": 0.70571784,
+          "distance": 0.39428216
+        },
+        {
+          "rank": 3,
+          "id": "bm.linalg.vector_norm",
+          "full_name": "bm.linalg.vector_norm",
+          "category": "linalg",
+          "score": 0.70015251,
+          "distance": 0.41984749
+        },
+        {
+          "rank": 4,
+          "id": "bm.linalg.matmul",
+          "full_name": "bm.linalg.matmul",
+          "category": "linalg",
+          "score": 0.69571784,
+          "distance": 0.39428216
+        },
+        {
+          "rank": 5,
+          "id": "bm.linalg.diagonal",
+          "full_name": "bm.linalg.diagonal",
+          "category": "linalg",
+          "score": 0.69408045,
+          "distance": 0.40591955
+        }
+      ],
+      "retrieval_hit_rank": 1,
+      "recall_at": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "answer_api": "bm.linalg.matrix_norm",
+      "answer_correct": true,
+      "answer_text": "推荐接口：`bm.linalg.matrix_norm`\n\n理由：计算矩阵范数，例如 Frobenius 范数或核范数\n\n当前知识库用于定位正确接口，具体参数和调用方式请查看该接口的代码补全或源码注释。\n\n其他候选：`bm.matmul`、`bm.linalg.vector_norm`",
+      "intent_source": "rule",
+      "answer_source": "template",
+      "failure_type": null,
+      "error": null,
+      "retrieval_seconds": 0.1671,
+      "chat_seconds": 0.0888
+    }
+  ]
+}

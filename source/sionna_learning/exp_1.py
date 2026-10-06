@@ -102,7 +102,7 @@ in_state = torch.tensor(
 )
 
 # Force UMa-NLOS
-los = False
+los = True
 
 
 channel_model.set_topology(
@@ -128,8 +128,8 @@ a, tau = channel_model(
 )
 
 print("=== CIR ===")
-print("a shape   :", a.shape)
-print("tau shape :", tau.shape)
+print("a shape   :", a.shape) # NLOS [1, 1, 1, 1, 4, 24, 1], 24个路径
+print("tau shape :", tau.shape) # [1, 1, 1, 24]
 
 
 # ============================================================
@@ -143,28 +143,28 @@ frequencies = subcarrier_frequencies(
 
 print("\n=== OFDM frequencies ===")
 print("shape:", frequencies.shape)
-print(frequencies)
+# print(frequencies)
 
 
 # ============================================================
 # 8. CIR -> frequency-domain channel
 # ============================================================
 
-h_freq = cir_to_ofdm_channel(
-    frequencies,
-    a,
-    tau,
-    normalize=False,
-)
+# h_freq = cir_to_ofdm_channel(
+#     frequencies,
+#     a,
+#     tau,
+#     normalize=False,
+# )
 
-print("\n=== Frequency-domain channel ===")
-print("dtype:", h_freq.dtype)
-print("shape:", h_freq.shape)
+# print("\n=== Frequency-domain channel ===")
+# print("dtype:", h_freq.dtype)
+# print("shape:", h_freq.shape)
 
 
 # ============================================================
 # 9. Inspect results
 # ============================================================
 
-print("\nFull h_freq:")
-print(h_freq)
+# print("\nFull h_freq:")
+# print(h_freq)

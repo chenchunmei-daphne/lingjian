@@ -1,5 +1,11 @@
 # FEALPy 多后端接口助手
 
+> 当前运行数据版本为 v02：源数据位于 `data/data_v02/all_interfaces.json`，
+> Chroma 位于 `vector_store/vector_store_v02/chroma`，Collection 为
+> `fealpy_capabilities_v02`。v01 已归档，只用于历史评测对比。v02 当前专注于
+> “用户计算目标 → 正确的 FEALPy 接口”，不再承诺从知识库生成完整参数、调用代码和
+> NumPy/PyTorch 映射。
+
 ## 项目介绍
 
 本项目是面向 FEALPy 新成员的多后端接口问答助手。用户可以用自然语言描述张量操作需求，例如“如何创建 GPU 全零张量”或“怎样求解线性方程组”，系统会返回合适的 `bm.*` 接口、参数用法、NumPy/PyTorch 原生接口映射和示例代码。
@@ -261,18 +267,22 @@ $env:QIANWEN_MODEL = "qwen-turbo"
 | `qianwen_openai_api` | 百炼 API Key，必填。 | 无 |
 | `QIANWEN_BASE_URL` | OpenAI 兼容端点。 | 示例代码中的百炼端点 |
 | `QIANWEN_MODEL` | 通义千问模型名。 | `qwen-turbo` |
+| `QIANWEN_MODEL_PRIORITY` | 自动选择时的模型系列优先级，逗号分隔。 | `qwen3.7,deepseek-v4` |
+| `QIANWEN_FALLBACK_MODELS` | 模型列表接口失败时仍可尝试的备用模型。 | 空 |
+| `QIANWEN_MODEL_CACHE_SECONDS` | 模型列表缓存秒数。 | `300` |
+| `QIANWEN_UNAVAILABLE_CACHE_SECONDS` | 额度不足或不可用模型的跳过时间。 | `300` |
 | `QIANWEN_TIMEOUT` | 单次请求超时秒数。 | `60` |
 | `QIANWEN_MAX_RETRIES` | 客户端最大重试次数。 | `2` |
 
 ## 构建向量知识库
 
-当 `all_interfaces.json` 更新或更换嵌入模型后，运行：
+当 v02 的 `all_interfaces.json` 更新或更换嵌入模型后，运行：
 
 ```powershell
 D:\mini\envs\cgraph_env\python.exe build_vector_kb.py
 ```
 
-脚本会全量重建 `fealpy_interfaces` Collection。当前知识库包含 220 条接口、1024 维归一化向量，并使用余弦距离。
+脚本会全量重建 `fealpy_capabilities_v02` Collection。当前知识库包含 218 条能力记录，覆盖 233 个接口，使用 1024 维归一化向量和余弦距离。
 
 ## Python 使用示例
 
@@ -407,7 +417,8 @@ D:\mini\envs\cgraph_env\python.exe -m uvicorn api.app:app --host 127.0.0.1 --por
 | 方法 | 路径 | 作用 |
 |---|---|---|
 | `GET` | `/health` | 检查模型、向量库、记录数和通义千问配置。 |
-| `POST` | `/api/chat` | 多轮问答，接收 `query`、`session_id` 和 `top_k`。 |
+| `GET` | `/api/models` | 获取可见的对话模型，按 qwen3.7、deepseek-v4 和其他模型排序。 |
+| `POST` | `/api/chat` | 多轮问答；接收 `query`、`session_id`、`top_k` 和可选 `model`，返回实际使用的 `model_used`。 |
 | `POST` | `/api/search` | 只执行检索，可指定后端和分类。 |
 | `GET` | `/api/interfaces/{id}` | 返回一条完整接口记录。 |
 | `DELETE` | `/api/sessions/{session_id}` | 清除指定会话历史。 |

@@ -9,6 +9,7 @@ from api.models import (
     ChatRequest,
     ChatResponse,
     HealthResponse,
+    ModelListResponse,
     SearchRequest,
     SearchResponse,
 )
@@ -34,7 +35,16 @@ async def chat(payload: ChatRequest, request: Request):
             payload.query,
             payload.session_id,
             payload.top_k,
+            payload.model,
         )
+    except RuntimeError as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+
+
+@router.get("/api/models", response_model=ModelListResponse)
+async def models(request: Request, refresh: bool = False):
+    try:
+        return await run_in_threadpool(_service(request).models, refresh)
     except RuntimeError as exc:
         raise HTTPException(status_code=503, detail=str(exc)) from exc
 
@@ -67,4 +77,3 @@ async def interface(interface_id: str, request: Request):
 @router.delete("/api/sessions/{session_id}", status_code=204)
 async def clear_session(session_id: str, request: Request):
     _service(request).clear_session(session_id)
-

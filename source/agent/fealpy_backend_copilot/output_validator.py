@@ -56,7 +56,7 @@ class GroundedAnswerValidator:
         if unknown_apis:
             errors.append(f"Unsupported backend APIs: {sorted(unknown_apis)}")
 
-        if intent.backend and results:
+        if intent.backend and results and results[0].record.get("backends"):
             best_backend = (
                 results[0].record.get("backends", {})
                 .get(intent.backend, {})

@@ -35,6 +35,7 @@ class AgentAnswer:
     intent_source: str = "rule"
     answer_source: str = "template"
     validation_errors: List[str] = field(default_factory=list)
+    model_used: Optional[str] = None
 
 
 @dataclass

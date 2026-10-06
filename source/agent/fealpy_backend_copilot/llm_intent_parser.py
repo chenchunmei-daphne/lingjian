@@ -68,6 +68,7 @@ class LLMIntentParser:
         top_k: int = 5,
         history: Optional[List[dict]] = None,
         previous_intent: Optional[QueryIntent] = None,
+        model: Optional[str] = None,
     ) -> QueryIntent:
         rule_intent = self.fallback.parse(query, top_k=top_k)
         try:
@@ -79,7 +80,9 @@ class LLMIntentParser:
                     json.dumps(history or [], ensure_ascii=False, indent=2),
                 )
             )
-            raw = self.client.complete([{"role": "user", "content": prompt}])
+            raw = self.client.complete(
+                [{"role": "user", "content": prompt}], model=model
+            )
             value = _json_object(raw)
             category = value.get("category")
             backend = value.get("backend")

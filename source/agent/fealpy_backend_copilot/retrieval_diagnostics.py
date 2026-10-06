@@ -16,7 +16,7 @@ from evaluate_benchmark import DEFAULT_BENCHMARK, _load_benchmark, normalize_api
 from intent_parser import RuleBasedIntentParser
 from retriever import FealpyRetriever
 from schemas import QueryIntent
-from vector_kb import DEFAULT_DATA_FILE
+from vector_kb_v02 import DEFAULT_DATA_FILE, DEFAULT_DB_DIR
 
 
 PROJECT_DIR = Path(__file__).resolve().parent
@@ -80,12 +80,21 @@ class DiagnosticRunner:
                 include=["distances"],
             )
             for position, index in enumerate(indices):
-                output[index] = [
-                    {"id": item_id, "distance": float(distance)}
-                    for item_id, distance in zip(
-                        response["ids"][position], response["distances"][position]
-                    )
-                ]
+                expanded = []
+                for capability_id, distance in zip(
+                    response["ids"][position], response["distances"][position]
+                ):
+                    capability = self.retriever.capabilities.get(capability_id)
+                    if not capability:
+                        continue
+                    for target in capability.get("target_interfaces") or []:
+                        expanded.append({
+                            "id": target["id"],
+                            "capability_id": capability_id,
+                            "distance": float(distance),
+                            "role": target.get("role") or "primary",
+                        })
+                output[index] = expanded
         return [items or [] for items in output]
 
     def run(self, rows: Sequence[dict]) -> tuple[dict, List[dict]]:
@@ -114,16 +123,17 @@ class DiagnosticRunner:
                 scored = []
                 for item in vector_items:
                     record = self.retriever.records.get(item["id"])
-                    if not record:
+                    capability = self.retriever.capabilities.get(
+                        item["capability_id"]
+                    )
+                    if not record or not capability:
                         continue
                     score = 1.0 - item["distance"]
-                    score += self.retriever._lexical_bonus(intent, record)
+                    score += self.retriever._lexical_bonus(intent, capability)
+                    if item.get("role") != "primary":
+                        score -= 0.01
                     if intent.category == record.get("category"):
                         score += 0.08
-                    if record.get("deprecated"):
-                        score -= 0.2
-                    if record.get("doc_quality") == "missing":
-                        score -= 0.03
                     scored.append((item["id"], score))
                 scored.sort(key=lambda value: value[1], reverse=True)
                 reranked_ids = [item_id for item_id, _ in scored]
@@ -235,8 +245,12 @@ class DiagnosticRunner:
 
 def knowledge_base_audit(rows: Sequence[dict], runner: DiagnosticRunner) -> dict:
     file_ids = set(runner.retriever.records)
-    collection = runner.retriever.collection.get(include=[])
-    collection_ids = set(collection["ids"])
+    collection = runner.retriever.collection.get(include=["metadatas"])
+    collection_ids = {
+        interface_id
+        for metadata in collection["metadatas"]
+        for interface_id in json.loads(metadata["all_interfaces"])
+    }
     gold_ids = {normalize_api(api) for row in rows for api in row["expected_api"]}
     category_mismatches = []
     for row in rows:
@@ -248,7 +262,7 @@ def knowledge_base_audit(rows: Sequence[dict], runner: DiagnosticRunner) -> dict
                     "benchmark_category": row.get("expected_category"),
                     "record_category": record.get("category"),
                 })
-    manifest_path = PROJECT_DIR / "vector_store" / "manifest.json"
+    manifest_path = DEFAULT_DB_DIR.parent / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     data_sha256 = hashlib.sha256(DEFAULT_DATA_FILE.read_bytes()).hexdigest()
     return {

@@ -23,7 +23,8 @@ class FakeClient:
     def __init__(self, responses):
         self.responses = iter(responses)
 
-    def complete(self, messages, temperature=0.0):
+    def complete(self, messages, temperature=0.0, model=None):
+        del messages, temperature, model
         response = next(self.responses)
         if isinstance(response, Exception):
             raise response

@@ -19,8 +19,8 @@ from typing import Any, Dict, Iterable, List, Optional, Sequence
 
 
 PROJECT_DIR = Path(__file__).resolve().parent
-DEFAULT_BENCHMARK = PROJECT_DIR / "data" / "eval_questions_55.json"
-DEFAULT_OUTPUT_DIR = PROJECT_DIR / "data" / "eval_results"
+DEFAULT_BENCHMARK = PROJECT_DIR / "data" / "data_v01" / "eval_questions_55.json"
+DEFAULT_OUTPUT_DIR = PROJECT_DIR / "data" / "data_v02" / "eval_results"
 API_PATTERN = re.compile(r"(?<![\w.])bm\.[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*")
 RECOMMENDATION_PATTERN = re.compile(
     r"(?:推荐接口|推荐使用|建议使用|建议接口)[^\n]{0,40}?"
